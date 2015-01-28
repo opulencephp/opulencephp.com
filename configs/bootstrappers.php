@@ -11,5 +11,6 @@
  */
 return [
     "Project\\Authentication\\Bootstrappers\\Credentials",
+    "Project\\Databases\\Bootstrappers\\SQL",
     "Project\\ORM\\Bootstrappers\\ORM"
 ];
