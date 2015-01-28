@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C) 2015 David Young
- * 
+ *
  * Defines the list of bootstrapper classes to load
  */
 /**
@@ -10,7 +10,11 @@
  * ----------------------------------------------------------
  */
 return [
-    "Project\\Authentication\\Bootstrappers\\Credentials",
-    "Project\\Databases\\Bootstrappers\\SQL",
-    "Project\\ORM\\Bootstrappers\\ORM"
+    /**
+     * To enable Redis, add the following bootstrapper:
+     * "Project\\Bootstrappers\\Databases\\Redis"
+     */
+    "Project\\Bootstrappers\\Authentication\\Credentials",
+    "Project\\Bootstrappers\\Databases\\SQL",
+    "Project\\Bootstrappers\\ORM\\UnitOfWork"
 ];

@@ -1,22 +1,22 @@
 <?php
 /**
  * Copyright (C) 2015 David Young
- *
+ * 
  * Defines the router bootstrapper
  */
-namespace Project\HTTP\Routing\Bootstrappers;
+namespace Project\Bootstrappers\HTTP\Routing;
 use RDev\Applications\Bootstrappers;
 use RDev\HTTP\Routing;
-use RDev\IoC;
 
 class Router extends Bootstrappers\Bootstrapper
 {
     /**
-     * {@inheritdoc}
+     * Sets the missed route controller
+     *
+     * @param Routing\Router $router The router to set the missed route controller on
      */
-    public function registerBindings(IoC\IContainer $container)
+    public function run(Routing\Router $router)
     {
-        $router = $container->makeShared("RDev\\HTTP\\Routing\\Router");
         $router->setMissedRouteControllerName("Project\\HTTP\\Routing\\Controllers\\Page");
     }
 }
