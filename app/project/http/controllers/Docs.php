@@ -55,22 +55,33 @@ class Docs extends Routing\Controller
         $this->template->setVar("version", $version);
         // Flatten all the docs into a 1-dimensional array
         $docs = array_merge(
-            ProjectDocs\Documentation::$docsToPageNames["Getting Started"],
-            ProjectDocs\Documentation::$docsToPageNames["Main"]
+            ProjectDocs\Documentation::$docData["Getting Started"],
+            ProjectDocs\Documentation::$docData["Main"]
         );
 
-        if(isset($docs[$docName]))
+        if(!isset($docs[$docName]))
         {
-            $this->template->setTag("doc", $this->docs->getCompiledDoc($docName));
-            $this->setTitle($docs[$docName]);
-        }
-        else
-        {
-            $this->template->setTag("doc", $this->docs->getCompiledDoc("application"));
-            $this->setTitle($docs["application"]);
+            // This is our default
+            $docName = "installation";
         }
 
+        $this->template->setTag("doc", $this->docs->getCompiledDoc($docName));
+        $this->setTitle($docs[$docName]["title"]);
+        $this->template->setVar("metaKeywords", $docs[$docName]["keywords"]);
+        $this->template->setVar("metaDescription", $docs[$docName]["description"]);
+
         return new Responses\Response($this->compiler->compile($this->template));
+    }
+
+    /**
+     * Shows the index doc page
+     *
+     * @param string $version The RDev version to retrieve
+     * @return Responses\Response The index page
+     */
+    public function showIndex($version = "master")
+    {
+        return $this->showDoc("installing", $version);
     }
 
     /**

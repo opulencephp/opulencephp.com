@@ -21,8 +21,6 @@ class Master implements Views\IBuilder
         $template->setVar("javaScript", [
             "/assets/js/prism.js"
         ]);
-        $template->setVar("metaKeywords", ["rdev", "php", "framework", "orm", "router", "console", "mvc"]);
-        $template->setVar("metaDescription", "RDev is a simple, secure, and scalable PHP framework");
         $template->setVar("mainClasses", "home");
 
         return $template;

@@ -25,5 +25,9 @@ $router->group(["controllerNamespace" => "Project\\HTTP\\Controllers"], function
             "controller" => "Docs@showNoVersionDoc",
             "name" => "docs-noversion"
         ]);
+        $router->get("", [
+            "controller" => "Docs@showIndex",
+            "name" => "docs-index"
+        ]);
     });
 });

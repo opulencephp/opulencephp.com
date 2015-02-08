@@ -3,10 +3,10 @@
 {% part("content") %}
 <nav class="sidebar">
     <?php foreach($docs as $category => $subDocs): ?>
-    <h4>{{$category}}</h4>
+    <h5>{{$category}}</h5>
     <ul>
-        <?php foreach($subDocs as $docName => $linkText): ?>
-        <li><a href="{{route('docs', [$version, $docName])}}" title="{{$linkText}}">{{$linkText}}</a></li>
+        <?php foreach($subDocs as $docName => $docData): ?>
+        <li><a href="{{route('docs', [$version, $docName])}}" title="{{$docData['title']}}">{{$docData['title']}}</a></li>
         <?php endforeach; ?>
     </ul>
     <?php endforeach; ?>

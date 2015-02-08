@@ -16,6 +16,28 @@ body {
   background-color: #fff;
   min-height: 600px; }
 
+h1 {
+  font-size: 30px;
+  margin: 0 0 20px; }
+
+h2, h3, h4, h5, h6 {
+  margin: 0 0 10px; }
+
+h2 {
+  font-size: 24px; }
+
+h3 {
+  font-size: 22px; }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 16px; }
+
+h6 {
+  font-size: 14px; }
+
 body, div {
   box-sizing: border-box; }
 
@@ -41,7 +63,7 @@ ul, ol {
     padding-bottom: 2px; }
 
 ul {
-  list-style: inside none; }
+  list-style: inside disc; }
 
 ol {
   list-style-position: inside; }
@@ -78,13 +100,20 @@ table {
   border-collapse: collapse; }
 
 main {
-  padding-bottom: 50px; }
+  padding: 10px 0 50px; }
   main.docs nav.sidebar {
     padding: 10px;
     float: left;
     width: 200px; }
+    main.docs nav.sidebar ul {
+      list-style: inside none; }
+      main.docs nav.sidebar ul:not(:last-child) {
+        margin-bottom: 20px; }
   main.docs article {
-    margin-left: 220px;
+    /* Force the left-border to be drawn from the nav bar */
+    margin: -10px 0 -40px 220px;
+    padding: 10px 0 40px 20px;
+    padding-top: 10px;
     padding-left: 20px;
     border-left: 1px solid #ccc; }
 

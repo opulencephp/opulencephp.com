@@ -16,7 +16,7 @@ class Docs implements Views\IBuilder
     public function build(Views\ITemplate $template)
     {
         $template->setVar("mainClasses", "docs");
-        $template->setVar("docs", ProjectDocs\Documentation::$docsToPageNames);
+        $template->setVar("docs", ProjectDocs\Documentation::$docData);
 
         return $template;
     }

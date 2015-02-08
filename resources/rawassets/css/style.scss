@@ -23,6 +23,42 @@ body
     min-height: 600px;
 }
 
+h1
+{
+    font-size: 30px;
+    margin: 0 0 20px;
+}
+
+h2, h3, h4, h5, h6
+{
+    margin: 0 0 10px;
+}
+
+h2
+{
+    font-size: 24px;
+}
+
+h3
+{
+    font-size: 22px;
+}
+
+h4
+{
+    font-size: 18px;
+}
+
+h5
+{
+    font-size: 16px;
+}
+
+h6
+{
+    font-size: 14px;
+}
+
 body, div
 {
     box-sizing: border-box;
@@ -67,7 +103,7 @@ ul, ol
 
 ul
 {
-    list-style: inside none;
+    list-style: inside disc;
 }
 
 ol
@@ -120,7 +156,7 @@ table
 
 main
 {
-    padding-bottom: $footerHeight + 10px;
+    padding: 10px 0 $footerHeight + 10px;
 
     &.docs
     {
@@ -129,12 +165,23 @@ main
             padding: 10px;
             float: left;
             width: $docSidebarWidth - 20px;
+
+            ul
+            {
+                list-style: inside none;
+
+                &:not(:last-child)
+                {
+                    margin-bottom: 20px;
+                }
+            }
         }
 
         article
         {
-            margin-left: $docSidebarWidth;
-            padding-left: 20px;
+            /* Force the left-border to be drawn from the nav bar */
+            margin: -10px 0 -1*$footerHeight $docSidebarWidth;
+            padding: 10px 0 $footerHeight 20px;
             border-left: 1px solid #ccc;
         }
     }
