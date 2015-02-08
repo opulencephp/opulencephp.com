@@ -20,10 +20,18 @@ $pathsConfig = [
     "configs" => __DIR__,
     // The path toe the vendor (Composer) directory
     "vendor" => __DIR__ . "/../vendor",
+    // The path to the resources directory
+    "resources" => __DIR__ . "/../resources",
     // The path to the view directory
-    "views" => __DIR__ . "/../views",
+    "views" => __DIR__ . "/../resources/views",
+    // The path to the temporary directory
+    "tmp" => __DIR__ . "/../tmp",
     // The path to the compiled view directory
-    "compiledViews" => __DIR__ . "/../views/compiled"
+    "compiledViews" => __DIR__ . "/../tmp/http/views",
+    // The path to the logs directory
+    "logs" => __DIR__ . "/../tmp/logs",
+    // The path to the compiled docs directory
+    "compiledDocs" => __DIR__ . "/../resources/docs"
 ];
 
 // Get the autoloader

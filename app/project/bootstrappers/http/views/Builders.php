@@ -26,5 +26,9 @@ class Builders extends Bootstrappers\Bootstrapper
         {
             return new ViewBuilders\Home();
         });
+        $templateFactory->registerBuilder("Docs.php", function()
+        {
+            return new ViewBuilders\Docs();
+        });
     }
 }

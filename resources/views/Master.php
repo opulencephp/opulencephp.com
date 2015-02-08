@@ -6,17 +6,18 @@
         {{!css($css)!}}
         {{!metaKeywords($metaKeywords)!}}
         {{!metaDescription($metaDescription)!}}
+        {{!script($javaScript)!}}
     </head>
     <body>
         <header>
             <h1><a href="{{route('home')}}" title="Home">RDev</a></h1>
-            <nav>
+            <nav class="main">
                 <ul>
                     <li><a href="{{route('home')}}" title="Home">Home</a></li>
                 </ul>
             </nav>
         </header>
-        <main>
+        <main class="{{!$mainClasses!}}">
             {% show("content") %}
         </main>
         <footer>

@@ -10,5 +10,5 @@
  * ----------------------------------------------------------
  */
 return [
-    // The list of fully-qualified command class names
+    "Project\\Console\\Commands\\Docs"
 ];

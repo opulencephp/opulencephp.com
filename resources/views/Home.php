@@ -6,6 +6,6 @@
     <a href="https://github.com/ramblingsofadev/RDev" target="_blank" title="RDev on Github">Check out RDev on Github</a>
 </p>
 <p>
-    Last updated Jan 27, 2015
+    Last updated Feb 7, 2015
 </p>
 {% endpart %}
