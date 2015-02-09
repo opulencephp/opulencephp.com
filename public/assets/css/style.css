@@ -133,8 +133,8 @@ header.main {
 
 main {
   display: block;
-  margin: 34px auto 0 auto;
-  padding: 10px; }
+  margin: 0 auto;
+  padding: 44px 10px 10px; }
   main.docs nav.sidebar {
     padding: 10px;
     float: left;

@@ -223,8 +223,8 @@ header.main
 main
 {
     display: block;
-    margin: 34px auto 0 auto;
-    padding: 10px;
+    margin: 0 auto;
+    padding: $headerHeight+10 10px 10px;
 
     &.docs
     {

@@ -71,7 +71,7 @@ class Documentation
             "rdbms" => [
                 "title" => "Relational Databases",
                 "description" => "Learn about working with relational databases in RDev",
-                "keywords" => ["rdev", "rdbms", "sql", "database", "php"]
+                "keywords" => ["rdev", "rdbms", "mysql", "postgresql", "pdo", "sql", "database", "php"]
             ],
             "routing" => [
                 "title" => "Routing",
