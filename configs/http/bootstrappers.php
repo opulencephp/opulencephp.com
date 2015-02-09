@@ -27,5 +27,6 @@ return [
      *
      * List any console bootstrappers you'd like here
      */
-    "Project\\Bootstrappers\\HTTP\\Views\\Builders"
+    "Project\\Bootstrappers\\HTTP\\Views\\Builders",
+    "Project\\Bootstrappers\\HTTP\\Views\\TemplateFunctions"
 ];
