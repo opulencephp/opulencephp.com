@@ -62,7 +62,7 @@ class Docs extends Routing\Controller
         if(!isset($docs[$docName]))
         {
             // This is our default
-            $docName = "installation";
+            $docName = "installing";
         }
 
         $this->template->setTag("doc", $this->docs->getCompiledDoc($docName));
