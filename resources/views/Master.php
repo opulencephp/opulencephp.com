@@ -17,6 +17,7 @@
         {{!metaKeywords($metaKeywords)!}}
         {{!metaDescription($metaDescription)!}}
         {{!script($javaScript)!}}
+        {% include("GoogleAnalytics.php") %}
     </head>
     <body>
         <header class="main">
