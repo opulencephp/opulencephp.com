@@ -1,7 +1,6 @@
 $siteWidth: 1024px;
 $headerHeight: 34px;
 $docSidebarWidth: 230px;
-$footerHeight: 40px;
 $hyperlinkColor: #69c;
 
 html
@@ -17,7 +16,6 @@ body
     position: relative;
     margin: 0 auto;
     background-color: #fff;
-    min-height: 600px;
 }
 
 body, div
@@ -226,7 +224,7 @@ main
 {
     display: block;
     margin: 34px auto 0 auto;
-    padding: 10px 10px $footerHeight + 10px;
+    padding: 10px;
 
     &.docs
     {
@@ -252,8 +250,8 @@ main
         article
         {
             /* Force the left-border to be drawn from the nav bar */
-            margin: -10px 0 -1*$footerHeight $docSidebarWidth;
-            padding: 10px 0 $footerHeight 20px;
+            margin: -10px 0 -10px $docSidebarWidth;
+            padding: 10px 0 10px 20px;
             border-left: 1px solid #ccc;
 
             h2, h3, h4
@@ -268,11 +266,6 @@ main
 footer.main
 {
     text-align: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: $footerHeight;
     background-color: #f1f1f1;
     color: #888;
 
@@ -351,5 +344,13 @@ p code
     main
     {
         width: $siteWidth;
+    }
+}
+
+@media screen and (min-device-height: 650px)
+{
+    main
+    {
+        min-height: 600px;
     }
 }
