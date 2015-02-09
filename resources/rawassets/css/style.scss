@@ -182,6 +182,11 @@ header.main nav, footer.main nav
             display: inline-block;
             line-height: 2em;
             font-size: 1.2em;
+
+            &:first-child
+            {
+                padding-left: 0;
+            }
         }
     }
 }

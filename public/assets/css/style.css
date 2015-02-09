@@ -112,6 +112,8 @@ header.main nav, footer.main nav {
       display: inline-block;
       line-height: 2em;
       font-size: 1.2em; }
+      header.main nav ul li:first-child, footer.main nav ul li:first-child {
+        padding-left: 0; }
 
 header.main {
   background-color: #369;
