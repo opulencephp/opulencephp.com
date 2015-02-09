@@ -108,7 +108,6 @@ table {
   border-collapse: collapse; }
 
 header.main nav, footer.main nav {
-  width: 1024px;
   margin: 0 auto; }
   header.main nav ul, footer.main nav ul {
     padding: 0; }
@@ -136,7 +135,6 @@ header.main {
 
 main {
   display: block;
-  width: 1024px;
   margin: 34px auto 0 auto;
   padding: 10px 10px 50px; }
   main.docs nav.sidebar {
@@ -197,5 +195,12 @@ p code {
 
 #site-title {
   color: #7cf; }
+
+@media screen and (min-device-width: 1024px) {
+  header.main nav, footer.main nav {
+    width: 1024px; }
+
+  main {
+    width: 1024px; } }
 
 /*# sourceMappingURL=style.css.map */

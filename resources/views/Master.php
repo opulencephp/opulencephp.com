@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=1024" />
         {{!charset("utf-8")!}}
         {{!pageTitle($title)!}}
         {{!css($css)!}}

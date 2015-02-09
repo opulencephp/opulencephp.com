@@ -174,7 +174,6 @@ table
 
 header.main nav, footer.main nav
 {
-    width: $siteWidth;
     margin: 0 auto;
 
     ul
@@ -224,7 +223,6 @@ header.main
 main
 {
     display: block;
-    width: $siteWidth;
     margin: 34px auto 0 auto;
     padding: 10px 10px $footerHeight + 10px;
 
@@ -332,4 +330,17 @@ p code
 #site-title
 {
     color: #7cf;
+}
+
+@media screen and (min-device-width: $siteWidth)
+{
+    header.main nav, footer.main nav
+    {
+        width: $siteWidth;
+    }
+
+    main
+    {
+        width: $siteWidth;
+    }
 }
