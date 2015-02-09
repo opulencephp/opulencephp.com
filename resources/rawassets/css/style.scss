@@ -176,7 +176,7 @@ header.main nav, footer.main nav
 
         li
         {
-            padding: 0 5px;
+            padding: 0 10px;
             display: inline-block;
             line-height: 2em;
             font-size: 1.2em;
@@ -184,6 +184,11 @@ header.main nav, footer.main nav
             &:first-child
             {
                 padding-left: 0;
+            }
+
+            &:last-child
+            {
+                padding-right: 0;
             }
         }
     }
@@ -204,18 +209,12 @@ header.main
     {
         a, a:link, a:active, a:visited
         {
-            padding: 0 10px;
             color: #fff;
         }
 
         a:hover
         {
             color: #def;
-        }
-
-        a:first-child
-        {
-            padding-left: 0;
         }
     }
 }
@@ -265,6 +264,7 @@ main
 
 footer.main
 {
+    padding: 30px 0;
     text-align: center;
     background-color: #f1f1f1;
     color: #888;
