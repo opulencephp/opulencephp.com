@@ -124,7 +124,8 @@ header.main {
   left: 0;
   right: 0;
   width: 100%;
-  height: 34px; }
+  height: 34px;
+  z-index: 10; }
   header.main nav a, header.main nav a:link, header.main nav a:active, header.main nav a:visited {
     padding: 0 10px;
     color: #fff; }
@@ -152,6 +153,9 @@ main {
     margin: -10px 0 -40px 230px;
     padding: 10px 0 40px 20px;
     border-left: 1px solid #ccc; }
+    main.docs article h2, main.docs article h3, main.docs article h4 {
+      padding-top: 34px;
+      margin-top: -34px; }
 
 footer.main {
   text-align: center;
@@ -193,8 +197,9 @@ p code {
     border-left: 1px solid #7cf;
     color: #bbe5ff; }
 
-#site-title {
-  color: #7cf; }
+.scroll-anchor {
+  padding-top: 34px;
+  margin-top: -34px; }
 
 @media screen and (min-device-width: 1024px) {
   header.main nav, footer.main nav {

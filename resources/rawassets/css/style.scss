@@ -1,4 +1,5 @@
 $siteWidth: 1024px;
+$headerHeight: 34px;
 $docSidebarWidth: 230px;
 $footerHeight: 40px;
 $hyperlinkColor: #69c;
@@ -198,7 +199,8 @@ header.main
     left: 0;
     right: 0;
     width: 100%;
-    height: 34px;
+    height: $headerHeight;
+    z-index: 10;
 
     nav
     {
@@ -253,6 +255,12 @@ main
             margin: -10px 0 -1*$footerHeight $docSidebarWidth;
             padding: 10px 0 $footerHeight 20px;
             border-left: 1px solid #ccc;
+
+            h2, h3, h4
+            {
+                padding-top: $headerHeight;
+                margin-top: -1*$headerHeight;
+            }
         }
     }
 }
@@ -327,9 +335,10 @@ p code
     }
 }
 
-#site-title
+.scroll-anchor
 {
-    color: #7cf;
+    padding-top: $headerHeight;
+    margin-top: -1*$headerHeight;
 }
 
 @media screen and (min-device-width: $siteWidth)

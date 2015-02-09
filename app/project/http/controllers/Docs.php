@@ -56,7 +56,7 @@ class Docs extends Routing\Controller
         // Flatten all the docs into a 1-dimensional array
         $docs = array_merge(
             ProjectDocs\Documentation::$docData["Getting Started"],
-            ProjectDocs\Documentation::$docData["Main"]
+            ProjectDocs\Documentation::$docData["Framework"]
         );
 
         if(!isset($docs[$docName]))

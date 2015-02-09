@@ -27,7 +27,7 @@ class Documentation
                 "keywords" => ["rdev", "structure", "php"]
             ]
         ],
-        "Main" => [
+        "Framework" => [
             "application" => [
                 "title" => "Application",
                 "description" => "Learn about the inner-workings of an RDev application",
@@ -38,7 +38,7 @@ class Documentation
                 "description" => "Learn how to create an RDev console application",
                 "keywords" => ["rdev", "console", "command prompt", "php"]
             ],
-            "ioc" => [
+            "dependency-injection" => [
                 "title" => "Dependency Injection",
                 "description" => "Learn about dependency injection in RDev",
                 "keywords" => ["rdev", "ioc", "dependency injection", "php"]
