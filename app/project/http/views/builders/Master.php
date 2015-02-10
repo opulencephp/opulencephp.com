@@ -5,10 +5,22 @@
  * Defines the master template builder
  */
 namespace Project\HTTP\Views\Builders;
+use RDev\HTTP\Requests;
 use RDev\Views;
 
 class Master implements Views\IBuilder
 {
+    /** @var Requests\Request The current request */
+    private $request = null;
+
+    /**
+     * @param Requests\Request $request The current request
+     */
+    public function __construct(Requests\Request $request)
+    {
+        $this->request = $request;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -22,6 +34,7 @@ class Master implements Views\IBuilder
             "/assets/js/prism.js"
         ]);
         $template->setVar("mainClasses", "home");
+        $template->setVar("request", $this->request);
 
         return $template;
     }
