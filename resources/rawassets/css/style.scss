@@ -2,6 +2,12 @@ $siteWidth: 1024px;
 $headerHeight: 34px;
 $docSidebarWidth: 230px;
 $hyperlinkColor: #69c;
+$mainNavPadding: 10px;
+
+*
+{
+    box-sizing: border-box;;
+}
 
 html
 {
@@ -9,6 +15,7 @@ html
     font-size: 14px;
     color: #111;
     background-color: #f1f1f1;
+    overflow-x: hidden;
 }
 
 body
@@ -16,6 +23,7 @@ body
     position: relative;
     margin: 0 auto;
     background-color: #fff;
+    overflow-x: hidden;
 }
 
 body, div
@@ -175,7 +183,7 @@ header.main nav, footer.main nav
 
         li
         {
-            padding: 0 10px;
+            padding: 0 $mainNavPadding;
             display: inline-block;
             line-height: $headerHeight;
             font-size: $headerHeight/2;
@@ -183,11 +191,6 @@ header.main nav, footer.main nav
             &:first-child
             {
                 padding-left: 0;
-            }
-
-            &:last-child
-            {
-                padding-right: 0;
             }
         }
     }
@@ -206,9 +209,17 @@ header.main
 
     nav
     {
-        li.current
+        li
         {
-            background-color: #5ad;
+            &.current
+            {
+                background-color: #5ad;
+            }
+
+            &.mobile-menu
+            {
+                display: none;
+            }
         }
 
         a, a:link, a:active, a:visited
@@ -226,6 +237,7 @@ header.main
 main
 {
     display: block;
+    position: relative;
     margin: 0 auto;
     padding: $headerHeight+10 10px 10px;
 
@@ -233,10 +245,6 @@ main
     {
         nav.sidebar
         {
-            padding: 10px;
-            float: left;
-            width: $docSidebarWidth - 20px;
-
             ul
             {
                 padding-top: 0;
@@ -252,11 +260,6 @@ main
 
         article
         {
-            /* Force the left-border to be drawn from the nav bar */
-            margin: -10px 0 -10px $docSidebarWidth;
-            padding: 10px 0 10px 20px;
-            border-left: 1px solid #ccc;
-
             h2, h3, h4
             {
                 padding-top: $headerHeight;
@@ -295,6 +298,11 @@ footer.main
         {
             color: #777;
         }
+
+        li.mobile-menu
+        {
+            display: none;
+        }
     }
 }
 
@@ -310,6 +318,7 @@ pre
     padding: 10px;
     background: #f1f1f1;
     position: relative;
+    overflow: auto;
 }
 
 code
@@ -339,16 +348,112 @@ p code
     margin-top: -1*$headerHeight;
 }
 
+@media screen and (max-device-width: $siteWidth - 1px)
+{
+    body.nav-open
+    {
+        main
+        {
+            &.docs
+            {
+                nav.sidebar
+                {
+                    -moz-transform: translate3d(-100%, 0, 0);
+                    -ms-transform: translate3d(-100%, 0, 0);
+                    -webkit-transform: translate3d(-100%, 0, 0);
+                    transform: translate3d(-100%, 0, 0);
+                    -moz-transition: .3s;
+                    -webkit-transition: .3s;
+                    transition: transform .3s;
+                }
+            }
+        }
+    }
+
+    header.main
+    {
+        nav li
+        {
+            &:nth-last-of-type(2)
+            {
+                padding-right: $mainNavPadding;
+            }
+        }
+
+        &.docs nav li.mobile-menu
+        {
+            display: inline-block !important;
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 25px;
+        }
+    }
+
+    main
+    {
+        &.docs
+        {
+            nav.sidebar
+            {
+                padding-top: 10px;
+                display: block;
+                position: absolute;
+                top: $headerHeight;
+                left: 100%;
+                width: 60%;
+                padding-left: 10px;
+                height: 100%;
+                background: #f1f1f1;
+                z-index: 5;
+                transition: transform .3s;
+            }
+        }
+    }
+}
+
 @media screen and (min-device-width: $siteWidth)
 {
     header.main nav, footer.main nav
     {
         width: $siteWidth;
+
+        li
+        {
+            &.mobile-menu
+            {
+                display: none;
+            }
+
+            /* In the desktop version, the second-to-lst item is the last visible one */
+            &:nth-last-of-type(2)
+            {
+                padding-right: 0;
+            }
+        }
     }
 
     main
     {
         width: $siteWidth;
+
+        &.docs
+        {
+            nav.sidebar
+            {
+                padding: 10px;
+                float: left;
+                width: $docSidebarWidth - 20px;
+            }
+
+            article
+            {
+                /* Force the left-border to be drawn from the nav bar */
+                margin: -10px 0 -10px $docSidebarWidth;
+                padding: 10px 0 10px 20px;
+                border-left: 1px solid #ccc;
+            }
+        }
     }
 }
 

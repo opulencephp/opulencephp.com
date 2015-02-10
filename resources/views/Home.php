@@ -2,7 +2,7 @@
 
 {% part("content") %}
 <section id="features">
-    <h2>RDev - A fast, customizable MVC PHP framework</h2>
+    <h2>RDev - A powerful new MVC PHP framework</h2>
     RDev was built with a lot of functionality already baked-in, but also with customization in mind.  RDev makes it easy to do things like:
 
     <ul>

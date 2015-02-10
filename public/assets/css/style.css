@@ -1,13 +1,18 @@
+* {
+  box-sizing: border-box; }
+
 html {
   font-family: 'Open Sans', 'Segoe UI', arial, sans-serif;
   font-size: 14px;
   color: #111;
-  background-color: #f1f1f1; }
+  background-color: #f1f1f1;
+  overflow-x: hidden; }
 
 body {
   position: relative;
   margin: 0 auto;
-  background-color: #fff; }
+  background-color: #fff;
+  overflow-x: hidden; }
 
 body, div {
   box-sizing: border-box; }
@@ -112,8 +117,6 @@ header.main nav, footer.main nav {
       font-size: 17px; }
       header.main nav ul li:first-child, footer.main nav ul li:first-child {
         padding-left: 0; }
-      header.main nav ul li:last-child, footer.main nav ul li:last-child {
-        padding-right: 0; }
 
 header.main {
   background-color: #369;
@@ -126,6 +129,8 @@ header.main {
   z-index: 10; }
   header.main nav li.current {
     background-color: #5ad; }
+  header.main nav li.mobile-menu {
+    display: none; }
   header.main nav a, header.main nav a:link, header.main nav a:active, header.main nav a:visited {
     color: #fff; }
   header.main nav a:hover {
@@ -133,26 +138,18 @@ header.main {
 
 main {
   display: block;
+  position: relative;
   margin: 0 auto;
   padding: 44px 10px 10px; }
-  main.docs nav.sidebar {
-    padding: 10px;
-    float: left;
-    width: 210px; }
-    main.docs nav.sidebar ul {
-      padding-top: 0;
-      padding-bottom: 0;
-      list-style: inside none; }
-      main.docs nav.sidebar ul:not(:last-child) {
-        margin-bottom: 20px; }
-  main.docs article {
-    /* Force the left-border to be drawn from the nav bar */
-    margin: -10px 0 -10px 230px;
-    padding: 10px 0 10px 20px;
-    border-left: 1px solid #ccc; }
-    main.docs article h2, main.docs article h3, main.docs article h4 {
-      padding-top: 34px;
-      margin-top: -34px; }
+  main.docs nav.sidebar ul {
+    padding-top: 0;
+    padding-bottom: 0;
+    list-style: inside none; }
+    main.docs nav.sidebar ul:not(:last-child) {
+      margin-bottom: 20px; }
+  main.docs article h2, main.docs article h3, main.docs article h4 {
+    padding-top: 34px;
+    margin-top: -34px; }
 
 footer.main {
   padding: 30px 0;
@@ -168,6 +165,8 @@ footer.main {
     color: #888; }
   footer.main nav a:hover {
     color: #777; }
+  footer.main nav li.mobile-menu {
+    display: none; }
 
 blockquote {
   background: #def;
@@ -177,7 +176,8 @@ blockquote {
 pre {
   padding: 10px;
   background: #f1f1f1;
-  position: relative; }
+  position: relative;
+  overflow: auto; }
 
 code {
   font-family: Consolas, Monaco, "Andale Mono", monospace; }
@@ -195,12 +195,58 @@ p code {
   padding-top: 34px;
   margin-top: -34px; }
 
+@media screen and (max-device-width: 1023px) {
+  body.nav-open main.docs nav.sidebar {
+    -moz-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -moz-transition: .3s;
+    -webkit-transition: .3s;
+    transition: transform .3s; }
+
+  header.main nav li:nth-last-of-type(2) {
+    padding-right: 10px; }
+  header.main.docs nav li.mobile-menu {
+    display: inline-block !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 25px; }
+
+  main.docs nav.sidebar {
+    padding-top: 10px;
+    display: block;
+    position: absolute;
+    top: 34px;
+    left: 100%;
+    width: 60%;
+    padding-left: 10px;
+    height: 100%;
+    background: #f1f1f1;
+    z-index: 5;
+    transition: transform .3s; } }
 @media screen and (min-device-width: 1024px) {
   header.main nav, footer.main nav {
     width: 1024px; }
+    header.main nav li, footer.main nav li {
+      /* In the desktop version, the second-to-lst item is the last visible one */ }
+      header.main nav li.mobile-menu, footer.main nav li.mobile-menu {
+        display: none; }
+      header.main nav li:nth-last-of-type(2), footer.main nav li:nth-last-of-type(2) {
+        padding-right: 0; }
 
   main {
-    width: 1024px; } }
+    width: 1024px; }
+    main.docs nav.sidebar {
+      padding: 10px;
+      float: left;
+      width: 210px; }
+    main.docs article {
+      /* Force the left-border to be drawn from the nav bar */
+      margin: -10px 0 -10px 230px;
+      padding: 10px 0 10px 20px;
+      border-left: 1px solid #ccc; } }
 @media screen and (min-device-height: 650px) {
   main {
     min-height: 600px; } }
