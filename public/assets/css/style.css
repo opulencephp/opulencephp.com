@@ -224,19 +224,23 @@ p code {
       padding: 0 10px; }
 
   main.docs nav.sidebar {
+    border-left: 1px solid #ccc;
     padding-top: 10px;
     display: block;
-    position: absolute;
+    position: fixed;
+    overflow-y: auto;
     top: 34px;
     left: 100%;
-    padding-left: 10px;
     height: 100%;
+    padding-left: 10px;
     background: #f1f1f1;
     z-index: 5;
     -webkit-transition: -webkit-transform .3s;
     -moz-transition: -moz-transform .3s;
     -o-transition: -o-transform .3s;
-    transition: transform .3s; } }
+    transition: transform .3s; }
+    main.docs nav.sidebar li {
+      white-space: nowrap; } }
 @media screen and (min-device-width: 1024px) {
   header.main nav, footer.main nav {
     width: 1024px; }

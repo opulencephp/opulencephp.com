@@ -413,19 +413,26 @@ p code
         {
             nav.sidebar
             {
+                border-left: 1px solid #ccc;
                 padding-top: 10px;
                 display: block;
-                position: absolute;
+                position: fixed;
+                overflow-y: auto;
                 top: $headerHeight;
                 left: 100%;
-                padding-left: 10px;
                 height: 100%;
+                padding-left: 10px;
                 background: #f1f1f1;
                 z-index: 5;
                 -webkit-transition: -webkit-transform .3s;
                 -moz-transition: -moz-transform .3s;
                 -o-transition: -o-transform .3s;
                 transition: transform .3s;
+
+                li
+                {
+                    white-space: nowrap;
+                }
             }
         }
     }
