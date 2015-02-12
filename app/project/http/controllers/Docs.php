@@ -65,7 +65,7 @@ class Docs extends Routing\Controller
             $docName = "installing";
         }
 
-        $this->template->setTag("doc", $this->docs->getCompiledDoc($docName));
+        $this->template->setVar("doc", $this->docs->getCompiledDoc($docName));
         $this->setTitle($docs[$docName]["title"]);
         $this->template->setVar("metaKeywords", $docs[$docName]["keywords"]);
         $this->template->setVar("metaDescription", $docs[$docName]["description"]);

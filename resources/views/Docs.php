@@ -14,7 +14,7 @@
     <?php endforeach; ?>
 </nav>
 <article>
-    {{!doc!}}
+    {{!$doc!}}
 </article>
 
 {% endpart %}

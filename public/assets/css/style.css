@@ -147,7 +147,7 @@ main {
     list-style: inside none; }
     main.docs nav.sidebar ul:not(:last-child) {
       margin-bottom: 20px; }
-  main.docs article h2, main.docs article h3, main.docs article h4 {
+  main.docs article h2, main.docs article h3, main.docs article h4, main.docs article h5 {
     padding-top: 34px;
     margin-top: -34px; }
 
@@ -195,6 +195,10 @@ p code {
   padding-top: 34px;
   margin-top: -34px; }
 
+/* For mobile devices that are big enough, add a little bit of left padding so logo doesn't look tucked away */
+@media screen and (min-device-width: 330px) and (max-device-width: 1023px) {
+  header.main nav ul li:first-child {
+    padding-left: 10px; } }
 @media screen and (max-device-width: 1023px) {
   body.nav-open main.docs nav.sidebar {
     -moz-transform: translate3d(-100%, 0, 0);
@@ -210,9 +214,14 @@ p code {
   header.main.docs nav li.mobile-menu {
     display: inline-block !important;
     position: absolute;
+    padding: 0;
     right: 0;
     top: 0;
-    font-size: 25px; }
+    font-size: 34px;
+    /* Make the link easier to click by making it wide */ }
+    header.main.docs nav li.mobile-menu a {
+      display: inline-block;
+      padding: 0 10px; }
 
   main.docs nav.sidebar {
     padding-top: 10px;
@@ -220,11 +229,13 @@ p code {
     position: absolute;
     top: 34px;
     left: 100%;
-    width: 60%;
     padding-left: 10px;
     height: 100%;
     background: #f1f1f1;
     z-index: 5;
+    -webkit-transition: -webkit-transform .3s;
+    -moz-transition: -moz-transform .3s;
+    -o-transition: -o-transform .3s;
     transition: transform .3s; } }
 @media screen and (min-device-width: 1024px) {
   header.main nav, footer.main nav {
@@ -241,7 +252,7 @@ p code {
     main.docs nav.sidebar {
       padding: 10px;
       float: left;
-      width: 210px; }
+      width: 230px; }
     main.docs article {
       /* Force the left-border to be drawn from the nav bar */
       margin: -10px 0 -10px 230px;
