@@ -30,17 +30,27 @@
             {% include("MainNav.php") %}
             &copy; {{date("Y")}} David Young
         </footer>
-        {{!script("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")!}}
         <script type="text/javascript">
-            $("document").ready(function()
+            // Toggle the "nav-open" class when clicking the link
+            document.getElementsByClassName("mobile-menu")[0].getElementsByTagName("a")[0].onclick = function(e)
             {
-                $("li.mobile-menu a").click(function()
+                // How to tell if an element has a particular class
+                if((' ' + document.body.className + ' ').indexOf(' nav-open ') > -1)
                 {
-                    $("body").toggleClass("nav-open");
+                    document.body.className = document.body.className.replace(/\bnav\-open\b/, "");
+                }
+                else
+                {
+                    if(document.body.className != "")
+                    {
+                        document.body.className += " ";
+                    }
 
-                    return false;
-                });
-            });
+                    document.body.className += "nav-open";
+                }
+
+                return false;
+            };
         </script>
     </body>
 </html>
