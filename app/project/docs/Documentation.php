@@ -63,6 +63,11 @@ class Documentation
                 "description" => "Learn about using ORM in RDev",
                 "keywords" => ["rdev", "orm", "unit of work", "object relational mapping", "data mapper", "repository", "php"]
             ],
+            "pipelines" => [
+                "title" => "Pipelines",
+                "description" => "Learn how to pipeline data",
+                "keywords" => ["rdev", "pipeline", "serial", "php"]
+            ],
             "query-builders" => [
                 "title" => "Query Builders",
                 "description" => "Learn about RDev SQL query builders",

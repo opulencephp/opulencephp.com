@@ -245,6 +245,11 @@ main
     {
         nav.sidebar
         {
+            padding-top: 10px;
+            position: fixed;
+            top: $headerHeight;
+            overflow-y: auto;
+
             ul
             {
                 padding-top: 0;
@@ -414,11 +419,6 @@ p code
             nav.sidebar
             {
                 border-left: 1px solid #ccc;
-                padding-top: 10px;
-                display: block;
-                position: fixed;
-                overflow-y: auto;
-                top: $headerHeight;
                 left: 100%;
                 height: 100%;
                 padding-left: 10px;
@@ -467,9 +467,10 @@ p code
         {
             nav.sidebar
             {
-                padding: 10px;
+                padding: 20px 10px 10px;
                 float: left;
                 width: $docSidebarWidth;
+                bottom: 0;
             }
 
             article
