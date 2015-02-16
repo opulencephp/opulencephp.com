@@ -1,11 +1,15 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Don't remove trailing slashes for API docs
+    RewriteRule ^api/ - [L]
+
     # Handle trailing slashes
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 
     # Bootup the application
     RewriteRule ^index.php - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php [QSA,L]
 </IfModule>

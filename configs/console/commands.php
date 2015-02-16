@@ -10,5 +10,6 @@
  * ----------------------------------------------------------
  */
 return [
+    "Project\\Console\\Commands\\API",
     "Project\\Console\\Commands\\Docs"
 ];
