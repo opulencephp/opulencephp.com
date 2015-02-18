@@ -12,7 +12,7 @@
 return [
     /**
      * ----------------------------------------------------------
-     * Your middleware
+     * Middleware to be run on every route
      * ----------------------------------------------------------
      *
      * List any HTTP middleware you'd like here
