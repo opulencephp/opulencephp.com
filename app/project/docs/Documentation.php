@@ -25,6 +25,16 @@ class Documentation
                 "title" => "Directory Structure",
                 "description" => "Learn about how RDev is structured",
                 "keywords" => ["rdev", "structure", "php"]
+            ],
+            "http-workflow" => [
+                "title" => "HTTP Workflow",
+                "description" => "Learn about the workflow of an RDev HTTP application",
+                "keywords" => ["rdev", "http", "workflow", "php"]
+            ],
+            "console-workflow" => [
+                "title" => "Console Workflow",
+                "description" => "Learn about the workflow of an RDev console application",
+                "keywords" => ["rdev", "console", "workflow", "php"]
             ]
         ],
         "Framework" => [
@@ -32,6 +42,11 @@ class Documentation
                 "title" => "Application",
                 "description" => "Learn about the inner-workings of an RDev application",
                 "keywords" => ["rdev", "application", "php"]
+            ],
+            "bootstrappers" => [
+                "title" => "Bootstrappers",
+                "description" => "Learn how to configure an RDev application",
+                "keywords" => ["rdev", "configuration", "bootstrapper", "php"]
             ],
             "console" => [
                 "title" => "Console",
@@ -42,6 +57,11 @@ class Documentation
                 "title" => "Dependency Injection",
                 "description" => "Learn about dependency injection in RDev",
                 "keywords" => ["rdev", "ioc", "dependency injection", "php"]
+            ],
+            "environment-configs" => [
+                "title" => "Environment Configs",
+                "description" => "Learn how to setup environment variables in RDev",
+                "keywords" => ["rdev", "environment variables", "config", "php"]
             ],
             "files" => [
                 "title" => "File System",
