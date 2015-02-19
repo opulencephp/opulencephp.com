@@ -16,14 +16,14 @@ require_once __DIR__ . "/../start.php";
  * Let's get started
  * ----------------------------------------------------------
  */
-$application->registerBootstrappers(require_once $paths["configs"] . "/console/bootstrappers.php");
+$application->registerBootstrappers(require_once $application->getPaths()["configs"] . "/console/bootstrappers.php");
 $statusCode = $application->start(function () use ($application)
 {
     global $argv;
 
     /**
      * ----------------------------------------------------------
-     * Setup the commands
+     * Handle the request
      * ----------------------------------------------------------
      *
      * @var Commands $commands
@@ -33,23 +33,9 @@ $statusCode = $application->start(function () use ($application)
     $commands = $application->getIoCContainer()->makeShared("RDev\\Console\\Commands\\Commands");
     $requestParser = $application->getIoCContainer()->makeShared("RDev\\Console\\Requests\\Parsers\\IParser");
     $commandCompiler = $application->getIoCContainer()->makeShared("RDev\\Console\\Commands\\Compilers\\ICompiler");
-    $commandClasses = require_once $application->getPaths()["configs"] . "/console/commands.php";
+    $kernel = new Kernel($requestParser, $commandCompiler, $commands, $application->getLogger(), $application->getVersion());
 
-    // Instantiate each command class
-    foreach($commandClasses as $commandClass)
-    {
-        $commands->add($application->getIoCContainer()->makeShared($commandClass));
-    }
-
-    /**
-     * ----------------------------------------------------------
-     * Handle the input
-     * ----------------------------------------------------------
-     */
-    $kernel = new Kernel($commandCompiler, $commands, $application->getLogger(), $application->getVersion());
-
-
-    return $kernel->handle($requestParser, $argv);
+    return $kernel->handle($argv);
 });
 
 /**
