@@ -1,5 +1,6 @@
 {% extends("Master.php") %}
 
 {% part("content") %}
-<h2>{{errorMessage}}</h2>
+<h2>{{errorTitle}}</h2>
+{{errorDescription}}
 {% endpart %}

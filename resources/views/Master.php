@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="initial-scale=1" />
         {{!charset("utf-8")!}}
-        {{!pageTitle($title)!}}
+        {{!rdevTitle($title)!}}
         {{!css("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700")!}}
         {{!css($css)!}}
         <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">

@@ -66,7 +66,7 @@ class Docs extends Routing\Controller
         }
 
         $this->template->setVar("doc", $this->docs->getCompiledDoc($docName));
-        $this->setTitle($docs[$docName]["title"]);
+        $this->template->setVar("title", $docs[$docName]["title"]);
         $this->template->setVar("metaKeywords", $docs[$docName]["keywords"]);
         $this->template->setVar("metaDescription", $docs[$docName]["description"]);
 
@@ -95,15 +95,5 @@ class Docs extends Routing\Controller
         return new Responses\RedirectResponse(
             $this->urlGenerator->createFromName("docs", ["master", $docName])
         );
-    }
-
-    /**
-     * Sets a formatted title for a page
-     *
-     * @param string $title The title of the page
-     */
-    private function setTitle($title)
-    {
-        $this->template->setVar("title", "$title | RDev");
     }
 }

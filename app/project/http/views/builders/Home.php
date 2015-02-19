@@ -14,7 +14,7 @@ class Home implements Views\IBuilder
      */
     public function build(Views\ITemplate $template)
     {
-        $template->setVar("title", "RDev | PHP Framework");
+        $template->setVar("title", "PHP Framework");
         $template->setVar("metaKeywords", ["rdev", "php", "framework", "orm", "router", "console", "mvc"]);
         $template->setVar("metaDescription", "A simple, secure, and scalable MVC PHP framework");
 
