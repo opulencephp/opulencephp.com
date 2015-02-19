@@ -30,6 +30,7 @@ class Master implements Views\IBuilder
         $template->setVar("metaKeywords", []);
         $template->setVar("metaDescription", "");
         // Set default variable values
+        $template->setVar("doFormatTitle", true);
         $template->setVar("css", [
             "/assets/css/style.css",
             "/assets/css/prism.css"

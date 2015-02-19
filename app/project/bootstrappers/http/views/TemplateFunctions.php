@@ -18,9 +18,14 @@ class TemplateFunctions extends Bootstrappers\Bootstrapper
     public function run(Compilers\ICompiler $compiler)
     {
         // Generates the title HTML
-        $compiler->registerTemplateFunction("rdevTitle", function($title) use ($compiler)
+        $compiler->registerTemplateFunction("rdevTitle", function($title, $doFormat = true) use ($compiler)
         {
-            return $compiler->executeTemplateFunction("pageTitle", ["$title | RDev"]);
+            if($doFormat)
+            {
+                $title .= " | RDev";
+            }
+
+            return $compiler->executeTemplateFunction("pageTitle", [$title]);
         });
         // Generates the logo text
         $compiler->registerTemplateFunction("logo", function()
