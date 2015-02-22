@@ -68,6 +68,11 @@ class Documentation
                 "description" => "Learn about working with the file system in RDev",
                 "keywords" => ["rdev", "file system", "read write", "php"]
             ],
+            "http-middleware" => [
+                "title" => "HTTP Middleware",
+                "description" => "Learn about HTTP middleware in RDev",
+                "keywords" => ["rdev", "middleware", "http", "requests", "responses", "php"]
+            ],
             "http" => [
                 "title" => "HTTP Requests/Responses",
                 "description" => "Learn about handling HTTP requests and responses in RDev",
