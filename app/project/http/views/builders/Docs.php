@@ -5,18 +5,19 @@
  * Defines the builder for the docs page
  */
 namespace Project\HTTP\Views\Builders;
-use Project\Docs as ProjectDocs;
-use RDev\Views;
+use Project\Docs\Documentation;
+use RDev\Views\IBuilder;
+use RDev\Views\ITemplate;
 
-class Docs implements Views\IBuilder
+class Docs implements IBuilder
 {
     /**
      * {@inheritdoc}
      */
-    public function build(Views\ITemplate $template)
+    public function build(ITemplate $template)
     {
         $template->setVar("mainClasses", "docs");
-        $template->setVar("docs", ProjectDocs\Documentation::$docData);
+        $template->setVar("docs", Documentation::$docData);
 
         return $template;
     }

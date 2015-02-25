@@ -5,19 +5,19 @@
  * Defines the command that generates HTML from the markdown docs
  */
 namespace Project\Console\Commands;
-use Project\Docs as ProjectDocs;
-use RDev\Console\Commands;
-use RDev\Console\Responses;
+use Project\Docs\Documentation;
+use RDev\Console\Commands\Command;
+use RDev\Console\Responses\IResponse;
 
-class Docs extends Commands\Command
+class Docs extends Command
 {
-    /** @var ProjectDocs\Documentation The tool to read/write docs */
+    /** @var Documentation The tool to read/write docs */
     private $docs = null;
 
     /**
-     * @param ProjectDocs\Documentation $docs The tool to read/write docs
+     * @param Documentation $docs The tool to read/write docs
      */
-    public function __construct(ProjectDocs\Documentation $docs)
+    public function __construct(Documentation $docs)
     {
         parent::__construct();
 
@@ -36,7 +36,7 @@ class Docs extends Commands\Command
     /**
      * {@inheritdoc}
      */
-    protected function doExecute(Responses\IResponse $response)
+    protected function doExecute(IResponse $response)
     {
         $response->write($this->docs->compile());
         $response->writeln("<success>Docs created</success>");

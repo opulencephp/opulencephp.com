@@ -5,18 +5,19 @@
  * Defines the master template builder
  */
 namespace Project\HTTP\Views\Builders;
-use RDev\HTTP\Requests;
-use RDev\Views;
+use RDev\HTTP\Requests\Request;
+use RDev\Views\IBuilder;
+use RDev\Views\ITemplate;
 
-class Master implements Views\IBuilder
+class Master implements IBuilder
 {
-    /** @var Requests\Request The current request */
+    /** @var Request The current request */
     private $request = null;
 
     /**
-     * @param Requests\Request $request The current request
+     * @param Request $request The current request
      */
-    public function __construct(Requests\Request $request)
+    public function __construct(Request $request)
     {
         $this->request = $request;
     }
@@ -24,7 +25,7 @@ class Master implements Views\IBuilder
     /**
      * {@inheritdoc}
      */
-    public function build(Views\ITemplate $template)
+    public function build(ITemplate $template)
     {
         // Default to empty meta data
         $template->setVar("metaKeywords", []);

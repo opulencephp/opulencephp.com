@@ -6,8 +6,9 @@
  */
 namespace Project\Docs;
 use Parsedown;
-use RDev\Applications;
-use RDev\Files;
+use RDev\Applications\Paths;
+use RDev\Files\FileSystem;
+use RDev\Files\FileSystemException;
 
 class Documentation
 {
@@ -122,17 +123,17 @@ class Documentation
     ];
     /** @var Parsedown The parsedown object to use */
     private $parsedown = null;
-    /** @var Applications\Paths The application paths */
+    /** @var Paths The application paths */
     private $paths = null;
-    /** @var Files\FileSystem The file system */
+    /** @var FileSystem The file system */
     private $files = null;
 
     /**
      * @param Parsedown $parsedown The parsedown object to use
-     * @param Applications\Paths $paths The application paths
-     * @param Files\FileSystem $files The file system
+     * @param Paths $paths The application paths
+     * @param FileSystem $files The file system
      */
-    public function __construct(Parsedown $parsedown, Applications\Paths $paths, Files\FileSystem $files)
+    public function __construct(Parsedown $parsedown, Paths $paths, FileSystem $files)
     {
         $this->parsedown = $parsedown;
         $this->paths = $paths;
@@ -174,7 +175,7 @@ class Documentation
      *
      * @param string $name The name of the document we want
      * @return string The parsed document
-     * @throws Files\FileSystemException Thrown if no document exists with the input name
+     * @throws FileSystemException Thrown if no document exists with the input name
      */
     public function getCompiledDoc($name)
     {

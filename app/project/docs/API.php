@@ -5,21 +5,21 @@
  * Defines the API docs
  */
 namespace Project\Docs;
-use RDev\Applications;
-use RDev\Files;
+use RDev\Applications\Paths;
+use RDev\Files\FileSystem;
 
 class API
 {
-    /** @var Applications\Paths The application paths */
+    /** @var Paths The application paths */
     private $paths = null;
-    /** @var Files\FileSystem The file system */
+    /** @var FileSystem The file system */
     private $files = null;
 
     /**
-     * @param Applications\Paths $paths The application paths
-     * @param Files\FileSystem $files The file system
+     * @param Paths $paths The application paths
+     * @param FileSystem $files The file system
      */
-    public function __construct(Applications\Paths $paths, Files\FileSystem $files)
+    public function __construct(Paths $paths, FileSystem $files)
     {
         $this->paths = $paths;
         $this->files = $files;

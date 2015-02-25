@@ -5,17 +5,17 @@
  * Defines the template functions bootstrapper
  */
 namespace Project\Bootstrappers\HTTP\Views;
-use RDev\Applications\Bootstrappers;
-use RDev\Views\Compilers;
+use RDev\Applications\Bootstrappers\Bootstrapper;
+use RDev\Views\Compilers\ICompiler;
 
-class TemplateFunctions extends Bootstrappers\Bootstrapper
+class TemplateFunctions extends Bootstrapper
 {
     /**
      * Registers template functions
      *
-     * @param Compilers\ICompiler $compiler The compiler to use
+     * @param ICompiler $compiler The compiler to use
      */
-    public function run(Compilers\ICompiler $compiler)
+    public function run(ICompiler $compiler)
     {
         // Generates the title HTML
         $compiler->registerTemplateFunction("rdevTitle", function($title, $doFormat = true) use ($compiler)

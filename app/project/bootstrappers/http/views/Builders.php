@@ -5,32 +5,34 @@
  * Defines the view builders bootstrapper
  */
 namespace Project\Bootstrappers\HTTP\Views;
-use Project\HTTP\Views\Builders as ViewBuilders;
-use RDev\Applications\Bootstrappers;
-use RDev\HTTP\Requests;
-use RDev\Views\Factories;
+use Project\HTTP\Views\Builders\Docs;
+use Project\HTTP\Views\Builders\Home;
+use Project\HTTP\Views\Builders\Master;
+use RDev\Applications\Bootstrappers\Bootstrapper;
+use RDev\HTTP\Requests\Request;
+use RDev\Views\Factories\ITemplateFactory;
 
-class Builders extends Bootstrappers\Bootstrapper
+class Builders extends Bootstrapper
 {
     /**
      * Registers view builders to the factory
      *
-     * @param Factories\ITemplateFactory $templateFactory The template factory to use
-     * @param Requests\Request $request The current request
+     * @param ITemplateFactory $templateFactory The template factory to use
+     * @param Request $request The current request
      */
-    public function run(Factories\ITemplateFactory $templateFactory, Requests\Request $request)
+    public function run(ITemplateFactory $templateFactory, Request $request)
     {
         $templateFactory->registerBuilder("Master.php", function() use($request)
         {
-            return new ViewBuilders\Master($request);
+            return new Master($request);
         });
         $templateFactory->registerBuilder("Home.php", function()
         {
-            return new ViewBuilders\Home();
+            return new Home();
         });
         $templateFactory->registerBuilder("Docs.php", function()
         {
-            return new ViewBuilders\Docs();
+            return new Docs();
         });
     }
 }

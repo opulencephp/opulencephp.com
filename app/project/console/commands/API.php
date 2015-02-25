@@ -5,19 +5,19 @@
  * Defines the command that generates API docs
  */
 namespace Project\Console\Commands;
-use Project\Docs as ProjectDocs;
-use RDev\Console\Commands;
-use RDev\Console\Responses;
+use Project\Docs\API as APIDocs;
+use RDev\Console\Commands\Command;
+use RDev\Console\Responses\IResponse;
 
-class API extends Commands\Command
+class API extends Command
 {
-    /** @var ProjectDocs\API The tool to generate docs */
+    /** @var APIDocs The tool to generate docs */
     private $api = null;
 
     /**
-     * @param ProjectDocs\API $api The tool to generate API docs
+     * @param APIDocs $api The tool to generate API docs
      */
-    public function __construct(ProjectDocs\API $api)
+    public function __construct(APIDocs $api)
     {
         parent::__construct();
 
@@ -36,7 +36,7 @@ class API extends Commands\Command
     /**
      * {@inheritdoc}
      */
-    protected function doExecute(Responses\IResponse $response)
+    protected function doExecute(IResponse $response)
     {
         $this->api->compile();
         $response->writeln("<success>API docs created</success>");
