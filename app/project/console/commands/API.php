@@ -15,7 +15,7 @@ class API extends Commands\Command
     private $api = null;
 
     /**
-     * @param ProjectDocs\API $api The tool to generate docs
+     * @param ProjectDocs\API $api The tool to generate API docs
      */
     public function __construct(ProjectDocs\API $api)
     {

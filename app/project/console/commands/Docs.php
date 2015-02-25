@@ -15,13 +15,13 @@ class Docs extends Commands\Command
     private $docs = null;
 
     /**
-     * @param ProjectDocs\Documentation $api The tool to read/write docs
+     * @param ProjectDocs\Documentation $docs The tool to read/write docs
      */
-    public function __construct(ProjectDocs\Documentation $api)
+    public function __construct(ProjectDocs\Documentation $docs)
     {
         parent::__construct();
 
-        $this->docs = $api;
+        $this->docs = $docs;
     }
 
     /**
