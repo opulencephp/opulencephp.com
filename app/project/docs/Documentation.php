@@ -54,6 +54,11 @@ class Documentation
                 "description" => "Learn how to create an RDev console application",
                 "keywords" => ["rdev", "console", "command prompt", "php"]
             ],
+            "cryptography" => [
+                "title" => "Cryptography",
+                "description" => "Learn how to make your data cryptographically-secure with RDev",
+                "keywords" => ["rdev", "cryptography", "encryption", "security", "passwords", "hashing", "php"]
+            ],
             "dependency-injection" => [
                 "title" => "Dependency Injection",
                 "description" => "Learn about dependency injection in RDev",
