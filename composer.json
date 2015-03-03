@@ -36,5 +36,11 @@
       "dev-master": "0.0.x-dev"
     }
   },
+  "scripts": {
+    "post-create-project-cmd": [
+      "php -r \"copy('configs/environment/.env.example.php', 'configs/environment/.env.app.php');\"",
+      "php rdev encryption:generatekey"
+    ]
+  },
   "minimum-stability": "dev"
 }

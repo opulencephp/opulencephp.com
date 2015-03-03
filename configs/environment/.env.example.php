@@ -2,7 +2,7 @@
 /**
  * Copyright (C) 2015 David Young
  *
- * Defines an example environment config
+ * Defines the application environment config
  */
 use RDev\Applications\Environments\Environment;
 
@@ -27,3 +27,10 @@ $environment->setVariable("DB_PORT", 5432);
 $environment->setVariable("REDIS_HOST", "localhost");
 $environment->setVariable("REDIS_PASSWORD", null);
 $environment->setVariable("REDIS_PORT", 6379);
+
+/**
+ * ----------------------------------------------------------
+ * Set the encryption key
+ * ----------------------------------------------------------
+ */
+$environment->setVariable("ENCRYPTION_KEY", "");
