@@ -36,6 +36,11 @@ class Documentation
                 "title" => "Console Workflow",
                 "description" => "Learn about the workflow of an RDev console application",
                 "keywords" => ["rdev", "console", "workflow", "php"]
+            ],
+            "testing" => [
+                "title" => "Testing",
+                "description" => "Learn how to test an RDev application",
+                "keywords" => ["rdev", "testing", "tdd", "phpunit", "php"]
             ]
         ],
         "Framework" => [
