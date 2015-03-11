@@ -4,7 +4,7 @@
  *
  * Defines the page tests
  */
-namespace Project;
+namespace Project\HTTP;
 use Project\Docs;
 
 class PageTest extends HTTPApplicationTestCase
