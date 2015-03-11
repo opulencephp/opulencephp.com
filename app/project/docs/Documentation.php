@@ -27,18 +27,13 @@ class Documentation
                 "description" => "Learn about how RDev is structured",
                 "keywords" => ["rdev", "structure", "php"]
             ],
-            "http-workflow" => [
-                "title" => "HTTP Workflow",
-                "description" => "Learn about the workflow of an RDev HTTP application",
-                "keywords" => ["rdev", "http", "workflow", "php"]
+            "application-workflow" => [
+                "title" => "Application Workflow",
+                "description" => "Learn about the workflow of HTTP and console applications in RDev",
+                "keywords" => ["rdev", "http", "console", "workflow", "php"]
             ],
-            "console-workflow" => [
-                "title" => "Console Workflow",
-                "description" => "Learn about the workflow of an RDev console application",
-                "keywords" => ["rdev", "console", "workflow", "php"]
-            ],
-            "testing" => [
-                "title" => "Testing",
+            "testing-your-application" => [
+                "title" => "Testing Your Application",
                 "description" => "Learn how to test an RDev application",
                 "keywords" => ["rdev", "testing", "tdd", "phpunit", "php"]
             ]
