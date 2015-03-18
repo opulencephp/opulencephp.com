@@ -5,7 +5,7 @@
         {{!charset("utf-8")!}}
         {{!rdevTitle($title, $doFormatTitle)!}}
         {{!css("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700")!}}
-        {{!css($css)!}}
+        {{!css($masterCSS)!}}
         <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">

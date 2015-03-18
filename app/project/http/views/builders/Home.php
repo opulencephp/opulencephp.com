@@ -18,7 +18,7 @@ class Home implements IBuilder
         $template->setVar("title", "RDev | PHP Framework");
         $template->setVar("doFormatTitle", false);
         $template->setVar("metaKeywords", ["rdev", "php", "framework", "orm", "router", "console", "mvc"]);
-        $template->setVar("metaDescription", "A simple, secure, and scalable MVC PHP framework");
+        $template->setVar("metaDescription", "A simple, secure, and scalable MVC framework for PHP");
 
         return $template;
     }

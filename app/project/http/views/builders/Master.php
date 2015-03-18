@@ -32,9 +32,10 @@ class Master implements IBuilder
         $template->setVar("metaDescription", "");
         // Set default variable values
         $template->setVar("doFormatTitle", true);
-        $template->setVar("css", [
+        $template->setVar("masterCSS", [
             "/assets/css/style.css",
-            "/assets/css/prism.css"
+            "/assets/css/prism.css",
+            "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
         ]);
         $template->setVar("javaScript", [
             "/assets/js/prism.js"

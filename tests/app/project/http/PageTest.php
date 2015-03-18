@@ -49,7 +49,7 @@ class PageTest extends ApplicationTestCase
         $this->assertTemplateVarEquals("doFormatTitle", false);
         $this->assertTemplateVarEquals("title", "RDev | PHP Framework");
         $this->assertTemplateVarEquals("metaKeywords", ["rdev", "php", "framework", "orm", "router", "console", "mvc"]);
-        $this->assertTemplateVarEquals("metaDescription", "A simple, secure, and scalable MVC PHP framework");
+        $this->assertTemplateVarEquals("metaDescription", "A simple, secure, and scalable MVC framework for PHP");
         $this->assertTemplateVarEquals("mainClasses", "home");
     }
 
@@ -58,9 +58,10 @@ class PageTest extends ApplicationTestCase
      */
     private function checkMasterTemplateSetup()
     {
-        $this->assertTemplateVarEquals("css", [
+        $this->assertTemplateVarEquals("masterCSS", [
             "/assets/css/style.css",
-            "/assets/css/prism.css"
+            "/assets/css/prism.css",
+            "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
         ]);
         $this->assertTemplateVarEquals("javaScript", [
             "/assets/js/prism.js"
