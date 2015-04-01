@@ -10,7 +10,7 @@
         <li><a href="{{route('docs', ['master', 'views'])}}" title="Views">Create extendable, cacheable views</a></li>
         <li><a href="{{route('docs', ['master', 'orm'])}}" title="ORM">ORM the right way with the repository pattern and heavy caching</a></li>
         <li><a href="{{route('docs', ['master', 'console'])}}" title="Console commands">Write powerful console commands</a></li>
-        <li><a href="{{route('docs', ['master', 'testing-your-application'])}}" title="Testing">Unit test all your HTTP routes and console commands</a></li>
+        <li><a href="{{route('docs', ['master', 'testing-your-application'])}}" title="Testing">Integration test all your HTTP routes and console commands</a></li>
     </ul>
     It is <a href="https://github.com/ramblingsofadev/RDev/tree/master/tests/app/rdev" target="_blank">thoroughly-tested</a>, <a href="https://github.com/ramblingsofadev/RDev" target="_blank">open source</a>, and free under the MIT license.
 </section>
