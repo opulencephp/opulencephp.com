@@ -9,7 +9,7 @@ use Project\Docs\Documentation;
 use RDev\Console\Commands\Command;
 use RDev\Console\Responses\IResponse;
 
-class Docs extends Command
+class DocsCommand extends Command
 {
     /** @var Documentation The tool to read/write docs */
     private $docs = null;

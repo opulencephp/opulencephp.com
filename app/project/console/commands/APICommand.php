@@ -9,7 +9,7 @@ use Project\Docs\API as APIDocs;
 use RDev\Console\Commands\Command;
 use RDev\Console\Responses\IResponse;
 
-class API extends Command
+class APICommand extends Command
 {
     /** @var APIDocs The tool to generate docs */
     private $api = null;
