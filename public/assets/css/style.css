@@ -162,10 +162,10 @@ footer.main {
   background-color: #f1f1f1;
   color: #888; }
   footer.main nav .logo {
-    color: #888; }
+    color: #aaa; }
     footer.main nav .logo .logo-dev {
       border-left-color: #888;
-      color: #aaa; }
+      color: #888; }
   footer.main nav a, footer.main nav a:link, footer.main nav a:visited {
     color: #888; }
   footer.main nav a:hover {
@@ -191,10 +191,10 @@ p code {
   background: #f1f1f1; }
 
 .logo {
-  color: #7cf; }
+  color: #bbe5ff; }
   .logo .logo-dev {
     border-left: 1px solid #7cf;
-    color: #bbe5ff; }
+    color: #7cf; }
 
 .scroll-anchor {
   padding-top: 34px;
