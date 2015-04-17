@@ -5,6 +5,7 @@
  * Defines the routing config
  */
 use RDev\HTTP\Routing\Router;
+use Project\HTTP\Middleware\Docs;
 
 /**
  * ----------------------------------------------------------
@@ -23,7 +24,10 @@ $router->group(["controllerNamespace" => "Project\\HTTP\\Controllers"], function
     {
         $router->get("/{version}/{docName}", [
             "controller" => "Docs@showDoc",
-            "name" => "docs"
+            "name" => "docs",
+            "middleware" => [
+                Docs::class
+            ]
         ]);
         $router->get("/{docName}", [
             "controller" => "Docs@showNoVersionDoc",

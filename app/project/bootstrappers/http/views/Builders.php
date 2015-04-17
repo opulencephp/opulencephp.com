@@ -5,6 +5,7 @@
  * Defines the view builders bootstrapper
  */
 namespace Project\Bootstrappers\HTTP\Views;
+use Project\Docs\Documentation;
 use Project\HTTP\Views\Builders\Docs;
 use Project\HTTP\Views\Builders\Home;
 use Project\HTTP\Views\Builders\Master;
@@ -19,12 +20,13 @@ class Builders extends Bootstrapper
      *
      * @param ITemplateFactory $templateFactory The template factory to use
      * @param Request $request The current request
+     * @param Documentation $docs The docs
      */
-    public function run(ITemplateFactory $templateFactory, Request $request)
+    public function run(ITemplateFactory $templateFactory, Request $request, Documentation $docs)
     {
-        $templateFactory->registerBuilder("Master.php", function() use($request)
+        $templateFactory->registerBuilder("Master.php", function() use($request, $docs)
         {
-            return new Master($request);
+            return new Master($request, $docs);
         });
         $templateFactory->registerBuilder("Home.php", function()
         {

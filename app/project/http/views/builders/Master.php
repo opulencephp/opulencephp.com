@@ -14,13 +14,17 @@ class Master implements IBuilder
 {
     /** @var Request The current request */
     private $request = null;
+    /** @var Documentation The docs */
+    private $docs = null;
 
     /**
      * @param Request $request The current request
+     * @param Documentation $docs The docs
      */
-    public function __construct(Request $request)
+    public function __construct(Request $request, Documentation $docs)
     {
         $this->request = $request;
+        $this->docs = $docs;
     }
 
     /**
@@ -34,7 +38,7 @@ class Master implements IBuilder
         // Set default variable values
         $template->setVar("doFormatTitle", true);
         $template->setVar("masterCSS", [
-            "/assets/css/style.css",
+            "/assets/css/style.css?v=1.0",
             "/assets/css/prism.css",
             "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
         ]);
@@ -42,7 +46,7 @@ class Master implements IBuilder
             "/assets/js/prism.js"
         ]);
         $template->setVar("mainClasses", "home");
-        $template->setVar("branches", Documentation::$branches);
+        $template->setVar("branchTitles", $this->docs->getBranchTitles());
         $template->setVar("request", $this->request);
 
         return $template;

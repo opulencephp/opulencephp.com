@@ -1,4 +1,5 @@
 $siteWidth: 1024px;
+$minWidthForHeaderNav: 475px;
 $headerHeight: 34px;
 $docSidebarWidth: 230px;
 $hyperlinkColor: #69c;
@@ -434,13 +435,46 @@ p code
     margin-top: -1*$headerHeight;
 }
 
-@media screen and (max-device-width: $siteWidth - 1px)
+#gray-out
 {
+    display: none;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+@media screen and (min-device-width: $minWidthForHeaderNav) and (max-device-width: $siteWidth - 1px)
+{
+    header.main nav > ul > li.movable
+    {
+        display: inline-block;
+    }
+
+    #sidebar-main-nav
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-device-width: $minWidthForHeaderNav - 1px)
+{
+    header.main nav > ul > li.movable
+    {
+        display: none;
+    }
+
     #sidebar-main-nav
     {
         display: block;
     }
+}
 
+@media screen and (max-device-width: $siteWidth - 1px)
+{
     body.nav-open
     {
         main
@@ -456,17 +490,17 @@ p code
                 transition: transform .3s;
             }
         }
+
+        #gray-out
+        {
+            display: block;
+        }
     }
 
     header.main
     {
         nav > ul > li
         {
-            &.movable
-            {
-                display: none;
-            }
-
             &#mobile-menu
             {
                 display: inline-block !important;
@@ -499,6 +533,7 @@ p code
         border-left: 1px solid $borderColor;
         left: 100%;
         height: 100%;
+        min-width: 25%;
         padding-left: 10px;
         background: #f1f1f1;
         z-index: 5;

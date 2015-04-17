@@ -53,21 +53,12 @@ class Docs extends Controller
      */
     public function showDoc($docName, $version = "master")
     {
+        $docs = $this->docs->getFlattenedDocs($version);
         $this->template->setVar("version", $version);
-        // Flatten all the docs into a 1-dimensional array
-        $docs = array_merge(
-            Documentation::$docData["Getting Started"],
-            Documentation::$docData["Framework"]
-        );
-
-        if(!isset($docs[$docName]))
-        {
-            // This is our default
-            $docName = "installing";
-        }
-
         $this->template->setVar("doc", $this->docs->getCompiledDoc($docName, $version));
+        $this->template->setVar("docs", $this->docs->getDocs($version));
         $this->template->setVar("title", $docs[$docName]["title"]);
+        $this->template->setVar("docName", $docName);
         $this->template->setVar("docVersion", $version);
         $this->template->setVar("metaKeywords", $docs[$docName]["keywords"]);
         $this->template->setVar("metaDescription", $docs[$docName]["description"]);
@@ -83,7 +74,7 @@ class Docs extends Controller
      */
     public function showIndex($version = "master")
     {
-        return $this->showDoc("installing", $version);
+        return $this->showDoc($this->docs->getDefaultDoc($version), $version);
     }
 
     /**

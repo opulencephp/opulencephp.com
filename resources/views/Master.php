@@ -26,12 +26,14 @@
         <main class="{{!$mainClasses!}}">
             {% include("SidebarNav.php") %}
             {% show("content") %}
+            <div id="gray-out"></div>
         </main>
         <footer class="main {{!$mainClasses!}}">
             {% include("FooterNav.php") %}
             &copy; {{date("Y")}} David Young
         </footer>
         <script type="text/javascript">
+            {% part("footerJS") %}
             function addClass(element, className)
             {
                 if(element.className != " ")
@@ -69,21 +71,13 @@
                 return false;
             };
 
-            document.getElementById("doc-version-toggle").onclick = function(e)
+            // Close the sidebar when clicking on gray-out
+            document.getElementById("gray-out").onclick = function(e)
             {
-                var dropdown = document.getElementById("doc-version-dropdown");
-
-                if(hasClass(dropdown, "open"))
-                {
-                    removeClass(dropdown, "open");
-                }
-                else
-                {
-                    addClass(dropdown, "open");
-                }
-
-                return false;
+                removeClass(document.body, "nav-open");
             };
+            {% endpart %}
+            {% show("footerJS") %}
         </script>
     </body>
 </html>

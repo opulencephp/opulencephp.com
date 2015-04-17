@@ -5,16 +5,35 @@
  * Defines the page tests
  */
 namespace Project\HTTP;
-use Project\Docs;
+use Parsedown;
+use Project\Docs\Documentation;
+use RDev\Files\FileSystem;
 
 class PageTest extends ApplicationTestCase
 {
+    /** @var Documentation The docs */
+    private $docs = null;
+
+    /**
+     * Sets up the tests
+     */
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->docs = new Documentation(
+            $this->getMock(Parsedown::class),
+            $this->application->getPaths(),
+            $this->getMock(FileSystem::class)
+        );
+    }
+
     /**
      * Tests that the 404 template is set up correctly
      */
     public function test404PageIsSetUpCorrectly()
     {
-        $this->route("GET", "/doesNotExist");
+        $this->route("GET", "/does-not-exist");
         $this->checkMasterTemplateSetup();
         $this->assertResponseIsNotFound();
         $this->assertTemplateVarEquals("metaKeywords", []);
@@ -34,7 +53,7 @@ class PageTest extends ApplicationTestCase
         $this->assertResponseIsOK();
         $this->assertTemplateVarEquals("doFormatTitle", true);
         $this->assertTemplateVarEquals("mainClasses", "docs");
-        $this->assertTemplateVarEquals("docs", Docs\Documentation::$docData);
+        $this->assertTemplateVarEquals("docs", $this->docs->getDocs("master"));
         $this->assertTemplateVarEquals("mainClasses", "docs");
     }
 
@@ -54,12 +73,30 @@ class PageTest extends ApplicationTestCase
     }
 
     /**
+     * Tests that a non-existent doc redirects to the default
+     */
+    public function testNonExistentDocIsRedirectingToDefault()
+    {
+        $this->route("GET", "/docs/master/does-not-exist");
+        $this->assertRedirectsTo("/docs/master/" . $this->docs->getDefaultDoc("master"));
+    }
+
+    /**
+     * Tests that a non-existent doc version redirects to the master's default
+     */
+    public function testNonExistentDocVersionIsRedirectingToMastersDefault()
+    {
+        $this->route("GET", "/docs/non-existent-version/does-not-exist");
+        $this->assertRedirectsTo("/docs");
+    }
+
+    /**
      * Tests that the master template is set up correctly
      */
     private function checkMasterTemplateSetup()
     {
         $this->assertTemplateVarEquals("masterCSS", [
-            "/assets/css/style.css",
+            "/assets/css/style.css?v=1.0",
             "/assets/css/prism.css",
             "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
         ]);
