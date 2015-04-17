@@ -24,29 +24,62 @@
             {% include("MainNav.php") %}
         </header>
         <main class="{{!$mainClasses!}}">
+            {% include("SidebarNav.php") %}
             {% show("content") %}
         </main>
         <footer class="main {{!$mainClasses!}}">
-            {% include("MainNav.php") %}
+            {% include("FooterNav.php") %}
             &copy; {{date("Y")}} David Young
         </footer>
         <script type="text/javascript">
+            function addClass(element, className)
+            {
+                if(element.className != " ")
+                {
+                    element.className += " ";
+                }
+
+                element.className += className;
+            }
+
+            function hasClass(element, className)
+            {
+                return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
+            }
+
+            function removeClass(element, className)
+            {
+                var regex = new RegExp("\\b" + className + "\\b", "g");
+                element.className = element.className.replace(regex, "");
+            }
+
             // Toggle the "nav-open" class when clicking the link
-            document.getElementsByClassName("mobile-menu")[0].getElementsByTagName("a")[0].onclick = function(e)
+            document.getElementById("mobile-menu").getElementsByTagName("a")[0].onclick = function(e)
             {
                 // How to tell if an element has a particular class
-                if((' ' + document.body.className + ' ').indexOf(' nav-open ') > -1)
+                if(hasClass(document.body, 'nav-open'))
                 {
-                    document.body.className = document.body.className.replace(/\bnav\-open\b/, "");
+                    removeClass(document.body, "nav-open");
                 }
                 else
                 {
-                    if(document.body.className != "")
-                    {
-                        document.body.className += " ";
-                    }
+                    addClass(document.body, "nav-open");
+                }
 
-                    document.body.className += "nav-open";
+                return false;
+            };
+
+            document.getElementById("doc-version-toggle").onclick = function(e)
+            {
+                var dropdown = document.getElementById("doc-version-dropdown");
+
+                if(hasClass(dropdown, "open"))
+                {
+                    removeClass(dropdown, "open");
+                }
+                else
+                {
+                    addClass(dropdown, "open");
                 }
 
                 return false;

@@ -5,6 +5,7 @@
  * Defines the master template builder
  */
 namespace Project\HTTP\Views\Builders;
+use Project\Docs\Documentation;
 use RDev\HTTP\Requests\Request;
 use RDev\Views\IBuilder;
 use RDev\Views\ITemplate;
@@ -41,6 +42,7 @@ class Master implements IBuilder
             "/assets/js/prism.js"
         ]);
         $template->setVar("mainClasses", "home");
+        $template->setVar("branches", Documentation::$branches);
         $template->setVar("request", $this->request);
 
         return $template;

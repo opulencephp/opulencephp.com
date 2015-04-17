@@ -66,8 +66,9 @@ class Docs extends Controller
             $docName = "installing";
         }
 
-        $this->template->setVar("doc", $this->docs->getCompiledDoc($docName));
+        $this->template->setVar("doc", $this->docs->getCompiledDoc($docName, $version));
         $this->template->setVar("title", $docs[$docName]["title"]);
+        $this->template->setVar("docVersion", $version);
         $this->template->setVar("metaKeywords", $docs[$docName]["keywords"]);
         $this->template->setVar("metaDescription", $docs[$docName]["description"]);
 

@@ -126,6 +126,21 @@ class Documentation
             ]
         ]
     ];
+    /** @var array The mapping of documentation branches to their titles */
+    public static $branches = [
+        "master" => [
+            "title" => "Master",
+            "default" => "installing"
+        ],
+        "0.5" => [
+            "title" => "0.5",
+            "default" => "installing"
+        ],
+        "0.4" => [
+            "title" => "0.4",
+            "default" => "installing"
+        ]
+    ];
     /** @var Parsedown The parsedown object to use */
     private $parsedown = null;
     /** @var Paths The application paths */
@@ -152,24 +167,44 @@ class Documentation
      */
     public function compile()
     {
-        $rawDocsPath = $this->paths["tmp"] . "/docs";
-        $gitOutput = shell_exec(
-            sprintf(
-                "rm -rf %s* && mkdir %s && cd %s && git clone %s .",
-                $rawDocsPath,
-                $rawDocsPath,
-                $rawDocsPath,
-                self::GITHUB_REPOSITORY
-            )
-        );
+        $gitOutput = "";
 
-        $markdownFiles = $this->files->glob("$rawDocsPath/*.md");
-
-        foreach($markdownFiles as $index => $markdownFile)
+        foreach(self::$branches as $branchName => $branchData)
         {
-            $html = $this->parsedown->text($this->files->read($markdownFile));
-            $compiledDocFilename = "{$this->paths['compiledDocs']}/{$this->files->getFileName($markdownFile)}.html";
-            $this->files->write($compiledDocFilename, $html);
+            $rawDocsPath = "{$this->paths["tmp"]}/docs/$branchName";
+            $compiledDocsPath = "{$this->paths["compiledDocs"]}/$branchName";
+
+            // Clone the branch from GitHub into our temporary directory
+            $gitOutput .= shell_exec(
+                sprintf(
+                    "rm -rf %s* && mkdir %s && cd %s && git clone -b %s --single-branch %s .",
+                    $rawDocsPath,
+                    $rawDocsPath,
+                    $rawDocsPath,
+                    $branchName,
+                    self::GITHUB_REPOSITORY
+                )
+            );
+
+            if(!$this->files->exists($compiledDocsPath))
+            {
+                $this->files->makeDirectory($compiledDocsPath);
+            }
+
+            $markdownFiles = $this->files->glob("$rawDocsPath/*.md");
+
+            // Convert the Markdown files into HTML and store them in the resources directory
+            foreach($markdownFiles as $index => $markdownFile)
+            {
+                $html = $this->parsedown->text($this->files->read($markdownFile));
+                $compiledDocFilename = sprintf(
+                    "%s/%s/%s.html",
+                    $this->paths['compiledDocs'],
+                    $branchName,
+                    $this->files->getFileName($markdownFile)
+                );
+                $this->files->write($compiledDocFilename, $html);
+            }
         }
 
         return $gitOutput;
@@ -179,11 +214,12 @@ class Documentation
      * Gets the parsed document
      *
      * @param string $name The name of the document we want
+     * @param string $version The version of RDev we want
      * @return string The parsed document
      * @throws FileSystemException Thrown if no document exists with the input name
      */
-    public function getCompiledDoc($name)
+    public function getCompiledDoc($name, $version)
     {
-        return $this->files->read($this->paths["compiledDocs"] . "/$name.html");
+        return $this->files->read("{$this->paths["compiledDocs"]}/$version/$name.html");
     }
 }
