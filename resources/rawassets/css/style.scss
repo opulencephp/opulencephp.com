@@ -223,7 +223,7 @@ header.main
             display: none;
             position: absolute;
             top: 100%;
-            left: 0;
+            right: 0;
             border: 1px solid $borderColor;
 
             &.open
@@ -383,6 +383,11 @@ footer.main
             {
                 display: none;
             }
+
+            &:last-child
+            {
+                padding-right: 0;
+            }
         }
     }
 }
@@ -429,15 +434,6 @@ p code
     margin-top: -1*$headerHeight;
 }
 
-/* For mobile devices that are big enough, add a little bit of left padding so logo doesn't look tucked away */
-@media screen and (min-device-width: 330px) and (max-device-width: $siteWidth - 1px)
-{
-    header.main nav ul > li:first-child
-    {
-        padding-left: 10px;
-    }
-}
-
 @media screen and (max-device-width: $siteWidth - 1px)
 {
     #sidebar-main-nav
@@ -464,14 +460,14 @@ p code
 
     header.main
     {
-        nav
+        nav > ul > li
         {
-            li.movable
+            &.movable
             {
                 display: none;
             }
 
-            li#mobile-menu
+            &#mobile-menu
             {
                 display: inline-block !important;
                 padding: 0;
@@ -485,7 +481,13 @@ p code
                 }
             }
 
-            & > ul > li:nth-last-of-type(3)
+            &:first-child
+            {
+                /* Add some left-padding so the logo is not scrunched against the side */
+                padding-left: 10px;
+            }
+
+            &:nth-last-of-type(3)
             {
                 padding-right: $mainNavPadding;
             }

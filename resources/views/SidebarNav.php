@@ -9,14 +9,16 @@
             <li><a href="https://www.twitter.com/ramblingsofadev" target="_blank" title="David's Twitter"><i class="fa fa-twitter"></i></a></li>
         </ul>
     </section>
-    <?php foreach($docs as $category => $subDocs): ?>
-        <section>
-            <h5>{{$category}}</h5>
-            <ul class="sidebar-doc-nav">
-                <?php foreach($subDocs as $docName => $docData): ?>
-                    <li><a href="{{route('docs', [$version, $docName])}}" title="{{$docData['title']}}">{{$docData['title']}}</a></li>
-                <?php endforeach; ?>
-            </ul>
-        </section>
-    <?php endforeach; ?>
+    <?php if(isset($docs)): ?>
+        <?php foreach($docs as $category => $subDocs): ?>
+            <section>
+                <h5>{{$category}}</h5>
+                <ul class="sidebar-doc-nav">
+                    <?php foreach($subDocs as $docName => $docData): ?>
+                        <li><a href="{{route('docs', [$version, $docName])}}" title="{{$docData['title']}}">{{$docData['title']}}</a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </section>
+        <?php endforeach; ?>
+    <?php endif; ?>
 </nav>

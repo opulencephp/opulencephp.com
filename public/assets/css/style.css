@@ -135,7 +135,7 @@ header.main {
       display: none;
       position: absolute;
       top: 100%;
-      left: 0;
+      right: 0;
       border: 1px solid #ccc; }
       header.main.docs nav li#doc-version-option ul.open {
         display: block; }
@@ -206,6 +206,8 @@ footer.main {
     color: #777777; }
   footer.main nav li#mobile-menu, footer.main nav li#doc-version-option {
     display: none; }
+  footer.main nav li:last-child {
+    padding-right: 0; }
 
 blockquote {
   background: #def;
@@ -234,10 +236,6 @@ p code {
   padding-top: 34px;
   margin-top: -34px; }
 
-/* For mobile devices that are big enough, add a little bit of left padding so logo doesn't look tucked away */
-@media screen and (min-device-width: 330px) and (max-device-width: 1023px) {
-  header.main nav ul > li:first-child {
-    padding-left: 10px; } }
 @media screen and (max-device-width: 1023px) {
   #sidebar-main-nav {
     display: block; }
@@ -251,16 +249,19 @@ p code {
     -webkit-transition: .3s;
     transition: transform .3s; }
 
-  header.main nav li.movable {
+  header.main nav > ul > li.movable {
     display: none; }
-  header.main nav li#mobile-menu {
+  header.main nav > ul > li#mobile-menu {
     display: inline-block !important;
     padding: 0;
     font-size: 34px;
     /* Make the link easier to click by making it wide */ }
-    header.main nav li#mobile-menu a {
+    header.main nav > ul > li#mobile-menu a {
       display: inline-block;
       padding: 0 10px; }
+  header.main nav > ul > li:first-child {
+    /* Add some left-padding so the logo is not scrunched against the side */
+    padding-left: 10px; }
   header.main nav > ul > li:nth-last-of-type(3) {
     padding-right: 10px; }
 
