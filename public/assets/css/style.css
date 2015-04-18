@@ -246,18 +246,23 @@ p code {
   bottom: 0;
   z-index: 1; }
 
-@media screen and (min-device-width: 475px) and (max-device-width: 1023px) {
-  header.main nav > ul > li.movable {
-    display: inline-block; }
-
-  #sidebar-main-nav {
-    display: none; } }
 @media screen and (max-device-width: 474px) {
   header.main nav > ul > li.movable {
     display: none; }
 
   #sidebar-main-nav {
     display: block; } }
+@media screen and (min-device-width: 475px) and (max-device-width: 1023px) {
+  header.main nav > ul > li.movable {
+    display: inline-block; }
+
+  /* We have enough room for the nav up top */
+  #sidebar-main-nav {
+    display: none; }
+
+  /* Don't display the sidebar on non-doc pages */
+  header.main:not(.docs) nav > ul > li#mobile-menu {
+    display: none; } }
 @media screen and (max-device-width: 1023px) {
   body.nav-open main nav.sidebar {
     -moz-transform: translate3d(-100%, 0, 0);
@@ -271,7 +276,7 @@ p code {
     display: block; }
 
   header.main nav > ul > li#mobile-menu {
-    display: inline-block !important;
+    display: inline-block;
     padding: 0;
     font-size: 34px;
     /* Make the link easier to click by making it wide */ }

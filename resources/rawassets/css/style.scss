@@ -447,19 +447,6 @@ p code
     z-index: 1;
 }
 
-@media screen and (min-device-width: $minWidthForHeaderNav) and (max-device-width: $siteWidth - 1px)
-{
-    header.main nav > ul > li.movable
-    {
-        display: inline-block;
-    }
-
-    #sidebar-main-nav
-    {
-        display: none;
-    }
-}
-
 @media screen and (max-device-width: $minWidthForHeaderNav - 1px)
 {
     header.main nav > ul > li.movable
@@ -470,6 +457,26 @@ p code
     #sidebar-main-nav
     {
         display: block;
+    }
+}
+
+@media screen and (min-device-width: $minWidthForHeaderNav) and (max-device-width: $siteWidth - 1px)
+{
+    header.main nav > ul > li.movable
+    {
+        display: inline-block;
+    }
+
+    /* We have enough room for the nav up top */
+    #sidebar-main-nav
+    {
+        display: none;
+    }
+
+    /* Don't display the sidebar on non-doc pages */
+    header.main:not(.docs) nav > ul > li#mobile-menu
+    {
+        display: none;
     }
 }
 
@@ -503,7 +510,7 @@ p code
         {
             &#mobile-menu
             {
-                display: inline-block !important;
+                display: inline-block;
                 padding: 0;
                 font-size: $headerHeight;
 
