@@ -317,7 +317,10 @@ p code {
         padding-right: 0; }
 
   main {
-    width: 1024px; }
+    width: 1024px;
+    /* Don't display the sidebar on non-doc pages */ }
+    main:not(.docs) nav.sidebar {
+      display: none; }
     main nav.sidebar {
       padding: 20px 10px 10px 0;
       float: left;

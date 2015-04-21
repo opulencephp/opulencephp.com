@@ -586,6 +586,12 @@ p code
     {
         width: $siteWidth;
 
+        /* Don't display the sidebar on non-doc pages */
+        &:not(.docs) nav.sidebar
+        {
+            display: none;
+        }
+
         nav.sidebar
         {
             padding: 20px 10px 10px 0;
