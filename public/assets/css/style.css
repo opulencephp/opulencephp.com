@@ -142,7 +142,8 @@ header.main {
       header.main.docs nav li#doc-version-option ul li {
         background: #f1f1f1;
         width: 100%;
-        padding: 0; }
+        padding: 0;
+        white-space: nowrap; }
         header.main.docs nav li#doc-version-option ul li:hover {
           background: #e0e0e0; }
         header.main.docs nav li#doc-version-option ul li:not(:last-of-type) {

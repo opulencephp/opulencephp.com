@@ -132,7 +132,7 @@ class Documentation
             ]
         ],
         "0.5" => [
-            "title" => "0.5",
+            "title" => "0.5 (Dev)",
             "default" => "installing",
             "docs" => [
                 "Getting Started" => [
