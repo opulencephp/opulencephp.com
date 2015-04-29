@@ -53,7 +53,7 @@ class PageTest extends ApplicationTestCase
         $this->assertResponseIsOK();
         $this->assertTemplateVarEquals("doFormatTitle", true);
         $this->assertTemplateVarEquals("mainClasses", "docs");
-        $this->assertTemplateVarEquals("docs", $this->docs->getDocs("master"));
+        $this->assertTemplateVarEquals("docs", $this->docs->getDocs(Documentation::DEFAULT_BRANCH));
         $this->assertTemplateVarEquals("mainClasses", "docs");
     }
 
@@ -82,9 +82,9 @@ class PageTest extends ApplicationTestCase
     }
 
     /**
-     * Tests that a non-existent doc version redirects to the master's default
+     * Tests that a non-existent doc version redirects to the default
      */
-    public function testNonExistentDocVersionIsRedirectingToMastersDefault()
+    public function testNonExistentDocVersionIsRedirectingToDefault()
     {
         $this->route("GET", "/docs/non-existent-version/does-not-exist");
         $this->assertRedirectsTo("/docs");
@@ -103,5 +103,6 @@ class PageTest extends ApplicationTestCase
         $this->assertTemplateVarEquals("javaScript", [
             "/assets/js/prism.js"
         ]);
+        $this->assertTemplateVarEquals("defaultBranch", Documentation::DEFAULT_BRANCH);
     }
 }

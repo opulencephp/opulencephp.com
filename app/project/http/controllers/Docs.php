@@ -51,7 +51,7 @@ class Docs extends Controller
      * @param string $version The RDev version to retrieve
      * @return Response The page
      */
-    public function showDoc($docName, $version = "master")
+    public function showDoc($docName, $version = Documentation::DEFAULT_BRANCH)
     {
         $docs = $this->docs->getFlattenedDocs($version);
         $this->template->setVar("version", $version);
@@ -72,7 +72,7 @@ class Docs extends Controller
      * @param string $version The RDev version to retrieve
      * @return Response The index page
      */
-    public function showIndex($version = "master")
+    public function showIndex($version = Documentation::DEFAULT_BRANCH)
     {
         return $this->showDoc($this->docs->getDefaultDoc($version), $version);
     }
@@ -86,7 +86,7 @@ class Docs extends Controller
     public function showNoVersionDoc($docName)
     {
         return new RedirectResponse(
-            $this->urlGenerator->createFromName("docs", ["master", $docName])
+            $this->urlGenerator->createFromName("docs", [Documentation::DEFAULT_BRANCH, $docName])
         );
     }
 }

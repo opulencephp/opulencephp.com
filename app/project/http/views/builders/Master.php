@@ -48,6 +48,7 @@ class Master implements IBuilder
         $template->setVar("mainClasses", "home");
         $template->setVar("branchTitles", $this->docs->getBranchTitles());
         $template->setVar("request", $this->request);
+        $template->setVar("defaultBranch", Documentation::DEFAULT_BRANCH);
 
         return $template;
     }

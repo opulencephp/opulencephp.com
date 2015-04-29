@@ -14,6 +14,8 @@ class Documentation
 {
     /** The GitHub docs repository */
     const GITHUB_REPOSITORY = "https://github.com/ramblingsofadev/docs.git";
+    /** The default branch to show in the docs */
+    const DEFAULT_BRANCH = "0.4";
     /** @var array The mapping of documentation branches to data */
     private static $branches = [
         "master" => [
