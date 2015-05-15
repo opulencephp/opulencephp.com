@@ -40,8 +40,9 @@ class Docs implements IMiddleware
     public function handle(Request $request, Closure $next)
     {
         $matchedRoute = $this->router->getMatchedRoute();
-        $version = $matchedRoute->getPathVariable("version");
-        $docName = $matchedRoute->getPathVariable("docName");
+        $pathVariables = $matchedRoute->getPathVariables();
+        $version = $pathVariables["version"];
+        $docName = $pathVariables["docName"];
 
         if(!$this->docs->hasVersion($version))
         {
