@@ -18,7 +18,7 @@
   },
   "require": {
     "php": ">=5.5.10",
-    "rdev/rdev": "0.4.0",
+    "rdev/rdev": "0.5.*@dev",
     "erusev/parsedown": "1.5.1",
     "sami/sami": "3.0.*@dev"
   },
@@ -33,13 +33,19 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.0.x-dev"
+      "dev-master": "0.5.x-dev"
     }
   },
   "scripts": {
     "post-create-project-cmd": [
       "php -r \"copy('configs/environment/.env.example.php', 'configs/environment/.env.app.php');\"",
       "php rdev encryption:generatekey"
+    ],
+    "post-install-cmd": [
+      "php -r \"shell_exec((file_exists(getcwd() . '/composer.phar') ? PHP_BINARY . ' composer.phar' : 'composer') . ' dump-autoload -o');\""
+    ],
+    "post-update-cmd": [
+      "php -r \"shell_exec((file_exists(getcwd() . '/composer.phar') ? PHP_BINARY . ' composer.phar' : 'composer') . ' dump-autoload -o');\""
     ]
   },
   "minimum-stability": "dev"

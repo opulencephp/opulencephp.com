@@ -6,7 +6,7 @@
  */
 namespace Project\Bootstrappers\Console\Commands;
 use RDev\Applications\Bootstrappers\Bootstrapper;
-use RDev\Console\Commands\Commands as ConsoleCommands;
+use RDev\Console\Commands\CommandCollection;
 use RDev\IoC\IContainer;
 
 class Commands extends Bootstrapper
@@ -14,10 +14,10 @@ class Commands extends Bootstrapper
     /**
      * Sets the console commands from this project
      *
-     * @param ConsoleCommands $commands The commands to add to
+     * @param CommandCollection $commands The commands to add to
      * @param IContainer $container The dependency injection container
      */
-    public function run(ConsoleCommands $commands, IContainer $container)
+    public function run(CommandCollection $commands, IContainer $container)
     {
         $commandClasses = require $this->paths["configs"] . "/console/commands.php";
 

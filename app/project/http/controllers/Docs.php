@@ -8,8 +8,8 @@ namespace Project\HTTP\Controllers;
 use Project\Docs\Documentation;
 use RDev\HTTP\Responses\RedirectResponse;
 use RDev\HTTP\Responses\Response;
-use RDev\HTTP\Routing\Controller;
-use RDev\HTTP\Routing\URL\URLGenerator;
+use RDev\Routing\Controller;
+use RDev\Routing\URL\URLGenerator;
 use RDev\Views\Compilers\ICompiler;
 use RDev\Views\Factories\ITemplateFactory;
 

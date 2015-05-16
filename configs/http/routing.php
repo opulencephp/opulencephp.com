@@ -4,7 +4,7 @@
  *
  * Defines the routing config
  */
-use RDev\HTTP\Routing\Router;
+use RDev\Routing\Router;
 use Project\HTTP\Middleware\Docs;
 
 /**
@@ -16,25 +16,21 @@ use Project\HTTP\Middleware\Docs;
  */
 $router->group(["controllerNamespace" => "Project\\HTTP\\Controllers"], function() use ($router)
 {
-    $router->get("/", [
-        "controller" => "Page@showHomePage",
+    $router->get("/", "Page@showHomePage", [
         "name" => "home"
     ]);
     $router->group(["path" => "/docs"], function() use ($router)
     {
-        $router->get("/{version}/{docName}", [
-            "controller" => "Docs@showDoc",
+        $router->get("/{version}/{docName}", "Docs@showDoc", [
             "name" => "docs",
             "middleware" => [
                 Docs::class
             ]
         ]);
-        $router->get("/{docName}", [
-            "controller" => "Docs@showNoVersionDoc",
+        $router->get("/{docName}", "Docs@showNoVersionDoc", [
             "name" => "docs-noversion"
         ]);
-        $router->get("", [
-            "controller" => "Docs@showIndex",
+        $router->get("", "Docs@showIndex", [
             "name" => "docs-index"
         ]);
     });

@@ -4,10 +4,10 @@
  *
  * Boots up our application with a console kernel
  */
-use RDev\Console\Commands\Commands;
+use RDev\Console\Commands\CommandCollection;
 use RDev\Console\Commands\Compilers\ICompiler;
-use RDev\Console\Kernels\Kernel;
 use RDev\Console\Requests\Parsers\IParser;
+use RDev\Framework\Console\Kernel;
 
 require_once __DIR__ . "/../start.php";
 
@@ -26,14 +26,14 @@ $statusCode = $application->start(function () use ($application)
      * Handle the request
      * ----------------------------------------------------------
      *
-     * @var Commands $commands
+     * @var CommandCollection $commandCollection
      * @var IParser $requestParser
      * @var ICompiler $commandCompiler
      */
-    $commands = $application->getIoCContainer()->makeShared("RDev\\Console\\Commands\\Commands");
+    $commandCollection = $application->getIoCContainer()->makeShared("RDev\\Console\\Commands\\CommandCollection");
     $requestParser = $application->getIoCContainer()->makeShared("RDev\\Console\\Requests\\Parsers\\IParser");
     $commandCompiler = $application->getIoCContainer()->makeShared("RDev\\Console\\Commands\\Compilers\\ICompiler");
-    $kernel = new Kernel($requestParser, $commandCompiler, $commands, $application->getLogger(), $application->getVersion());
+    $kernel = new Kernel($requestParser, $commandCompiler, $commandCollection, $application->getLogger(), $application->getVersion());
 
     return $kernel->handle($argv);
 });

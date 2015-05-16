@@ -6,7 +6,7 @@
  */
 namespace Project\Bootstrappers\HTTP\Routing;
 use RDev\Applications\Bootstrappers\Bootstrapper;
-use RDev\HTTP\Routing\Router as HTTPRouter;
+use RDev\Routing\Router as HTTPRouter;
 
 class Router extends Bootstrapper
 {
@@ -17,7 +17,7 @@ class Router extends Bootstrapper
      */
     public function run(HTTPRouter $router)
     {
-        $router->setMissedRouteControllerName("Project\\HTTP\\Controllers\\Page");
+        $router->setMissedRouteController("Project\\HTTP\\Controllers\\Page");
         require $this->paths["configs"] . "/http/routing.php";
     }
 }

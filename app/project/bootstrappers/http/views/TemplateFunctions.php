@@ -5,18 +5,22 @@
  * Defines the template functions bootstrapper
  */
 namespace Project\Bootstrappers\HTTP\Views;
-use RDev\Applications\Bootstrappers\Bootstrapper;
+use RDev\Framework\Bootstrappers\HTTP\Views\TemplateFunctions as BaseTemplateFunctions;
+use RDev\Routing\URL\URLGenerator;
 use RDev\Views\Compilers\ICompiler;
 
-class TemplateFunctions extends Bootstrapper
+class TemplateFunctions extends BaseTemplateFunctions
 {
     /**
      * Registers template functions
      *
      * @param ICompiler $compiler The compiler to use
+     * @param URLGenerator $urlGenerator What generates URLs from routes
      */
-    public function run(ICompiler $compiler)
+    public function run(ICompiler $compiler, URLGenerator $urlGenerator)
     {
+        parent::run($compiler, $urlGenerator);
+
         // Generates the title HTML
         $compiler->registerTemplateFunction("rdevTitle", function($title, $doFormat = true) use ($compiler)
         {

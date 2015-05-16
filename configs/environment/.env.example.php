@@ -5,6 +5,7 @@
  * Defines the application environment config
  */
 use RDev\Applications\Environments\Environment;
+use RDev\Sessions\Handlers\FileSessionHandler;
 
 /**
  * ----------------------------------------------------------
@@ -18,6 +19,13 @@ $environment->setVariable("DB_USER", "myuser");
 $environment->setVariable("DB_PASSWORD", "mypassword");
 $environment->setVariable("DB_NAME", "public");
 $environment->setVariable("DB_PORT", 5432);
+
+/**
+ * ----------------------------------------------------------
+ * Set the session driver
+ * ----------------------------------------------------------
+ */
+$environment->setVariable("SESSION_HANDLER", FileSessionHandler::class);
 
 /**
  * ----------------------------------------------------------

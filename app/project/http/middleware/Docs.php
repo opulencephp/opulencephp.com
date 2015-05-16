@@ -10,8 +10,8 @@ use Project\Docs\Documentation;
 use RDev\HTTP\Middleware\IMiddleware;
 use RDev\HTTP\Requests\Request;
 use RDev\HTTP\Responses\RedirectResponse;
-use RDev\HTTP\Routing\Router;
-use RDev\HTTP\Routing\URL\URLGenerator;
+use RDev\Routing\Router;
+use RDev\Routing\URL\URLGenerator;
 
 class Docs implements IMiddleware
 {
@@ -40,9 +40,8 @@ class Docs implements IMiddleware
     public function handle(Request $request, Closure $next)
     {
         $matchedRoute = $this->router->getMatchedRoute();
-        $pathVariables = $matchedRoute->getPathVariables();
-        $version = $pathVariables["version"];
-        $docName = $pathVariables["docName"];
+        $version = $matchedRoute->getPathVariable("version");
+        $docName = $matchedRoute->getPathVariable("docName");
 
         if(!$this->docs->hasVersion($version))
         {
