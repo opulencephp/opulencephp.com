@@ -10,9 +10,9 @@
   ],
   "autoload": {
     "psr-4": {
-      "Project\\": [
-        "app/project",
-        "tests/app/project"
+      "RDevWebsite\\": [
+        "app/rdevwebsite",
+        "tests/app/rdevwebsite"
       ]
     }
   },

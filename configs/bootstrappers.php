@@ -24,9 +24,9 @@ return [
      * ----------------------------------------------------------
      *
      * List any console bootstrappers you'd like here
-     * To enable Redis, add "Project\\Bootstrappers\\Databases\\Redis"
+     * To enable Redis, add "RDevWebsite\\Bootstrappers\\Databases\\Redis"
      */
-    "Project\\Bootstrappers\\Authentication\\Credentials",
-    "Project\\Bootstrappers\\Databases\\SQL",
-    "Project\\Bootstrappers\\ORM\\UnitOfWork"
+    "RDevWebsite\\Bootstrappers\\Authentication\\Credentials",
+    "RDevWebsite\\Bootstrappers\\Databases\\SQL",
+    "RDevWebsite\\Bootstrappers\\ORM\\UnitOfWork"
 ];

@@ -4,11 +4,11 @@
  *
  * Defines the list of bootstrapper classes to load for an HTTP application
  */
-use Project\Bootstrappers\HTTP\Routing\Router as ProjectRouter;
-use Project\Bootstrappers\HTTP\Sessions\Session;
-use Project\Bootstrappers\HTTP\Views\Builders;
-use Project\Bootstrappers\HTTP\Views\Template;
-use Project\Bootstrappers\HTTP\Views\TemplateFunctions;
+use RDevWebsite\Bootstrappers\HTTP\Routing\Router as ProjectRouter;
+use RDevWebsite\Bootstrappers\HTTP\Sessions\Session;
+use RDevWebsite\Bootstrappers\HTTP\Views\Builders;
+use RDevWebsite\Bootstrappers\HTTP\Views\Template;
+use RDevWebsite\Bootstrappers\HTTP\Views\TemplateFunctions;
 use RDev\Framework\Bootstrappers\HTTP\Requests\Request;
 use RDev\Framework\Bootstrappers\HTTP\Routing\Router as RDevRouter;
 

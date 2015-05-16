@@ -5,7 +5,7 @@
  * Defines the routing config
  */
 use RDev\Routing\Router;
-use Project\HTTP\Middleware\Docs;
+use RDevWebsite\HTTP\Middleware\Docs;
 
 /**
  * ----------------------------------------------------------
@@ -14,7 +14,7 @@ use Project\HTTP\Middleware\Docs;
  *
  * @var Router $router
  */
-$router->group(["controllerNamespace" => "Project\\HTTP\\Controllers"], function() use ($router)
+$router->group(["controllerNamespace" => "RDevWebsite\\HTTP\\Controllers"], function() use ($router)
 {
     $router->get("/", "Page@showHomePage", [
         "name" => "home"
