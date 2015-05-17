@@ -28,9 +28,9 @@ class Template extends BaseTemplate
         return new Cache(
             $fileSystem,
             $this->paths["compiledViews"],
-            $cacheConfig["cacheLifetime"],
-            $cacheConfig["gcChance"],
-            $cacheConfig["gcTotal"]
+            $cacheConfig["cache.lifetime"],
+            $cacheConfig["gc.chance"],
+            $cacheConfig["gc.divisor"]
         );
     }
 
