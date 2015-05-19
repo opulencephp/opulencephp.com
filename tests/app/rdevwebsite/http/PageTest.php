@@ -35,7 +35,7 @@ class PageTest extends ApplicationTestCase
     {
         $this->route("GET", "/does-not-exist");
         $this->checkMasterTemplateSetup();
-        $this->assertResponseIsOK();//$this->assertResponseIsNotFound();
+        $this->assertResponseIsNotFound();
         $this->assertTemplateVarEquals("metaKeywords", []);
         $this->assertTemplateVarEquals("metaDescription", "");
         $this->assertTemplateVarEquals("doFormatTitle", true);
