@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-$htmlDirectory = realpath(__DIR__ . "/../..");
+$htmlDirectory = "/var/www/html";
 $projectRootDirectory = realpath(__DIR__ . "/..");
 $commands = [
     // Go to this project's root directory
