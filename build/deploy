@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+<?php
+$rootDirectory = "/var/www/html";
+$releaseDirectory = "releases/" . date("YmdHis");
+$commands = [
+    // Grab the latest commit
+    "git clone https://github.com/ramblingsofadev/rdevphp.com.git $rootDirectory/$releaseDirectory",
+    "cd $rootDirectory/$releaseDirectory",
+    "composer update",
+    // Copy the master environment config
+    "\cp -vrf $rootDirectory/.env.app.php configs/environment/.env.app.php",
+    // Copy the fixed Sami project
+    "\cp -vrf $rootDirectory/sami vendor",
+    "composer dump-autoload -o",
+    // Generate the necessary files
+    "php rdev docs",
+    "php rdev api",
+    "chmod -R 777 tmp",
+    "chmod -R 777 resources",
+    "cd $rootDirectory",
+    // Go live
+    "ln -snf $releaseDirectory ./current"
+];
+
+if(shell_exec(implode(" && ", $commands)) === null)
+{
+    echo "An error occurred";
+}
+else
+{
+    echo "Deployed successfully";
+}
+
+echo "\n";
