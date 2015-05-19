@@ -1,5 +1,7 @@
 #!/usr/bin/env php
 <?php
+$output = [];
+$returnValue = null;
 $htmlDirectory = "/var/www/html";
 $projectRootDirectory = realpath(__DIR__ . "/..");
 $commands = [
@@ -15,7 +17,15 @@ $commands = [
     "php rdev docs",
     "php rdev api",
     "chmod -R 777 tmp",
-    "chmod -R 777 resources"
+    "chmod -R 777 resources",
+    "vendor/bin/phpunit"
 ];
 
-return shell_exec(implode(" && ", $commands));
+exec(implode(" && ", $commands), $output, $returnValue);
+
+foreach($output as $line)
+{
+    echo $line . "\n";
+}
+
+return $returnValue;
