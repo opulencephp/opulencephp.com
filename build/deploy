@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 $output = [];
-$returnValue = null;
+$statusCode = null;
 $htmlDirectory = "/var/www/html";
 $projectRootDirectory = realpath(__DIR__ . "/..");
 $commands = [
@@ -13,7 +13,7 @@ $commands = [
     // Copy the fixed Sami project
     "\\cp -vrf $htmlDirectory/sami vendor",
     "composer dump-autoload -o",
-    // Generate the necessary files
+    // Generate the necessary files and run tests
     "php rdev docs",
     "php rdev api",
     "chmod -R 777 tmp",
@@ -21,11 +21,11 @@ $commands = [
     "vendor/bin/phpunit"
 ];
 
-exec(implode(" && ", $commands), $output, $returnValue);
+exec(implode(" && ", $commands), $output, $statusCode);
 
 foreach($output as $line)
 {
     echo $line . "\n";
 }
 
-exit($returnValue);
+exit($statusCode);
