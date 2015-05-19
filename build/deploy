@@ -1,12 +1,15 @@
 #!/usr/bin/env php
 <?php
-$rootDirectory = realpath(__DIR__ . "/../..");
+$htmlDirectory = realpath(__DIR__ . "/../..");
+$projectRootDirectory = realpath(__DIR__ . "/..");
 $commands = [
+    // Go to this project's root directory
+    "cd $projectRootDirectory",
     "composer update",
     // Copy the master environment config
-    "\cp -vrf $rootDirectory/.env.app.php configs/environment/.env.app.php",
+    "\cp -vrf $htmlDirectory/.env.app.php configs/environment/.env.app.php",
     // Copy the fixed Sami project
-    "\cp -vrf $rootDirectory/sami vendor",
+    "\cp -vrf $htmlDirectory/sami vendor",
     "composer dump-autoload -o",
     // Generate the necessary files
     "php rdev docs",
