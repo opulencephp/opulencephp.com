@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 $output = [];
 $returnValue = null;
@@ -8,9 +9,9 @@ $commands = [
     "cd $projectRootDirectory",
     "composer update",
     // Copy the master environment config
-    "\cp -vrf $htmlDirectory/.env.app.php configs/environment/.env.app.php",
+    "\\cp -vrf $htmlDirectory/.env.app.php configs/environment/.env.app.php",
     // Copy the fixed Sami project
-    "\cp -vrf $htmlDirectory/sami vendor",
+    "\\cp -vrf $htmlDirectory/sami vendor",
     "composer dump-autoload -o",
     // Generate the necessary files
     "php rdev docs",
@@ -27,4 +28,4 @@ foreach($output as $line)
     echo $line . "\n";
 }
 
-return $returnValue;
+exit $returnValue;
