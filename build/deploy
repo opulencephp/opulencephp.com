@@ -28,4 +28,4 @@ foreach($output as $line)
     echo $line . "\n";
 }
 
-exit $returnValue;
+exit($returnValue);
