@@ -120,6 +120,11 @@ class Documentation
                         "description" => "Learn about creating an RDev HTTP router",
                         "keywords" => ["rdev", "routing", "router", "http", "php"]
                     ],
+                    "sessions" => [
+                        "title" => "Sessions",
+                        "description" => "Learn about sessions in RDev",
+                        "keywords" => ["rdev", "sessions", "php"]
+                    ],
                     "type-mappers" => [
                         "title" => "Type Mappers",
                         "description" => "Learn about casting to and from relational database types",
