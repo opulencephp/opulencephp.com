@@ -55,15 +55,15 @@ class Documentation
                         "description" => "Learn about handling HTTP requests and responses in RDev",
                         "keywords" => ["rdev", "http", "requests", "headers", "cookies", "php"]
                     ],
-                    "sessions" => [
-                        "title" => "Sessions",
-                        "description" => "Learn about sessions in RDev",
-                        "keywords" => ["rdev", "sessions", "php"]
-                    ],
                     "views" => [
                         "title" => "Views",
                         "description" => "Learn how to create powerful view templates in RDev",
                         "keywords" => ["rdev", "views", "template", "php"]
+                    ],
+                    "sessions" => [
+                        "title" => "Sessions",
+                        "description" => "Learn about sessions in RDev",
+                        "keywords" => ["rdev", "sessions", "php"]
                     ],
                     "http-middleware" => [
                         "title" => "Middleware",
