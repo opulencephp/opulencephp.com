@@ -32,19 +32,14 @@ class Documentation
                         "title" => "Directory Structure",
                         "description" => "Learn about how RDev is structured",
                         "keywords" => ["rdev", "structure", "php"]
-                    ],
-                    "application-workflow" => [
-                        "title" => "Application Workflow",
-                        "description" => "Learn about the workflow of HTTP and console applications in RDev",
-                        "keywords" => ["rdev", "http", "console", "workflow", "php"]
-                    ],
-                    "testing-your-application" => [
-                        "title" => "Testing Your Application",
-                        "description" => "Learn how to test an RDev application",
-                        "keywords" => ["rdev", "testing", "tdd", "phpunit", "php"]
                     ]
                 ],
                 "HTTP Applications" => [
+                    "http-workflow" => [
+                        "title" => "Application Workflow",
+                        "description" => "Learn about the workflow of HTTP applications in RDev",
+                        "keywords" => ["rdev", "http", "workflow", "php"]
+                    ],
                     "routing" => [
                         "title" => "Routing",
                         "description" => "Learn about creating an RDev HTTP router",
@@ -55,11 +50,6 @@ class Documentation
                         "description" => "Learn about handling HTTP requests and responses in RDev",
                         "keywords" => ["rdev", "http", "requests", "headers", "cookies", "php"]
                     ],
-                    "views" => [
-                        "title" => "Views",
-                        "description" => "Learn how to create powerful view templates in RDev",
-                        "keywords" => ["rdev", "views", "template", "php"]
-                    ],
                     "sessions" => [
                         "title" => "Sessions",
                         "description" => "Learn about sessions in RDev",
@@ -69,10 +59,19 @@ class Documentation
                         "title" => "Middleware",
                         "description" => "Learn about HTTP middleware in RDev",
                         "keywords" => ["rdev", "middleware", "http", "requests", "responses", "php"]
+                    ],
+                    "http-testing" => [
+                        "title" => "Testing Your Application",
+                        "description" => "Learn how to test an RDev HTTP application",
+                        "keywords" => ["rdev", "testing", "tdd", "phpunit", "php"]
                     ]
-
                 ],
                 "Console Applications" => [
+                    "console-workflow" => [
+                        "title" => "Application Workflow",
+                        "description" => "Learn about the workflow of HTTP console in RDev",
+                        "keywords" => ["rdev", "console", "workflow", "php"]
+                    ],
                     "console-basics" => [
                         "title" => "Basics",
                         "description" => "Learn the basics of console applications in RDev",
@@ -87,7 +86,24 @@ class Documentation
                         "title" => "Creating Commands",
                         "description" => "Learn how to create custom console commands in RDev",
                         "keywords" => ["rdev", "console", "commands", "php"]
+                    ],
+                    "console-testing" => [
+                        "title" => "Testing Your Application",
+                        "description" => "Learn how to test an RDev console application",
+                        "keywords" => ["rdev", "testing", "tdd", "phpunit", "php"]
                     ]
+                ],
+                "Views" => [
+                    "view-basics" => [
+                        "title" => "Basics",
+                        "description" => "Learn how to create powerful view templates in RDev",
+                        "keywords" => ["rdev", "views", "template", "php"]
+                    ],
+                    "view-functions" => [
+                        "title" => "Functions",
+                        "description" => "Learn how to use and create functions in RDev templates",
+                        "keywords" => ["rdev", "views", "template", "functions", "php"]
+                    ],
                 ],
                 "Framework" => [
                     "application" => [
