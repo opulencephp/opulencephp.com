@@ -44,6 +44,51 @@ class Documentation
                         "keywords" => ["rdev", "testing", "tdd", "phpunit", "php"]
                     ]
                 ],
+                "HTTP Applications" => [
+                    "routing" => [
+                        "title" => "Routing",
+                        "description" => "Learn about creating an RDev HTTP router",
+                        "keywords" => ["rdev", "routing", "router", "http", "php"]
+                    ],
+                    "http" => [
+                        "title" => "Requests/Responses",
+                        "description" => "Learn about handling HTTP requests and responses in RDev",
+                        "keywords" => ["rdev", "http", "requests", "headers", "cookies", "php"]
+                    ],
+                    "sessions" => [
+                        "title" => "Sessions",
+                        "description" => "Learn about sessions in RDev",
+                        "keywords" => ["rdev", "sessions", "php"]
+                    ],
+                    "views" => [
+                        "title" => "Views",
+                        "description" => "Learn how to create powerful view templates in RDev",
+                        "keywords" => ["rdev", "views", "template", "php"]
+                    ],
+                    "http-middleware" => [
+                        "title" => "Middleware",
+                        "description" => "Learn about HTTP middleware in RDev",
+                        "keywords" => ["rdev", "middleware", "http", "requests", "responses", "php"]
+                    ]
+
+                ],
+                "Console Applications" => [
+                    "console-basics" => [
+                        "title" => "Basics",
+                        "description" => "Learn the basics of console applications in RDev",
+                        "keywords" => ["rdev", "console", "command prompt", "php"]
+                    ],
+                    "console-requests-responses" => [
+                        "title" => "Requests/Responses",
+                        "description" => "Learn about console requests and responses",
+                        "keywords" => ["rdev", "console", "requests", "responses", "php"]
+                    ],
+                    "console-creating-commands" => [
+                        "title" => "Creating Commands",
+                        "description" => "Learn how to create custom console commands in RDev",
+                        "keywords" => ["rdev", "console", "commands", "php"]
+                    ]
+                ],
                 "Framework" => [
                     "application" => [
                         "title" => "Application",
@@ -54,11 +99,6 @@ class Documentation
                         "title" => "Bootstrappers",
                         "description" => "Learn how to configure an RDev application",
                         "keywords" => ["rdev", "configuration", "bootstrapper", "php"]
-                    ],
-                    "console" => [
-                        "title" => "Console",
-                        "description" => "Learn how to create an RDev console application",
-                        "keywords" => ["rdev", "console", "command prompt", "php"]
                     ],
                     "cryptography" => [
                         "title" => "Cryptography",
@@ -79,16 +119,6 @@ class Documentation
                         "title" => "File System",
                         "description" => "Learn about working with the file system in RDev",
                         "keywords" => ["rdev", "file system", "read write", "php"]
-                    ],
-                    "http-middleware" => [
-                        "title" => "HTTP Middleware",
-                        "description" => "Learn about HTTP middleware in RDev",
-                        "keywords" => ["rdev", "middleware", "http", "requests", "responses", "php"]
-                    ],
-                    "http" => [
-                        "title" => "HTTP Requests/Responses",
-                        "description" => "Learn about handling HTTP requests and responses in RDev",
-                        "keywords" => ["rdev", "http", "requests", "headers", "cookies", "php"]
                     ],
                     "nosql" => [
                         "title" => "NoSQL Databases",
@@ -115,25 +145,10 @@ class Documentation
                         "description" => "Learn about working with relational databases in RDev",
                         "keywords" => ["rdev", "rdbms", "mysql", "postgresql", "pdo", "sql", "database", "php"]
                     ],
-                    "routing" => [
-                        "title" => "Routing",
-                        "description" => "Learn about creating an RDev HTTP router",
-                        "keywords" => ["rdev", "routing", "router", "http", "php"]
-                    ],
-                    "sessions" => [
-                        "title" => "Sessions",
-                        "description" => "Learn about sessions in RDev",
-                        "keywords" => ["rdev", "sessions", "php"]
-                    ],
                     "type-mappers" => [
                         "title" => "Type Mappers",
                         "description" => "Learn about casting to and from relational database types",
                         "keywords" => ["rdev", "sql", "cast", "type mapping", "php"]
-                    ],
-                    "views" => [
-                        "title" => "Views",
-                        "description" => "Learn how to create powerful view templates in RDev",
-                        "keywords" => ["rdev", "views", "template", "php"]
                     ]
                 ]
             ]
