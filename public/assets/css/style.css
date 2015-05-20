@@ -178,7 +178,6 @@ main {
   padding: 44px 10px 10px; }
   main nav.sidebar {
     padding-top: 10px;
-    position: fixed;
     top: 34px;
     overflow-y: auto; }
     main nav.sidebar ul {
@@ -291,6 +290,7 @@ p code {
     padding-right: 10px; }
 
   main nav.sidebar {
+    position: fixed;
     border-left: 1px solid #ccc;
     left: 100%;
     bottom: 0;
@@ -324,15 +324,16 @@ p code {
     main:not(.docs) nav.sidebar {
       display: none; }
     main nav.sidebar {
+      position: absolute;
       padding: 20px 10px 10px 0;
       float: left;
       width: 230px;
-      bottom: 0; }
+      bottom: 0;
+      border-right: 1px solid #ccc; }
     main.docs article {
       /* Force the left-border to be drawn from the nav bar */
       margin: -10px 0 -10px 230px;
-      padding: 10px 0 10px 20px;
-      border-left: 1px solid #ccc; } }
+      padding: 10px 0 10px 20px; } }
 @media screen and (min-device-height: 650px) {
   main {
     min-height: 600px; } }

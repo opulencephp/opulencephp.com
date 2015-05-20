@@ -317,7 +317,6 @@ main
     nav.sidebar
     {
         padding-top: 10px;
-        position: fixed;
         top: $headerHeight;
         overflow-y: auto;
 
@@ -538,6 +537,7 @@ p code
 
     main nav.sidebar
     {
+        position: fixed;
         border-left: 1px solid $borderColor;
         left: 100%;
         bottom: 0;
@@ -596,10 +596,12 @@ p code
 
         nav.sidebar
         {
+            position: absolute;
             padding: 20px 10px 10px 0;
             float: left;
             width: $docSidebarWidth;
             bottom: 0;
+            border-right: 1px solid $borderColor;
         }
 
         &.docs article
@@ -607,7 +609,6 @@ p code
             /* Force the left-border to be drawn from the nav bar */
             margin: -10px 0 -10px $docSidebarWidth;
             padding: 10px 0 10px 20px;
-            border-left: 1px solid $borderColor;
         }
     }
 }

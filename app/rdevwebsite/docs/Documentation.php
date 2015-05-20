@@ -104,6 +104,11 @@ class Documentation
                         "description" => "Learn how to use and create functions in RDev templates",
                         "keywords" => ["rdev", "views", "template", "functions", "php"]
                     ],
+                    "view-factories" => [
+                        "title" => "Factories",
+                        "description" => "Learn how factories can be used to build templates",
+                        "keywords" => ["rdev", "views", "template", "factories", "php"]
+                    ]
                 ],
                 "Framework" => [
                     "application" => [
