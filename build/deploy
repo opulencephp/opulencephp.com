@@ -1,8 +1,16 @@
 #!/usr/bin/env php
 <?php
+global $argv;
 $output = [];
 $statusCode = null;
-$htmlDirectory = realpath(__DIR__ . "/../..");
+
+if(count($argv) == 1 || strlen(trim($argv[1])) == 0)
+{
+    echo "No HTML directory specified\n";
+    exit(1);
+}
+
+$htmlDirectory = $argv[1];
 $projectRootDirectory = realpath(__DIR__ . "/..");
 $commands = [
     // Go to this project's root directory
