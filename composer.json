@@ -1,6 +1,6 @@
 {
   "name": "rdev/website",
-  "description": "The RDev flagship framework",
+  "description": "The RDev flagship website",
   "authors": [
     {
       "name": "David Young",
@@ -42,10 +42,12 @@
       "php rdev encryption:generatekey"
     ],
     "post-install-cmd": [
-      "php -r \"shell_exec((file_exists(getcwd() . '/composer.phar') ? PHP_BINARY . ' composer.phar' : 'composer') . ' dump-autoload -o');\""
+      "php -r \"shell_exec((file_exists(getcwd() . '/composer.phar') ? PHP_BINARY . ' composer.phar' : 'composer') . ' dump-autoload -o');\"",
+      "php rdev framework:flushcache"
     ],
     "post-update-cmd": [
-      "php -r \"shell_exec((file_exists(getcwd() . '/composer.phar') ? PHP_BINARY . ' composer.phar' : 'composer') . ' dump-autoload -o');\""
+      "php -r \"shell_exec((file_exists(getcwd() . '/composer.phar') ? PHP_BINARY . ' composer.phar' : 'composer') . ' dump-autoload -o');\"",
+      "php rdev framework:flushcache"
     ]
   },
   "minimum-stability": "dev"

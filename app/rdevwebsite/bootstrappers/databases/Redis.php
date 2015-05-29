@@ -6,13 +6,23 @@
  */
 namespace RDevWebsite\Bootstrappers\Databases;
 use RDev\Applications\Bootstrappers\Bootstrapper;
+use RDev\Applications\Bootstrappers\ILazyBootstrapper;
 use RDev\IoC\IContainer;
+use RDev\Redis\IRedis;
 use RDev\Redis\RDevPHPRedis;
 use RDev\Redis\Server;
 use RDev\Redis\TypeMapper;
 
-class Redis extends Bootstrapper
+class Redis extends Bootstrapper implements ILazyBootstrapper
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function getBoundClasses()
+    {
+        return [IRedis::class];
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -26,6 +36,6 @@ class Redis extends Bootstrapper
             ),
             new TypeMapper()
         );
-        $container->bind("RDev\\Redis\\IRedis", $redis);
+        $container->bind(IRedis::class, $redis);
     }
 }

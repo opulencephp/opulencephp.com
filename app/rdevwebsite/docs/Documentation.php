@@ -320,8 +320,8 @@ class Documentation
 
         foreach(self::$branches as $branchName => $branchData)
         {
-            $rawDocsPath = "{$this->paths["tmp"]}/docs/$branchName";
-            $compiledDocsPath = "{$this->paths["compiledDocs"]}/$branchName";
+            $rawDocsPath = "{$this->paths["tmp.docs"]}/$branchName";
+            $compiledDocsPath = "{$this->paths["docs.compiled"]}/$branchName";
 
             // Clone the branch from GitHub into our temporary directory
             $gitOutput .= shell_exec(
@@ -348,7 +348,7 @@ class Documentation
                 $html = $this->parsedown->text($this->files->read($markdownFile));
                 $compiledDocFilename = sprintf(
                     "%s/%s/%s.html",
-                    $this->paths['compiledDocs'],
+                    $this->paths['docs.compiled'],
                     $branchName,
                     $this->files->getFileName($markdownFile)
                 );
@@ -386,7 +386,7 @@ class Documentation
      */
     public function getCompiledDoc($name, $version)
     {
-        return $this->files->read("{$this->paths["compiledDocs"]}/$version/$name.html");
+        return $this->files->read("{$this->paths["docs.compiled"]}/$version/$name.html");
     }
 
     /**

@@ -6,13 +6,23 @@
  */
 namespace RDevWebsite\Bootstrappers\Databases;
 use RDev\Applications\Bootstrappers\Bootstrapper;
+use RDev\Applications\Bootstrappers\ILazyBootstrapper;
+use RDev\Databases\ConnectionPool;
 use RDev\Databases\PDO\PostgreSQL\Driver;
 use RDev\Databases\SingleServerConnectionPool;
 use RDev\Databases\Server;
 use RDev\IoC\IContainer;
 
-class SQL extends Bootstrapper
+class SQL extends Bootstrapper implements ILazyBootstrapper
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function getBoundClasses()
+    {
+        return [ConnectionPool::class];
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -28,6 +38,6 @@ class SQL extends Bootstrapper
                 $this->environment->getVariable("DB_PORT")
             )
         );
-        $container->bind("RDev\\Databases\\ConnectionPool", $connectionPool);
+        $container->bind(ConnectionPool::class, $connectionPool);
     }
 }

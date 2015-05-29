@@ -42,7 +42,7 @@ class API
             )
         );
         // Move them to the public directory
-        $this->files->copyDirectory($this->paths["tmp"] . "/api/build", $this->paths["public"] . "/api/master");
+        $this->files->copyDirectory($this->paths["tmp.api"] . "/build", $this->paths["public"] . "/api/master");
         $this->clearTempFiles();
 
         return $samiOutput;
@@ -55,14 +55,14 @@ class API
     {
         shell_exec(
             sprintf(
-                "rm -rf %s/api/build",
-                $this->paths["tmp"]
+                "rm -rf %s/build",
+                $this->paths["tmp.api"]
             )
         );
         shell_exec(
             sprintf(
-                "rm -rf %s/api/cache",
-                $this->paths["tmp"]
+                "rm -rf %s/cache",
+                $this->paths["tmp.api"]
             )
         );
     }
