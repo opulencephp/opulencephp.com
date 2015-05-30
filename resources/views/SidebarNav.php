@@ -15,7 +15,7 @@
                 <h5>{{$category}}</h5>
                 <ul class="sidebar-doc-nav">
                     <?php foreach($subDocs as $docName => $docData): ?>
-                        <li><a href="{{route('docs', [$version, $docName])}}" title="{{$docData['title']}}">{{$docData['title']}}</a></li>
+                        <li><a href="{{route('docs', [$version, $docName])}}" title="{{$docData['title']}}">{{$docData['linkText']}}</a></li>
                     <?php endforeach; ?>
                 </ul>
             </section>
