@@ -37,6 +37,12 @@ class Documentation
                     ]
                 ],
                 "HTTP Applications" => [
+                    "http-basics" => [
+                        "title" => "HTTP Basics",
+                        "linkText" => "Basics",
+                        "description" => "Learn the basics of HTTP applications in RDev",
+                        "keywords" => ["rdev", "http", "application", "mvc", "controller", "middleware"]
+                    ],
                     "http-workflow" => [
                         "title" => "HTTP Application Workflow",
                         "linkText" => "Application Workflow",
@@ -49,7 +55,7 @@ class Documentation
                         "description" => "Learn about creating an RDev HTTP router",
                         "keywords" => ["rdev", "routing", "router", "http", "php"]
                     ],
-                    "http" => [
+                    "http-requests-responses" => [
                         "title" => "Requests/Responses",
                         "linkText" => "HTTP Requests/Responses",
                         "description" => "Learn about handling HTTP requests and responses in RDev",
@@ -75,17 +81,17 @@ class Documentation
                     ]
                 ],
                 "Console Applications" => [
+                    "console-basics" => [
+                        "title" => "Console Basics",
+                        "linkText" => "Basics",
+                        "description" => "Learn the basics of console applications in RDev",
+                        "keywords" => ["rdev", "console", "command prompt", "php"]
+                    ],
                     "console-workflow" => [
                         "title" => "Console Application Workflow",
                         "linkText" => "Application Workflow",
                         "description" => "Learn about the workflow of HTTP console in RDev",
                         "keywords" => ["rdev", "console", "workflow", "php"]
-                    ],
-                    "console-basics" => [
-                        "title" => "Console Basics",
-                        "linkText" => "Console Basics",
-                        "description" => "Learn the basics of console applications in RDev",
-                        "keywords" => ["rdev", "console", "command prompt", "php"]
                     ],
                     "console-requests-responses" => [
                         "title" => "Console Requests/Responses",
