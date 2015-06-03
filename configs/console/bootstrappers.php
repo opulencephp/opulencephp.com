@@ -26,6 +26,7 @@ return [
     RDevCommands::class,
     Requests::class,
     Composer::class,
+
     /**
      * ----------------------------------------------------------
      * Your bootstrappers

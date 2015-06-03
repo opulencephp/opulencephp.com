@@ -4,12 +4,15 @@
  * 
  * Defines the list of console command classes to load
  */
+use RDevWebsite\Console\Commands\APICommand;
+use RDevWebsite\Console\Commands\DocsCommand;
+
 /**
  * ----------------------------------------------------------
  * List of command classes
  * ----------------------------------------------------------
  */
 return [
-    "RDevWebsite\\Console\\Commands\\APICommand",
-    "RDevWebsite\\Console\\Commands\\DocsCommand"
+    APICommand::class,
+    DocsCommand::class
 ];

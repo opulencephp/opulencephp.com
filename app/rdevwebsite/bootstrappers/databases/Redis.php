@@ -36,6 +36,6 @@ class Redis extends Bootstrapper implements ILazyBootstrapper
             ),
             new TypeMapper()
         );
-        $container->bind(IRedis::class, $redis);
+        $container->bind([IRedis::class, RDevPHPRedis::class], $redis);
     }
 }

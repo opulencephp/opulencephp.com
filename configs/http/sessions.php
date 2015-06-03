@@ -4,6 +4,8 @@
  *
  * Defines the session config
  */
+use RDev\Cache\FileBridge;
+
 /**
  * ----------------------------------------------------------
  * Defines session properties
@@ -20,6 +22,7 @@ return [
      */
     "lifetime" => 7200,
     "name" => "__rdev_session",
+
     /**
      * ----------------------------------------------------------
      * Garbage collection settings
@@ -30,6 +33,7 @@ return [
      */
     "gc.chance" => 1,
     "gc.divisor" => 100,
+
     /**
      * ----------------------------------------------------------
      * Settings for the session Id cookie
@@ -44,6 +48,18 @@ return [
     "cookie.domain" => "",
     "cookie.isSecure" => false,
     "cookie.path" => "/",
+
+    /**
+     * ----------------------------------------------------------
+     * Cache-backed session settings
+     * ----------------------------------------------------------
+     *
+     * "cache.bridge" => The name of the cache bridge that implements RDev\Cache\ICacheBridge
+     * "cache.keyPrefix" => The prefix to use on all cache keys
+     */
+    "cache.bridge" => FileBridge::class,
+    "cache.keyPrefix" => "",
+
     /**
      * ----------------------------------------------------------
      * File-backed session settings
