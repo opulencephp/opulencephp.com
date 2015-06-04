@@ -34,8 +34,10 @@ $pathsConfig = [
     "tmp.api" => __DIR__ . "/../tmp/api",
     // The documents' temporary directory
     "tmp.docs" => __DIR__ . "/../tmp/docs",
-    // The framework's temporary directory
-    "tmp.framework" => __DIR__ . "/../tmp/framework",
+    // The framework's console temporary directory
+    "tmp.framework.console" => __DIR__ . "/../tmp/framework/console",
+    // The framework's HTTP temporary directory
+    "tmp.framework.http" => __DIR__ . "/../tmp/framework/http",
     // The path to the vendor (Composer) directory
     "vendor" => __DIR__ . "/../vendor",
     // The path to the view directory
