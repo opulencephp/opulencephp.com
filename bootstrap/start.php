@@ -1,7 +1,5 @@
 <?php
 /**
- * Copyright (C) 2015 David Young
- *
  * Defines the common starting point for RDev applications
  */
 /**
@@ -17,4 +15,4 @@ require $paths["vendor"] . "/rdev/rdev/app/rdev/framework/setupcheck.php";
  * Setup the application
  * ----------------------------------------------------------
  */
-$application = require $paths["configs"] . "/application.php";
+$application = require __DIR__ . "/../configs/application.php";
