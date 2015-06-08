@@ -18,8 +18,6 @@ $commands = [
     "composer update",
     // Copy the master environment config
     "\\cp -vrf $htmlDirectory/.env.app.php configs/environment/.env.app.php",
-    // Copy the fixed Sami project
-    "\\cp -vrf $htmlDirectory/sami vendor",
     "composer dump-autoload -o",
     // Generate the necessary files and run tests
     "php rdev docs",
