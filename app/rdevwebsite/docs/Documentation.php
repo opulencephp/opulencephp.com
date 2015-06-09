@@ -134,7 +134,7 @@ class Documentation
                 ],
                 "Databases" => [
                     "database-basics" => [
-                        "title" => "Relational Databases",
+                        "title" => "Database Basics",
                         "linkText" => "Basics",
                         "description" => "Learn about working with relational databases in RDev",
                         "keywords" => ["rdev", "rdbms", "mysql", "postgresql", "pdo", "sql", "database", "php"]
