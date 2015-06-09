@@ -18,7 +18,7 @@ class SQL extends Bootstrapper implements ILazyBootstrapper
     /**
      * {@inheritdoc}
      */
-    public function getBoundClasses()
+    public function getBindings()
     {
         return [ConnectionPool::class];
     }
