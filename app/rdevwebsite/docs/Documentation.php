@@ -132,6 +132,26 @@ class Documentation
                         "keywords" => ["rdev", "views", "template", "factories", "php"]
                     ]
                 ],
+                "Databases" => [
+                    "database-basics" => [
+                        "title" => "Relational Databases",
+                        "linkText" => "Basics",
+                        "description" => "Learn about working with relational databases in RDev",
+                        "keywords" => ["rdev", "rdbms", "mysql", "postgresql", "pdo", "sql", "database", "php"]
+                    ],
+                    "database-query-builders" => [
+                        "title" => "Query Builders",
+                        "linkText" => "Query Builders",
+                        "description" => "Learn about RDev SQL query builders",
+                        "keywords" => ["rdev", "programmatically build", "queries", "sql", "php"]
+                    ],
+                    "database-type-mappers" => [
+                        "title" => "Type Mappers",
+                        "linkText" => "Type Mappers",
+                        "description" => "Learn about casting to and from relational database types",
+                        "keywords" => ["rdev", "sql", "cast", "type mapping", "php"]
+                    ]
+                ],
                 "ORM" => [
                     "orm-basics" => [
                         "title" => "ORM Basics",
@@ -164,6 +184,12 @@ class Documentation
                         "linkText" => "Bootstrappers",
                         "description" => "Learn how to configure an RDev application",
                         "keywords" => ["rdev", "configuration", "bootstrapper", "php"]
+                    ],
+                    "cache" => [
+                        "title" => "Cache",
+                        "linkText" => "Cache",
+                        "description" => "Learn how to use cache in an RDev application",
+                        "keywords" => ["rdev", "cache", "Redis", "Memcached", "php"]
                     ],
                     "cryptography" => [
                         "title" => "Cryptography",
@@ -200,24 +226,6 @@ class Documentation
                         "linkText" => "Pipelines",
                         "description" => "Learn how to pipeline data",
                         "keywords" => ["rdev", "pipeline", "serial", "php"]
-                    ],
-                    "query-builders" => [
-                        "title" => "Query Builders",
-                        "linkText" => "Query Builders",
-                        "description" => "Learn about RDev SQL query builders",
-                        "keywords" => ["rdev", "programmatically build", "queries", "sql", "php"]
-                    ],
-                    "rdbms" => [
-                        "title" => "Relational Databases",
-                        "linkText" => "Relational Databases",
-                        "description" => "Learn about working with relational databases in RDev",
-                        "keywords" => ["rdev", "rdbms", "mysql", "postgresql", "pdo", "sql", "database", "php"]
-                    ],
-                    "type-mappers" => [
-                        "title" => "Type Mappers",
-                        "linkText" => "Type Mappers",
-                        "description" => "Learn about casting to and from relational database types",
-                        "keywords" => ["rdev", "sql", "cast", "type mapping", "php"]
                     ]
                 ]
             ]
