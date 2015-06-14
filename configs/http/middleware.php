@@ -4,6 +4,7 @@
  *
  * Defines the list of global middleware to be run on all routes
  */
+use RDevWebsite\HTTP\Middleware\CheckCSRFToken;
 use RDevWebsite\HTTP\Middleware\Session;
 
 /**
@@ -19,5 +20,6 @@ return [
      *
      * List any HTTP middleware you'd like here
      */
-    Session::class
+    Session::class,
+    CheckCSRFToken::class
 ];

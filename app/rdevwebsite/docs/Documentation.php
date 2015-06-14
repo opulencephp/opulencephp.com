@@ -73,6 +73,12 @@ class Documentation
                         "description" => "Learn about HTTP middleware in RDev",
                         "keywords" => ["rdev", "middleware", "http", "requests", "responses", "php"]
                     ],
+                    "http-security" => [
+                        "title" => "HTTP Security",
+                        "linkText" => "Security",
+                        "description" => "Learn about security in HTTP applications in RDev",
+                        "keywords" => ["rdev", "security", "http", "css", "xsrf", "csrf", "cross site request forgery", "hack", "php"]
+                    ],
                     "http-testing" => [
                         "title" => "Testing Your HTTP Application",
                         "linkText" => "Testing Your Application",

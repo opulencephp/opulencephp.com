@@ -7,6 +7,7 @@
 namespace RDevWebsite\Bootstrappers\HTTP\Views;
 use RDev\Framework\Bootstrappers\HTTP\Views\TemplateFunctions as BaseTemplateFunctions;
 use RDev\Routing\URL\URLGenerator;
+use RDev\Sessions\ISession;
 use RDev\Views\Compilers\ICompiler;
 
 class TemplateFunctions extends BaseTemplateFunctions
@@ -16,10 +17,11 @@ class TemplateFunctions extends BaseTemplateFunctions
      *
      * @param ICompiler $compiler The compiler to use
      * @param URLGenerator $urlGenerator What generates URLs from routes
+     * @param ISession $session The current session
      */
-    public function run(ICompiler $compiler, URLGenerator $urlGenerator)
+    public function run(ICompiler $compiler, URLGenerator $urlGenerator, ISession $session)
     {
-        parent::run($compiler, $urlGenerator);
+        parent::run($compiler, $urlGenerator, $session);
 
         // Generates the title HTML
         $compiler->registerTemplateFunction("rdevTitle", function($title, $doFormat = true) use ($compiler)
