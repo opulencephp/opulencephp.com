@@ -7,10 +7,10 @@
 
     <ul>
         <li><a href="{{route('docs', [$defaultBranch, 'routing'])}}" title="Routing">Route requests</a></li>
-        <li><a href="{{route('docs', [$defaultBranch, 'views'])}}" title="Views">Create extendable, cacheable views</a></li>
-        <li><a href="{{route('docs', [$defaultBranch, 'orm'])}}" title="ORM">ORM the right way with the repository pattern and heavy caching</a></li>
-        <li><a href="{{route('docs', [$defaultBranch, 'console'])}}" title="Console commands">Write powerful console commands</a></li>
-        <li><a href="{{route('docs', [$defaultBranch, 'testing-your-application'])}}" title="Testing">Integration test all your HTTP routes and console commands</a></li>
+        <li><a href="{{route('docs', [$defaultBranch, 'view-basics'])}}" title="Views">Create extendable, cacheable views</a></li>
+        <li><a href="{{route('docs', [$defaultBranch, 'orm-basics'])}}" title="ORM">ORM the right way with the repository pattern and heavy caching</a></li>
+        <li><a href="{{route('docs', [$defaultBranch, 'console-basics'])}}" title="Console commands">Write powerful console commands</a></li>
+        <li>Integration test all your <a href="{{route('docs', [$defaultBranch, 'http-testing'])}}" title="Testing HTTP routes">HTTP routes</a> and <a href="{{route('docs', [$defaultBranch, 'console-testing'])}}" title="Testing console commands">console commands</a></li>
     </ul>
     It is <a href="https://github.com/ramblingsofadev/RDev/tree/master/tests/app/rdev" target="_blank">thoroughly-tested</a>, <a href="https://github.com/ramblingsofadev/RDev" target="_blank">open source</a>, and free under the MIT license.
 </section>
@@ -18,7 +18,7 @@
     <h2><i class="fa fa-download"></i> Installing</h2>
     Get up and running fast with Composer:
     <blockquote>
-        <code>composer create-project rdev/project --prefer-dist</code>
+        <code>composer create-project rdev/project DESIRED_SERVER_PATH --prefer-dist</code>
     </blockquote>
     To learn more about installation, <a href="{{route('docs', [$defaultBranch, 'installing'])}}" title="Installing">read the documentation</a>.
 </section>

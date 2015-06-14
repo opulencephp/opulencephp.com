@@ -15,11 +15,230 @@ class Documentation
     /** The GitHub docs repository */
     const GITHUB_REPOSITORY = "https://github.com/ramblingsofadev/docs.git";
     /** The default branch to show in the docs */
-    const DEFAULT_BRANCH = "0.4";
+    const DEFAULT_BRANCH = "0.5";
+
     /** @var array The mapping of documentation branches to data */
     private static $branches = [
         "master" => [
             "title" => "Master",
+            "default" => "installing",
+            "docs" => [
+                "Getting Started" => [
+                    "installing" => [
+                        "title" => "Installing",
+                        "linkText" => "Installing",
+                        "description" => "Learn how to install RDev",
+                        "keywords" => ["rdev", "install", "php"]
+                    ],
+                    "directory-structure" => [
+                        "title" => "Directory Structure",
+                        "linkText" => "Directory Structure",
+                        "description" => "Learn about how RDev is structured",
+                        "keywords" => ["rdev", "structure", "php"]
+                    ]
+                ],
+                "HTTP Applications" => [
+                    "http-basics" => [
+                        "title" => "HTTP Basics",
+                        "linkText" => "Basics",
+                        "description" => "Learn the basics of HTTP applications in RDev",
+                        "keywords" => ["rdev", "http", "application", "mvc", "controller", "middleware"]
+                    ],
+                    "http-workflow" => [
+                        "title" => "HTTP Application Workflow",
+                        "linkText" => "Application Workflow",
+                        "description" => "Learn about the workflow of HTTP applications in RDev",
+                        "keywords" => ["rdev", "http", "workflow", "php"]
+                    ],
+                    "routing" => [
+                        "title" => "Routing",
+                        "linkText" => "Routing",
+                        "description" => "Learn about creating an RDev HTTP router",
+                        "keywords" => ["rdev", "routing", "router", "http", "php"]
+                    ],
+                    "http-requests-responses" => [
+                        "title" => "Requests/Responses",
+                        "linkText" => "HTTP Requests/Responses",
+                        "description" => "Learn about handling HTTP requests and responses in RDev",
+                        "keywords" => ["rdev", "http", "requests", "headers", "cookies", "php"]
+                    ],
+                    "sessions" => [
+                        "title" => "Sessions",
+                        "linkText" => "Sessions",
+                        "description" => "Learn about sessions in RDev",
+                        "keywords" => ["rdev", "sessions", "php"]
+                    ],
+                    "http-middleware" => [
+                        "title" => "HTTP Middleware",
+                        "linkText" => "Middleware",
+                        "description" => "Learn about HTTP middleware in RDev",
+                        "keywords" => ["rdev", "middleware", "http", "requests", "responses", "php"]
+                    ],
+                    "http-security" => [
+                        "title" => "HTTP Security",
+                        "linkText" => "Security",
+                        "description" => "Learn about security in HTTP applications in RDev",
+                        "keywords" => ["rdev", "security", "http", "css", "xsrf", "csrf", "cross site request forgery", "hack", "php"]
+                    ],
+                    "http-testing" => [
+                        "title" => "Testing Your HTTP Application",
+                        "linkText" => "Testing Your Application",
+                        "description" => "Learn how to test an RDev HTTP application",
+                        "keywords" => ["rdev", "testing", "tdd", "phpunit", "php"]
+                    ]
+                ],
+                "Console Applications" => [
+                    "console-basics" => [
+                        "title" => "Console Basics",
+                        "linkText" => "Basics",
+                        "description" => "Learn the basics of console applications in RDev",
+                        "keywords" => ["rdev", "console", "command prompt", "php"]
+                    ],
+                    "console-workflow" => [
+                        "title" => "Console Application Workflow",
+                        "linkText" => "Application Workflow",
+                        "description" => "Learn about the workflow of HTTP console in RDev",
+                        "keywords" => ["rdev", "console", "workflow", "php"]
+                    ],
+                    "console-requests-responses" => [
+                        "title" => "Console Requests/Responses",
+                        "linkText" => "Requests/Responses",
+                        "description" => "Learn about console requests and responses",
+                        "keywords" => ["rdev", "console", "requests", "responses", "php"]
+                    ],
+                    "console-creating-commands" => [
+                        "title" => "Creating Commands",
+                        "linkText" => "Creating Commands",
+                        "description" => "Learn how to create custom console commands in RDev",
+                        "keywords" => ["rdev", "console", "commands", "php"]
+                    ],
+                    "console-testing" => [
+                        "title" => "Testing Your Console Application",
+                        "linkText" => "Testing Your Application",
+                        "description" => "Learn how to test an RDev console application",
+                        "keywords" => ["rdev", "testing", "tdd", "phpunit", "php"]
+                    ]
+                ],
+                "Views" => [
+                    "view-basics" => [
+                        "title" => "View Basics",
+                        "linkText" => "Basics",
+                        "description" => "Learn how to create powerful view templates in RDev",
+                        "keywords" => ["rdev", "views", "template", "php"]
+                    ],
+                    "view-functions" => [
+                        "title" => "View Functions",
+                        "linkText" => "Functions",
+                        "description" => "Learn how to use and create functions in RDev templates",
+                        "keywords" => ["rdev", "views", "template", "functions", "php"]
+                    ],
+                    "view-factories" => [
+                        "title" => "View Factories",
+                        "linkText" => "Factories",
+                        "description" => "Learn how factories can be used to build templates",
+                        "keywords" => ["rdev", "views", "template", "factories", "php"]
+                    ]
+                ],
+                "Databases" => [
+                    "database-basics" => [
+                        "title" => "Database Basics",
+                        "linkText" => "Basics",
+                        "description" => "Learn about working with relational databases in RDev",
+                        "keywords" => ["rdev", "rdbms", "mysql", "postgresql", "pdo", "sql", "database", "php"]
+                    ],
+                    "database-query-builders" => [
+                        "title" => "Query Builders",
+                        "linkText" => "Query Builders",
+                        "description" => "Learn about RDev SQL query builders",
+                        "keywords" => ["rdev", "programmatically build", "queries", "sql", "php"]
+                    ],
+                    "database-type-mappers" => [
+                        "title" => "Type Mappers",
+                        "linkText" => "Type Mappers",
+                        "description" => "Learn about casting to and from relational database types",
+                        "keywords" => ["rdev", "sql", "cast", "type mapping", "php"]
+                    ]
+                ],
+                "ORM" => [
+                    "orm-basics" => [
+                        "title" => "ORM Basics",
+                        "linkText" => "Basics",
+                        "description" => "Learn the basics of ORM in RDev",
+                        "keywords" => ["rdev", "orm", "repository", "data mapper"]
+                    ],
+                    "orm-units-of-work" => [
+                        "title" => "Unit of Work",
+                        "linkText" => "Unit of Work",
+                        "description" => "Learn about units of work and ORM in RDev",
+                        "keywords" => ["rdev", "orm", "repository", "data mapper", "unit of work", "uow"]
+                    ],
+                    "orm-data-mappers" => [
+                        "title" => "Data Mappers",
+                        "linkText" => "Data Mappers",
+                        "description" => "Learn about data mappers in RDev",
+                        "keywords" => ["rdev", "orm", "repository", "data mapper"]
+                    ]
+                ],
+                "Framework" => [
+                    "application" => [
+                        "title" => "Application",
+                        "linkText" => "Application",
+                        "description" => "Learn about the inner-workings of an RDev application",
+                        "keywords" => ["rdev", "application", "php"]
+                    ],
+                    "bootstrappers" => [
+                        "title" => "Bootstrappers",
+                        "linkText" => "Bootstrappers",
+                        "description" => "Learn how to configure an RDev application",
+                        "keywords" => ["rdev", "configuration", "bootstrapper", "php"]
+                    ],
+                    "cache" => [
+                        "title" => "Cache",
+                        "linkText" => "Cache",
+                        "description" => "Learn how to use cache in an RDev application",
+                        "keywords" => ["rdev", "cache", "Redis", "Memcached", "php"]
+                    ],
+                    "cryptography" => [
+                        "title" => "Cryptography",
+                        "linkText" => "Cryptography",
+                        "description" => "Learn how to make your data cryptographically-secure with RDev",
+                        "keywords" => ["rdev", "cryptography", "encryption", "security", "passwords", "hashing", "php"]
+                    ],
+                    "dependency-injection" => [
+                        "title" => "Dependency Injection",
+                        "linkText" => "Dependency Injection",
+                        "description" => "Learn about dependency injection in RDev",
+                        "keywords" => ["rdev", "ioc", "dependency injection", "php"]
+                    ],
+                    "environment-configs" => [
+                        "title" => "Environment Configs",
+                        "linkText" => "Environment Configs",
+                        "description" => "Learn how to setup environment variables in RDev",
+                        "keywords" => ["rdev", "environment variables", "config", "php"]
+                    ],
+                    "files" => [
+                        "title" => "File System",
+                        "linkText" => "File System",
+                        "description" => "Learn about working with the file system in RDev",
+                        "keywords" => ["rdev", "file system", "read write", "php"]
+                    ],
+                    "nosql" => [
+                        "title" => "NoSQL Databases",
+                        "linkText" => "NoSQL Databases",
+                        "description" => "Learn how to interact with NoSQL databases in RDev",
+                        "keywords" => ["rdev", "nosql", "redis", "memcached", "cache", "php"]
+                    ],
+                    "pipelines" => [
+                        "title" => "Pipelines",
+                        "linkText" => "Pipelines",
+                        "description" => "Learn how to pipeline data",
+                        "keywords" => ["rdev", "pipeline", "serial", "php"]
+                    ]
+                ]
+            ]
+        ],
+        "0.5" => [
+            "title" => "0.5",
             "default" => "installing",
             "docs" => [
                 "Getting Started" => [
