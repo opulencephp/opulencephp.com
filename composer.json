@@ -19,7 +19,7 @@
   "require": {
     "php": ">=5.5.10",
     "rdev/rdev": "0.5.*@dev",
-    "erusev/parsedown": "1.5.1",
+    "erusev/parsedown": "1.5.3",
     "sami/sami": "3.0.*@dev"
   },
   "require-dev": {
