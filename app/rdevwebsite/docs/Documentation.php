@@ -166,17 +166,23 @@ class Documentation
                         "description" => "Learn the basics of ORM in RDev",
                         "keywords" => ["rdev", "orm", "repository", "data mapper"]
                     ],
-                    "orm-units-of-work" => [
-                        "title" => "Unit of Work",
-                        "linkText" => "Unit of Work",
-                        "description" => "Learn about units of work and ORM in RDev",
-                        "keywords" => ["rdev", "orm", "repository", "data mapper", "unit of work", "uow"]
+                    "orm-repositories" => [
+                        "title" => "Repositories",
+                        "linkText" => "Repositories",
+                        "description" => "Learn about repositories in RDev",
+                        "keywords" => ["rdev", "orm", "repository"]
                     ],
                     "orm-data-mappers" => [
                         "title" => "Data Mappers",
                         "linkText" => "Data Mappers",
                         "description" => "Learn about data mappers in RDev",
                         "keywords" => ["rdev", "orm", "repository", "data mapper"]
+                    ],
+                    "orm-units-of-work" => [
+                        "title" => "Unit of Work",
+                        "linkText" => "Unit of Work",
+                        "description" => "Learn about units of work and ORM in RDev",
+                        "keywords" => ["rdev", "orm", "repository", "data mapper", "unit of work", "uow"]
                     ]
                 ],
                 "Framework" => [
@@ -384,17 +390,23 @@ class Documentation
                         "description" => "Learn the basics of ORM in RDev",
                         "keywords" => ["rdev", "orm", "repository", "data mapper"]
                     ],
-                    "orm-units-of-work" => [
-                        "title" => "Unit of Work",
-                        "linkText" => "Unit of Work",
-                        "description" => "Learn about units of work and ORM in RDev",
-                        "keywords" => ["rdev", "orm", "repository", "data mapper", "unit of work", "uow"]
+                    "orm-repositories" => [
+                        "title" => "Repositories",
+                        "linkText" => "Repositories",
+                        "description" => "Learn about repositories in RDev",
+                        "keywords" => ["rdev", "orm", "repository"]
                     ],
                     "orm-data-mappers" => [
                         "title" => "Data Mappers",
                         "linkText" => "Data Mappers",
                         "description" => "Learn about data mappers in RDev",
                         "keywords" => ["rdev", "orm", "repository", "data mapper"]
+                    ],
+                    "orm-units-of-work" => [
+                        "title" => "Unit of Work",
+                        "linkText" => "Unit of Work",
+                        "description" => "Learn about units of work and ORM in RDev",
+                        "keywords" => ["rdev", "orm", "repository", "data mapper", "unit of work", "uow"]
                     ]
                 ],
                 "Framework" => [
