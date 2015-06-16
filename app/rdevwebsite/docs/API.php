@@ -10,6 +10,11 @@ use RDev\Files\FileSystem;
 
 class API
 {
+    /** The GitHub docs repository */
+    const GITHUB_REPOSITORY = "https://github.com/ramblingsofadev/RDev.git";
+
+    /** @var array The list of versions to create APIs for */
+    private static $branches = ["0.5", "master"];
     /** @var Paths The application paths */
     private $paths = null;
     /** @var FileSystem The file system */
@@ -33,6 +38,19 @@ class API
     public function compile()
     {
         $this->clearTempFiles();
+
+        // Grab the branches from Git
+        $rawDocsPath = "{$this->paths["tmp.api"]}/versions";
+        shell_exec(
+            sprintf(
+                "rm -rf %s* && mkdir %s && cd %s && git clone %s",
+                $rawDocsPath,
+                $rawDocsPath,
+                $rawDocsPath,
+                self::GITHUB_REPOSITORY
+            )
+        );
+
         // Generate the API docs
         $samiOutput = shell_exec(
             sprintf(
@@ -41,8 +59,13 @@ class API
                 $this->paths["configs"]
             )
         );
+
         // Move them to the public directory
-        $this->files->copyDirectory($this->paths["tmp.api"] . "/build", $this->paths["public"] . "/api/master");
+        foreach(self::$branches as $branchName)
+        {
+            $this->files->copyDirectory($this->paths["tmp.api"] . "/build/$branchName", $this->paths["public"] . "/api/$branchName");
+        }
+
         $this->clearTempFiles();
 
         return $samiOutput;
