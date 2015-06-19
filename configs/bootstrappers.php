@@ -7,6 +7,7 @@
 use RDev\Framework\Bootstrappers\Cryptography\Cryptography;
 use RDevWebsite\Bootstrappers\Authentication\Credentials;
 use RDevWebsite\Bootstrappers\Databases\SQL;
+use RDevWebsite\Bootstrappers\Events\Dispatcher;
 use RDevWebsite\Bootstrappers\ORM\UnitOfWork;
 
 /**
@@ -32,6 +33,7 @@ return [
      * List any console bootstrappers you'd like here
      * To enable Redis, add "RDevWebsite\\Bootstrappers\\Databases\\Redis"
      */
+    Dispatcher::class,
     Credentials::class,
     SQL::class,
     UnitOfWork::class

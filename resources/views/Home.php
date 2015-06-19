@@ -22,6 +22,79 @@
     </blockquote>
     To learn more about installation, <a href="{{route('docs', [$defaultBranch, 'installing'])}}" title="Installing">read the documentation</a>.
 </section>
+<section id="why-rdev">
+    <h2><i class="fa fa-question-circle"></i> Why Use RDev?</h2>
+    In a world saturated with PHP frameworks, here are some reasons you should give RDev a try:
+
+    <div class="highlight-wrapper">
+        <article>
+            <h4>It's fast.</h4>
+            <ul>
+                <li>
+                    Under load, RDev can handle several hundred requests per second.
+                </li>
+                <li>
+                    Most of RDev's settings are cached to reduce overhead on each request.
+                </li>
+            </ul>
+        </article>
+        <article>
+            <h4>It's completely configurable.</h4>
+            <ul>
+                <li>
+                    Want to write your own implementation of an RDev component?  Most are written to an interface, so you can <a href="{{route('docs', [$defaultBranch, 'dependency-injection'])}}" title="Learn about dependency injection">bind your implementation to RDev at runtime</a>.
+                </li>
+            </ul>
+        </article>
+        <article>
+            <h4>It's scalable.</h4>
+            <ul>
+                <li>
+                    Need to take a load off your database?  Learn how data mappers can <a href="{{route('docs', [$defaultBranch, 'orm-data-mappers'])}}" title="Learn about data mappers">send 95% of queries to cache</a>.
+                </li>
+                <li>
+                    Need session support with multiple servers?  We've <a href="{{route('docs', [$defaultBranch, 'sessions'])}}" title="Learn about sessions">got you covered</a>.
+                </li>
+            </ul>
+        </article>
+        <article>
+            <h4>It's loosely coupled.</h4>
+            <ul>
+                <li>
+                    Want to use a single component without having to download half the framework?  Most components have 0 dependencies.
+                </li>
+                <li>
+                    Want to write your own app from scratch?  RDev isn't bound to any config implementation like some frameworks are.
+                </li>
+            </ul>
+        </article>
+        <article>
+            <h4>It doesn't bleed into your classes.</h4>
+            <ul>
+                <li>
+                    Want to write an HTTP controller?  Use a <a href="{{route('docs', [$defaultBranch, 'http-basics'])}}#controllers" title="Learn about HTTP controllers">plain-old PHP object</a>.
+                </li>
+                <li>
+                    Want to write a class that can be stored with ORM?  Use a plain-old PHP object.
+                </li>
+            </ul>
+        </article>
+        <article>
+            <h4>It's secure.</h4>
+            <ul>
+                <li>
+                    Need to store passwords?  Try our <a href="{{route('docs', [$defaultBranch, 'cryptography'])}}#hashing" title="Learn about hashing">hashing library</a>.
+                </li>
+                <li>
+                    Need to prevent cross-site scripting attacks?  Try our <a href="{{route('docs', [$defaultBranch, 'view-basics'])}}#cross-site-scripting" title="Learn how to prevent cross-site scripting">template engine</a>.
+                </li>
+                <li>
+                    Need to prevent cross-site request forgeries?  Try our <a href="{{route('docs', [$defaultBranch, 'http-security'])}}#cross-site-request-forgery" title="Learn how to prevent cross-site request forgeries">middleware</a>.
+                </li>
+            </ul>
+        </article>
+    </div>
+</section>
 <section id="about">
     <h2><i class="fa fa-info-circle"></i> About</h2>
     RDev was written by <a href="https://twitter.com/ramblingsofadev" target="_blank" title="David's Twitter">David Young</a>, a math and computer science graduate from the University of Illinois at Urbana-Champaign.

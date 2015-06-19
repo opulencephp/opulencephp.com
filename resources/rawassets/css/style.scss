@@ -611,6 +611,31 @@ p code
             padding: 10px 0 10px 20px;
         }
     }
+
+    .highlight-wrapper
+    {
+        article
+        {
+            background: #f7f7f7;
+            width: 32%;
+            min-height: 225px;
+            display: inline-block;
+            padding: 10px;
+            vertical-align: top;
+            border: 1px solid #ddd;
+            margin: .5%;
+
+            &:nth-child(3n + 1)
+            {
+                margin-left: 0;
+            }
+
+            &:nth-child(3n)
+            {
+                margin-right: 0;
+            }
+        }
+    }
 }
 
 @media screen and (min-device-height: 650px)

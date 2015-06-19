@@ -222,6 +222,12 @@ class Documentation
                         "description" => "Learn how to setup environment variables in RDev",
                         "keywords" => ["rdev", "environment variables", "config", "php"]
                     ],
+                    "events" => [
+                        "title" => "Events",
+                        "linkText" => "Events",
+                        "description" => "Learn about events in RDev",
+                        "keywords" => ["rdev", "events", "dispatchers", "php"]
+                    ],
                     "files" => [
                         "title" => "File System",
                         "linkText" => "File System",
@@ -445,6 +451,12 @@ class Documentation
                         "linkText" => "Environment Configs",
                         "description" => "Learn how to setup environment variables in RDev",
                         "keywords" => ["rdev", "environment variables", "config", "php"]
+                    ],
+                    "events" => [
+                        "title" => "Events",
+                        "linkText" => "Events",
+                        "description" => "Learn about events in RDev",
+                        "keywords" => ["rdev", "events", "dispatchers", "php"]
                     ],
                     "files" => [
                         "title" => "File System",
