@@ -232,17 +232,20 @@ p code {
     border-left: 1px solid #7cf;
     color: #7cf; }
 
-.highlight-wrapper ul {
+.highlight-wrapper article h4 {
+  color: #f53; }
+.highlight-wrapper article ul {
   padding: 0; }
-  .highlight-wrapper ul li {
+  .highlight-wrapper article ul li {
     padding-left: 1.3em;
     list-style: none; }
-    .highlight-wrapper ul li:before {
-      content: "+";
+    .highlight-wrapper article ul li:before {
+      content: "\f067";
+      font-family: FontAwesome, sans-serif;
       display: inline-block;
       margin-left: -1.3em;
       width: 1em;
-      color: #777; }
+      color: #f53; }
 
 .scroll-anchor {
   padding-top: 34px;
@@ -348,9 +351,9 @@ p code {
       padding: 10px 0 10px 20px; }
 
   .highlight-wrapper article {
-    background: #f7f7f7;
+    background: #fcfcfc;
     width: 32%;
-    min-height: 225px;
+    min-height: 205px;
     display: inline-block;
     padding: 10px;
     vertical-align: top;

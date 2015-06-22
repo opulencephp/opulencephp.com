@@ -31,7 +31,7 @@
             <h4><i class="fa fa-bolt"></i> It's fast.</h4>
             <ul>
                 <li>
-                    On a cheap 512MB server, RDev can handle 350 requests per second.
+                    RDev can handle 350 requests per second on a cheap 512MB server.
                 </li>
                 <li>
                     Most of RDev's settings are cached to reduce overhead on each request.

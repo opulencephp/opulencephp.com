@@ -431,22 +431,33 @@ p code
 
 .highlight-wrapper
 {
-    ul
+    article
     {
-        padding: 0;
+        $headingColor: #f53;
 
-        li
+        h4
         {
-            padding-left: 1.3em;
-            list-style: none;
+            color: $headingColor;
+        }
 
-            &:before
+        ul
+        {
+            padding: 0;
+
+            li
             {
-                content: "+";
-                display: inline-block;
-                margin-left: -1.3em;
-                width: 1em;
-                color: #777;
+                padding-left: 1.3em;
+                list-style: none;
+
+                &:before
+                {
+                    content: "\f067";
+                    font-family: FontAwesome, sans-serif;
+                    display: inline-block;
+                    margin-left: -1.3em;
+                    width: 1em;
+                    color: $headingColor;
+                }
             }
         }
     }
@@ -639,9 +650,9 @@ p code
     {
         article
         {
-            background: #f7f7f7;
+            background: #fcfcfc;
             width: 32%;
-            min-height: 225px;
+            min-height: 205px;
             display: inline-block;
             padding: 10px;
             vertical-align: top;
