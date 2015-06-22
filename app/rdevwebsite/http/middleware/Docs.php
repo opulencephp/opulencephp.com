@@ -48,9 +48,7 @@ class Docs implements IMiddleware
             return new RedirectResponse("/docs");
         }
 
-        $docs = $this->docs->getFlattenedDocs($version);
-
-        if(!isset($docs[$docName]))
+        if(!$this->docs->hasDoc($version, $docName))
         {
             return new RedirectResponse(
                 $this->urlGenerator->createFromName("docs", [$version, $this->docs->getDefaultDoc($version)])

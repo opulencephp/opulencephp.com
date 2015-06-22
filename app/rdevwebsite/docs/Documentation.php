@@ -756,6 +756,25 @@ class Documentation
     }
 
     /**
+     * Gets whether or not a doc exists for a specific version
+     *
+     * @param string $version The name of the version to get
+     * @param string $name The name of the document
+     * @return bool True if the document exists, otherwise false
+     */
+    public function hasDoc($version, $name)
+    {
+        if(!isset(self::$branches[$version]))
+        {
+            return false;
+        }
+
+        $docs = $this->getFlattenedDocs($version);
+
+        return isset($docs[$name]);
+    }
+
+    /**
      * Gets whether or not a version has docs
      *
      * @param string $version The name of the version to get

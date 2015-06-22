@@ -232,6 +232,18 @@ p code {
     border-left: 1px solid #7cf;
     color: #7cf; }
 
+.highlight-wrapper ul {
+  padding: 0; }
+  .highlight-wrapper ul li {
+    padding-left: 1.3em;
+    list-style: none; }
+    .highlight-wrapper ul li:before {
+      content: "+";
+      display: inline-block;
+      margin-left: -1.3em;
+      width: 1em;
+      color: #777; }
+
 .scroll-anchor {
   padding-top: 34px;
   margin-top: -34px; }

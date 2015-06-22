@@ -28,7 +28,7 @@
 
     <div class="highlight-wrapper">
         <article>
-            <h4>It's fast.</h4>
+            <h4><i class="fa fa-bolt"></i> It's fast.</h4>
             <ul>
                 <li>
                     Under load, RDev can handle several hundred requests per second.
@@ -39,7 +39,7 @@
             </ul>
         </article>
         <article>
-            <h4>It's completely configurable.</h4>
+            <h4><i class="fa fa-wrench"></i> It's completely configurable.</h4>
             <ul>
                 <li>
                     Want to write your own implementation of an RDev component?  Most are written to an interface, so you can <a href="{{route('docs', [$defaultBranch, 'dependency-injection'])}}" title="Learn about dependency injection">bind your implementation to RDev at runtime</a>.
@@ -47,7 +47,7 @@
             </ul>
         </article>
         <article>
-            <h4>It's scalable.</h4>
+            <h4><i class="fa fa-sitemap"></i> It's scalable.</h4>
             <ul>
                 <li>
                     Need to take a load off your database?  Learn how data mappers can <a href="{{route('docs', [$defaultBranch, 'orm-data-mappers'])}}" title="Learn about data mappers">send 95% of queries to cache</a>.
@@ -58,18 +58,18 @@
             </ul>
         </article>
         <article>
-            <h4>It's loosely coupled.</h4>
+            <h4><i class="fa fa-chain-broken"></i> It's loosely coupled.</h4>
             <ul>
                 <li>
-                    Want to use a single component without having to download half the framework?  Most components have 0 dependencies.
+                    Want to use a component without downloading half the framework?  Most components have 0 dependencies.
                 </li>
                 <li>
-                    Want to write your own app from scratch?  RDev isn't bound to any config implementation like some frameworks are.
+                    Want to write your own app from scratch?  RDev isn't bound to any config implementation like some frameworks.
                 </li>
             </ul>
         </article>
         <article>
-            <h4>It doesn't bleed into your classes.</h4>
+            <h4><i class="fa fa-thumbs-o-up"></i> It doesn't bleed into your code.</h4>
             <ul>
                 <li>
                     Want to write an HTTP controller?  Use a <a href="{{route('docs', [$defaultBranch, 'http-basics'])}}#controllers" title="Learn about HTTP controllers">plain-old PHP object</a>.
@@ -80,7 +80,7 @@
             </ul>
         </article>
         <article>
-            <h4>It's secure.</h4>
+            <h4><i class="fa fa-shield"></i> It's secure.</h4>
             <ul>
                 <li>
                     Need to store passwords?  Try our <a href="{{route('docs', [$defaultBranch, 'cryptography'])}}#hashing" title="Learn about hashing">hashing library</a>.
