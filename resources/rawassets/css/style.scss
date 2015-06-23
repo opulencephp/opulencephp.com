@@ -433,7 +433,7 @@ p code
 {
     article
     {
-        $headingColor: #f53;
+        $headingColor: #e41;
 
         h4
         {
@@ -454,8 +454,9 @@ p code
                     content: "\f067";
                     font-family: FontAwesome, sans-serif;
                     display: inline-block;
-                    margin-left: -1.3em;
-                    width: 1em;
+                    margin-left: -1.8em;
+                    width: 1.3em;
+                    font-size: .7em;
                     color: $headingColor;
                 }
             }

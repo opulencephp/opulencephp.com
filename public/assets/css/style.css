@@ -233,7 +233,7 @@ p code {
     color: #7cf; }
 
 .highlight-wrapper article h4 {
-  color: #f53; }
+  color: #e41; }
 .highlight-wrapper article ul {
   padding: 0; }
   .highlight-wrapper article ul li {
@@ -243,9 +243,10 @@ p code {
       content: "\f067";
       font-family: FontAwesome, sans-serif;
       display: inline-block;
-      margin-left: -1.3em;
-      width: 1em;
-      color: #f53; }
+      margin-left: -1.8em;
+      width: 1.3em;
+      font-size: .7em;
+      color: #e41; }
 
 .scroll-anchor {
   padding-top: 34px;

@@ -28,7 +28,7 @@
 
     <div class="highlight-wrapper">
         <article>
-            <h4><i class="fa fa-bolt"></i> It's fast.</h4>
+            <h4><i class="fa fa-rocket"></i> It's fast.</h4>
             <ul>
                 <li>
                     RDev can handle 350 requests per second on a cheap 512MB server.
