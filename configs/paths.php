@@ -12,37 +12,126 @@ use RDev\Applications\Paths;
  * ----------------------------------------------------------
  */
 $pathsConfig = [
-    // The application directory
+    /**
+     * ----------------------------------------------------------
+     * Application
+     * ----------------------------------------------------------
+     *
+     * "app" => The application directory
+     */
     "app" => __DIR__ . "/../app",
-    // The configs directory
+
+    /**
+     * ----------------------------------------------------------
+     * Configs
+     * ----------------------------------------------------------
+     *
+     * "configs" => The configs directory
+     * "configs.console" => The console config directory
+     * "configs.http" => The HTTP config directory
+     */
     "configs" => __DIR__,
-    // The path to the compiled docs directory
+    "configs.console" => __DIR__ . "/console",
+    "configs.http" => __DIR__ . "/http",
+
+    /**
+     * ----------------------------------------------------------
+     * Documentation
+     * ----------------------------------------------------------
+     *
+     * "docs.compiled" => The path to the compiled docs directory
+     */
     "docs.compiled" => __DIR__ . "/../resources/docs",
-    // The path to the logs directory
+
+    /**
+     * ----------------------------------------------------------
+     * Logs
+     * ----------------------------------------------------------
+     *
+     * "logs" => The logs directory
+     */
     "logs" => __DIR__ . "/../tmp/logs",
-    // The path to the public directory
+
+    /**
+     * ----------------------------------------------------------
+     * Public
+     * ----------------------------------------------------------
+     *
+     * "public" => The public directory
+     */
     "public" => __DIR__ . "/../public",
-    // The path to the resources directory
+
+    /**
+     * ----------------------------------------------------------
+     * Resources
+     * ----------------------------------------------------------
+     *
+     * "resources" => The resources directory
+     */
     "resources" => __DIR__ . "/../resources",
-    // The directory of this project's root directory
+
+    /**
+     * ----------------------------------------------------------
+     * Root
+     * ----------------------------------------------------------
+     *
+     * "root" => The root directory
+     */
     "root" => __DIR__ . "/..",
-    // The test directory
+
+    /**
+     * ----------------------------------------------------------
+     * Routes
+     * ----------------------------------------------------------
+     *
+     * "routes.cache" => The cached routes directory
+     */
+    "routes.cache" => __DIR__ . "/../tmp/framework/http/routing",
+
+    /**
+     * ----------------------------------------------------------
+     * Tests
+     * ----------------------------------------------------------
+     *
+     * "tests" => The tests directory
+     */
     "tests" => __DIR__ . "/../tests/app",
-    // The path to the temporary directory
+
+    /**
+     * ----------------------------------------------------------
+     * Temporary
+     * ----------------------------------------------------------
+     *
+     * "tmp" => The temporary directory
+     * "tmp.api" => The API's temporary directory
+     * "tmp.docs" => The documents' temporary directory
+     * "tmp.framework.console" => The framework's temporary console directory
+     * "tmp.framework.http" => The framework's temporary HTTP directory
+     */
     "tmp" => __DIR__ . "/../tmp",
-    // The API's temporary directory
     "tmp.api" => __DIR__ . "/../tmp/api",
-    // The documents' temporary directory
     "tmp.docs" => __DIR__ . "/../tmp/docs",
-    // The framework's console temporary directory
     "tmp.framework.console" => __DIR__ . "/../tmp/framework/console",
-    // The framework's HTTP temporary directory
     "tmp.framework.http" => __DIR__ . "/../tmp/framework/http",
-    // The path to the vendor (Composer) directory
+
+    /**
+     * ----------------------------------------------------------
+     * Vendor
+     * ----------------------------------------------------------
+     *
+     * "vendor" => The vendor directory
+     */
     "vendor" => __DIR__ . "/../vendor",
-    // The path to the compiled view directory
+
+    /**
+     * ----------------------------------------------------------
+     * Views
+     * ----------------------------------------------------------
+     *
+     * "views.compiled" => The compiled views directory
+     * "views.raw" => The raw views directory
+     */
     "views.compiled" => __DIR__ . "/../tmp/framework/http/views",
-    // The path to the raw views directory
     "views.raw" => __DIR__ . "/../resources/views"
 ];
 

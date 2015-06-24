@@ -7,11 +7,6 @@
 use RDevWebsite\Console\Commands\APICommand;
 use RDevWebsite\Console\Commands\DocsCommand;
 
-/**
- * ----------------------------------------------------------
- * List of command classes
- * ----------------------------------------------------------
- */
 return [
     APICommand::class,
     DocsCommand::class

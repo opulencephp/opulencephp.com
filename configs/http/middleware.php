@@ -7,11 +7,6 @@
 use RDevWebsite\HTTP\Middleware\CheckCSRFToken;
 use RDevWebsite\HTTP\Middleware\Session;
 
-/**
- * ----------------------------------------------------------
- * List of HTTP-specific middleware
- * ----------------------------------------------------------
- */
 return [
     /**
      * ----------------------------------------------------------

@@ -4,41 +4,18 @@
  *
  * Defines the list of bootstrapper classes to load for an HTTP application
  */
-use RDevWebsite\Bootstrappers\HTTP\Routing\Router as ProjectRouter;
+use RDevWebsite\Bootstrappers\HTTP\Routing\Router;
 use RDevWebsite\Bootstrappers\HTTP\Sessions\Session;
 use RDevWebsite\Bootstrappers\HTTP\Views\Builders;
 use RDevWebsite\Bootstrappers\HTTP\Views\Template;
 use RDevWebsite\Bootstrappers\HTTP\Views\TemplateFunctions;
 use RDev\Framework\Bootstrappers\HTTP\Requests\Request;
-use RDev\Framework\Bootstrappers\HTTP\Routing\Router as RDevRouter;
 
-/**
- * ----------------------------------------------------------
- * List of HTTP-specific bootstrapper classes
- * ----------------------------------------------------------
- */
 return [
-    /**
-     * ----------------------------------------------------------
-     * RDev Bootstrappers
-     * ----------------------------------------------------------
-     *
-     * Keep these bootstrappers unless you want to customize anything that they bind
-     */
-    Session::class,
     Request::class,
-    RDevRouter::class,
-    TemplateFunctions::class,
-
-    /**
-     * ----------------------------------------------------------
-     * Your Bootstrappers
-     * ----------------------------------------------------------
-     *
-     * List any console bootstrappers you'd like here
-     */
+    Router::class,
+    Session::class,
     Template::class,
     Builders::class,
-    ProjectRouter::class,
     TemplateFunctions::class
 ];
