@@ -24,7 +24,7 @@ $commands = [
     "php rdev api",
     "chmod -R 777 tmp",
     "chmod -R 777 resources",
-    "php rdev views:flush",
+    "php rdev framework:flushcache",
     "vendor/bin/phpunit"
 ];
 
