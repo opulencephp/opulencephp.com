@@ -5,12 +5,12 @@
  * Defines the template functions bootstrapper
  */
 namespace RDevWebsite\Bootstrappers\HTTP\Views;
-use RDev\Framework\Bootstrappers\HTTP\Views\TemplateFunctions as BaseTemplateFunctions;
+use RDev\Framework\Bootstrappers\HTTP\Views\TemplateFunctions as BaseBootstrapper;
 use RDev\Routing\URL\URLGenerator;
 use RDev\Sessions\ISession;
 use RDev\Views\Compilers\ICompiler;
 
-class TemplateFunctions extends BaseTemplateFunctions
+class TemplateFunctions extends BaseBootstrapper
 {
     /**
      * Registers template functions

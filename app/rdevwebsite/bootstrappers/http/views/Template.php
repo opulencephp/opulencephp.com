@@ -6,12 +6,12 @@
  */
 namespace RDevWebsite\Bootstrappers\HTTP\Views;
 use RDev\Files\FileSystem;
-use RDev\Framework\Bootstrappers\HTTP\Views\Template as BaseTemplate;
+use RDev\Framework\Bootstrappers\HTTP\Views\Template as BaseBootstrapper;
 use RDev\IoC\IContainer;
 use RDev\Views\Caching\Cache;
 use RDev\Views\Caching\ICache;
 
-class Template extends BaseTemplate
+class Template extends BaseBootstrapper
 {
     /**
      * Gets the view cache

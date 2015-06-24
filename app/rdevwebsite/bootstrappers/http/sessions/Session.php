@@ -11,7 +11,7 @@ use RDev\Cache\ICacheBridge;
 use RDev\Cache\MemcachedBridge;
 use RDev\Cache\RedisBridge;
 use RDev\Cryptography\Encryption\IEncrypter;
-use RDev\Framework\Bootstrappers\HTTP\Sessions\Session as BaseSession;
+use RDev\Framework\Bootstrappers\HTTP\Sessions\Session as BaseBootstrapper;
 use RDev\IoC\IContainer;
 use RDev\Sessions\Handlers\CacheSessionHandler;
 use RDev\Sessions\Handlers\FileSessionHandler;
@@ -20,7 +20,7 @@ use RDev\Sessions\ISession;
 use RDev\Sessions\Session as RDevSession;
 use SessionHandlerInterface;
 
-class Session extends BaseSession
+class Session extends BaseBootstrapper
 {
     /** @var array|null The config array */
     private $config = null;
