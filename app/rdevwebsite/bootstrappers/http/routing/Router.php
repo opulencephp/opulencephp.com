@@ -6,6 +6,7 @@
  */
 namespace RDevWebsite\Bootstrappers\HTTP\Routing;
 use RDevWebsite\HTTP\Controllers\Page;
+use RDev\Applications\Environments\Environment;
 use RDev\Framework\Bootstrappers\HTTP\Routing\Router as BaseBootstrapper;
 use RDev\Routing\Router as HTTPRouter;
 use RDev\Routing\Routes\Caching\ICache;
@@ -23,7 +24,7 @@ class Router extends BaseBootstrapper
         $routingConfig = require "{$this->paths["configs.http"]}/routing.php";
         $routesConfigPath = "{$this->paths["configs.http"]}/routes.php";
 
-        if($routingConfig["cache"])
+        if($routingConfig["cache"] && $this->environment->getName() == Environment::PRODUCTION)
         {
             $cachedRoutesPath = "{$this->paths["routes.cache"]}/" . ICache::DEFAULT_CACHED_ROUTES_FILE_NAME;
             $routes = $this->cache->get($cachedRoutesPath, $router, $routesConfigPath);
