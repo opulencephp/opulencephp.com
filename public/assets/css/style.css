@@ -232,7 +232,7 @@ p code {
     border-left: 1px solid #7cf;
     color: #7cf; }
 
-.highlight-wrapper article h4 {
+.highlight-wrapper article i.fa {
   color: #e41; }
 .highlight-wrapper article ul {
   padding: 0; }

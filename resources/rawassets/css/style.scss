@@ -6,6 +6,7 @@ $hyperlinkColor: #69c;
 $mainNavPadding: 10px;
 $borderColor: #ccc;
 $hoverColorDifference: #111;
+$highlightsColor: #e41;
 
 *
 {
@@ -433,11 +434,9 @@ p code
 {
     article
     {
-        $headingColor: #e41;
-
-        h4
+        i.fa
         {
-            color: $headingColor;
+            color: $highlightsColor;
         }
 
         ul
@@ -457,7 +456,7 @@ p code
                     margin-left: -1.8em;
                     width: 1.3em;
                     font-size: .7em;
-                    color: $headingColor;
+                    color: $highlightsColor;
                 }
             }
         }
