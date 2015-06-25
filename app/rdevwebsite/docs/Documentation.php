@@ -216,9 +216,9 @@ class Documentation
                         "description" => "Learn about dependency injection in RDev",
                         "keywords" => ["rdev", "ioc", "dependency injection", "php"]
                     ],
-                    "environment-configs" => [
-                        "title" => "Environment Configs",
-                        "linkText" => "Environment Configs",
+                    "environments" => [
+                        "title" => "Environments",
+                        "linkText" => "Environments",
                         "description" => "Learn how to setup environment variables in RDev",
                         "keywords" => ["rdev", "environment variables", "config", "php"]
                     ],
