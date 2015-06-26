@@ -8,7 +8,7 @@ use Sami\RemoteRepository\GitHubRemoteRepository;
 use Sami\Sami;
 use Sami\Version\GitVersionCollection;
 
-$versions = GitVersionCollection::create($dir = __DIR__ . "/../tmp/api/versions/RDev")
+$versions = GitVersionCollection::create($dir = __DIR__ . "/../tmp/api/versions/RDev/app")
     ->add("0.5", "RDev 0.5")
     ->add("master", "RDev Master");
 
