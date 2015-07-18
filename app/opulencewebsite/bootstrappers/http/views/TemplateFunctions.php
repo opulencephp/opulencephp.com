@@ -36,7 +36,7 @@ class TemplateFunctions extends BaseBootstrapper
         // Generates the logo text
         $compiler->registerTemplateFunction("logo", function()
         {
-            return '<span class="logo">R<span class="logo-dev">Dev</span></span>';
+            return '<span class="logo">Opulence</span>';
         });
     }
 }
