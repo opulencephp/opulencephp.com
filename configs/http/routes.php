@@ -4,8 +4,8 @@
  *
  * Defines the routing config
  */
-use RDev\Routing\Router;
-use RDevWebsite\HTTP\Middleware\Docs;
+use Opulence\Routing\Router;
+use OpulenceWebsite\HTTP\Middleware\Docs;
 
 /**
  * ----------------------------------------------------------
@@ -14,7 +14,7 @@ use RDevWebsite\HTTP\Middleware\Docs;
  *
  * @var Router $router
  */
-$router->group(["controllerNamespace" => "RDevWebsite\\HTTP\\Controllers"], function() use ($router)
+$router->group(["controllerNamespace" => "OpulenceWebsite\\HTTP\\Controllers"], function() use ($router)
 {
     $router->get("/", "Page@showHomePage", [
         "name" => "home"

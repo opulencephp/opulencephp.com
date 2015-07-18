@@ -4,16 +4,16 @@
  *
  * Defines the list of bootstrapper classes to load for a console application
  */
-use RDevWebsite\Bootstrappers\Console\Commands\Commands as ProjectCommands;
-use RDevWebsite\Bootstrappers\HTTP\Routing\Router;
-use RDevWebsite\Bootstrappers\HTTP\Views\Template;
-use RDev\Framework\Bootstrappers\Console\Commands\Commands as RDevCommands;
-use RDev\Framework\Bootstrappers\Console\Requests\Requests;
-use RDev\Framework\Bootstrappers\Console\Composer\Composer;
+use OpulenceWebsite\Bootstrappers\Console\Commands\Commands as ProjectCommands;
+use OpulenceWebsite\Bootstrappers\HTTP\Routing\Router;
+use OpulenceWebsite\Bootstrappers\HTTP\Views\Template;
+use Opulence\Framework\Bootstrappers\Console\Commands\Commands as OpulenceCommands;
+use Opulence\Framework\Bootstrappers\Console\Requests\Requests;
+use Opulence\Framework\Bootstrappers\Console\Composer\Composer;
 
 return [
     Router::class,
-    RDevCommands::class,
+    OpulenceCommands::class,
     Requests::class,
     Composer::class,
     Template::class,

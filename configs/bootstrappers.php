@@ -4,10 +4,10 @@
  *
  * Defines the list of bootstrapper classes to load
  */
-use RDev\Framework\Bootstrappers\Cryptography\Cryptography;
-use RDevWebsite\Bootstrappers\Databases\SQL;
-use RDevWebsite\Bootstrappers\Events\Dispatcher;
-use RDevWebsite\Bootstrappers\ORM\UnitOfWork;
+use Opulence\Framework\Bootstrappers\Cryptography\Cryptography;
+use OpulenceWebsite\Bootstrappers\Databases\SQL;
+use OpulenceWebsite\Bootstrappers\Events\Dispatcher;
+use OpulenceWebsite\Bootstrappers\ORM\UnitOfWork;
 
 return [
     Cryptography::class,

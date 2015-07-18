@@ -4,12 +4,12 @@
  *
  * Defines the list of bootstrapper classes to load for an HTTP application
  */
-use RDevWebsite\Bootstrappers\HTTP\Routing\Router;
-use RDevWebsite\Bootstrappers\HTTP\Sessions\Session;
-use RDevWebsite\Bootstrappers\HTTP\Views\Builders;
-use RDevWebsite\Bootstrappers\HTTP\Views\Template;
-use RDevWebsite\Bootstrappers\HTTP\Views\TemplateFunctions;
-use RDev\Framework\Bootstrappers\HTTP\Requests\Request;
+use OpulenceWebsite\Bootstrappers\HTTP\Routing\Router;
+use OpulenceWebsite\Bootstrappers\HTTP\Sessions\Session;
+use OpulenceWebsite\Bootstrappers\HTTP\Views\Builders;
+use OpulenceWebsite\Bootstrappers\HTTP\Views\Template;
+use OpulenceWebsite\Bootstrappers\HTTP\Views\TemplateFunctions;
+use Opulence\Framework\Bootstrappers\HTTP\Requests\Request;
 
 return [
     Request::class,

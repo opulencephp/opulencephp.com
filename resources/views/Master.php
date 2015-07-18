@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="initial-scale=1" />
         {{!charset("utf-8")!}}
-        {{!rdevTitle($title, $doFormatTitle)!}}
+        {{!opulenceTitle($title, $doFormatTitle)!}}
         {{!css("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700")!}}
         {{!css($masterCSS)!}}
         <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -17,23 +17,23 @@
         {{!metaKeywords($metaKeywords)!}}
         {{!metaDescription($metaDescription)!}}
         {{!script($javaScript)!}}
-        {% include("GoogleAnalytics.php") %}
+        <% include("GoogleAnalytics.php") %>
     </head>
     <body>
         <header class="main {{!$mainClasses!}}">
-            {% include("MainNav.php") %}
+            <% include("MainNav.php") %>
         </header>
         <main class="{{!$mainClasses!}}">
-            {% include("SidebarNav.php") %}
-            {% show("content") %}
+            <% include("SidebarNav.php") %>
+            <% show("content") %>
             <div id="gray-out"></div>
         </main>
         <footer class="main {{!$mainClasses!}}">
-            {% include("FooterNav.php") %}
+            <% include("FooterNav.php") %>
             &copy; {{date("Y")}} David Young
         </footer>
         <script type="text/javascript">
-            {% part("footerJS") %}
+            <% part("footerJS") %>
             function addClass(element, className)
             {
                 if(element.className != " ")
@@ -76,8 +76,8 @@
             {
                 removeClass(document.body, "nav-open");
             };
-            {% endpart %}
-            {% show("footerJS") %}
+            <% endpart %>
+            <% show("footerJS") %>
         </script>
     </body>
 </html>

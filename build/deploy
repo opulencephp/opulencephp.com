@@ -20,11 +20,11 @@ $commands = [
     "\\cp -vrf $htmlDirectory/.env.app.php configs/environment/.env.app.php",
     "composer dump-autoload -o",
     // Generate the necessary files and run tests
-    "php rdev docs",
-    "php rdev api",
+    "php opulence docs",
+    "php opulence api",
     "chmod -R 777 tmp",
     "chmod -R 777 resources",
-    "php rdev framework:flushcache",
+    "php opulence framework:flushcache",
     "vendor/bin/phpunit"
 ];
 

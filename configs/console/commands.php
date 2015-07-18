@@ -4,8 +4,8 @@
  * 
  * Defines the list of console command classes to load
  */
-use RDevWebsite\Console\Commands\APICommand;
-use RDevWebsite\Console\Commands\DocsCommand;
+use OpulenceWebsite\Console\Commands\APICommand;
+use OpulenceWebsite\Console\Commands\DocsCommand;
 
 return [
     APICommand::class,

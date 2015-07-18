@@ -1,9 +1,9 @@
-{% extends("Master.php") %}
+<% extends("Master.php") %>
 
-{% part("content") %}
+<% part("content") %>
 <section id="features">
-    <h2><i class="fa fa-code"></i> RDev - A powerful new MVC framework for PHP</h2>
-    RDev was built with a lot of functionality already baked-in, but also with customization in mind.  RDev makes it easy to do things like:
+    <h2><i class="fa fa-code"></i> Opulence - A powerful new MVC framework for PHP</h2>
+    Opulence was built with a lot of functionality already baked-in, but also with customization in mind.  Opulence makes it easy to do things like:
 
     <ul>
         <li><a href="{{route('docs', [$defaultBranch, 'routing'])}}" title="Routing">Route requests</a></li>
@@ -12,29 +12,29 @@
         <li><a href="{{route('docs', [$defaultBranch, 'console-basics'])}}" title="Console commands">Write powerful console commands</a></li>
         <li>Integration test all your <a href="{{route('docs', [$defaultBranch, 'http-testing'])}}" title="Testing HTTP routes">HTTP routes</a> and <a href="{{route('docs', [$defaultBranch, 'console-testing'])}}" title="Testing console commands">console commands</a></li>
     </ul>
-    It is <a href="https://github.com/ramblingsofadev/RDev/tree/master/tests/app/rdev" target="_blank">thoroughly-tested</a>, <a href="https://github.com/ramblingsofadev/RDev" target="_blank">open source</a>, and free under the MIT license.
+    It is <a href="https://github.com/opulencephp/Opulence/tree/master/tests/app/opulence" target="_blank">thoroughly-tested</a>, <a href="https://github.com/opulencephp/Opulence" target="_blank">open source</a>, and free under the MIT license.
 </section>
 <section id="installation">
     <h2><i class="fa fa-download"></i> Installing</h2>
     Get up and running fast with Composer:
     <blockquote>
-        <code>composer create-project rdev/project DESIRED_SERVER_PATH --prefer-dist</code>
+        <code>composer create-project opulence/project DESIRED_SERVER_PATH --prefer-dist</code>
     </blockquote>
     To learn more about installation, <a href="{{route('docs', [$defaultBranch, 'installing'])}}" title="Installing">read the documentation</a>.
 </section>
-<section id="why-rdev">
-    <h2><i class="fa fa-question-circle"></i> Why Use RDev?</h2>
-    In a world saturated with PHP frameworks, here are some reasons you should give RDev a try:
+<section id="why-opulence">
+    <h2><i class="fa fa-question-circle"></i> Why Use Opulence?</h2>
+    In a world saturated with PHP frameworks, here are some reasons you should give Opulence a try:
 
     <div class="highlight-wrapper">
         <article>
             <h4><i class="fa fa-rocket"></i> It's fast.</h4>
             <ul>
                 <li>
-                    RDev can handle 350 requests/second on a cheap 512MB server and 1,500 requests/second on a modest 8GB server.
+                    Opulence can handle 350 requests/second on a cheap 512MB server and 1,500 requests/second on a modest 8GB server.
                 </li>
                 <li>
-                    Most of RDev's settings are cached to reduce overhead on each request.
+                    Most of Opulence's settings are cached to reduce overhead on each request.
                 </li>
             </ul>
         </article>
@@ -42,7 +42,7 @@
             <h4><i class="fa fa-wrench"></i> It's completely configurable.</h4>
             <ul>
                 <li>
-                    Want to write your own implementation of an RDev component?  Most are written to an interface, so you can <a href="{{route('docs', [$defaultBranch, 'dependency-injection'])}}" title="Learn about dependency injection">bind your implementation to RDev at runtime</a>.
+                    Want to write your own implementation of an Opulence component?  Most are written to an interface, so you can <a href="{{route('docs', [$defaultBranch, 'dependency-injection'])}}" title="Learn about dependency injection">bind your implementation to Opulence at runtime</a>.
                 </li>
             </ul>
         </article>
@@ -64,7 +64,7 @@
                     Want to use a component without downloading half the framework?  Most components have 0 dependencies.
                 </li>
                 <li>
-                    Want to write your own app from scratch?  RDev isn't bound to any config implementation like some frameworks.
+                    Want to write your own app from scratch?  Opulence isn't bound to any config implementation like some frameworks.
                 </li>
             </ul>
         </article>
@@ -97,6 +97,6 @@
 </section>
 <section id="about">
     <h2><i class="fa fa-info-circle"></i> About</h2>
-    RDev was written by <a href="https://twitter.com/ramblingsofadev" target="_blank" title="David's Twitter">David Young</a>, a math and computer science graduate from the University of Illinois at Urbana-Champaign.
+    Opulence was written by <a href="https://twitter.com/opulencephp" target="_blank" title="David's Twitter">David Young</a>, a math and computer science graduate from the University of Illinois at Urbana-Champaign.
 </section>
-{% endpart %}
+<% endpart %>

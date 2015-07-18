@@ -1,13 +1,13 @@
-{% extends("Master.php") %}
+<% extends("Master.php") %>
 
-{% part("content") %}
+<% part("content") %>
 <article>
     {{!$doc!}}
 </article>
-{% endpart %}
+<% endpart %>
 
-{% part("footerJS") %}
-{% parent("footerJS") %}
+<% part("footerJS") %>
+<% parent("footerJS") %>
 // Toggle the doc version selector
 document.getElementById("doc-version-toggle").onclick = function(e)
 {
@@ -24,4 +24,4 @@ document.getElementById("doc-version-toggle").onclick = function(e)
 
     return false;
 };
-{% endpart %}
+<% endpart %>

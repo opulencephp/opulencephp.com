@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright (C) 2015 David Young
+ * 
+ * Defines the SQL bootstrapper
+ */
+namespace OpulenceWebsite\Bootstrappers\Databases;
+use Opulence\Applications\Bootstrappers\Bootstrapper;
+use Opulence\Applications\Bootstrappers\ILazyBootstrapper;
+use Opulence\Databases\ConnectionPool;
+use Opulence\Databases\PDO\PostgreSQL\Driver;
+use Opulence\Databases\SingleServerConnectionPool;
+use Opulence\Databases\Server;
+use Opulence\IoC\IContainer;
+
+class SQL extends Bootstrapper implements ILazyBootstrapper
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function getBindings()
+    {
+        return [ConnectionPool::class];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function registerBindings(IContainer $container)
+    {
+        $connectionPool = new SingleServerConnectionPool(
+            new Driver(),
+            new Server(
+                $this->environment->getVariable("DB_HOST"),
+                $this->environment->getVariable("DB_USER"),
+                $this->environment->getVariable("DB_PASSWORD"),
+                $this->environment->getVariable("DB_NAME"),
+                $this->environment->getVariable("DB_PORT")
+            )
+        );
+        $container->bind(ConnectionPool::class, $connectionPool);
+    }
+}

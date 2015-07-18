@@ -4,8 +4,8 @@
  *
  * Defines the list of global middleware to be run on all routes
  */
-use RDevWebsite\HTTP\Middleware\CheckCSRFToken;
-use RDevWebsite\HTTP\Middleware\Session;
+use OpulenceWebsite\HTTP\Middleware\CheckCSRFToken;
+use OpulenceWebsite\HTTP\Middleware\Session;
 
 return [
     /**

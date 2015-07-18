@@ -8,16 +8,15 @@ use Sami\RemoteRepository\GitHubRemoteRepository;
 use Sami\Sami;
 use Sami\Version\GitVersionCollection;
 
-$versions = GitVersionCollection::create($dir = __DIR__ . "/../tmp/api/versions/RDev/app")
-    ->add("0.5", "RDev 0.5")
-    ->add("master", "RDev Master");
+$versions = GitVersionCollection::create($dir = __DIR__ . "/../tmp/api/versions/Opulence/app")
+    ->add("0.6", "Opulence 0.6");
 
 return new Sami(
     $dir,
     [
-        "title" => "RDev API",
+        "title" => "Opulence API",
         "versions" => $versions,
-        "remote_repository" => new GitHubRemoteRepository("ramblingsofadev/RDev", dirname($dir)),
+        "remote_repository" => new GitHubRemoteRepository("opulencephp/Opulence", dirname($dir)),
         "build_dir" => __DIR__ . "/../tmp/api/build/%version%",
         "cache_dir" => __DIR__ . "/../tmp/api/cache/%version%",
         "default_opened_level" => 2
