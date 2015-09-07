@@ -5,36 +5,36 @@
  * Defines the template functions bootstrapper
  */
 namespace OpulenceWebsite\Bootstrappers\HTTP\Views;
-use Opulence\Framework\Bootstrappers\HTTP\Views\TemplateFunctions as BaseBootstrapper;
+use Opulence\Framework\Bootstrappers\HTTP\Views\ViewFunctions as BaseBootstrapper;
 use Opulence\Routing\URL\URLGenerator;
 use Opulence\Sessions\ISession;
-use Opulence\Views\Compilers\ICompiler;
+use Opulence\Views\Compilers\Fortune\ITranspiler;
 
-class TemplateFunctions extends BaseBootstrapper
+class ViewFunctions extends BaseBootstrapper
 {
     /**
      * Registers template functions
      *
-     * @param ICompiler $compiler The compiler to use
+     * @param ITranspiler $transpiler The transpiler to use
      * @param URLGenerator $urlGenerator What generates URLs from routes
      * @param ISession $session The current session
      */
-    public function run(ICompiler $compiler, URLGenerator $urlGenerator, ISession $session)
+    public function run(ITranspiler $transpiler, URLGenerator $urlGenerator, ISession $session)
     {
-        parent::run($compiler, $urlGenerator, $session);
+        parent::run($transpiler, $urlGenerator, $session);
 
         // Generates the title HTML
-        $compiler->registerTemplateFunction("opulenceTitle", function($title, $doFormat = true) use ($compiler)
+        $transpiler->registerViewFunction("opulenceTitle", function($title, $doFormat = true) use ($transpiler)
         {
             if($doFormat)
             {
                 $title .= " | Opulence";
             }
 
-            return $compiler->executeTemplateFunction("pageTitle", [$title]);
+            return $transpiler->callViewFunction("pageTitle", $title);
         });
         // Generates the logo text
-        $compiler->registerTemplateFunction("logo", function()
+        $transpiler->registerViewFunction("logo", function()
         {
             return '<span class="logo">Opulence</span>';
         });

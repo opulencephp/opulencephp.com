@@ -8,7 +8,7 @@ namespace OpulenceWebsite\HTTP\Views\Builders;
 use OpulenceWebsite\Docs\Documentation;
 use Opulence\HTTP\Requests\Request;
 use Opulence\Views\IBuilder;
-use Opulence\Views\ITemplate;
+use Opulence\Views\IView;
 
 class Master implements IBuilder
 {
@@ -30,26 +30,27 @@ class Master implements IBuilder
     /**
      * {@inheritdoc}
      */
-    public function build(ITemplate $template)
+    public function build(IView $view)
     {
+        $view->setVar("foo", rand(0, 100));
         // Default to empty meta data
-        $template->setVar("metaKeywords", []);
-        $template->setVar("metaDescription", "");
+        $view->setVar("metaKeywords", []);
+        $view->setVar("metaDescription", "");
         // Set default variable values
-        $template->setVar("doFormatTitle", true);
-        $template->setVar("masterCSS", [
+        $view->setVar("doFormatTitle", true);
+        $view->setVar("masterCSS", [
             "/assets/css/style.css?v=1.6",
             "/assets/css/prism.css",
             "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
         ]);
-        $template->setVar("javaScript", [
+        $view->setVar("javaScript", [
             "/assets/js/prism.js"
         ]);
-        $template->setVar("mainClasses", "home");
-        $template->setVar("branchTitles", $this->docs->getBranchTitles());
-        $template->setVar("request", $this->request);
-        $template->setVar("defaultBranch", Documentation::DEFAULT_BRANCH);
+        $view->setVar("mainClasses", "home");
+        $view->setVar("branchTitles", $this->docs->getBranchTitles());
+        $view->setVar("request", $this->request);
+        $view->setVar("defaultBranch", Documentation::DEFAULT_BRANCH);
 
-        return $template;
+        return $view;
     }
 }

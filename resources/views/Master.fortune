@@ -21,15 +21,15 @@
     </head>
     <body>
         <header class="main {{!$mainClasses!}}">
-            <% include("MainNav.php") %>
+            <% include("MainNav.fortune") %>
         </header>
         <main class="{{!$mainClasses!}}">
-            <% include("SidebarNav.php") %>
+            <% include("SidebarNav.fortune") %>
             <% show("content") %>
             <div id="gray-out"></div>
         </main>
         <footer class="main {{!$mainClasses!}}">
-            <% include("FooterNav.php") %>
+            <% include("FooterNav.fortune") %>
             &copy; {{date("Y")}} David Young
         </footer>
         <script type="text/javascript">

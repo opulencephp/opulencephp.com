@@ -6,7 +6,7 @@
  */
 use OpulenceWebsite\Bootstrappers\Console\Commands\Commands as ProjectCommands;
 use OpulenceWebsite\Bootstrappers\HTTP\Routing\Router;
-use OpulenceWebsite\Bootstrappers\HTTP\Views\Template;
+use OpulenceWebsite\Bootstrappers\HTTP\Views\View;
 use Opulence\Framework\Bootstrappers\Console\Commands\Commands as OpulenceCommands;
 use Opulence\Framework\Bootstrappers\Console\Requests\Requests;
 use Opulence\Framework\Bootstrappers\Console\Composer\Composer;
@@ -16,6 +16,6 @@ return [
     OpulenceCommands::class,
     Requests::class,
     Composer::class,
-    Template::class,
+    View::class,
     ProjectCommands::class
 ];

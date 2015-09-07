@@ -6,17 +6,17 @@
  */
 namespace OpulenceWebsite\HTTP\Views\Builders;
 use Opulence\Views\IBuilder;
-use Opulence\Views\ITemplate;
+use Opulence\Views\IView;
 
 class Docs implements IBuilder
 {
     /**
      * {@inheritdoc}
      */
-    public function build(ITemplate $template)
+    public function build(IView $view)
     {
-        $template->setVar("mainClasses", "docs");
+        $view->setVar("mainClasses", "docs");
 
-        return $template;
+        return $view;
     }
 }

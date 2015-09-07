@@ -8,23 +8,23 @@ namespace OpulenceWebsite\HTTP\Controllers;
 use Opulence\HTTP\Responses\Response;
 use Opulence\Routing\Controller;
 use Opulence\Views\Compilers\ICompiler;
-use Opulence\Views\Factories\ITemplateFactory;
+use Opulence\Views\Factories\IViewFactory;
 
 class Page extends Controller
 {
-    /** @var ICompiler The template compiler to use */
+    /** @var ICompiler The view compiler to use */
     protected $compiler = null;
-    /** @var ITemplateFactory The factory to use to create templates */
-    protected $templateFactory = null;
+    /** @var IViewFactory The factory to use to create views */
+    protected $viewFactory = null;
 
     /**
-     * @param ICompiler $compiler The template compiler to use
-     * @param ITemplateFactory $templateFactory The factory to use to create templates
+     * @param ICompiler $compiler The view compiler to use
+     * @param IViewFactory $viewFactory The factory to use to create views
      */
-    public function __construct(ICompiler $compiler, ITemplateFactory $templateFactory)
+    public function __construct(ICompiler $compiler, IViewFactory $viewFactory)
     {
         $this->compiler = $compiler;
-        $this->templateFactory = $templateFactory;
+        $this->viewFactory = $viewFactory;
     }
 
     /**
@@ -32,25 +32,25 @@ class Page extends Controller
      */
     public function showHTTPError($statusCode)
     {
-        $this->template = $this->templateFactory->create("HTTPError.php");
-        $this->template->setVar("title", $statusCode . " Error");
-        $this->template->setTag("errorTitle", $statusCode);
+        $this->view = $this->viewFactory->create("HTTPError.fortune");
+        $this->view->setVar("title", $statusCode . " Error");
+        $this->view->setVar("errorTitle", $statusCode);
 
         switch($statusCode)
         {
             case 404:
-                $this->template->setTag("errorTitle", "We couldn't find what you're looking for");
-                $this->template->setTag("errorDescription", "Maybe you clicked on a bad link, or maybe you typed the URL incorrectly.");
+                $this->view->setVar("errorTitle", "We couldn't find what you're looking for");
+                $this->view->setVar("errorDescription", "Maybe you clicked on a bad link, or maybe you typed the URL incorrectly.");
 
                 break;
             default:
-                $this->template->setTag("errorTitle", "Uh oh");
-                $this->template->setTag("errorDescription", "Something went wrong with your request.  We've been alerted to the issue, and we apologize for the inconvenience.");
+                $this->view->setVar("errorTitle", "Uh oh");
+                $this->view->setVar("errorDescription", "Something went wrong with your request.  We've been alerted to the issue, and we apologize for the inconvenience.");
 
                 break;
         }
 
-        return new Response($this->compiler->compile($this->template), $statusCode);
+        return new Response($this->compiler->compile($this->view), $statusCode);
     }
 
     /**
@@ -60,8 +60,8 @@ class Page extends Controller
      */
     public function showHomePage()
     {
-        $this->template = $this->templateFactory->create("Home.php");
+        $this->view = $this->viewFactory->create("Home.fortune");
 
-        return new Response($this->compiler->compile($this->template));
+        return new Response($this->compiler->compile($this->view));
     }
 }

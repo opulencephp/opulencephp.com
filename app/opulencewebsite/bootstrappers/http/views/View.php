@@ -6,12 +6,12 @@
  */
 namespace OpulenceWebsite\Bootstrappers\HTTP\Views;
 use Opulence\Files\FileSystem;
-use Opulence\Framework\Bootstrappers\HTTP\Views\Template as BaseBootstrapper;
+use Opulence\Framework\Bootstrappers\HTTP\Views\View as BaseBootstrapper;
 use Opulence\IoC\IContainer;
 use Opulence\Views\Caching\Cache;
 use Opulence\Views\Caching\ICache;
 
-class Template extends BaseBootstrapper
+class View extends BaseBootstrapper
 {
     /**
      * Gets the view cache

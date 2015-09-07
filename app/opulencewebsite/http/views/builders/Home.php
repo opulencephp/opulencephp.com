@@ -6,20 +6,20 @@
  */
 namespace OpulenceWebsite\HTTP\Views\Builders;
 use Opulence\Views\IBuilder;
-use Opulence\Views\ITemplate;
+use Opulence\Views\IView;
 
 class Home implements IBuilder
 {
     /**
      * {@inheritdoc}
      */
-    public function build(ITemplate $template)
+    public function build(IView $view)
     {
-        $template->setVar("title", "Opulence | PHP Framework");
-        $template->setVar("doFormatTitle", false);
-        $template->setVar("metaKeywords", ["opulence", "php", "framework", "orm", "router", "console", "mvc"]);
-        $template->setVar("metaDescription", "A simple, secure, and scalable MVC framework for PHP");
+        $view->setVar("title", "Opulence | PHP Framework");
+        $view->setVar("doFormatTitle", false);
+        $view->setVar("metaKeywords", ["opulence", "php", "framework", "orm", "router", "console", "mvc"]);
+        $view->setVar("metaDescription", "A simple, secure, and scalable MVC framework for PHP");
 
-        return $template;
+        return $view;
     }
 }

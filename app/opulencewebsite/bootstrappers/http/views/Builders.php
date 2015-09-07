@@ -11,28 +11,28 @@ use OpulenceWebsite\HTTP\Views\Builders\Home;
 use OpulenceWebsite\HTTP\Views\Builders\Master;
 use Opulence\Applications\Bootstrappers\Bootstrapper;
 use Opulence\HTTP\Requests\Request;
-use Opulence\Views\Factories\ITemplateFactory;
+use Opulence\Views\Factories\IViewFactory;
 
 class Builders extends Bootstrapper
 {
     /**
      * Registers view builders to the factory
      *
-     * @param ITemplateFactory $templateFactory The template factory to use
+     * @param IViewFactory $templateFactory The template factory to use
      * @param Request $request The current request
      * @param Documentation $docs The docs
      */
-    public function run(ITemplateFactory $templateFactory, Request $request, Documentation $docs)
+    public function run(IViewFactory $templateFactory, Request $request, Documentation $docs)
     {
-        $templateFactory->registerBuilder("Master.php", function() use($request, $docs)
+        $templateFactory->registerBuilder("Master.fortune", function() use($request, $docs)
         {
             return new Master($request, $docs);
         });
-        $templateFactory->registerBuilder("Home.php", function()
+        $templateFactory->registerBuilder("Home.fortune", function()
         {
             return new Home();
         });
-        $templateFactory->registerBuilder("Docs.php", function()
+        $templateFactory->registerBuilder("Docs.fortune", function()
         {
             return new Docs();
         });

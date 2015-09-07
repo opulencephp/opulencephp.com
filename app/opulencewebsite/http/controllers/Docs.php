@@ -11,7 +11,7 @@ use Opulence\HTTP\Responses\Response;
 use Opulence\Routing\Controller;
 use Opulence\Routing\URL\URLGenerator;
 use Opulence\Views\Compilers\ICompiler;
-use Opulence\Views\Factories\ITemplateFactory;
+use Opulence\Views\Factories\IViewFactory;
 
 class Docs extends Controller
 {
@@ -19,29 +19,29 @@ class Docs extends Controller
     protected $docs = null;
     /** @var URLGenerator The URL generator */
     protected $urlGenerator = null;
-    /** @var ICompiler The template compiler to use */
+    /** @var ICompiler The view compiler to use */
     protected $compiler = null;
-    /** @var ITemplateFactory The factory to use to create templates */
-    protected $templateFactory = null;
+    /** @var IViewFactory The factory to use to create views */
+    protected $viewFactory = null;
 
     /**
      * @param Documentation $docs The object used to grab documents
      * @param URLGenerator $urlGenerator The URL generator
-     * @param ICompiler $compiler The template compiler to use
-     * @param ITemplateFactory $templateFactory The factory to use to create templates
+     * @param ICompiler $compiler The view compiler to use
+     * @param IViewFactory $viewFactory The factory to use to create views
      */
     public function __construct(
         Documentation $docs,
         URLGenerator $urlGenerator,
         ICompiler $compiler,
-        ITemplateFactory $templateFactory
+        IViewFactory $viewFactory
     )
     {
         $this->docs = $docs;
         $this->urlGenerator = $urlGenerator;
         $this->compiler = $compiler;
-        $this->templateFactory = $templateFactory;
-        $this->template = $this->templateFactory->create("Docs.php");
+        $this->viewFactory = $viewFactory;
+        $this->view = $this->viewFactory->create("Docs.fortune");
     }
 
     /**
@@ -54,16 +54,16 @@ class Docs extends Controller
     public function showDoc($docName, $version = Documentation::DEFAULT_BRANCH)
     {
         $docs = $this->docs->getFlattenedDocs($version);
-        $this->template->setVar("version", $version);
-        $this->template->setVar("doc", $this->docs->getCompiledDoc($docName, $version));
-        $this->template->setVar("docs", $this->docs->getDocs($version));
-        $this->template->setVar("title", $docs[$docName]["title"]);
-        $this->template->setVar("docName", $docName);
-        $this->template->setVar("docVersion", $version);
-        $this->template->setVar("metaKeywords", $docs[$docName]["keywords"]);
-        $this->template->setVar("metaDescription", $docs[$docName]["description"]);
+        $this->view->setVar("version", $version);
+        $this->view->setVar("doc", $this->docs->getCompiledDoc($docName, $version));
+        $this->view->setVar("docs", $this->docs->getDocs($version));
+        $this->view->setVar("title", $docs[$docName]["title"]);
+        $this->view->setVar("docName", $docName);
+        $this->view->setVar("docVersion", $version);
+        $this->view->setVar("metaKeywords", $docs[$docName]["keywords"]);
+        $this->view->setVar("metaDescription", $docs[$docName]["description"]);
 
-        return new Response($this->compiler->compile($this->template));
+        return new Response($this->compiler->compile($this->view));
     }
 
     /**

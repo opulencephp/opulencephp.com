@@ -7,15 +7,15 @@
 use OpulenceWebsite\Bootstrappers\HTTP\Routing\Router;
 use OpulenceWebsite\Bootstrappers\HTTP\Sessions\Session;
 use OpulenceWebsite\Bootstrappers\HTTP\Views\Builders;
-use OpulenceWebsite\Bootstrappers\HTTP\Views\Template;
-use OpulenceWebsite\Bootstrappers\HTTP\Views\TemplateFunctions;
+use OpulenceWebsite\Bootstrappers\HTTP\Views\View;
+use OpulenceWebsite\Bootstrappers\HTTP\Views\ViewFunctions;
 use Opulence\Framework\Bootstrappers\HTTP\Requests\Request;
 
 return [
     Request::class,
     Router::class,
     Session::class,
-    Template::class,
+    View::class,
     Builders::class,
-    TemplateFunctions::class
+    ViewFunctions::class
 ];
