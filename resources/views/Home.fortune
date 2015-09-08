@@ -86,7 +86,7 @@
                     Need to store passwords?  Try our <a href="{{route('docs', [$defaultBranch, 'cryptography'])}}#hashing" title="Learn about hashing">hashing library</a>.
                 </li>
                 <li>
-                    Need to prevent cross-site scripting attacks?  Try our <a href="{{route('docs', [$defaultBranch, 'view-basics'])}}#cross-site-scripting" title="Learn how to prevent cross-site scripting">template engine</a>.
+                    Need to prevent cross-site scripting attacks?  Try our <a href="{{route('docs', [$defaultBranch, 'view-fortune'])}}#sanitized-tags" title="Learn how to prevent cross-site scripting">template engine</a>.
                 </li>
                 <li>
                     Need to prevent cross-site request forgeries?  Try our <a href="{{route('docs', [$defaultBranch, 'http-security'])}}#cross-site-request-forgery" title="Learn how to prevent cross-site request forgeries">middleware</a>.
