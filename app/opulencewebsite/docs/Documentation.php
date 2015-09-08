@@ -127,7 +127,7 @@ class Documentation
                         "keywords" => ["opulence", "views", "template", "fortune", "php"]
                     ],
                     "view-fortune" => [
-                        "title" => "Fortune Engine",
+                        "title" => "Fortune",
                         "linkText" => "Fortune",
                         "description" => "Learn how Fortune can build powerful page templates",
                         "keywords" => ["opulence", "fortune", "views", "template", "php"]
@@ -351,7 +351,7 @@ class Documentation
                         "keywords" => ["opulence", "views", "template", "fortune", "php"]
                     ],
                     "view-fortune" => [
-                        "title" => "Fortune Engine",
+                        "title" => "Fortune",
                         "linkText" => "Fortune",
                         "description" => "Learn how Fortune can build powerful page templates",
                         "keywords" => ["opulence", "fortune", "views", "template", "php"]
