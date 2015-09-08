@@ -5,10 +5,10 @@
  * Defines the home page template builder
  */
 namespace OpulenceWebsite\HTTP\Views\Builders;
-use Opulence\Views\IBuilder;
+use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
 
-class Home implements IBuilder
+class Home implements IViewBuilder
 {
     /**
      * {@inheritdoc}

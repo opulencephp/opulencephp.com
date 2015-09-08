@@ -353,20 +353,14 @@ class Documentation
                     "view-basics" => [
                         "title" => "View Basics",
                         "linkText" => "Basics",
-                        "description" => "Learn how to create powerful view templates in Opulence",
-                        "keywords" => ["opulence", "views", "template", "php"]
+                        "description" => "Learn how to build templates in Opulence",
+                        "keywords" => ["opulence", "views", "template", "fortune", "php"]
                     ],
-                    "view-functions" => [
-                        "title" => "View Functions",
-                        "linkText" => "Functions",
-                        "description" => "Learn how to use and create functions in Opulence templates",
-                        "keywords" => ["opulence", "views", "template", "functions", "php"]
-                    ],
-                    "view-factories" => [
-                        "title" => "View Factories",
-                        "linkText" => "Factories",
-                        "description" => "Learn how factories can be used to build templates",
-                        "keywords" => ["opulence", "views", "template", "factories", "php"]
+                    "view-fortune" => [
+                        "title" => "Fortune Engine",
+                        "linkText" => "Fortune",
+                        "description" => "Learn how Fortune can build powerful page templates",
+                        "keywords" => ["opulence", "fortune", "views", "template", "php"]
                     ]
                 ],
                 "Databases" => [

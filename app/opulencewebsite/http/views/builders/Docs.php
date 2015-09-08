@@ -5,10 +5,10 @@
  * Defines the builder for the docs page
  */
 namespace OpulenceWebsite\HTTP\Views\Builders;
-use Opulence\Views\IBuilder;
+use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
 
-class Docs implements IBuilder
+class Docs implements IViewBuilder
 {
     /**
      * {@inheritdoc}

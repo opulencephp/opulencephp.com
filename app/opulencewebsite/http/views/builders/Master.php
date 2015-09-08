@@ -7,10 +7,10 @@
 namespace OpulenceWebsite\HTTP\Views\Builders;
 use OpulenceWebsite\Docs\Documentation;
 use Opulence\HTTP\Requests\Request;
-use Opulence\Views\IBuilder;
+use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
 
-class Master implements IBuilder
+class Master implements IViewBuilder
 {
     /** @var Request The current request */
     private $request = null;
