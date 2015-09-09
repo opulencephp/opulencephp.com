@@ -356,12 +356,6 @@ footer.main
         .logo
         {
             color: #aaa;
-
-            .logo-dev
-            {
-                border-left-color: #888;
-                color: #888;
-            }
         }
 
         a
@@ -423,10 +417,11 @@ p code
 {
     color: #bbe5ff;
 
-    .logo-dev
+    .logo-icon
     {
-        border-left: 1px solid #7cf;
-        color: #7cf;
+        height: $headerHeight - 8px;
+        margin-right: 5px;
+        vertical-align: middle;
     }
 }
 

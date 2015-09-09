@@ -197,9 +197,6 @@ footer.main {
   color: #888; }
   footer.main nav .logo {
     color: #aaa; }
-    footer.main nav .logo .logo-dev {
-      border-left-color: #888;
-      color: #888; }
   footer.main nav a, footer.main nav a:link, footer.main nav a:visited {
     color: #888; }
   footer.main nav a:hover {
@@ -228,9 +225,10 @@ p code {
 
 .logo {
   color: #bbe5ff; }
-  .logo .logo-dev {
-    border-left: 1px solid #7cf;
-    color: #7cf; }
+  .logo .logo-icon {
+    height: 26px;
+    margin-right: 5px;
+    vertical-align: middle; }
 
 .highlight-wrapper article i.fa {
   color: #e41; }
