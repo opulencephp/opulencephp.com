@@ -34,9 +34,9 @@ class ViewFunctions extends BaseBootstrapper
             return $transpiler->callViewFunction("pageTitle", $title);
         });
         // Generates the logo text
-        $transpiler->registerViewFunction("logo", function()
+        $transpiler->registerViewFunction("logo", function($includeImage = true)
         {
-            return '<span class="logo"><img class="logo-icon" src="/assets/images/opulence-logo.png" alt="Opulence"><span class="logo-text">Opulence</span></span>';
+            return '<span class="logo">' . ($includeImage ? '<img class="logo-icon" src="/assets/images/opulence-logo.png" alt="Opulence">' : '') . '<span class="logo-text">Opulence</span></span>';
         });
     }
 }
