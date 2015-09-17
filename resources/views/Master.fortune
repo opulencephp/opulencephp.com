@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta name="viewport" content="initial-scale=1" />
-        {{!charset("utf-8")!}}
-        {{!opulenceTitle($title, $doFormatTitle)!}}
-        {{!css("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700")!}}
-        {{!css($masterCSS)!}}
+        {{! charset("utf-8") !}}
+        {{! opulenceTitle($title, $doFormatTitle) !}}
+        {{! css("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700") !}}
+        {{! css($masterCSS) !}}
         <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -14,23 +14,23 @@
         <link rel="manifest" href="/manifest.json">
         <meta name="msapplication-TileColor" content="#336699">
         <meta name="theme-color" content="#ffffff">
-        {{!metaKeywords($metaKeywords)!}}
-        {{!metaDescription($metaDescription)!}}
-        {{!script($javaScript)!}}
+        {{! metaKeywords($metaKeywords) !}}
+        {{! metaDescription($metaDescription) !}}
+        {{! script($javaScript) !}}
         <% include("GoogleAnalytics.php") %>
     </head>
     <body>
-        <header class="main {{!$mainClasses!}}">
+        <header class="main {{! $mainClasses !}}">
             <% include("MainNav") %>
         </header>
-        <main class="{{!$mainClasses!}}">
+        <main class="{{! $mainClasses !}}">
             <% include("SidebarNav") %>
             <% show("content") %>
             <div id="gray-out"></div>
         </main>
-        <footer class="main {{!$mainClasses!}}">
+        <footer class="main {{! $mainClasses !}}">
             <% include("FooterNav") %>
-            &copy; {{date("Y")}} David Young
+            &copy; {{ date("Y") }} David Young
         </footer>
         <script type="text/javascript">
             <% part("footerJS") %>

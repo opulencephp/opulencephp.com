@@ -2,7 +2,7 @@
 
 <% part("content") %>
     <article>
-        {{!$doc!}}
+        {{! $doc !}}
     </article>
 <% endpart %>
 
