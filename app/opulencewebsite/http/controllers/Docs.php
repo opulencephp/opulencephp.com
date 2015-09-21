@@ -10,8 +10,6 @@ use Opulence\HTTP\Responses\RedirectResponse;
 use Opulence\HTTP\Responses\Response;
 use Opulence\Routing\Controller;
 use Opulence\Routing\URL\URLGenerator;
-use Opulence\Views\Compilers\ICompiler;
-use Opulence\Views\Factories\IViewFactory;
 
 class Docs extends Controller
 {
@@ -19,29 +17,15 @@ class Docs extends Controller
     protected $docs = null;
     /** @var URLGenerator The URL generator */
     protected $urlGenerator = null;
-    /** @var ICompiler The view compiler to use */
-    protected $compiler = null;
-    /** @var IViewFactory The factory to use to create views */
-    protected $viewFactory = null;
 
     /**
      * @param Documentation $docs The object used to grab documents
      * @param URLGenerator $urlGenerator The URL generator
-     * @param ICompiler $compiler The view compiler to use
-     * @param IViewFactory $viewFactory The factory to use to create views
      */
-    public function __construct(
-        Documentation $docs,
-        URLGenerator $urlGenerator,
-        ICompiler $compiler,
-        IViewFactory $viewFactory
-    )
+    public function __construct(Documentation $docs, URLGenerator $urlGenerator)
     {
         $this->docs = $docs;
         $this->urlGenerator = $urlGenerator;
-        $this->compiler = $compiler;
-        $this->viewFactory = $viewFactory;
-        $this->view = $this->viewFactory->create("Docs.fortune");
     }
 
     /**
@@ -54,6 +38,7 @@ class Docs extends Controller
     public function showDoc($docName, $version = Documentation::DEFAULT_BRANCH)
     {
         $docs = $this->docs->getFlattenedDocs($version);
+        $this->view = $this->viewFactory->create("Docs.fortune");
         $this->view->setVar("version", $version);
         $this->view->setVar("doc", $this->docs->getCompiledDoc($docName, $version));
         $this->view->setVar("docs", $this->docs->getDocs($version));
@@ -63,7 +48,7 @@ class Docs extends Controller
         $this->view->setVar("metaKeywords", $docs[$docName]["keywords"]);
         $this->view->setVar("metaDescription", $docs[$docName]["description"]);
 
-        return new Response($this->compiler->compile($this->view));
+        return new Response($this->viewCompiler->compile($this->view));
     }
 
     /**

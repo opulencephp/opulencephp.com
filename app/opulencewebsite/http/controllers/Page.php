@@ -7,26 +7,9 @@
 namespace OpulenceWebsite\HTTP\Controllers;
 use Opulence\HTTP\Responses\Response;
 use Opulence\Routing\Controller;
-use Opulence\Views\Compilers\ICompiler;
-use Opulence\Views\Factories\IViewFactory;
 
 class Page extends Controller
 {
-    /** @var ICompiler The view compiler to use */
-    protected $compiler = null;
-    /** @var IViewFactory The factory to use to create views */
-    protected $viewFactory = null;
-
-    /**
-     * @param ICompiler $compiler The view compiler to use
-     * @param IViewFactory $viewFactory The factory to use to create views
-     */
-    public function __construct(ICompiler $compiler, IViewFactory $viewFactory)
-    {
-        $this->compiler = $compiler;
-        $this->viewFactory = $viewFactory;
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -50,7 +33,7 @@ class Page extends Controller
                 break;
         }
 
-        return new Response($this->compiler->compile($this->view), $statusCode);
+        return new Response($this->viewCompiler->compile($this->view), $statusCode);
     }
 
     /**
@@ -62,6 +45,6 @@ class Page extends Controller
     {
         $this->view = $this->viewFactory->create("Home.fortune");
 
-        return new Response($this->compiler->compile($this->view));
+        return new Response($this->viewCompiler->compile($this->view));
     }
 }
