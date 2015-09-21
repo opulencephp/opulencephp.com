@@ -38,7 +38,7 @@ class Docs extends Controller
     public function showDoc($docName, $version = Documentation::DEFAULT_BRANCH)
     {
         $docs = $this->docs->getFlattenedDocs($version);
-        $this->view = $this->viewFactory->create("Docs.fortune");
+        $this->view = $this->viewFactory->create("Docs");
         $this->view->setVar("version", $version);
         $this->view->setVar("doc", $this->docs->getCompiledDoc($docName, $version));
         $this->view->setVar("docs", $this->docs->getDocs($version));

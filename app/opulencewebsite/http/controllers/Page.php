@@ -15,7 +15,7 @@ class Page extends Controller
      */
     public function showHTTPError($statusCode)
     {
-        $this->view = $this->viewFactory->create("HTTPError.fortune");
+        $this->view = $this->viewFactory->create("HTTPError");
         $this->view->setVar("title", $statusCode . " Error");
         $this->view->setVar("errorTitle", $statusCode);
 
@@ -43,7 +43,7 @@ class Page extends Controller
      */
     public function showHomePage()
     {
-        $this->view = $this->viewFactory->create("Home.fortune");
+        $this->view = $this->viewFactory->create("Home");
 
         return new Response($this->viewCompiler->compile($this->view));
     }
