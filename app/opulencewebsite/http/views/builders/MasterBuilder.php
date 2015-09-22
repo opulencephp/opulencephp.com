@@ -2,7 +2,7 @@
 /**
  * Copyright (C) 2015 David Young
  * 
- * Defines the master template builder
+ * Defines the master view builder
  */
 namespace OpulenceWebsite\HTTP\Views\Builders;
 use OpulenceWebsite\Docs\Documentation;
@@ -10,7 +10,7 @@ use Opulence\HTTP\Requests\Request;
 use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
 
-class Master implements IViewBuilder
+class MasterBuilder implements IViewBuilder
 {
     /** @var Request The current request */
     private $request = null;
@@ -28,7 +28,7 @@ class Master implements IViewBuilder
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function build(IView $view)
     {

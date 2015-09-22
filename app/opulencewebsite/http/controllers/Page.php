@@ -11,7 +11,7 @@ use Opulence\Routing\Controller;
 class Page extends Controller
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function showHTTPError($statusCode)
     {

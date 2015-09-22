@@ -8,10 +8,10 @@ namespace OpulenceWebsite\HTTP\Views\Builders;
 use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
 
-class Docs implements IViewBuilder
+class DocsBuilder implements IViewBuilder
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function build(IView $view)
     {

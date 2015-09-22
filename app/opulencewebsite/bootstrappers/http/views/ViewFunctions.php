@@ -2,7 +2,7 @@
 /**
  * Copyright (C) 2015 David Young
  *
- * Defines the template functions bootstrapper
+ * Defines the view functions bootstrapper
  */
 namespace OpulenceWebsite\Bootstrappers\HTTP\Views;
 use Opulence\Framework\Bootstrappers\HTTP\Views\ViewFunctions as BaseBootstrapper;
@@ -13,7 +13,7 @@ use Opulence\Views\Compilers\Fortune\ITranspiler;
 class ViewFunctions extends BaseBootstrapper
 {
     /**
-     * Registers template functions
+     * Registers view functions
      *
      * @param ITranspiler $transpiler The transpiler to use
      * @param URLGenerator $urlGenerator What generates URLs from routes

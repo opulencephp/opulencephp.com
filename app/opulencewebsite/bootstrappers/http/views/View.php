@@ -2,7 +2,7 @@
 /**
  * Copyright (C) 2015 David Young
  *
- * Defines the template bootstrapper
+ * Defines the view bootstrapper
  */
 namespace OpulenceWebsite\Bootstrappers\HTTP\Views;
 use Opulence\Files\FileSystem;

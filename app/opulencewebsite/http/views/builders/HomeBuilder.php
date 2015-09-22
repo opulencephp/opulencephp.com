@@ -2,16 +2,16 @@
 /**
  * Copyright (C) 2015 David Young
  *
- * Defines the home page template builder
+ * Defines the homepage view builder
  */
 namespace OpulenceWebsite\HTTP\Views\Builders;
 use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
 
-class Home implements IViewBuilder
+class HomeBuilder implements IViewBuilder
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function build(IView $view)
     {
