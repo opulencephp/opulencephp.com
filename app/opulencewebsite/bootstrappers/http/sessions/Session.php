@@ -50,7 +50,7 @@ class Session extends BaseBootstrapper
     {
         $this->loadConfig();
 
-        switch($this->environment->getVariable("SESSION_HANDLER"))
+        switch($this->environment->getVar("SESSION_HANDLER"))
         {
             case CacheSessionHandler::class:
                 $handler = new CacheSessionHandler($this->getCacheBridge($container), $this->config["lifetime"]);
@@ -76,7 +76,7 @@ class Session extends BaseBootstrapper
      */
     private function getCacheBridge(IContainer $container)
     {
-        switch($this->environment->getVariable("SESSION_CACHE_BRIDGE"))
+        switch($this->environment->getVar("SESSION_CACHE_BRIDGE"))
         {
             case ArrayBridge::class:
                 return new ArrayBridge();
