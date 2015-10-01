@@ -5,6 +5,7 @@
  * Defines the API docs
  */
 namespace OpulenceWebsite\Docs;
+
 use Opulence\Applications\Paths;
 use Opulence\Files\FileSystem;
 

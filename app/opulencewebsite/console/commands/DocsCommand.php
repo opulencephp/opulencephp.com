@@ -5,6 +5,7 @@
  * Defines the command that generates HTML from the markdown docs
  */
 namespace OpulenceWebsite\Console\Commands;
+
 use OpulenceWebsite\Docs\Documentation;
 use Opulence\Console\Commands\Command;
 use Opulence\Console\Responses\IResponse;

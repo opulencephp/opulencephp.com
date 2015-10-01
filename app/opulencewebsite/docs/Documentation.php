@@ -5,6 +5,7 @@
  * Pulls in documents
  */
 namespace OpulenceWebsite\Docs;
+
 use Parsedown;
 use Opulence\Applications\Paths;
 use Opulence\Files\FileSystem;
@@ -35,6 +36,12 @@ class Documentation
                         "linkText" => "Directory Structure",
                         "description" => "Learn about how Opulence is structured",
                         "keywords" => ["opulence", "structure", "php"]
+                    ],
+                    "contributing" => [
+                        "title" => "Contributing",
+                        "linkText" => "Contributing",
+                        "description" => "Learn how to contribute to Opulence",
+                        "keywords" => ["opulence", "contribute", "open source"]
                     ]
                 ],
                 "HTTP Applications" => [
@@ -259,6 +266,12 @@ class Documentation
                         "linkText" => "Directory Structure",
                         "description" => "Learn about how Opulence is structured",
                         "keywords" => ["opulence", "structure", "php"]
+                    ],
+                    "contributing" => [
+                        "title" => "Contributing",
+                        "linkText" => "Contributing",
+                        "description" => "Learn how to contribute to Opulence",
+                        "keywords" => ["opulence", "contribute", "open source"]
                     ]
                 ],
                 "HTTP Applications" => [

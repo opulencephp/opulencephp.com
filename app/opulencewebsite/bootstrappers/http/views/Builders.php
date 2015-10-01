@@ -5,6 +5,7 @@
  * Defines the view builders bootstrapper
  */
 namespace OpulenceWebsite\Bootstrappers\HTTP\Views;
+
 use OpulenceWebsite\Docs\Documentation;
 use OpulenceWebsite\HTTP\Views\Builders\DocsBuilder;
 use OpulenceWebsite\HTTP\Views\Builders\HomeBuilder;

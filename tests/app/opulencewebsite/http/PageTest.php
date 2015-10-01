@@ -5,6 +5,7 @@
  * Defines the page tests
  */
 namespace OpulenceWebsite\HTTP;
+
 use Parsedown;
 use OpulenceWebsite\Docs\Documentation;
 use Opulence\Files\FileSystem;

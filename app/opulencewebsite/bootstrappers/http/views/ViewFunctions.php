@@ -5,6 +5,7 @@
  * Defines the view functions bootstrapper
  */
 namespace OpulenceWebsite\Bootstrappers\HTTP\Views;
+
 use Opulence\Framework\Bootstrappers\HTTP\Views\ViewFunctions as BaseBootstrapper;
 use Opulence\Routing\URL\URLGenerator;
 use Opulence\Sessions\ISession;

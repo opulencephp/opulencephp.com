@@ -5,6 +5,7 @@
  * Defines the master view builder
  */
 namespace OpulenceWebsite\HTTP\Views\Builders;
+
 use OpulenceWebsite\Docs\Documentation;
 use Opulence\HTTP\Requests\Request;
 use Opulence\Views\Factories\IViewBuilder;

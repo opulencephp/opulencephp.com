@@ -5,6 +5,7 @@
  * Defines the session middleware
  */
 namespace OpulenceWebsite\HTTP\Middleware;
+
 use DateTime;
 use Opulence\Framework\HTTP\Middleware\Session as BaseSession;
 use Opulence\HTTP\Responses\Cookie;

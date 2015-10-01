@@ -5,6 +5,7 @@
  * Defines the documentation page controller
  */
 namespace OpulenceWebsite\HTTP\Controllers;
+
 use OpulenceWebsite\Docs\Documentation;
 use Opulence\HTTP\Responses\RedirectResponse;
 use Opulence\HTTP\Responses\Response;

@@ -5,6 +5,7 @@
  * Defines the command that generates API docs
  */
 namespace OpulenceWebsite\Console\Commands;
+
 use OpulenceWebsite\Docs\API as APIDocs;
 use Opulence\Console\Commands\Command;
 use Opulence\Console\Responses\IResponse;

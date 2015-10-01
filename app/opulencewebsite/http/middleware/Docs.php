@@ -5,6 +5,7 @@
  * Defines the documentation middleware
  */
 namespace OpulenceWebsite\HTTP\Middleware;
+
 use Closure;
 use OpulenceWebsite\Docs\Documentation;
 use Opulence\HTTP\Middleware\IMiddleware;

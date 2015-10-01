@@ -5,6 +5,7 @@
  * Defines the middleware that checks the CSRF token
  */
 namespace OpulenceWebsite\HTTP\Middleware;
+
 use DateTime;
 use Opulence\Framework\HTTP\CSRFTokenChecker;
 use Opulence\Framework\HTTP\Middleware\CheckCSRFToken as BaseMiddleware;

@@ -5,6 +5,7 @@
  * Defines an example controller
  */
 namespace OpulenceWebsite\HTTP\Controllers;
+
 use Opulence\HTTP\Responses\Response;
 use Opulence\Routing\Controller;
 

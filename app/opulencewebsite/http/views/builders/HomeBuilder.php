@@ -5,6 +5,7 @@
  * Defines the homepage view builder
  */
 namespace OpulenceWebsite\HTTP\Views\Builders;
+
 use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
 
