@@ -4,18 +4,18 @@
  *
  * Defines the list of bootstrapper classes to load for a console application
  */
-use OpulenceWebsite\Bootstrappers\Console\Commands\Commands as ProjectCommands;
-use OpulenceWebsite\Bootstrappers\HTTP\Routing\Router;
-use OpulenceWebsite\Bootstrappers\HTTP\Views\View;
-use Opulence\Framework\Bootstrappers\Console\Commands\Commands as OpulenceCommands;
-use Opulence\Framework\Bootstrappers\Console\Requests\Requests;
-use Opulence\Framework\Bootstrappers\Console\Composer\Composer;
+use OpulenceWebsite\Bootstrappers\Console\Commands\CommandsBootstrapper as WebsiteCommandsBootstrapper;
+use OpulenceWebsite\Bootstrappers\HTTP\Routing\RouterBootstrapper;
+use OpulenceWebsite\Bootstrappers\HTTP\Views\ViewBootstrapper;
+use Opulence\Framework\Bootstrappers\Console\Commands\CommandsBootstrapper as OpulenceCommandsBootstrapper;
+use Opulence\Framework\Bootstrappers\Console\Requests\RequestsBootstrapper;
+use Opulence\Framework\Bootstrappers\Console\Composer\ComposerBootstrapper;
 
 return [
-    Router::class,
-    OpulenceCommands::class,
-    Requests::class,
-    Composer::class,
-    View::class,
-    ProjectCommands::class
+    RouterBootstrapper::class,
+    OpulenceCommandsBootstrapper::class,
+    RequestsBootstrapper::class,
+    ComposerBootstrapper::class,
+    ViewBootstrapper::class,
+    WebsiteCommandsBootstrapper::class
 ];

@@ -7,12 +7,12 @@
 namespace OpulenceWebsite\Bootstrappers\HTTP\Views;
 
 use Opulence\Files\FileSystem;
-use Opulence\Framework\Bootstrappers\HTTP\Views\View as BaseBootstrapper;
+use Opulence\Framework\Bootstrappers\HTTP\Views\ViewBootstrapper as BaseBootstrapper;
 use Opulence\IoC\IContainer;
 use Opulence\Views\Caching\Cache;
 use Opulence\Views\Caching\ICache;
 
-class View extends BaseBootstrapper
+class ViewBootstrapper extends BaseBootstrapper
 {
     /**
      * Gets the view cache

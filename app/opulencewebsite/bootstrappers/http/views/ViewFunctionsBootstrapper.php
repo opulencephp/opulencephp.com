@@ -6,12 +6,12 @@
  */
 namespace OpulenceWebsite\Bootstrappers\HTTP\Views;
 
-use Opulence\Framework\Bootstrappers\HTTP\Views\ViewFunctions as BaseBootstrapper;
+use Opulence\Framework\Bootstrappers\HTTP\Views\ViewFunctionsBootstrapper as BaseBootstrapper;
 use Opulence\Routing\URL\URLGenerator;
 use Opulence\Sessions\ISession;
 use Opulence\Views\Compilers\Fortune\ITranspiler;
 
-class ViewFunctions extends BaseBootstrapper
+class ViewFunctionsBootstrapper extends BaseBootstrapper
 {
     /**
      * Registers view functions

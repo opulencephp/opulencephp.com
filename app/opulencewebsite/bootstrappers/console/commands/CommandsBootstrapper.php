@@ -10,7 +10,7 @@ use Opulence\Applications\Bootstrappers\Bootstrapper;
 use Opulence\Console\Commands\CommandCollection;
 use Opulence\IoC\IContainer;
 
-class Commands extends Bootstrapper
+class CommandsBootstrapper extends Bootstrapper
 {
     /**
      * Sets the console commands from this project

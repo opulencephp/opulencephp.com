@@ -14,7 +14,7 @@ use Opulence\Applications\Bootstrappers\Bootstrapper;
 use Opulence\HTTP\Requests\Request;
 use Opulence\Views\Factories\IViewFactory;
 
-class Builders extends Bootstrapper
+class BuildersBootstrapper extends Bootstrapper
 {
     /**
      * Registers view builders to the factory

@@ -4,8 +4,8 @@
  *
  * Defines the list of bootstrapper classes to load
  */
-use Opulence\Framework\Bootstrappers\Cryptography\Cryptography;
+use Opulence\Framework\Bootstrappers\Cryptography\CryptographyBootstrapper;
 
 return [
-    Cryptography::class
+    CryptographyBootstrapper::class
 ];
