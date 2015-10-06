@@ -363,7 +363,9 @@ p code {
       padding: 10px 0 10px 20px; }
 
   main.home {
-    width: auto; }
+    width: auto;
+    padding-left: 0;
+    padding-right: 0; }
     main.home section {
       width: 1024px;
       margin: 0 auto; }
