@@ -148,7 +148,7 @@ button
 
 section:not(:last-child)
 {
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 input::-moz-focus-inner, button::-moz-focus-inner
@@ -425,10 +425,34 @@ p code
     }
 }
 
+.feature-wrapper
+{
+    article
+    {
+        i.fa
+        {
+            color: $highlightsColor;
+            display: block;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        h4
+        {
+            text-align: center;
+        }
+    }
+}
+
 .highlight-wrapper
 {
     article
     {
+        h4
+        {
+            text-align: center;
+        }
+
         i.fa
         {
             color: $highlightsColor;
@@ -476,8 +500,7 @@ p code
     z-index: 1;
 }
 
-@media screen and (max-device-width: $minWidthForHeaderNav - 1px)
-{
+@media screen and (max-device-width: $minWidthForHeaderNav - 1px) {
     header.main nav > ul > li.movable
     {
         display: none;
@@ -489,8 +512,7 @@ p code
     }
 }
 
-@media screen and (min-device-width: $minWidthForHeaderNav) and (max-device-width: $siteWidth - 1px)
-{
+@media screen and (min-device-width: $minWidthForHeaderNav) and (max-device-width: $siteWidth - 1px) {
     header.main nav > ul > li.movable
     {
         display: inline-block;
@@ -509,8 +531,7 @@ p code
     }
 }
 
-@media screen and (max-device-width: $siteWidth - 1px)
-{
+@media screen and (max-device-width: $siteWidth - 1px) {
     body.nav-open
     {
         main
@@ -585,10 +606,20 @@ p code
             white-space: nowrap;
         }
     }
+
+    .highlight-wrapper
+    {
+        article
+        {
+            h4
+            {
+                text-align: left;
+            }
+        }
+    }
 }
 
-@media screen and (min-device-width: $siteWidth)
-{
+@media screen and (min-device-width: $siteWidth) {
     #sidebar-main-nav
     {
         display: none;
@@ -641,34 +672,73 @@ p code
         }
     }
 
-    .highlight-wrapper
+    main.home
+    {
+        width: auto;
+
+        section
+        {
+            width: $siteWidth;
+            margin: 0 auto;
+
+            &#why-opulence
+            {
+                width: auto;
+                background: #eee;
+            }
+
+            .highlight-wrapper
+            {
+                width: $siteWidth;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .highlight-wrapper, .feature-wrapper
     {
         article
         {
-            background: #fcfcfc;
             width: 32%;
-            min-height: 205px;
             display: inline-block;
             padding: 10px;
-            vertical-align: top;
-            border: 1px solid #ddd;
             margin: .5%;
 
-            &:nth-child(3n + 1)
+            &:nth-of-type(3n + 1)
             {
                 margin-left: 0;
             }
 
-            &:nth-child(3n)
+            &:nth-of-type(3n)
             {
                 margin-right: 0;
             }
         }
     }
+
+    .feature-wrapper
+    {
+        article
+        {
+            min-height: 100px;
+            vertical-align: top;
+            text-align: center;
+        }
+    }
+
+    .highlight-wrapper
+    {
+        article
+        {
+            background: #fcfcfc;
+            min-height: 205px;
+            vertical-align: top;
+            border: 1px solid #ddd;
+        }
+    }
 }
 
-@media screen and (min-device-height: 650px)
-{
+@media screen and (min-device-height: 650px) {
     main
     {
         min-height: 600px;

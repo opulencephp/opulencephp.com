@@ -25,16 +25,13 @@ class BuildersBootstrapper extends Bootstrapper
      */
     public function run(IViewFactory $viewFactory, Request $request, Documentation $docs)
     {
-        $viewFactory->registerBuilder("Master", function() use($request, $docs)
-        {
+        $viewFactory->registerBuilder("Master", function () use ($request, $docs) {
             return new MasterBuilder($request, $docs);
         });
-        $viewFactory->registerBuilder("Home", function()
-        {
+        $viewFactory->registerBuilder("Home", function () {
             return new HomeBuilder();
         });
-        $viewFactory->registerBuilder("Docs", function()
-        {
+        $viewFactory->registerBuilder("Docs", function () {
             return new DocsBuilder();
         });
     }

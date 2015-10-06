@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C) 2015 David Young
- * 
+ *
  * Defines the command that generates HTML from the markdown docs
  */
 namespace OpulenceWebsite\Console\Commands;

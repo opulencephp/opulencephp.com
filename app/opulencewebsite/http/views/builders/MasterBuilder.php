@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C) 2015 David Young
- * 
+ *
  * Defines the master view builder
  */
 namespace OpulenceWebsite\HTTP\Views\Builders;
@@ -40,7 +40,7 @@ class MasterBuilder implements IViewBuilder
         // Set default variable values
         $view->setVar("doFormatTitle", true);
         $view->setVar("masterCSS", [
-            "/assets/css/style.css?v=1.6",
+            "/assets/css/style.css?v=1.7",
             "/assets/css/prism.css",
             "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
         ]);

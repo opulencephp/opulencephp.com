@@ -11,7 +11,7 @@
             <a id="doc-version-toggle" href="#" title="Select the documentation version">{{ $branchTitles[$docVersion] }}</a>
             <ul id="doc-version-dropdown">
                 <% foreach($branchTitles as $branchName => $branchTitle) %>
-                <li><a href="{{! route('docs', [$branchName, $docName]) !}}" title="View documentation for {{ $branchTitle }} version">{{ $branchTitle }}</a></li>
+                <li><a href="{{! route('docs', $branchName, $docName) !}}" title="View documentation for {{ $branchTitle }} version">{{ $branchTitle }}</a></li>
                 <% endforeach %>
             </ul>
         </li>

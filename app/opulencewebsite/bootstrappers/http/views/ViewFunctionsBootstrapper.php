@@ -25,18 +25,15 @@ class ViewFunctionsBootstrapper extends BaseBootstrapper
         parent::run($transpiler, $urlGenerator, $session);
 
         // Generates the title HTML
-        $transpiler->registerViewFunction("opulenceTitle", function($title, $doFormat = true) use ($transpiler)
-        {
-            if($doFormat)
-            {
+        $transpiler->registerViewFunction("opulenceTitle", function ($title, $doFormat = true) use ($transpiler) {
+            if ($doFormat) {
                 $title .= " | Opulence";
             }
 
             return $transpiler->callViewFunction("pageTitle", $title);
         });
         // Generates the logo text
-        $transpiler->registerViewFunction("logo", function($includeImage = true)
-        {
+        $transpiler->registerViewFunction("logo", function ($includeImage = true) {
             return '<span class="logo">' . ($includeImage ? '<img class="logo-icon" src="/assets/images/opulence-logo.png" alt="Opulence">' : '') . '<span class="logo-text">Opulence</span></span>';
         });
     }

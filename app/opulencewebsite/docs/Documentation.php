@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C) 2015 David Young
- * 
+ *
  * Pulls in documents
  */
 namespace OpulenceWebsite\Docs;
@@ -85,7 +85,17 @@ class Documentation
                         "title" => "HTTP Security",
                         "linkText" => "Security",
                         "description" => "Learn about security in HTTP applications in Opulence",
-                        "keywords" => ["opulence", "security", "http", "css", "xsrf", "csrf", "cross site request forgery", "hack", "php"]
+                        "keywords" => [
+                            "opulence",
+                            "security",
+                            "http",
+                            "css",
+                            "xsrf",
+                            "csrf",
+                            "cross site request forgery",
+                            "hack",
+                            "php"
+                        ]
                     ],
                     "http-testing" => [
                         "title" => "Testing Your HTTP Application",
@@ -209,7 +219,15 @@ class Documentation
                         "title" => "Cryptography",
                         "linkText" => "Cryptography",
                         "description" => "Learn how to make your data cryptographically-secure with Opulence",
-                        "keywords" => ["opulence", "cryptography", "encryption", "security", "passwords", "hashing", "php"]
+                        "keywords" => [
+                            "opulence",
+                            "cryptography",
+                            "encryption",
+                            "security",
+                            "passwords",
+                            "hashing",
+                            "php"
+                        ]
                     ],
                     "dependency-injection" => [
                         "title" => "Dependency Injection",
@@ -315,7 +333,17 @@ class Documentation
                         "title" => "HTTP Security",
                         "linkText" => "Security",
                         "description" => "Learn about security in HTTP applications in Opulence",
-                        "keywords" => ["opulence", "security", "http", "css", "xsrf", "csrf", "cross site request forgery", "hack", "php"]
+                        "keywords" => [
+                            "opulence",
+                            "security",
+                            "http",
+                            "css",
+                            "xsrf",
+                            "csrf",
+                            "cross site request forgery",
+                            "hack",
+                            "php"
+                        ]
                     ],
                     "http-testing" => [
                         "title" => "Testing Your HTTP Application",
@@ -439,7 +467,15 @@ class Documentation
                         "title" => "Cryptography",
                         "linkText" => "Cryptography",
                         "description" => "Learn how to make your data cryptographically-secure with Opulence",
-                        "keywords" => ["opulence", "cryptography", "encryption", "security", "passwords", "hashing", "php"]
+                        "keywords" => [
+                            "opulence",
+                            "cryptography",
+                            "encryption",
+                            "security",
+                            "passwords",
+                            "hashing",
+                            "php"
+                        ]
                     ],
                     "dependency-injection" => [
                         "title" => "Dependency Injection",
@@ -539,7 +575,17 @@ class Documentation
                         "title" => "HTTP Security",
                         "linkText" => "Security",
                         "description" => "Learn about security in HTTP applications in Opulence",
-                        "keywords" => ["opulence", "security", "http", "css", "xsrf", "csrf", "cross site request forgery", "hack", "php"]
+                        "keywords" => [
+                            "opulence",
+                            "security",
+                            "http",
+                            "css",
+                            "xsrf",
+                            "csrf",
+                            "cross site request forgery",
+                            "hack",
+                            "php"
+                        ]
                     ],
                     "http-testing" => [
                         "title" => "Testing Your HTTP Application",
@@ -669,7 +715,15 @@ class Documentation
                         "title" => "Cryptography",
                         "linkText" => "Cryptography",
                         "description" => "Learn how to make your data cryptographically-secure with Opulence",
-                        "keywords" => ["opulence", "cryptography", "encryption", "security", "passwords", "hashing", "php"]
+                        "keywords" => [
+                            "opulence",
+                            "cryptography",
+                            "encryption",
+                            "security",
+                            "passwords",
+                            "hashing",
+                            "php"
+                        ]
                     ],
                     "dependency-injection" => [
                         "title" => "Dependency Injection",
@@ -739,8 +793,7 @@ class Documentation
     {
         $gitOutput = "";
 
-        foreach(self::$branches as $branchName => $branchData)
-        {
+        foreach (self::$branches as $branchName => $branchData) {
             $rawDocsPath = "{$this->paths["tmp.docs"]}/$branchName";
             $compiledDocsPath = "{$this->paths["docs.compiled"]}/$branchName";
 
@@ -756,16 +809,14 @@ class Documentation
                 )
             );
 
-            if(!$this->files->exists($compiledDocsPath))
-            {
+            if (!$this->files->exists($compiledDocsPath)) {
                 $this->files->makeDirectory($compiledDocsPath);
             }
 
             $markdownFiles = $this->files->glob("$rawDocsPath/*.md");
 
             // Convert the Markdown files into HTML and store them in the resources directory
-            foreach($markdownFiles as $index => $markdownFile)
-            {
+            foreach ($markdownFiles as $index => $markdownFile) {
                 $html = $this->parsedown->text($this->files->read($markdownFile));
                 $compiledDocFilename = sprintf(
                     "%s/%s/%s.html",
@@ -789,8 +840,7 @@ class Documentation
     {
         $titles = [];
 
-        foreach(self::$branches as $name => $data)
-        {
+        foreach (self::$branches as $name => $data) {
             $titles[$name] = $data["title"];
         }
 
@@ -842,8 +892,7 @@ class Documentation
     {
         $flattenedDocs = [];
 
-        foreach(self::$branches[$version]["docs"] as $sectionHeader => $docs)
-        {
+        foreach (self::$branches[$version]["docs"] as $sectionHeader => $docs) {
             $flattenedDocs = array_merge($flattenedDocs, $docs);
         }
 
@@ -859,8 +908,7 @@ class Documentation
      */
     public function hasDoc($version, $name)
     {
-        if(!isset(self::$branches[$version]))
-        {
+        if (!isset(self::$branches[$version])) {
             return false;
         }
 

@@ -86,7 +86,7 @@ button {
     border-color: #111; }
 
 section:not(:last-child) {
-  margin-bottom: 20px; }
+  padding-bottom: 20px; }
 
 input::-moz-focus-inner, button::-moz-focus-inner {
   border: 0; }
@@ -230,6 +230,16 @@ p code {
     margin-right: 5px;
     vertical-align: middle; }
 
+.feature-wrapper article i.fa {
+  color: #e41;
+  display: block;
+  text-align: center;
+  font-size: 40px; }
+.feature-wrapper article h4 {
+  text-align: center; }
+
+.highlight-wrapper article h4 {
+  text-align: center; }
 .highlight-wrapper article i.fa {
   color: #e41; }
 .highlight-wrapper article ul {
@@ -318,7 +328,10 @@ p code {
     -o-transition: -o-transform .3s;
     transition: transform .3s; }
     main nav.sidebar li {
-      white-space: nowrap; } }
+      white-space: nowrap; }
+
+  .highlight-wrapper article h4 {
+    text-align: left; } }
 @media screen and (min-device-width: 1024px) {
   #sidebar-main-nav {
     display: none; }
@@ -349,19 +362,38 @@ p code {
       margin: -10px 0 -10px 230px;
       padding: 10px 0 10px 20px; }
 
-  .highlight-wrapper article {
-    background: #fcfcfc;
+  main.home {
+    width: auto; }
+    main.home section {
+      width: 1024px;
+      margin: 0 auto; }
+      main.home section#why-opulence {
+        width: auto;
+        background: #eee; }
+      main.home section .highlight-wrapper {
+        width: 1024px;
+        margin: 0 auto; }
+
+  .highlight-wrapper article, .feature-wrapper article {
     width: 32%;
-    min-height: 205px;
     display: inline-block;
     padding: 10px;
-    vertical-align: top;
-    border: 1px solid #ddd;
     margin: .5%; }
-    .highlight-wrapper article:nth-child(3n + 1) {
+    .highlight-wrapper article:nth-of-type(3n + 1), .feature-wrapper article:nth-of-type(3n + 1) {
       margin-left: 0; }
-    .highlight-wrapper article:nth-child(3n) {
-      margin-right: 0; } }
+    .highlight-wrapper article:nth-of-type(3n), .feature-wrapper article:nth-of-type(3n) {
+      margin-right: 0; }
+
+  .feature-wrapper article {
+    min-height: 100px;
+    vertical-align: top;
+    text-align: center; }
+
+  .highlight-wrapper article {
+    background: #fcfcfc;
+    min-height: 205px;
+    vertical-align: top;
+    border: 1px solid #ddd; } }
 @media screen and (min-device-height: 650px) {
   main {
     min-height: 600px; } }

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C) 2015 David Young
- * 
+ *
  * Defines the API docs
  */
 namespace OpulenceWebsite\Docs;
@@ -62,9 +62,9 @@ class API
         );
 
         // Move them to the public directory
-        foreach(self::$branches as $branchName)
-        {
-            $this->files->copyDirectory($this->paths["tmp.api"] . "/build/$branchName", $this->paths["public"] . "/api/$branchName");
+        foreach (self::$branches as $branchName) {
+            $this->files->copyDirectory($this->paths["tmp.api"] . "/build/$branchName",
+                $this->paths["public"] . "/api/$branchName");
         }
 
         $this->clearTempFiles();

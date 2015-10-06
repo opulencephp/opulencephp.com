@@ -14,13 +14,11 @@ use OpulenceWebsite\HTTP\Middleware\Docs;
  *
  * @var Router $router
  */
-$router->group(["controllerNamespace" => "OpulenceWebsite\\HTTP\\Controllers"], function() use ($router)
-{
+$router->group(["controllerNamespace" => "OpulenceWebsite\\HTTP\\Controllers"], function () use ($router) {
     $router->get("/", "Page@showHomePage", [
         "name" => "home"
     ]);
-    $router->group(["path" => "/docs"], function() use ($router)
-    {
+    $router->group(["path" => "/docs"], function () use ($router) {
         $router->get("/:version/:docName", "Docs@showDoc", [
             "name" => "docs",
             "middleware" => [

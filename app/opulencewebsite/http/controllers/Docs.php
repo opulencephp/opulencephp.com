@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C) 2015 David Young
- * 
+ *
  * Defines the documentation page controller
  */
 namespace OpulenceWebsite\HTTP\Controllers;
@@ -72,7 +72,7 @@ class Docs extends Controller
     public function showNoVersionDoc($docName)
     {
         return new RedirectResponse(
-            $this->urlGenerator->createFromName("docs", [Documentation::DEFAULT_BRANCH, $docName])
+            $this->urlGenerator->createFromName("docs", Documentation::DEFAULT_BRANCH, $docName)
         );
     }
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C) 2015 David Young
- * 
+ *
  * Defines the documentation middleware
  */
 namespace OpulenceWebsite\HTTP\Middleware;
@@ -44,15 +44,13 @@ class Docs implements IMiddleware
         $version = $matchedRoute->getPathVar("version");
         $docName = $matchedRoute->getPathVar("docName");
 
-        if(!$this->docs->hasVersion($version))
-        {
+        if (!$this->docs->hasVersion($version)) {
             return new RedirectResponse("/docs");
         }
 
-        if(!$this->docs->hasDoc($version, $docName))
-        {
+        if (!$this->docs->hasDoc($version, $docName)) {
             return new RedirectResponse(
-                $this->urlGenerator->createFromName("docs", [$version, $this->docs->getDefaultDoc($version)])
+                $this->urlGenerator->createFromName("docs", $version, $this->docs->getDefaultDoc($version))
             );
         }
 

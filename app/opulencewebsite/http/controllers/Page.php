@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C) 2015 David Young
- * 
+ *
  * Defines an example controller
  */
 namespace OpulenceWebsite\HTTP\Controllers;
@@ -20,16 +20,17 @@ class Page extends Controller
         $this->view->setVar("title", $statusCode . " Error");
         $this->view->setVar("errorTitle", $statusCode);
 
-        switch($statusCode)
-        {
+        switch ($statusCode) {
             case 404:
                 $this->view->setVar("errorTitle", "We couldn't find what you're looking for");
-                $this->view->setVar("errorDescription", "Maybe you clicked on a bad link, or maybe you typed the URL incorrectly.");
+                $this->view->setVar("errorDescription",
+                    "Maybe you clicked on a bad link, or maybe you typed the URL incorrectly.");
 
                 break;
             default:
                 $this->view->setVar("errorTitle", "Uh oh");
-                $this->view->setVar("errorDescription", "Something went wrong with your request.  We've been alerted to the issue, and we apologize for the inconvenience.");
+                $this->view->setVar("errorDescription",
+                    "Something went wrong with your request.  We've been alerted to the issue, and we apologize for the inconvenience.");
 
                 break;
         }
