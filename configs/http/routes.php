@@ -21,13 +21,13 @@ $router->group(["controllerNamespace" => "OpulenceWebsite\\HTTP\\Controllers"], 
     ]);
     $router->group(["path" => "/docs"], function() use ($router)
     {
-        $router->get("/{version}/{docName}", "Docs@showDoc", [
+        $router->get("/:version/:docName", "Docs@showDoc", [
             "name" => "docs",
             "middleware" => [
                 Docs::class
             ]
         ]);
-        $router->get("/{docName}", "Docs@showNoVersionDoc", [
+        $router->get("/:docName", "Docs@showNoVersionDoc", [
             "name" => "docs-noversion"
         ]);
         $router->get("", "Docs@showIndex", [
