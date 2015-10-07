@@ -230,13 +230,15 @@ p code {
     margin-right: 5px;
     vertical-align: middle; }
 
-.feature-wrapper article i.fa {
-  color: #e41;
-  display: block;
-  text-align: center;
-  font-size: 40px; }
-.feature-wrapper article h4 {
+.feature-wrapper article {
   text-align: center; }
+  .feature-wrapper article i.fa {
+    color: #e41;
+    display: block;
+    text-align: center;
+    font-size: 40px; }
+  .feature-wrapper article h4 {
+    text-align: center; }
 
 .highlight-wrapper article h4 {
   text-align: center; }
@@ -330,6 +332,9 @@ p code {
     main nav.sidebar li {
       white-space: nowrap; }
 
+  .feature-wrapper article:not(:last-of-type) {
+    margin-bottom: 10px; }
+
   .highlight-wrapper article h4 {
     text-align: left; } }
 @media screen and (min-device-width: 1024px) {
@@ -388,8 +393,7 @@ p code {
 
   .feature-wrapper article {
     min-height: 100px;
-    vertical-align: top;
-    text-align: center; }
+    vertical-align: top; }
 
   .highlight-wrapper article {
     background: #fcfcfc;

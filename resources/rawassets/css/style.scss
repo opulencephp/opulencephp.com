@@ -429,6 +429,8 @@ p code
 {
     article
     {
+        text-align: center;
+
         i.fa
         {
             color: $highlightsColor;
@@ -607,6 +609,14 @@ p code
         }
     }
 
+    .feature-wrapper
+    {
+        article:not(:last-of-type)
+        {
+            margin-bottom: 10px;
+        }
+    }
+
     .highlight-wrapper
     {
         article
@@ -724,7 +734,6 @@ p code
         {
             min-height: 100px;
             vertical-align: top;
-            text-align: center;
         }
     }
 
