@@ -208,12 +208,14 @@ footer.main {
 
 blockquote {
   background: #def;
+  border: 1px solid #ccddee;
   padding: 10px;
   margin: 10px 30px; }
 
 pre {
   padding: 10px;
   background: #f1f1f1;
+  border: 1px solid #e0e0e0;
   position: relative;
   overflow: auto; }
 

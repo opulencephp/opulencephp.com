@@ -390,15 +390,19 @@ footer.main
 
 blockquote
 {
-    background: #def;
+    $background: #def;
+    background: $background;
+    border: 1px solid $background - #111;
     padding: 10px;
     margin: 10px 30px;
 }
 
 pre
 {
+    $background: #f1f1f1;
     padding: 10px;
-    background: #f1f1f1;
+    background: $background;
+    border: 1px solid $background - #111;
     position: relative;
     overflow: auto;
 }
