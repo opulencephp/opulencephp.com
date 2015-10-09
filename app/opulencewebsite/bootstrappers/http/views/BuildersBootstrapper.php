@@ -13,6 +13,7 @@ use OpulenceWebsite\HTTP\Views\Builders\MasterBuilder;
 use Opulence\Applications\Bootstrappers\Bootstrapper;
 use Opulence\HTTP\Requests\Request;
 use Opulence\Views\Factories\IViewFactory;
+use Opulence\Views\IView;
 
 class BuildersBootstrapper extends Bootstrapper
 {
@@ -25,14 +26,14 @@ class BuildersBootstrapper extends Bootstrapper
      */
     public function run(IViewFactory $viewFactory, Request $request, Documentation $docs)
     {
-        $viewFactory->registerBuilder("Master", function () use ($request, $docs) {
-            return new MasterBuilder($request, $docs);
+        $viewFactory->registerBuilder("Master", function (IView $view) use ($request, $docs) {
+            return (new MasterBuilder($request, $docs))->build($view);
         });
-        $viewFactory->registerBuilder("Home", function () {
-            return new HomeBuilder();
+        $viewFactory->registerBuilder("Home", function (IView $view) {
+            return (new HomeBuilder())->build($view);
         });
-        $viewFactory->registerBuilder("Docs", function () {
-            return new DocsBuilder();
+        $viewFactory->registerBuilder("Docs", function (IView $view) {
+            return (new DocsBuilder())->build($view);
         });
     }
 }
