@@ -253,17 +253,23 @@ class Documentation
                         "description" => "Learn about working with the file system in Opulence",
                         "keywords" => ["opulence", "file system", "read write", "php"]
                     ],
-                    "nosql" => [
-                        "title" => "NoSQL Databases",
-                        "linkText" => "NoSQL Databases",
-                        "description" => "Learn how to interact with NoSQL databases in Opulence",
-                        "keywords" => ["opulence", "nosql", "redis", "memcached", "cache", "php"]
+                    "memcached" => [
+                        "title" => "Memcached",
+                        "linkText" => "Memcached",
+                        "description" => "Learn how to interact with Memcached databases in Opulence",
+                        "keywords" => ["opulence", "nosql", "memcached", "cache", "php"]
                     ],
                     "pipelines" => [
                         "title" => "Pipelines",
                         "linkText" => "Pipelines",
                         "description" => "Learn how to pipeline data",
                         "keywords" => ["opulence", "pipeline", "serial", "php"]
+                    ],
+                    "redis" => [
+                        "title" => "Redis",
+                        "linkText" => "Redis",
+                        "description" => "Learn how to interact with Redis databases in Opulence",
+                        "keywords" => ["opulence", "nosql", "redis", "cache", "php"]
                     ]
                 ]
             ]
@@ -501,17 +507,23 @@ class Documentation
                         "description" => "Learn about working with the file system in Opulence",
                         "keywords" => ["opulence", "file system", "read write", "php"]
                     ],
-                    "nosql" => [
-                        "title" => "NoSQL Databases",
-                        "linkText" => "NoSQL Databases",
-                        "description" => "Learn how to interact with NoSQL databases in Opulence",
-                        "keywords" => ["opulence", "nosql", "redis", "memcached", "cache", "php"]
+                    "memcached" => [
+                        "title" => "Memcached",
+                        "linkText" => "Memcached",
+                        "description" => "Learn how to interact with Memcached databases in Opulence",
+                        "keywords" => ["opulence", "nosql", "memcached", "cache", "php"]
                     ],
                     "pipelines" => [
                         "title" => "Pipelines",
                         "linkText" => "Pipelines",
                         "description" => "Learn how to pipeline data",
                         "keywords" => ["opulence", "pipeline", "serial", "php"]
+                    ],
+                    "redis" => [
+                        "title" => "Redis",
+                        "linkText" => "Redis",
+                        "description" => "Learn how to interact with Redis databases in Opulence",
+                        "keywords" => ["opulence", "nosql", "redis", "cache", "php"]
                     ]
                 ]
             ]
