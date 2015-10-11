@@ -37,7 +37,7 @@
             <article>
                 <i class="fa fa-terminal"></i>
                 <h4>Console</h4>
-                Write your own powerful <a href="{{! route('docs', $defaultBranch, 'console-basics') !}}" title="Console commands">console commands</a>
+                Write your own powerful console commands using <a href="{{! route('docs', $defaultBranch, 'console-basics') !}}" title="Apex">Apex</a>
             </article>
             <article>
                 <i class="fa fa-check"></i>
