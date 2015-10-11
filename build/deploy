@@ -4,8 +4,7 @@ global $argv;
 $output = [];
 $statusCode = null;
 
-if(count($argv) == 1 || strlen(trim($argv[1])) == 0)
-{
+if (count($argv) == 1 || strlen(trim($argv[1])) == 0) {
     echo "No HTML directory specified\n";
     exit(1);
 }
@@ -20,18 +19,17 @@ $commands = [
     "\\cp -vrf $htmlDirectory/.env.app.php configs/environment/.env.app.php",
     "composer dump-autoload -o",
     // Generate the necessary files and run tests
-    "php opulence docs",
-    "php opulence api",
+    "php apex docs",
+    "php apex api",
     "chmod -R 777 tmp",
     "chmod -R 777 resources",
-    "php opulence framework:flushcache",
+    "php apex framework:flushcache",
     "vendor/bin/phpunit"
 ];
 
 exec(implode(" && ", $commands), $output, $statusCode);
 
-foreach($output as $line)
-{
+foreach ($output as $line) {
     echo $line . "\n";
 }
 
