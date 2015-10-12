@@ -10,6 +10,7 @@ use Sami\Version\GitVersionCollection;
 
 $versions = GitVersionCollection::create($dir = __DIR__ . "/../tmp/api/versions/Opulence/app")
     ->add("master", "Opulence Master")
+    ->add("1.0", "Opulence 1.0")
     ->add("0.6", "Opulence 0.6");
 
 return new Sami(

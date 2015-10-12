@@ -16,7 +16,7 @@ class Documentation
     /** The GitHub docs repository */
     const GITHUB_REPOSITORY = "https://github.com/opulencephp/docs.git";
     /** The default branch to show in the docs */
-    const DEFAULT_BRANCH = "0.6";
+    const DEFAULT_BRANCH = "1.0";
     /** @var Parsedown The parsedown object to use */
     private $parsedown = null;
     /** @var Paths The application paths */

@@ -18,7 +18,7 @@
   },
   "require": {
     "php": ">=5.5.10",
-    "opulence/opulence": "0.6.*@dev",
+    "opulence/opulence": "1.0.*@dev",
     "erusev/parsedown": "1.5.3",
     "sami/sami": "3.0.*@dev"
   },
@@ -33,7 +33,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.6.x-dev"
+      "dev-master": "1.0.x-dev"
     }
   },
   "scripts": {
