@@ -11,15 +11,36 @@
     // Toggle the doc version selector
     document.getElementById("doc-version-toggle").onclick = function(e)
     {
+        var self = this;
         var dropdown = document.getElementById("doc-version-dropdown");
+
+        function closeVersionMenu()
+        {
+            removeClass(dropdown, "open");
+            document.removeEventListener("click", detectClickOffVersionMenu);
+        }
+
+        function openVersionMenu()
+        {
+            addClass(dropdown, "open");
+            document.addEventListener("click", detectClickOffVersionMenu);
+        }
+
+        function detectClickOffVersionMenu(e)
+        {
+            if(e.target != dropdown && e.target != self)
+            {
+                closeVersionMenu();
+            }
+        }
 
         if(hasClass(dropdown, "open"))
         {
-            removeClass(dropdown, "open");
+            closeVersionMenu();
         }
         else
         {
-            addClass(dropdown, "open");
+            openVersionMenu();
         }
 
         return false;
