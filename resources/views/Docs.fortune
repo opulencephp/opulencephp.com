@@ -8,6 +8,10 @@
 
 <% part("footerJS") %>
     <% parent %>
+    // Make sure our docs are at least as tall as the sidebar
+    var sidebar = document.querySelector("nav.sidebar");
+    document.querySelector("main.docs").style.minHeight = (sidebar.offsetTop + sidebar.scrollHeight + 10) + "px";
+
     var versionMenu = {
         close: function()
         {
