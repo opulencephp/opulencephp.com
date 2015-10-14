@@ -34,47 +34,59 @@
         </footer>
         <script type="text/javascript">
             <% part("footerJS") %>
-                function addClass(element, className)
+                Element.prototype.addClass = function(className)
                 {
-                    if(element.className != " ")
+                    if(this.className != " ")
                     {
-                        element.className += " ";
+                        this.className += " ";
                     }
 
-                    element.className += className;
-                }
-
-                function hasClass(element, className)
+                    this.className += className;
+                };
+                Element.prototype.hasClass = function(className)
                 {
-                    return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
-                }
-
-                function removeClass(element, className)
+                    return (' ' + this.className + ' ').indexOf(' ' + className + ' ') > -1;
+                };
+                Element.prototype.removeClass = function(className)
                 {
                     var regex = new RegExp("\\b" + className + "\\b", "g");
-                    element.className = element.className.replace(regex, "");
-                }
+                    this.className = this.className.replace(regex, "");
+                };
 
-                // Toggle the "nav-open" class when clicking the link
-                document.getElementById("mobile-menu").getElementsByTagName("a")[0].onclick = function(e)
-                {
-                    // How to tell if an element has a particular class
-                    if(hasClass(document.body, 'nav-open'))
+                var mobileMenu = {
+                    isOpen: function()
                     {
-                        removeClass(document.body, "nav-open");
+                        return document.body.hasClass('nav-open');
+                    },
+                    close: function()
+                    {
+                        document.body.removeClass("nav-open");
+                    },
+                    open: function()
+                    {
+                        document.body.addClass("nav-open");
+                    }
+                };
+
+                // Handle toggling the mobile menu
+                document.getElementById("mobile-menu").getElementsByTagName("a")[0].onclick = function()
+                {
+                    if(mobileMenu.isOpen())
+                    {
+                        mobileMenu.close();
                     }
                     else
                     {
-                        addClass(document.body, "nav-open");
+                        mobileMenu.open();
                     }
 
                     return false;
                 };
 
                 // Close the sidebar when clicking on gray-out
-                document.getElementById("gray-out").onclick = function(e)
+                document.getElementById("gray-out").onclick = function()
                 {
-                    removeClass(document.body, "nav-open");
+                    mobileMenu.close();
                 };
             <% show %>
         </script>

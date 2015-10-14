@@ -8,39 +8,42 @@
 
 <% part("footerJS") %>
     <% parent %>
-    // Toggle the doc version selector
-    document.getElementById("doc-version-toggle").onclick = function(e)
-    {
-        var self = this;
-        var dropdown = document.getElementById("doc-version-dropdown");
-
-        function closeVersionMenu()
+    var versionMenu = {
+        close: function()
         {
-            removeClass(dropdown, "open");
-            document.removeEventListener("click", detectClickOffVersionMenu);
-        }
-
-        function openVersionMenu()
+            this.dropdown.removeClass("open");
+            document.removeEventListener("click", this.detectClickOff);
+        },
+        detectClickOff: function(e)
         {
-            addClass(dropdown, "open");
-            document.addEventListener("click", detectClickOffVersionMenu);
-        }
-
-        function detectClickOffVersionMenu(e)
-        {
-            if(e.target != dropdown && e.target != self)
+            if(e.target != this.dropdown && e.target != document.getElementById("doc-version-toggle"))
             {
-                closeVersionMenu();
+                // Can't use this because that'll point to the document
+                versionMenu.close();
             }
-        }
-
-        if(hasClass(dropdown, "open"))
+        },
+        dropdown: document.getElementById("doc-version-dropdown"),
+        isOpen: function()
         {
-            closeVersionMenu();
+            return this.dropdown.hasClass("open");
+        },
+        open: function()
+        {
+            this.dropdown.addClass("open");
+            document.addEventListener("click", this.detectClickOff);
+        }
+    };
+
+    // Handle toggling the version menu
+    document.getElementById("doc-version-toggle").onclick = function()
+    {
+        if(versionMenu.isOpen())
+        {
+            versionMenu.close();
         }
         else
         {
-            openVersionMenu();
+            versionMenu.open();
         }
 
         return false;
