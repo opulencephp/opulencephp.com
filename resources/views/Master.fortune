@@ -69,7 +69,7 @@
                 };
 
                 // Handle toggling the mobile menu
-                document.getElementById("mobile-menu").getElementsByTagName("a")[0].onclick = function()
+                document.querySelector("#mobile-menu a").onclick = function()
                 {
                     if(mobileMenu.isOpen())
                     {

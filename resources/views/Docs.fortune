@@ -8,38 +8,40 @@
 
 <% part("footerJS") %>
     <% parent %>
-    // Make sure our docs are at least as tall as the sidebar
     var sidebar = document.querySelector("nav.sidebar");
+    var versionDropdown = document.getElementById("doc-version-dropdown");
+    var versionToggle = document.getElementById("doc-version-toggle");
+
+    // Make sure our docs are at least as tall as the sidebar
     document.querySelector("main.docs").style.minHeight = (sidebar.offsetTop + sidebar.scrollHeight + 10) + "px";
 
     var versionMenu = {
         close: function()
         {
-            this.dropdown.removeClass("open");
+            versionDropdown.removeClass("open");
             document.removeEventListener("click", this.detectClickOff);
         },
         detectClickOff: function(e)
         {
-            if(e.target != this.dropdown && e.target != document.getElementById("doc-version-toggle"))
+            if(e.target != versionDropdown && e.target != versionToggle)
             {
                 // Can't use this because that'll point to the document
                 versionMenu.close();
             }
         },
-        dropdown: document.getElementById("doc-version-dropdown"),
         isOpen: function()
         {
-            return this.dropdown.hasClass("open");
+            return versionDropdown.hasClass("open");
         },
         open: function()
         {
-            this.dropdown.addClass("open");
+            versionDropdown.addClass("open");
             document.addEventListener("click", this.detectClickOff);
         }
     };
 
     // Handle toggling the version menu
-    document.getElementById("doc-version-toggle").onclick = function()
+    versionToggle.onclick = function()
     {
         if(versionMenu.isOpen())
         {
