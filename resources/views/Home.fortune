@@ -32,7 +32,7 @@
             <article>
                 <i class="fa fa-database"></i>
                 <h4>ORM</h4>
-                Use the repository and data mapper patterns for your <a href="{{! route('docs', $defaultBranch, 'orm-basics') !}}" title="ORM">ORM</a>
+                Use plain-old PHP objects and the repository and data mapper patterns for your <a href="{{! route('docs', $defaultBranch, 'orm-basics') !}}" title="ORM">ORM</a>
             </article>
             <article>
                 <i class="fa fa-terminal"></i>
