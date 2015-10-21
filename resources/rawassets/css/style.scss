@@ -701,6 +701,9 @@ p code
             {
                 width: auto;
                 background: #eee;
+                padding-top: 10px;
+                /* Make next section look like it has padding */
+                margin-bottom: 10px;
             }
 
             .highlight-wrapper

@@ -378,7 +378,10 @@ p code {
       margin: 0 auto; }
       main.home section#why-opulence {
         width: auto;
-        background: #eee; }
+        background: #eee;
+        padding-top: 10px;
+        /* Make next section look like it has padding */
+        margin-bottom: 10px; }
       main.home section .highlight-wrapper {
         width: 1024px;
         margin: 0 auto; }
