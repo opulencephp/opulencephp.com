@@ -55,7 +55,7 @@ class DocumentationConfig
                     ],
                     "http-requests-responses" => [
                         "title" => "Requests/Responses",
-                        "linkText" => "HTTP Requests/Responses",
+                        "linkText" => "Requests/Responses",
                         "description" => "Learn about handling HTTP requests and responses in Opulence",
                         "keywords" => ["opulence", "http", "requests", "headers", "cookies", "php"]
                     ],
@@ -308,8 +308,8 @@ class DocumentationConfig
                         "keywords" => ["opulence", "routing", "router", "http", "php"]
                     ],
                     "http-requests-responses" => [
-                        "title" => "Requests/Responses",
-                        "linkText" => "HTTP Requests/Responses",
+                        "title" => "HTTP Requests/Responses",
+                        "linkText" => "Requests/Responses",
                         "description" => "Learn about handling HTTP requests and responses in Opulence",
                         "keywords" => ["opulence", "http", "requests", "headers", "cookies", "php"]
                     ],
@@ -562,8 +562,8 @@ class DocumentationConfig
                         "keywords" => ["opulence", "routing", "router", "http", "php"]
                     ],
                     "http-requests-responses" => [
-                        "title" => "Requests/Responses",
-                        "linkText" => "HTTP Requests/Responses",
+                        "title" => "HTTP Requests/Responses",
+                        "linkText" => "Requests/Responses",
                         "description" => "Learn about handling HTTP requests and responses in Opulence",
                         "keywords" => ["opulence", "http", "requests", "headers", "cookies", "php"]
                     ],
@@ -810,8 +810,8 @@ class DocumentationConfig
                         "keywords" => ["opulence", "routing", "router", "http", "php"]
                     ],
                     "http-requests-responses" => [
-                        "title" => "Requests/Responses",
-                        "linkText" => "HTTP Requests/Responses",
+                        "title" => "HTTP Requests/Responses",
+                        "linkText" => "Requests/Responses",
                         "description" => "Learn about handling HTTP requests and responses in Opulence",
                         "keywords" => ["opulence", "http", "requests", "headers", "cookies", "php"]
                     ],
