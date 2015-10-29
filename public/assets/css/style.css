@@ -223,7 +223,11 @@ code {
   font-family: Consolas, Monaco, "Andale Mono", monospace; }
 
 p code {
-  background: #f1f1f1; }
+  background: #f1f1f1;
+  padding: 2px 5px;
+  font-size: 11px;
+  white-space: nowrap;
+  border: 1px solid #e0e0e0; }
 
 .logo {
   color: #bbe5ff; }
