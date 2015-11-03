@@ -1,20 +1,27 @@
 <?php
 /**
- * Copyright (C) 2015 David Young
+ * Opulence
  *
- * Defines the list of global middleware to be run on all routes
+ * @link      https://www.opulencephp.com
+ * @copyright Copyright (C) 2015 David Young
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
-use OpulenceWebsite\HTTP\Middleware\CheckCSRFToken;
-use OpulenceWebsite\HTTP\Middleware\Session;
+use OpulenceWebsite\Http\Middleware\CheckCsrfToken;
+use OpulenceWebsite\Http\Middleware\Session;
 
+/**
+ * ----------------------------------------------------------
+ * Define the list of middleware to be run on all routes
+ * ----------------------------------------------------------
+ */
 return [
     /**
      * ----------------------------------------------------------
      * Middleware to be run on every route
      * ----------------------------------------------------------
      *
-     * List any HTTP middleware you'd like here
+     * List any Http middleware you'd like here
      */
     Session::class,
-    CheckCSRFToken::class
+    CheckCsrfToken::class
 ];

@@ -1,20 +1,24 @@
 <?php
 /**
- * Boots up our application with an HTTP kernel
+ * Opulence
+ *
+ * @link      https://www.opulencephp.com
+ * @copyright Copyright (C) 2015 David Young
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 use Monolog\Logger;
 use Opulence\Applications\Bootstrappers\ApplicationBinder;
 use Opulence\Applications\Bootstrappers\Caching\ICache;
 use Opulence\Applications\Environments\Environment;
-use Opulence\Framework\HTTP\Kernel;
-use Opulence\HTTP\Requests\Request;
+use Opulence\Framework\Http\Kernel;
+use Opulence\Http\Requests\Request;
 use Opulence\Routing\Router;
 
 require_once __DIR__ . "/../start.php";
 
 /**
  * ----------------------------------------------------------
- * Finish configuring the bootstrappers for the HTTP kernel
+ * Finish configuring the bootstrappers for the Http kernel
  * ----------------------------------------------------------
  *
  * @var ApplicationBinder $applicationBinder

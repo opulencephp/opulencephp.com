@@ -1,16 +1,23 @@
 <?php
 /**
- * Copyright (C) 2015 David Young
+ * Opulence
  *
- * Defines the list of bootstrapper classes to load for an HTTP application
+ * @link      https://www.opulencephp.com
+ * @copyright Copyright (C) 2015 David Young
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
-use OpulenceWebsite\Bootstrappers\HTTP\Routing\RouterBootstrapper;
-use OpulenceWebsite\Bootstrappers\HTTP\Sessions\SessionBootstrapper;
-use OpulenceWebsite\Bootstrappers\HTTP\Views\BuildersBootstrapper;
-use OpulenceWebsite\Bootstrappers\HTTP\Views\ViewBootstrapper;
-use OpulenceWebsite\Bootstrappers\HTTP\Views\ViewFunctionsBootstrapper;
-use Opulence\Framework\Bootstrappers\HTTP\Requests\RequestBootstrapper;
+use OpulenceWebsite\Bootstrappers\Http\Routing\RouterBootstrapper;
+use OpulenceWebsite\Bootstrappers\Http\Sessions\SessionBootstrapper;
+use OpulenceWebsite\Bootstrappers\Http\Views\BuildersBootstrapper;
+use OpulenceWebsite\Bootstrappers\Http\Views\ViewBootstrapper;
+use OpulenceWebsite\Bootstrappers\Http\Views\ViewFunctionsBootstrapper;
+use Opulence\Framework\Bootstrappers\Http\Requests\RequestBootstrapper;
 
+/**
+ * ----------------------------------------------------------
+ * Define the bootstrapper classes for an Http application
+ * ----------------------------------------------------------
+ */
 return [
     RequestBootstrapper::class,
     RouterBootstrapper::class,

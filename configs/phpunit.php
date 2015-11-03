@@ -1,8 +1,15 @@
 <?php
 /**
- * Copyright (C) 2015 David Young
+ * Opulence
  *
- * Sets up PHPUnit tests
+ * @link      https://www.opulencephp.com
+ * @copyright Copyright (C) 2015 David Young
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ */
+/**
+ * ----------------------------------------------------------
+ * Define the PHPUnit config
+ * ----------------------------------------------------------
  */
 $paths = require __DIR__ . "/paths.php";
 require_once $paths["vendor"] . "/autoload.php";

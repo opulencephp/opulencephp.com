@@ -1,14 +1,16 @@
 <?php
 /**
- * Copyright (C) 2015 David Young
+ * Opulence
  *
- * Defines the list of paths needed by this application
+ * @link      https://www.opulencephp.com
+ * @copyright Copyright (C) 2015 David Young
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 use Opulence\Applications\Paths;
 
 /**
  * ----------------------------------------------------------
- * List any paths used by our application
+ * Define the list of paths needed by this application
  * ----------------------------------------------------------
  */
 $pathsConfig = [
@@ -28,7 +30,7 @@ $pathsConfig = [
      *
      * "configs" => The configs directory
      * "configs.console" => The console config directory
-     * "configs.http" => The HTTP config directory
+     * "configs.http" => The Http config directory
      */
     "configs" => __DIR__,
     "configs.console" => __DIR__ . "/console",
@@ -106,7 +108,7 @@ $pathsConfig = [
      * "tmp.api" => The API's temporary directory
      * "tmp.docs" => The documents' temporary directory
      * "tmp.framework.console" => The framework's temporary console directory
-     * "tmp.framework.http" => The framework's temporary HTTP directory
+     * "tmp.framework.http" => The framework's temporary Http directory
      */
     "tmp" => __DIR__ . "/../tmp",
     "tmp.api" => __DIR__ . "/../tmp/api",

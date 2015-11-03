@@ -1,12 +1,19 @@
 <?php
 /**
- * Copyright (C) 2015 David Young
+ * Opulence
  *
- * Defines the list of console command classes to load
+ * @link      https://www.opulencephp.com
+ * @copyright Copyright (C) 2015 David Young
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 use OpulenceWebsite\Console\Commands\APICommand;
 use OpulenceWebsite\Console\Commands\DocsCommand;
 
+/**
+ * ----------------------------------------------------------
+ * Define the console command classes to load
+ * ----------------------------------------------------------
+ */
 return [
     APICommand::class,
     DocsCommand::class

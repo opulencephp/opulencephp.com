@@ -11,8 +11,8 @@
   "autoload": {
     "psr-4": {
       "OpulenceWebsite\\": [
-        "app/opulencewebsite",
-        "tests/app/opulencewebsite"
+        "app/OpulenceWebsite",
+        "tests/app/OpulenceWebsite"
       ]
     }
   },

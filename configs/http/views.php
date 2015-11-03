@@ -1,8 +1,15 @@
 <?php
 /**
- * Copyright (C) 2015 David Young
+ * Opulence
  *
- * Defines the view config
+ * @link      https://www.opulencephp.com
+ * @copyright Copyright (C) 2015 David Young
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ */
+/**
+ * ----------------------------------------------------------
+ * Define the view config
+ * ----------------------------------------------------------
  */
 return [
     /**

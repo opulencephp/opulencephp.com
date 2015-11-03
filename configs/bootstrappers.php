@@ -1,13 +1,20 @@
 <?php
 /**
- * Copyright (C) 2015 David Young
+ * Opulence
  *
- * Defines the list of bootstrapper classes to load
+ * @link      https://www.opulencephp.com
+ * @copyright Copyright (C) 2015 David Young
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 use Opulence\Framework\Bootstrappers\Cryptography\CryptographyBootstrapper;
-use Opulence\Framework\Bootstrappers\PHP\PHPBootstrapper;
+use Opulence\Framework\Bootstrappers\Php\PhpBootstrapper;
 
+/**
+ * ----------------------------------------------------------
+ * Define the bootstrapper classes for all applications
+ * ----------------------------------------------------------
+ */
 return [
-    PHPBootstrapper::class,
+    PhpBootstrapper::class,
     CryptographyBootstrapper::class
 ];
