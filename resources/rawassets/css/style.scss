@@ -1,0 +1,771 @@
+$siteWidth: 1024px;
+$fontSize: 14px;
+$minWidthForHeaderNav: 475px;
+$headerHeight: 34px;
+$docSidebarWidth: 230px;
+$hyperlinkColor: #69c;
+$mainNavPadding: 10px;
+$borderColor: #ccc;
+$borderColorDifference: #111;
+$hoverColorDifference: #111;
+$highlightsColor: #e41;
+$codeBackgroundColor: #f1f1f1;
+
+*
+{
+    box-sizing: border-box;;
+}
+
+html
+{
+    font-family: 'Open Sans', 'Segoe UI', arial, sans-serif;
+    font-size: $fontSize;
+    color: #111;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+}
+
+body
+{
+    position: relative;
+    margin: 0 auto;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+body, div
+{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    color: #555;
+    font-weight: 300;
+}
+
+h1
+{
+    font-size: 30px;
+    margin: 0 0 20px;
+}
+
+h2, h3, h4, h5, h6
+{
+    margin: 0 0 10px;
+}
+
+h2
+{
+    font-size: 24px;
+}
+
+h3
+{
+    font-size: 22px;
+}
+
+h4
+{
+    font-size: 18px;
+}
+
+h5
+{
+    font-size: 16px;
+}
+
+h6
+{
+    font-size: 14px;
+}
+
+a, a:link, a:active, a:visited
+{
+    color: $hyperlinkColor;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover
+{
+    color: $hyperlinkColor - $hoverColorDifference;
+}
+
+h1
+{
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+img
+{
+    border: none;
+}
+
+ul, ol
+{
+    padding: 10px 1em;
+    margin: 0;
+
+    ul, ol
+    {
+        padding: 0 0 0 25px;
+    }
+
+    & > li:not(:last-child)
+    {
+        padding-bottom: 2px;
+    }
+}
+
+ul
+{
+    list-style: inside disc;
+}
+
+ol
+{
+    list-style-position: inside;
+}
+
+button
+{
+    $background: #ddd;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: $background;
+    color: #333;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-family: 'Segoe UI', arial, sans-serif;
+
+    &:hover
+    {
+        color: #111;
+        background-color: $background - $hoverColorDifference;
+        border-color: #111;
+
+    }
+}
+
+section:not(:last-child)
+{
+    padding-bottom: 20px;
+}
+
+input::-moz-focus-inner, button::-moz-focus-inner
+{
+    border: 0;
+}
+
+input, select, textarea
+{
+    font-family: 'Segoe UI', arial, sans-serif;;
+}
+
+input[type=text], input[type=password], input[type=email]
+{
+    text-align: left;
+    width: 150px;
+    height: 18px;
+    font-size: $fontSize;
+}
+
+table
+{
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;;
+}
+
+header.main nav, footer.main nav
+{
+    margin: 0 auto;
+
+    ul
+    {
+        padding: 0;
+
+        li
+        {
+            padding: 0 $mainNavPadding;
+            display: inline-block;
+            line-height: $headerHeight;
+            font-size: $headerHeight/2;
+        }
+    }
+
+    & > ul > li:first-child
+    {
+        padding-left: 0;
+    }
+}
+
+header.main
+{
+    background-color: #369;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: $headerHeight;
+    z-index: 10;
+
+    &.docs nav li#doc-version-option
+    {
+        display: inline-block;
+
+        a#doc-version-toggle:after
+        {
+            font-family: "FontAwesome";
+            content: " \f0d7";
+        }
+
+        ul
+        {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            border: 1px solid $borderColor;
+
+            &.open
+            {
+                display: block;
+            }
+
+            li
+            {
+                $background: #f1f1f1;
+                background: $background;
+                width: 100%;
+                padding: 0;
+                white-space: nowrap;
+
+                &:hover
+                {
+                    background: $background - $hoverColorDifference;
+                }
+
+                &:not(:last-of-type)
+                {
+                    border-bottom: 1px solid #fff;
+                }
+
+                a
+                {
+                    $color: #333;
+                    width: 100%;
+                    padding: 2px 10px;
+                    display: inline-block;
+
+                    &, &:link, &:visited, &:active
+                    {
+                        color: $color;
+                    }
+
+                    &:hover
+                    {
+                        color: $color - $hoverColorDifference;
+                    }
+                }
+            }
+        }
+    }
+
+    nav
+    {
+        &:after
+        {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        li
+        {
+            &.current
+            {
+                background-color: #5ad;
+            }
+
+            &.aux
+            {
+                display: none;
+                float: right;
+                position: relative;
+            }
+        }
+
+        a, a:link, a:active, a:visited
+        {
+            color: #fff;
+        }
+
+        a:hover
+        {
+            color: #def;
+        }
+    }
+}
+
+main
+{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: $headerHeight+10 10px 10px;
+
+    nav.sidebar
+    {
+        padding-top: 10px;
+        top: $headerHeight;
+        overflow-y: auto;
+
+        ul
+        {
+            padding-top: 0;
+            padding-bottom: 0;
+            list-style: inside none;
+
+            &:not(:last-child)
+            {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &.docs article
+    {
+        h2, h3, h4, h5
+        {
+            padding-top: $headerHeight;
+            margin-top: -1*$headerHeight;
+        }
+    }
+}
+
+footer.main
+{
+    padding: 30px 0;
+    text-align: center;
+    background-color: #f1f1f1;
+    color: #888;
+
+    nav
+    {
+        .logo
+        {
+            color: #aaa;
+        }
+
+        a
+        {
+            $color: #888;
+
+            &, &:link, &:visited
+            {
+                color: $color;
+            }
+
+            &:hover
+            {
+                color: $color - $hoverColorDifference;
+            }
+        }
+
+        li
+        {
+            &#mobile-menu, &#doc-version-option
+            {
+                display: none;
+            }
+
+            &:last-child
+            {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+blockquote
+{
+    $background: #def;
+    background: $background;
+    border: 1px solid $background - $borderColorDifference;
+    padding: 10px;
+    margin: 10px 30px;
+}
+
+pre
+{
+    padding: 10px;
+    background: $codeBackgroundColor;
+    border: 1px solid $codeBackgroundColor - $borderColorDifference;
+    position: relative;
+    overflow: auto;
+}
+
+code
+{
+    font-family: Consolas, Monaco, "Andale Mono", monospace;
+}
+
+p code
+{
+    $verticalPadding: 2px;
+    background: $codeBackgroundColor;
+    padding: $verticalPadding 5px;
+    font-size: $fontSize - 2*$verticalPadding + 1px;
+    white-space: nowrap;
+    border: 1px solid $codeBackgroundColor - $borderColorDifference;
+}
+
+.logo
+{
+    color: #bbe5ff;
+
+    .logo-icon
+    {
+        height: $headerHeight - 8px;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+}
+
+.feature-wrapper
+{
+    article
+    {
+        text-align: center;
+
+        i.fa
+        {
+            color: $highlightsColor;
+            display: block;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        h4
+        {
+            text-align: center;
+        }
+    }
+}
+
+.highlight-wrapper
+{
+    article
+    {
+        h4
+        {
+            text-align: center;
+        }
+
+        i.fa
+        {
+            color: $highlightsColor;
+        }
+
+        ul
+        {
+            padding: 0;
+
+            li
+            {
+                padding-left: 1.3em;
+                list-style: none;
+
+                &:before
+                {
+                    content: "\f067";
+                    font-family: FontAwesome, sans-serif;
+                    display: inline-block;
+                    margin-left: -1.8em;
+                    width: 1.3em;
+                    font-size: .7em;
+                    color: $highlightsColor;
+                }
+            }
+        }
+    }
+}
+
+.scroll-anchor
+{
+    padding-top: $headerHeight;
+    margin-top: -1*$headerHeight;
+}
+
+#gray-out
+{
+    display: none;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+@media screen and (max-device-width: $minWidthForHeaderNav - 1px) {
+    header.main nav > ul > li.movable
+    {
+        display: none;
+    }
+
+    #sidebar-main-nav
+    {
+        display: block;
+    }
+}
+
+@media screen and (min-device-width: $minWidthForHeaderNav) and (max-device-width: $siteWidth - 1px) {
+    header.main nav > ul > li.movable
+    {
+        display: inline-block;
+    }
+
+    /* We have enough room for the nav up top */
+    #sidebar-main-nav
+    {
+        display: none;
+    }
+
+    /* Don't display the sidebar on non-doc pages */
+    header.main:not(.docs) nav > ul > li#mobile-menu
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-device-width: $siteWidth - 1px) {
+    body.nav-open
+    {
+        main
+        {
+            nav.sidebar
+            {
+                -moz-transform: translate3d(-100%, 0, 0);
+                -ms-transform: translate3d(-100%, 0, 0);
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+                -moz-transition: .3s;
+                -webkit-transition: .3s;
+                transition: transform .3s;
+            }
+        }
+
+        #gray-out
+        {
+            display: block;
+        }
+    }
+
+    header.main
+    {
+        nav > ul > li
+        {
+            &#mobile-menu
+            {
+                display: inline-block;
+                padding: 0;
+                font-size: $headerHeight;
+
+                /* Make the link easier to click by making it wide */
+                a
+                {
+                    display: inline-block;
+                    padding: 0 10px;
+                }
+            }
+
+            &:first-child
+            {
+                /* Add some left-padding so the logo is not scrunched against the side */
+                padding-left: 10px;
+            }
+
+            &:nth-last-of-type(3)
+            {
+                padding-right: $mainNavPadding;
+            }
+        }
+    }
+
+    main nav.sidebar
+    {
+        position: fixed;
+        border-left: 1px solid $borderColor;
+        left: 100%;
+        bottom: 0;
+        min-width: 25%;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        background: #f1f1f1;
+        z-index: 5;
+        -webkit-transition: -webkit-transform .3s;
+        -moz-transition: -moz-transform .3s;
+        -o-transition: -o-transform .3s;
+        transition: transform .3s;
+
+        li
+        {
+            white-space: nowrap;
+        }
+    }
+
+    .feature-wrapper
+    {
+        article:not(:last-of-type)
+        {
+            margin-bottom: 10px;
+        }
+    }
+
+    .highlight-wrapper
+    {
+        article
+        {
+            h4
+            {
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media screen and (min-device-width: $siteWidth) {
+    #sidebar-main-nav
+    {
+        display: none;
+    }
+
+    header.main nav, footer.main nav
+    {
+        width: $siteWidth;
+
+        & > ul > li
+        {
+            &#mobile-menu
+            {
+                display: none;
+            }
+
+            /* In the desktop version, the third-to-lst item is the last visible one */
+            &:nth-last-of-type(3)
+            {
+                padding-right: 0;
+            }
+        }
+    }
+
+    main
+    {
+        width: $siteWidth;
+
+        /* Don't display the sidebar on non-doc pages */
+        &:not(.docs) nav.sidebar
+        {
+            display: none;
+        }
+
+        nav.sidebar
+        {
+            position: absolute;
+            padding: 20px 10px 10px 0;
+            float: left;
+            width: $docSidebarWidth;
+            bottom: 0;
+            border-right: 1px solid $borderColor;
+        }
+
+        &.docs article
+        {
+            /* Force the left-border to be drawn from the nav bar */
+            margin: -10px 0 -10px $docSidebarWidth;
+            padding: 10px 0 10px 20px;
+        }
+    }
+
+    main.home
+    {
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+
+        section
+        {
+            width: $siteWidth;
+            margin: 0 auto;
+
+            &#why-opulence
+            {
+                width: auto;
+                background: #eee;
+                padding-top: 10px;
+                /* Make next section look like it has padding */
+                margin-bottom: 10px;
+            }
+
+            .highlight-wrapper
+            {
+                width: $siteWidth;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .highlight-wrapper, .feature-wrapper
+    {
+        article
+        {
+            width: 32%;
+            display: inline-block;
+            padding: 10px;
+            margin: .5%;
+
+            &:nth-of-type(3n + 1)
+            {
+                margin-left: 0;
+            }
+
+            &:nth-of-type(3n)
+            {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .feature-wrapper
+    {
+        article
+        {
+            min-height: 100px;
+            vertical-align: top;
+        }
+    }
+
+    .highlight-wrapper
+    {
+        article
+        {
+            background: #fcfcfc;
+            min-height: 205px;
+            vertical-align: top;
+            border: 1px solid #ddd;
+        }
+    }
+}
+
+@media screen and (min-device-height: 650px) {
+    main
+    {
+        min-height: 600px;
+    }
+}
