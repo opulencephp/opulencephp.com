@@ -29,7 +29,7 @@ class PageTest extends ApplicationTestCase
 
         $this->docs = new Documentation(
             $this->getMock(Parsedown::class),
-            $this->application->getPaths(),
+            require __DIR__ . "/../../../../configs/paths.php",
             $this->getMock(FileSystem::class)
         );
     }
