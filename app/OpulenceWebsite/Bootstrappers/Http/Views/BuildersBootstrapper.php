@@ -12,7 +12,7 @@ use OpulenceWebsite\Docs\Documentation;
 use OpulenceWebsite\Http\Views\Builders\DocsBuilder;
 use OpulenceWebsite\Http\Views\Builders\HomeBuilder;
 use OpulenceWebsite\Http\Views\Builders\MasterBuilder;
-use Opulence\Applications\Bootstrappers\Bootstrapper;
+use Opulence\Bootstrappers\Bootstrapper;
 use Opulence\Http\Requests\Request;
 use Opulence\Views\Factories\IViewFactory;
 use Opulence\Views\IView;

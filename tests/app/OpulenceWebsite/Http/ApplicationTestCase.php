@@ -9,7 +9,7 @@
 namespace OpulenceWebsite\Http;
 
 use Opulence\Applications\Application;
-use Opulence\Applications\Bootstrappers\ApplicationBinder;
+use Opulence\Bootstrappers\ApplicationBinder;
 use Opulence\Framework\Testing\PhpUnit\Http\ApplicationTestCase as BaseTestCase;
 use Opulence\Ioc\IContainer;
 

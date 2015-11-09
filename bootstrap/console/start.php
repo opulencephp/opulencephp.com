@@ -7,8 +7,8 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 use Monolog\Logger;
-use Opulence\Applications\Bootstrappers\ApplicationBinder;
-use Opulence\Applications\Bootstrappers\Caching\ICache;
+use Opulence\Bootstrappers\ApplicationBinder;
+use Opulence\Bootstrappers\Caching\ICache;
 use Opulence\Console\Commands\CommandCollection;
 use Opulence\Console\Commands\Compilers\ICompiler;
 use Opulence\Console\Requests\Parsers\IParser;
