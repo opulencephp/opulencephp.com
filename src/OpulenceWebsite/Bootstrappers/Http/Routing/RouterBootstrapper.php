@@ -4,20 +4,20 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Bootstrappers\Http\Routing;
 
-use OpulenceWebsite\Http\Controllers\Page;
 use Opulence\Applications\Environments\Environment;
 use Opulence\Framework\Bootstrappers\Http\Routing\RouterBootstrapper as BaseBootstrapper;
 use Opulence\Routing\Router;
 use Opulence\Routing\Routes\Caching\ICache;
+use OpulenceWebsite\Http\Controllers\Page;
 
 /**
  * Defines the router bootstrapper
  */
-class  RouterBootstrapper extends BaseBootstrapper
+class RouterBootstrapper extends BaseBootstrapper
 {
     /**
      * Configures the router, which is useful for things like caching
@@ -34,7 +34,7 @@ class  RouterBootstrapper extends BaseBootstrapper
             $cachedRoutesPath = "{$this->paths["routes.cache"]}/" . ICache::DEFAULT_CACHED_ROUTES_FILE_NAME;
             $routes = $this->cache->get($cachedRoutesPath, $router, $routesConfigPath);
             $router->setRouteCollection($routes);
-        }else {
+        } else {
             require $routesConfigPath;
         }
     }

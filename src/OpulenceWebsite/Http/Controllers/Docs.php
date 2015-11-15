@@ -4,20 +4,20 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Http\Controllers;
 
-use OpulenceWebsite\Docs\Documentation;
 use Opulence\Http\Responses\RedirectResponse;
 use Opulence\Http\Responses\Response;
 use Opulence\Routing\Controller;
 use Opulence\Routing\Url\UrlGenerator;
+use OpulenceWebsite\Documentation\Documentation;
 
 /**
  * Defines the documentation page controller
  */
-class  Docs extends Controller
+class Docs extends Controller
 {
     /** @var Documentation The object used to grab documents */
     protected $docs = null;

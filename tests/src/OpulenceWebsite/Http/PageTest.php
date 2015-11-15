@@ -4,13 +4,13 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Http;
 
-use Parsedown;
-use OpulenceWebsite\Docs\Documentation;
 use Opulence\Files\FileSystem;
+use OpulenceWebsite\Documentation\Documentation;
+use Parsedown;
 
 /**
  * Defines the page tests
@@ -27,9 +27,11 @@ class PageTest extends ApplicationTestCase
     {
         parent::setUp();
 
+        $paths = require __DIR__ . "/../../../../configs/paths.php";
         $this->docs = new Documentation(
+            require "{$paths["configs"]}/documentation.php",
             $this->getMock(Parsedown::class),
-            require __DIR__ . "/../../../../configs/paths.php",
+            $paths,
             $this->getMock(FileSystem::class)
         );
     }

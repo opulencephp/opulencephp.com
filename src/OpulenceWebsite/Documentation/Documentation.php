@@ -4,24 +4,26 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-namespace OpulenceWebsite\Docs;
+namespace OpulenceWebsite\Documentation;
 
-use Parsedown;
-use Opulence\Applications\Paths;
+use Opulence\Bootstrappers\Paths;
 use Opulence\Files\FileSystem;
 use Opulence\Files\FileSystemException;
+use Parsedown;
 
 /**
  * Pulls in documents
  */
-class  Documentation
+class Documentation
 {
     /** The GitHub docs repository */
     const GITHUB_REPOSITORY = "https://github.com/opulencephp/docs.git";
     /** The default branch to show in the docs */
     const DEFAULT_BRANCH = "1.0";
+    /** @var array The config for the docs */
+    private $config = [];
     /** @var Parsedown The parsedown object to use */
     private $parsedown = null;
     /** @var Paths The application paths */
@@ -30,12 +32,14 @@ class  Documentation
     private $files = null;
 
     /**
+     * @param array $config The config for the docs
      * @param Parsedown $parsedown The parsedown object to use
      * @param Paths $paths The application paths
      * @param FileSystem $files The file system
      */
-    public function __construct(Parsedown $parsedown, Paths $paths, FileSystem $files)
+    public function __construct(array $config, Parsedown $parsedown, Paths $paths, FileSystem $files)
     {
+        $this->config = $config;
         $this->parsedown = $parsedown;
         $this->paths = $paths;
         $this->files = $files;
@@ -50,7 +54,7 @@ class  Documentation
     {
         $gitOutput = "";
 
-        foreach (DocumentationConfig::$config as $branchName => $branchData) {
+        foreach ($this->config as $branchName => $branchData) {
             $rawDocsPath = "{$this->paths["tmp.docs"]}/$branchName";
             $compiledDocsPath = "{$this->paths["docs.compiled"]}/$branchName";
 
@@ -97,7 +101,7 @@ class  Documentation
     {
         $titles = [];
 
-        foreach (DocumentationConfig::$config as $name => $data) {
+        foreach ($this->config as $name => $data) {
             $titles[$name] = $data["title"];
         }
 
@@ -125,7 +129,7 @@ class  Documentation
      */
     public function getDefaultDoc($version)
     {
-        return DocumentationConfig::$config[$version]["default"];
+        return $this->config[$version]["default"];
     }
 
     /**
@@ -136,7 +140,7 @@ class  Documentation
      */
     public function getDocs($version)
     {
-        return DocumentationConfig::$config[$version]["docs"];
+        return $this->config[$version]["docs"];
     }
 
     /**
@@ -149,7 +153,7 @@ class  Documentation
     {
         $flattenedDocs = [];
 
-        foreach (DocumentationConfig::$config[$version]["docs"] as $sectionHeader => $docs) {
+        foreach ($this->config[$version]["docs"] as $sectionHeader => $docs) {
             $flattenedDocs = array_merge($flattenedDocs, $docs);
         }
 
@@ -165,7 +169,7 @@ class  Documentation
      */
     public function hasDoc($version, $name)
     {
-        if (!isset(DocumentationConfig::$config[$version])) {
+        if (!isset($this->config[$version])) {
             return false;
         }
 
@@ -182,6 +186,6 @@ class  Documentation
      */
     public function hasVersion($version)
     {
-        return isset(DocumentationConfig::$config[$version]);
+        return isset($this->config[$version]);
     }
 }

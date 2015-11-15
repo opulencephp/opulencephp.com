@@ -4,7 +4,7 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Console;
 
@@ -16,7 +16,7 @@ use Opulence\Ioc\IContainer;
 /**
  * Defines the console application test case
  */
-class  ApplicationTestCase extends BaseTestCase
+class ApplicationTestCase extends BaseTestCase
 {
     /**
      * @inheritdoc

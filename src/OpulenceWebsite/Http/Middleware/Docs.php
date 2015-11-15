@@ -4,12 +4,12 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Http\Middleware;
 
 use Closure;
-use OpulenceWebsite\Docs\Documentation;
+use OpulenceWebsite\Documentation\Documentation;
 use Opulence\Http\Middleware\IMiddleware;
 use Opulence\Http\Requests\Request;
 use Opulence\Http\Responses\RedirectResponse;
@@ -19,7 +19,7 @@ use Opulence\Routing\Url\UrlGenerator;
 /**
  * Defines the documentation middleware
  */
-class  Docs implements IMiddleware
+class Docs implements IMiddleware
 {
     /** @var Router The Http router */
     private $router = null;

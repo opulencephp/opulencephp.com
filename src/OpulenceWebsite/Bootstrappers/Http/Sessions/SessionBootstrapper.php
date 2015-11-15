@@ -4,7 +4,7 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Bootstrappers\Http\Sessions;
 
@@ -26,7 +26,7 @@ use SessionHandlerInterface;
 /**
  * Defines the session bootstrapper
  */
-class  SessionBootstrapper extends BaseBootstrapper
+class SessionBootstrapper extends BaseBootstrapper
 {
     /** @var array|null The config array */
     private $config = null;

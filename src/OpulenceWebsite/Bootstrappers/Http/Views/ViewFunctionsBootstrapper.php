@@ -4,7 +4,7 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Bootstrappers\Http\Views;
 
@@ -16,7 +16,7 @@ use Opulence\Views\Compilers\Fortune\ITranspiler;
 /**
  * Defines the view functions bootstrapper
  */
-class  ViewFunctionsBootstrapper extends BaseBootstrapper
+class ViewFunctionsBootstrapper extends BaseBootstrapper
 {
     /**
      * Registers view functions

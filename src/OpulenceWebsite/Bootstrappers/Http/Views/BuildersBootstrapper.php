@@ -4,23 +4,23 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Bootstrappers\Http\Views;
 
-use OpulenceWebsite\Docs\Documentation;
-use OpulenceWebsite\Http\Views\Builders\DocsBuilder;
-use OpulenceWebsite\Http\Views\Builders\HomeBuilder;
-use OpulenceWebsite\Http\Views\Builders\MasterBuilder;
 use Opulence\Bootstrappers\Bootstrapper;
 use Opulence\Http\Requests\Request;
 use Opulence\Views\Factories\IViewFactory;
 use Opulence\Views\IView;
+use OpulenceWebsite\Documentation\Documentation;
+use OpulenceWebsite\Http\Views\Builders\DocsBuilder;
+use OpulenceWebsite\Http\Views\Builders\HomeBuilder;
+use OpulenceWebsite\Http\Views\Builders\MasterBuilder;
 
 /**
  * Defines the view builders bootstrapper
  */
-class  BuildersBootstrapper extends Bootstrapper
+class BuildersBootstrapper extends Bootstrapper
 {
     /**
      * Registers view builders to the factory

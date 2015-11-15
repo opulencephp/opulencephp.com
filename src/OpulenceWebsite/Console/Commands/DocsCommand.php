@@ -4,18 +4,18 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Console\Commands;
 
-use OpulenceWebsite\Docs\Documentation;
 use Opulence\Console\Commands\Command;
 use Opulence\Console\Responses\IResponse;
+use OpulenceWebsite\Documentation\Documentation;
 
 /**
  * Defines the command that generates HTML from the markdown docs
  */
-class  DocsCommand extends Command
+class DocsCommand extends Command
 {
     /** @var Documentation The tool to read/write docs */
     private $docs = null;

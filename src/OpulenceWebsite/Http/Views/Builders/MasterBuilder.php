@@ -4,11 +4,11 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Http\Views\Builders;
 
-use OpulenceWebsite\Docs\Documentation;
+use OpulenceWebsite\Documentation\Documentation;
 use Opulence\Http\Requests\Request;
 use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
@@ -16,7 +16,7 @@ use Opulence\Views\IView;
 /**
  * Defines the master view builder
  */
-class  MasterBuilder implements IViewBuilder
+class MasterBuilder implements IViewBuilder
 {
     /** @var Request The current request */
     private $request = null;

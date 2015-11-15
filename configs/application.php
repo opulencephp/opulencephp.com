@@ -4,11 +4,10 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 use Opulence\Applications\Application;
 use Opulence\Applications\Environments\Environment;
-use Opulence\Applications\Paths;
 use Opulence\Applications\Tasks\Dispatchers\IDispatcher as ITaskDispatcher;
 use Opulence\Bootstrappers\ApplicationBinder;
 use Opulence\Bootstrappers\BootstrapperRegistry;
@@ -17,6 +16,7 @@ use Opulence\Bootstrappers\Caching\ICache;
 use Opulence\Bootstrappers\Dispatchers\Dispatcher as BootstrapperDispatcher;
 use Opulence\Bootstrappers\Dispatchers\IDispatcher as IBootstrapperDispatcher;
 use Opulence\Bootstrappers\IBootstrapperRegistry;
+use Opulence\Bootstrappers\Paths;
 use Opulence\Ioc\IContainer;
 
 /**

@@ -4,7 +4,7 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Http\Controllers;
 
@@ -14,7 +14,7 @@ use Opulence\Routing\Controller;
 /**
  * Defines an example controller
  */
-class  Page extends Controller
+class Page extends Controller
 {
     /**
      * @inheritdoc

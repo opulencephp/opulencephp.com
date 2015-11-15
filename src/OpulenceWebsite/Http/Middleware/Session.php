@@ -4,7 +4,7 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Http\Middleware;
 
@@ -16,7 +16,7 @@ use Opulence\Http\Responses\Response;
 /**
  * Defines the session middleware
  */
-class  Session extends BaseSession
+class Session extends BaseSession
 {
     /** @var array|null The config array */
     private $config = null;

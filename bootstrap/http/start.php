@@ -4,7 +4,7 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 use Monolog\Logger;
 use Opulence\Applications\Environments\Environment;
@@ -59,4 +59,4 @@ $application->start(function () use ($application, $container) {
  * Shut her down
  * ----------------------------------------------------------
  */
-$application->shutdown();
+$application->shutDown();

@@ -4,7 +4,7 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Bootstrappers\Console\Commands;
 
@@ -15,7 +15,7 @@ use Opulence\Ioc\IContainer;
 /**
  * Defines the command bootstrapper
  */
-class  CommandsBootstrapper extends Bootstrapper
+class CommandsBootstrapper extends Bootstrapper
 {
     /**
      * Sets the console commands from this project

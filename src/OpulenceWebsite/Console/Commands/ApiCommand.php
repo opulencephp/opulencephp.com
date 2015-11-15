@@ -4,26 +4,26 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Console\Commands;
 
-use OpulenceWebsite\Docs\Api as ApiDocs;
 use Opulence\Console\Commands\Command;
 use Opulence\Console\Responses\IResponse;
+use OpulenceWebsite\Documentation\Api;
 
 /**
  * Defines the command that generates API docs
  */
-class  ApiCommand extends Command
+class ApiCommand extends Command
 {
-    /** @var ApiDocs The tool to generate docs */
+    /** @var Api The tool to generate docs */
     private $api = null;
 
     /**
-     * @param ApiDocs $api The tool to generate API docs
+     * @param Api $api The tool to generate API docs
      */
-    public function __construct(ApiDocs $api)
+    public function __construct(Api $api)
     {
         parent::__construct();
 

@@ -4,17 +4,17 @@
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2015 David Young
- * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-namespace OpulenceWebsite\Docs;
+namespace OpulenceWebsite\Documentation;
 
-use Opulence\Applications\Paths;
+use Opulence\Bootstrappers\Paths;
 use Opulence\Files\FileSystem;
 
 /**
  * Defines the API docs
  */
-class  Api
+class Api
 {
     /** The GitHub docs repository */
     const GITHUB_REPOSITORY = "https://github.com/opulencephp/Opulence.git";
