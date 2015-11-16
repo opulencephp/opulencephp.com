@@ -190,8 +190,8 @@ $config["master"] = [
         ],
         "Framework" => [
             "application" => [
-                "title" => "Application",
-                "linkText" => "Application",
+                "title" => "Applications",
+                "linkText" => "Applications",
                 "description" => "Learn about the inner-workings of an Opulence application",
                 "keywords" => ["opulence", "application", "php"]
             ],
@@ -444,8 +444,8 @@ $config["1.0"] = [
         ],
         "Framework" => [
             "application" => [
-                "title" => "Application",
-                "linkText" => "Application",
+                "title" => "Applications",
+                "linkText" => "Applications",
                 "description" => "Learn about the inner-workings of an Opulence application",
                 "keywords" => ["opulence", "application", "php"]
             ],
@@ -698,8 +698,8 @@ $config["0.6"] = [
         ],
         "Framework" => [
             "application" => [
-                "title" => "Application",
-                "linkText" => "Application",
+                "title" => "Applications",
+                "linkText" => "Applications",
                 "description" => "Learn about the inner-workings of an Opulence application",
                 "keywords" => ["opulence", "application", "php"]
             ],
@@ -952,8 +952,8 @@ $config["0.5"] = [
         ],
         "Framework" => [
             "application" => [
-                "title" => "Application",
-                "linkText" => "Application",
+                "title" => "Applications",
+                "linkText" => "Applications",
                 "description" => "Learn about the inner-workings of an Opulence application",
                 "keywords" => ["opulence", "application", "php"]
             ],
