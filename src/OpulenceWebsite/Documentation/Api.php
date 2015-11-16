@@ -20,7 +20,7 @@ class Api
     const GITHUB_REPOSITORY = "https://github.com/opulencephp/Opulence.git";
 
     /** @var array The list of versions to create APIs for */
-    private static $branches = ["0.5", "0.6", "1.0", "master"];
+    private static $branches = ["1.0", "master"];
     /** @var Paths The application paths */
     private $paths = null;
     /** @var FileSystem The file system */
