@@ -12,12 +12,12 @@ use Opulence\Http\Responses\RedirectResponse;
 use Opulence\Http\Responses\Response;
 use Opulence\Routing\Controller;
 use Opulence\Routing\Url\UrlGenerator;
-use OpulenceWebsite\Documentation\Documentation;
+use OpulenceWebsite\Documentation\Documentation as DocumentationWrapper;
 
 /**
  * Defines the documentation page controller
  */
-class Docs extends Controller
+class Documentation extends Controller
 {
     /** @var Documentation The object used to grab documents */
     protected $docs = null;
@@ -25,10 +25,10 @@ class Docs extends Controller
     protected $urlGenerator = null;
 
     /**
-     * @param Documentation $docs The object used to grab documents
+     * @param DocumentationWrapper $docs The object used to grab documents
      * @param UrlGenerator $urlGenerator The URL generator
      */
-    public function __construct(Documentation $docs, UrlGenerator $urlGenerator)
+    public function __construct(DocumentationWrapper $docs, UrlGenerator $urlGenerator)
     {
         $this->docs = $docs;
         $this->urlGenerator = $urlGenerator;
@@ -41,7 +41,7 @@ class Docs extends Controller
      * @param string $version The Opulence version to retrieve
      * @return Response The page
      */
-    public function showDoc($docName, $version = Documentation::DEFAULT_BRANCH)
+    public function showDoc($docName, $version = DocumentationWrapper::DEFAULT_BRANCH)
     {
         $docs = $this->docs->getFlattenedDocs($version);
         $this->view = $this->viewFactory->create("Docs");
@@ -63,7 +63,7 @@ class Docs extends Controller
      * @param string $version The Opulence version to retrieve
      * @return Response The index page
      */
-    public function showIndex($version = Documentation::DEFAULT_BRANCH)
+    public function showIndex($version = DocumentationWrapper::DEFAULT_BRANCH)
     {
         return $this->showDoc($this->docs->getDefaultDoc($version), $version);
     }
@@ -77,7 +77,7 @@ class Docs extends Controller
     public function showNoVersionDoc($docName)
     {
         return new RedirectResponse(
-            $this->urlGenerator->createFromName("docs", Documentation::DEFAULT_BRANCH, $docName)
+            $this->urlGenerator->createFromName("docs", DocumentationWrapper::DEFAULT_BRANCH, $docName)
         );
     }
 }

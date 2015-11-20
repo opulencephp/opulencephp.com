@@ -6,16 +6,18 @@
  * @copyright Copyright (C) 2015 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-/**
- * ----------------------------------------------------------
- * Create our paths
- * ----------------------------------------------------------
- */
-$paths = require __DIR__ . "/../configs/paths.php";
+use Monolog\Handler\ErrorLogHandler;
+use Monolog\Logger;
 
 /**
  * ----------------------------------------------------------
- * Setup the application
+ * Create a PSR-3 logger
  * ----------------------------------------------------------
+ *
+ * Note: You may use any PSR-3 logger you'd like
+ * For convenience, the Monolog library is included here
  */
-$application = require __DIR__ . "/../configs/application.php";
+$logger = new Logger("application");
+$logger->pushHandler(new ErrorLogHandler());
+
+return $logger;

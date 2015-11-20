@@ -27,9 +27,9 @@ class PageTest extends ApplicationTestCase
     {
         parent::setUp();
 
-        $paths = require __DIR__ . "/../../../../configs/paths.php";
+        $paths = require __DIR__ . "/../../../../config/paths.php";
         $this->docs = new Documentation(
-            require "{$paths["configs"]}/documentation.php",
+            require "{$paths["config"]}/documentation.php",
             $this->getMock(Parsedown::class),
             $paths,
             $this->getMock(FileSystem::class)
@@ -42,13 +42,7 @@ class PageTest extends ApplicationTestCase
     public function test404PageIsSetUpCorrectly()
     {
         $this->route("GET", "/does-not-exist");
-        $this->checkMasterTemplateSetup();
         $this->assertResponseIsNotFound();
-        $this->assertViewVarEquals("metaKeywords", []);
-        $this->assertViewVarEquals("metaDescription", "");
-        $this->assertViewVarEquals("doFormatTitle", true);
-        $this->assertViewVarEquals("title", "404 Error");
-        $this->assertViewVarEquals("mainClasses", "home");
     }
 
     /**

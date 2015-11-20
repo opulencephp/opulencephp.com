@@ -62,7 +62,7 @@ class Api
             sprintf(
                 'php %s/bin/sami.php update %s/sami.php',
                 $this->paths["vendor"],
-                $this->paths["configs"]
+                $this->paths["config"]
             )
         );
 

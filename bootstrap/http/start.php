@@ -6,7 +6,6 @@
  * @copyright Copyright (C) 2015 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-use Monolog\Logger;
 use Opulence\Applications\Environments\Environment;
 use Opulence\Bootstrappers\ApplicationBinder;
 use Opulence\Bootstrappers\Caching\ICache;
@@ -14,17 +13,46 @@ use Opulence\Framework\Http\Kernel;
 use Opulence\Http\Requests\Request;
 use Opulence\Routing\Router;
 
-require_once __DIR__ . "/../start.php";
+/**
+ * ----------------------------------------------------------
+ * Create our paths
+ * ----------------------------------------------------------
+ */
+$paths = require_once __DIR__ . "/../../config/paths.php";
 
 /**
  * ----------------------------------------------------------
- * Finish configuring the bootstrappers for the Http kernel
+ * Set up the environment
+ * ----------------------------------------------------------
+ */
+$environment = require __DIR__ . "/../../config/environment.php";
+
+/**
+ * ----------------------------------------------------------
+ * Set up the exception and error handlers
+ * ----------------------------------------------------------
+ */
+$exceptionHandler = require_once __DIR__ . "/../../config/http/exceptions.php";
+$errorHandler = require_once __DIR__ . "/../../config/http/errors.php";
+$exceptionHandler->register();
+$errorHandler->register();
+
+/**
+ * ----------------------------------------------------------
+ * Initialize some application variables
+ * ----------------------------------------------------------
+ */
+$application = require_once __DIR__ . "/../../config/application.php";
+
+/**
+ * ----------------------------------------------------------
+ * Configure the bootstrappers for the HTTP kernel
  * ----------------------------------------------------------
  *
  * @var ApplicationBinder $applicationBinder
  */
 $applicationBinder->bindToApplication(
-    require __DIR__ . "/../../configs/http/bootstrappers.php",
+    require_once __DIR__ . "/../../config/http/bootstrappers.php",
     false,
     $application->getEnvironment()->getName() == Environment::PRODUCTION,
     $paths["tmp.framework.http"] . "/" . ICache::DEFAULT_CACHED_REGISTRY_FILE_NAME
@@ -35,7 +63,7 @@ $applicationBinder->bindToApplication(
  * Let's get started
  * ----------------------------------------------------------
  */
-$application->start(function () use ($application, $container) {
+$application->start(function () use ($application, $container, $exceptionHandler, $exceptionRenderer) {
     /**
      * ----------------------------------------------------------
      * Handle the request
@@ -46,10 +74,8 @@ $application->start(function () use ($application, $container) {
      */
     $router = $container->makeShared(Router::class);
     $request = $container->makeShared(Request::class);
-    $logger = require __DIR__ . "/../../configs/http/logging.php";
-    $container->bind(Logger::class, $logger);
-    $kernel = new Kernel($container, $router, $logger);
-    $kernel->addMiddleware(require __DIR__ . "/../../configs/http/middleware.php");
+    $kernel = new Kernel($container, $router, $exceptionHandler, $exceptionRenderer);
+    $kernel->addMiddleware(require_once __DIR__ . "/../../config/http/middleware.php");
     $response = $kernel->handle($request);
     $response->send();
 });

@@ -36,7 +36,7 @@ class DocumentationBootstrapper extends Bootstrapper implements ILazyBootstrappe
         $container->bind(
             Documentation::class,
             new Documentation(
-                require "{$this->paths["configs"]}/documentation.php",
+                require "{$this->paths["config"]}/documentation.php",
                 new Parsedown(),
                 $this->paths,
                 $container->makeShared(FileSystem::class)

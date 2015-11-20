@@ -18,8 +18,9 @@
   },
   "require": {
     "php": ">=5.5.10",
-    "opulence/opulence": "1.0.*@dev",
     "erusev/parsedown": "1.5.3",
+    "monolog/monolog": "1.12.*@dev",
+    "opulence/opulence": "1.0.*@dev",
     "sami/sami": "3.0.*@dev"
   },
   "require-dev": {
@@ -38,7 +39,7 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "php -r \"copy('configs/environment/.env.example.php', 'configs/environment/.env.app.php');\"",
+      "php -r \"copy('config/environment/.env.example.php', 'config/environment/.env.app.php');\"",
       "php apex encryption:generatekey"
     ],
     "post-install-cmd": [

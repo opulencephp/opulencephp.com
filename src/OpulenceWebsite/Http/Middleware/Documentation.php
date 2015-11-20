@@ -9,31 +9,31 @@
 namespace OpulenceWebsite\Http\Middleware;
 
 use Closure;
-use OpulenceWebsite\Documentation\Documentation;
 use Opulence\Http\Middleware\IMiddleware;
 use Opulence\Http\Requests\Request;
 use Opulence\Http\Responses\RedirectResponse;
 use Opulence\Routing\Router;
 use Opulence\Routing\Url\UrlGenerator;
+use OpulenceWebsite\Documentation\Documentation as DocumentationWrapper;
 
 /**
  * Defines the documentation middleware
  */
-class Docs implements IMiddleware
+class Documentation implements IMiddleware
 {
     /** @var Router The Http router */
     private $router = null;
     /** @var UrlGenerator The URL generator */
     private $urlGenerator = null;
-    /** @var Documentation The docs */
+    /** @var DocumentationWrapper The docs */
     private $docs = null;
 
     /**
      * @param Router $router The Http router
-     * @param Documentation $docs The docs
+     * @param DocumentationWrapper $docs The docs
      * @param UrlGenerator $urlGenerator The URL generator
      */
-    public function __construct(Router $router, Documentation $docs, UrlGenerator $urlGenerator)
+    public function __construct(Router $router, DocumentationWrapper $docs, UrlGenerator $urlGenerator)
     {
         $this->router = $router;
         $this->docs = $docs;

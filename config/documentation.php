@@ -233,6 +233,12 @@ $config["master"] = [
                 "description" => "Learn how to setup environment variables in Opulence",
                 "keywords" => ["opulence", "environment variables", "config", "php"]
             ],
+            "error-handling" => [
+                "title" => "Error Handling",
+                "linkText" => "Error Handling",
+                "description" => "Learn about error handling in Opulence",
+                "keywords" => ["opulence", "errors", "exceptions"]
+            ],
             "events" => [
                 "title" => "Events",
                 "linkText" => "Events",
@@ -486,6 +492,12 @@ $config["1.0"] = [
                 "linkText" => "Environments",
                 "description" => "Learn how to setup environment variables in Opulence",
                 "keywords" => ["opulence", "environment variables", "config", "php"]
+            ],
+            "error-handling" => [
+                "title" => "Error Handling",
+                "linkText" => "Error Handling",
+                "description" => "Learn about error handling in Opulence",
+                "keywords" => ["opulence", "errors", "exceptions"]
             ],
             "events" => [
                 "title" => "Events",

@@ -16,7 +16,7 @@ $commands = [
     "cd $projectRootDirectory",
     "composer update",
     // Copy the master environment config
-    "\\cp -vrf $htmlDirectory/.env.app.php configs/environment/.env.app.php",
+    "\\cp -vrf $htmlDirectory/.env.app.php config/environment/.env.app.php",
     "composer dump-autoload -o",
     // Generate the necessary files and run tests
     "php apex docs",

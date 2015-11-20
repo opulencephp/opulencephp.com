@@ -8,7 +8,6 @@
  */
 namespace OpulenceWebsite\Console;
 
-use Opulence\Applications\Application;
 use Opulence\Bootstrappers\ApplicationBinder;
 use Opulence\Framework\Testing\PhpUnit\Console\ApplicationTestCase as BaseTestCase;
 use Opulence\Ioc\IContainer;
@@ -21,19 +20,11 @@ class ApplicationTestCase extends BaseTestCase
     /**
      * @inheritdoc
      */
-    protected function getKernelLogger()
+    public function setUp()
     {
-        return require __DIR__ . "/../../../../configs/console/logging.php";
-    }
-
-    /**
-     * @inheritdoc
-     */
-    protected function setApplicationAndIocContainer()
-    {
-        /** @var Application $application */
-        require __DIR__ . "/../../../../bootstrap/start.php";
-        $this->application = $application;
+        $paths = require __DIR__ . "/../../../../config/paths.php";
+        $environment = require __DIR__ . "/../../../../config/environment.php";
+        $this->application = require __DIR__ . "/../../../../config/application.php";
         /** @var IContainer $container */
         $this->container = $container;
 
@@ -45,9 +36,11 @@ class ApplicationTestCase extends BaseTestCase
          * @var ApplicationBinder $applicationBinder
          */
         $applicationBinder->bindToApplication(
-            require __DIR__ . "/../../../../configs/console/bootstrappers.php",
+            require __DIR__ . "/../../../../config/console/bootstrappers.php",
             false,
             false
         );
+
+        parent::setUp();
     }
 }

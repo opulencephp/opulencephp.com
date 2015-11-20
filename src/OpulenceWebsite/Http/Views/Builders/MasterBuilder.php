@@ -8,10 +8,10 @@
  */
 namespace OpulenceWebsite\Http\Views\Builders;
 
-use OpulenceWebsite\Documentation\Documentation;
 use Opulence\Http\Requests\Request;
 use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
+use OpulenceWebsite\Documentation\Documentation;
 
 /**
  * Defines the master view builder
@@ -38,7 +38,7 @@ class MasterBuilder implements IViewBuilder
      */
     public function build(IView $view)
     {
-        $view->setVar("foo", rand(0, 100));
+        $view->setVar("title", "Opulence");
         // Default to empty meta data
         $view->setVar("metaKeywords", []);
         $view->setVar("metaDescription", "");

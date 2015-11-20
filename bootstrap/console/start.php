@@ -6,25 +6,43 @@
  * @copyright Copyright (C) 2015 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-use Monolog\Logger;
 use Opulence\Bootstrappers\ApplicationBinder;
 use Opulence\Bootstrappers\Caching\ICache;
 use Opulence\Console\Commands\CommandCollection;
 use Opulence\Console\Commands\Compilers\ICompiler;
+use Opulence\Console\Kernel;
 use Opulence\Console\Requests\Parsers\IParser;
-use Opulence\Framework\Console\Kernel;
-
-require_once __DIR__ . "/../start.php";
 
 /**
  * ----------------------------------------------------------
- * Finish configuring the bootstrappers for the console kernel
+ * Create our paths
+ * ----------------------------------------------------------
+ */
+$paths = require_once __DIR__ . "/../../config/paths.php";
+
+/**
+ * ----------------------------------------------------------
+ * Set up the environment
+ * ----------------------------------------------------------
+ */
+$environment = require __DIR__ . "/../../config/environment.php";
+
+/**
+ * ----------------------------------------------------------
+ * Initialize some application variables
+ * ----------------------------------------------------------
+ */
+$application = require_once __DIR__ . "/../../config/application.php";
+
+/**
+ * ----------------------------------------------------------
+ * Configure the bootstrappers for the console kernel
  * ----------------------------------------------------------
  *
  * @var ApplicationBinder $applicationBinder
  */
 $applicationBinder->bindToApplication(
-    require __DIR__ . "/../../configs/console/bootstrappers.php",
+    require_once __DIR__ . "/../../config/console/bootstrappers.php",
     false,
     true,
     $paths["tmp.framework.console"] . "/" . ICache::DEFAULT_CACHED_REGISTRY_FILE_NAME
@@ -50,9 +68,12 @@ $statusCode = $application->start(function () use ($application, $container) {
     $commandCollection = $container->makeShared(CommandCollection::class);
     $requestParser = $container->makeShared(IParser::class);
     $commandCompiler = $container->makeShared(ICompiler::class);
-    $logger = require __DIR__ . "/../../configs/console/logging.php";
-    $container->bind(Logger::class, $logger);
-    $kernel = new Kernel($requestParser, $commandCompiler, $commandCollection, $logger, $application->getVersion());
+    $kernel = new Kernel(
+        $requestParser,
+        $commandCompiler,
+        $commandCollection,
+        $application->getVersion()
+    );
 
     return $kernel->handle($argv);
 });
