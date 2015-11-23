@@ -8,7 +8,7 @@
  */
 namespace OpulenceWebsite\Bootstrappers\Http\Routing;
 
-use Opulence\Applications\Environments\Environment;
+use Opulence\Environments\Environment;
 use Opulence\Framework\Bootstrappers\Http\Routing\RouterBootstrapper as BaseBootstrapper;
 use Opulence\Routing\Router;
 use Opulence\Routing\Routes\Caching\ICache;

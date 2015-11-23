@@ -6,8 +6,8 @@
  * @copyright Copyright (C) 2015 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-use Opulence\Applications\Environments\Environment;
 use Opulence\Cache\FileBridge;
+use Opulence\Environments\Environment;
 use Opulence\Sessions\Handlers\FileSessionHandler;
 
 /** @var Environment $environment */

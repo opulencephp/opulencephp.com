@@ -6,9 +6,9 @@
  * @copyright Copyright (C) 2015 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-use Opulence\Applications\Environments\Environment;
 use Opulence\Bootstrappers\ApplicationBinder;
 use Opulence\Bootstrappers\Caching\ICache;
+use Opulence\Environments\Environment;
 use Opulence\Framework\Http\Kernel;
 use Opulence\Http\Requests\Request;
 use Opulence\Routing\Router;
@@ -54,7 +54,7 @@ $application = require_once __DIR__ . "/../../config/application.php";
 $applicationBinder->bindToApplication(
     require_once __DIR__ . "/../../config/http/bootstrappers.php",
     false,
-    $application->getEnvironment()->getName() == Environment::PRODUCTION,
+    $environment == Environment::PRODUCTION,
     $paths["tmp.framework.http"] . "/" . ICache::DEFAULT_CACHED_REGISTRY_FILE_NAME
 );
 
@@ -63,7 +63,7 @@ $applicationBinder->bindToApplication(
  * Let's get started
  * ----------------------------------------------------------
  */
-$application->start(function () use ($application, $container, $exceptionHandler, $exceptionRenderer) {
+$application->start(function () use ($container, $exceptionHandler, $exceptionRenderer) {
     /**
      * ----------------------------------------------------------
      * Handle the request

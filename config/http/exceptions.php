@@ -6,7 +6,7 @@
  * @copyright Copyright (C) 2015 David Young
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
-use Opulence\Applications\Environments\Environment;
+use Opulence\Environments\Environment;
 use Opulence\Debug\Exceptions\Handlers\ExceptionHandler;
 use Opulence\Framework\Debug\Exceptions\Handlers\Http\ExceptionRenderer;
 use Opulence\Http\HttpException;
