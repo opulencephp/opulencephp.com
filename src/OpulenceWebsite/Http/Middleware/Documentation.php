@@ -13,7 +13,7 @@ use Opulence\Http\Middleware\IMiddleware;
 use Opulence\Http\Requests\Request;
 use Opulence\Http\Responses\RedirectResponse;
 use Opulence\Routing\Router;
-use Opulence\Routing\Url\UrlGenerator;
+use Opulence\Routing\Urls\UrlGenerator;
 use OpulenceWebsite\Documentation\Documentation as DocumentationWrapper;
 
 /**

@@ -11,7 +11,7 @@ namespace OpulenceWebsite\Http\Controllers;
 use Opulence\Http\Responses\RedirectResponse;
 use Opulence\Http\Responses\Response;
 use Opulence\Routing\Controller;
-use Opulence\Routing\Url\UrlGenerator;
+use Opulence\Routing\Urls\UrlGenerator;
 use OpulenceWebsite\Documentation\Documentation as DocumentationWrapper;
 
 /**
