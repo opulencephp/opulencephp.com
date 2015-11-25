@@ -6,6 +6,30 @@
     </article>
 <% endpart %>
 
+<% part("docVersion") %>
+    <li id="doc-version-option" class="aux">
+        <a id="doc-version-toggle" href="#" title="Select the documentation version">{{ $branchTitles[$docVersion] }}</a>
+        <ul id="doc-version-dropdown">
+            <% foreach($branchTitles as $branchName => $branchTitle) %>
+            <li><a href="{{! route('docs', $branchName, $docName) !}}" title="View documentation for {{ $branchTitle }} version">{{ $branchTitle }}</a></li>
+            <% endforeach %>
+        </ul>
+    </li>
+<% endpart %>
+
+<% part("docNav") %>
+    <% foreach($docs as $category => $subDocs) %>
+    <section>
+        <h5>{{ $category }}</h5>
+        <ul class="sidebar-doc-nav">
+            <% foreach($subDocs as $docName => $docData) %>
+            <li><a href="{{! route('docs', $version, $docName) !}}" title="{{ $docData['title'] }}">{{ $docData['linkText'] }}</a></li>
+            <% endforeach %>
+        </ul>
+    </section>
+    <% endforeach %>
+<% endpart %>
+
 <% part("footerJS") %>
     <% parent %>
     var sidebar = document.querySelector("nav.sidebar");

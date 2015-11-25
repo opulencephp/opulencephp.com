@@ -21,15 +21,15 @@
     </head>
     <body>
         <header class="main {{! $mainClasses !}}">
-            <% include("MainNav") %>
+            <% include("MainNav", compact("request", "defaultBranch")) %>
         </header>
         <main class="{{! $mainClasses !}}">
-            <% include("SidebarNav") %>
+            <% include("SidebarNav", compact("request")) %>
             <% show("content") %>
             <div id="gray-out"></div>
         </main>
         <footer class="main {{! $mainClasses !}}">
-            <% include("FooterNav") %>
+            <% include("FooterNav", compact("request", "defaultBranch")) %>
             &copy; {{ date("Y") }} David Young
         </footer>
         <script type="text/javascript">

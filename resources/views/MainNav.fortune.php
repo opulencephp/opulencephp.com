@@ -6,15 +6,8 @@
         <li class="movable"><a href="https://github.com/opulencephp/Opulence" target="_blank" title="GitHub">GitHub</a></li>
         <li class="movable"><a href="https://www.twitter.com/opulencephp" target="_blank" title="David's Twitter"><i class="fa fa-twitter"></i></a></li>
         <li id="mobile-menu" class="aux"><a href="#" title="Expand menu">&equiv;</a></li>
-        <% if(isset($docName) && isset($docVersion)) %>
-        <li id="doc-version-option" class="aux">
-            <a id="doc-version-toggle" href="#" title="Select the documentation version">{{ $branchTitles[$docVersion] }}</a>
-            <ul id="doc-version-dropdown">
-                <% foreach($branchTitles as $branchName => $branchTitle) %>
-                    <li><a href="{{! route('docs', $branchName, $docName) !}}" title="View documentation for {{ $branchTitle }} version">{{ $branchTitle }}</a></li>
-                <% endforeach %>
-            </ul>
-        </li>
-        <% endif %>
+        <% part("docVersion") %>
+
+        <% show %>
     </ul>
 </nav>

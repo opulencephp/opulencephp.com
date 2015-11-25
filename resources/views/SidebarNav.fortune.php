@@ -9,16 +9,7 @@
             <li><a href="https://www.twitter.com/opulencephp" target="_blank" title="David's Twitter"><i class="fa fa-twitter"></i></a></li>
         </ul>
     </section>
-    <% if(isset($docs)) %>
-        <% foreach($docs as $category => $subDocs) %>
-            <section>
-                <h5>{{ $category }}</h5>
-                <ul class="sidebar-doc-nav">
-                    <% foreach($subDocs as $docName => $docData) %>
-                        <li><a href="{{! route('docs', $version, $docName) !}}" title="{{ $docData['title'] }}">{{ $docData['linkText'] }}</a></li>
-                    <% endforeach %>
-                </ul>
-            </section>
-        <% endforeach %>
-    <% endif %>
+    <% part("docNav") %>
+
+    <% show %>
 </nav>
