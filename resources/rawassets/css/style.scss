@@ -414,7 +414,7 @@ code
     font-family: Consolas, Monaco, "Andale Mono", monospace;
 }
 
-p code
+p code, li code
 {
     $verticalPadding: 2px;
     background: $codeBackgroundColor;
