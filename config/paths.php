@@ -138,6 +138,6 @@ $pathsConfig = [
 ];
 
 // Get the autoloader
-require_once $pathsConfig["vendor"] . "/autoload.php";
+require $pathsConfig["vendor"] . "/autoload.php";
 
 return new Paths($pathsConfig);
