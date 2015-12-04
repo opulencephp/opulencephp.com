@@ -21,8 +21,10 @@ $commands = [
     // Generate the necessary files and run tests
     "php apex docs",
     "php apex api",
-    "chmod -R 755 tmp",
+    "chown -R 48:48 resources",
+    "chown -R 48:48 tmp",
     "chmod -R 755 resources",
+    "chmod -R 755 tmp",
     "php apex framework:flushcache",
     "vendor/bin/phpunit"
 ];
