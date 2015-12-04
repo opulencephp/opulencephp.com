@@ -32,7 +32,7 @@ $environment = require_once __DIR__ . "/../../config/environment.php";
  * Set up the exception and error handlers
  * ----------------------------------------------------------
  */
-$logger = require_once  __DIR__ . "/../../config/http/logging.php";
+$logger = require_once __DIR__ . "/../../config/http/logging.php";
 $exceptionHandler = require_once __DIR__ . "/../../config/http/exceptions.php";
 $errorHandler = require_once __DIR__ . "/../../config/http/errors.php";
 $exceptionHandler->register();
@@ -55,7 +55,7 @@ $application = require_once __DIR__ . "/../../config/application.php";
 $applicationBinder->bindToApplication(
     require_once __DIR__ . "/../../config/http/bootstrappers.php",
     false,
-    $environment == Environment::PRODUCTION,
+    $environment->getName() == Environment::PRODUCTION,
     $paths["tmp.framework.http"] . "/" . ICache::DEFAULT_CACHED_REGISTRY_FILE_NAME
 );
 
