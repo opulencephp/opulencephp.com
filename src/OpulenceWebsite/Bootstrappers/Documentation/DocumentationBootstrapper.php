@@ -23,7 +23,7 @@ class DocumentationBootstrapper extends Bootstrapper implements ILazyBootstrappe
     /**
      * @inheritdoc
      */
-    public function getBindings()
+    public function getBindings() : array
     {
         return [Documentation::class];
     }

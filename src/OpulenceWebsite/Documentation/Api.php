@@ -41,7 +41,7 @@ class Api
      *
      * @return string The output of the compilation
      */
-    public function compile()
+    public function compile() : string
     {
         $this->clearTempFiles();
 

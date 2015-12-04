@@ -41,7 +41,7 @@ class Documentation extends Controller
      * @param string $version The Opulence version to retrieve
      * @return Response The page
      */
-    public function showDoc($docName, $version = DocumentationWrapper::DEFAULT_BRANCH)
+    public function showDoc(string $docName, string $version = DocumentationWrapper::DEFAULT_BRANCH) : Response
     {
         $docs = $this->docs->getFlattenedDocs($version);
         $this->view = $this->viewFactory->create("Docs");
@@ -63,7 +63,7 @@ class Documentation extends Controller
      * @param string $version The Opulence version to retrieve
      * @return Response The index page
      */
-    public function showIndex($version = DocumentationWrapper::DEFAULT_BRANCH)
+    public function showIndex(string $version = DocumentationWrapper::DEFAULT_BRANCH) : Response
     {
         return $this->showDoc($this->docs->getDefaultDoc($version), $version);
     }
@@ -74,7 +74,7 @@ class Documentation extends Controller
      * @param string $docName The name of the document to retrieve
      * @return RedirectResponse The redirect
      */
-    public function showNoVersionDoc($docName)
+    public function showNoVersionDoc(string $docName) : RedirectResponse
     {
         return new RedirectResponse(
             $this->urlGenerator->createFromName("docs", DocumentationWrapper::DEFAULT_BRANCH, $docName)

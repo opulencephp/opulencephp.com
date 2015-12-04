@@ -50,7 +50,7 @@ class Documentation
      *
      * @return string The output of the retrieval
      */
-    public function compile()
+    public function compile() : string
     {
         $gitOutput = "";
 
@@ -97,7 +97,7 @@ class Documentation
      *
      * @return array The mapping of branch names to their titles
      */
-    public function getBranchTitles()
+    public function getBranchTitles() : array
     {
         $titles = [];
 
@@ -116,7 +116,7 @@ class Documentation
      * @return string The parsed document
      * @throws FileSystemException Thrown if no document exists with the input name
      */
-    public function getCompiledDoc($name, $version)
+    public function getCompiledDoc(string $name, string $version) : string
     {
         return $this->files->read("{$this->paths["docs.compiled"]}/$version/$name.html");
     }
@@ -127,7 +127,7 @@ class Documentation
      * @param string $version The version to get
      * @return string The default doc
      */
-    public function getDefaultDoc($version)
+    public function getDefaultDoc(string $version) : string
     {
         return $this->config[$version]["default"];
     }
@@ -136,9 +136,9 @@ class Documentation
      * Gets the docs for a version
      *
      * @param string $version The version to get
-     * @return string The docs
+     * @return array The docs
      */
-    public function getDocs($version)
+    public function getDocs($version) : array
     {
         return $this->config[$version]["docs"];
     }
@@ -149,7 +149,7 @@ class Documentation
      * @param string $version The version to get
      * @return array The flattened docs
      */
-    public function getFlattenedDocs($version)
+    public function getFlattenedDocs(string $version) : array
     {
         $flattenedDocs = [];
 
@@ -167,7 +167,7 @@ class Documentation
      * @param string $name The name of the document
      * @return bool True if the document exists, otherwise false
      */
-    public function hasDoc($version, $name)
+    public function hasDoc(string $version, string $name) : bool
     {
         if (!isset($this->config[$version])) {
             return false;
@@ -184,7 +184,7 @@ class Documentation
      * @param string $version The name of the version to get
      * @return bool True if the version exists, otherwise false
      */
-    public function hasVersion($version)
+    public function hasVersion(string $version) : bool
     {
         return isset($this->config[$version]);
     }
