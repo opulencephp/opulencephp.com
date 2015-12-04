@@ -19,7 +19,7 @@ class HomeBuilder implements IViewBuilder
     /**
      * @inheritdoc
      */
-    public function build(IView $view)
+    public function build(IView $view) : IView
     {
         $view->setVar("title", "Opulence | PHP Framework");
         $view->setVar("doFormatTitle", false);

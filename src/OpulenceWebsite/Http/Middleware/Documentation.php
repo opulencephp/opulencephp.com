@@ -12,6 +12,7 @@ use Closure;
 use Opulence\Http\Middleware\IMiddleware;
 use Opulence\Http\Requests\Request;
 use Opulence\Http\Responses\RedirectResponse;
+use Opulence\Http\Responses\Response;
 use Opulence\Routing\Router;
 use Opulence\Routing\Urls\UrlGenerator;
 use OpulenceWebsite\Documentation\Documentation as DocumentationWrapper;
@@ -43,7 +44,7 @@ class Documentation implements IMiddleware
     /**
      * @inheritdoc
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next) : Response
     {
         $matchedRoute = $this->router->getMatchedRoute();
         $version = $matchedRoute->getPathVar("version");
