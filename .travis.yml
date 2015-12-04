@@ -7,8 +7,6 @@ before_script:
   - composer self-update
   - composer install
   - composer dump-autoload -o
-
-after_script:
   - chmod -R 755 resources
   - chmod -R 755 tmp
   - php apex api
