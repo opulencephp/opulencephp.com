@@ -41,8 +41,9 @@ class PageTest extends ApplicationTestCase
      */
     public function test404PageIsSetUpCorrectly()
     {
-        $this->route("GET", "/does-not-exist");
-        $this->assertResponseIsNotFound();
+        $this->get("/does-not-exist")
+            ->go()
+            ->assertResponseIsNotFound();
     }
 
     /**
@@ -50,13 +51,14 @@ class PageTest extends ApplicationTestCase
      */
     public function testDocsPageIsSetUpCorrectly()
     {
-        $this->route("GET", "/docs");
+        $this->get("/docs")
+            ->go()
+            ->assertResponseIsOK()
+            ->assertViewVarEquals("doFormatTitle", true)
+            ->assertViewVarEquals("mainClasses", "docs")
+            ->assertViewVarEquals("docs", $this->docs->getDocs(Documentation::DEFAULT_BRANCH))
+            ->assertViewVarEquals("mainClasses", "docs");
         $this->checkMasterTemplateSetup();
-        $this->assertResponseIsOK();
-        $this->assertViewVarEquals("doFormatTitle", true);
-        $this->assertViewVarEquals("mainClasses", "docs");
-        $this->assertViewVarEquals("docs", $this->docs->getDocs(Documentation::DEFAULT_BRANCH));
-        $this->assertViewVarEquals("mainClasses", "docs");
     }
 
     /**
@@ -64,14 +66,15 @@ class PageTest extends ApplicationTestCase
      */
     public function testHomePageIsSetUpCorrectly()
     {
-        $this->route("GET", "/");
+        $this->get("/")
+            ->go()
+            ->assertResponseIsOK()
+            ->assertViewVarEquals("doFormatTitle", false)
+            ->assertViewVarEquals("title", "Opulence | PHP Framework")
+            ->assertViewVarEquals("metaKeywords", ["opulence", "php", "framework", "orm", "router", "console", "mvc"])
+            ->assertViewVarEquals("metaDescription", "A simple, secure, and scalable MVC framework for PHP")
+            ->assertViewVarEquals("mainClasses", "home");
         $this->checkMasterTemplateSetup();
-        $this->assertResponseIsOK();
-        $this->assertViewVarEquals("doFormatTitle", false);
-        $this->assertViewVarEquals("title", "Opulence | PHP Framework");
-        $this->assertViewVarEquals("metaKeywords", ["opulence", "php", "framework", "orm", "router", "console", "mvc"]);
-        $this->assertViewVarEquals("metaDescription", "A simple, secure, and scalable MVC framework for PHP");
-        $this->assertViewVarEquals("mainClasses", "home");
     }
 
     /**
@@ -79,8 +82,9 @@ class PageTest extends ApplicationTestCase
      */
     public function testNonExistentDocIsRedirectingToDefault()
     {
-        $this->route("GET", "/docs/master/does-not-exist");
-        $this->assertRedirectsTo("/docs/master/" . $this->docs->getDefaultDoc("master"));
+        $this->get("/docs/master/does-not-exist")
+            ->go()
+            ->assertRedirectsTo("/docs/master/" . $this->docs->getDefaultDoc("master"));
     }
 
     /**
@@ -88,8 +92,9 @@ class PageTest extends ApplicationTestCase
      */
     public function testNonExistentDocVersionIsRedirectingToDefault()
     {
-        $this->route("GET", "/docs/non-existent-version/does-not-exist");
-        $this->assertRedirectsTo("/docs");
+        $this->get("/docs/non-existent-version/does-not-exist")
+            ->go()
+            ->assertRedirectsTo("/docs");
     }
 
     /**
