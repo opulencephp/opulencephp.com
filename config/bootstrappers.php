@@ -7,7 +7,6 @@
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 use Opulence\Framework\Bootstrappers\Cryptography\CryptographyBootstrapper;
-use Opulence\Framework\Bootstrappers\Php\PhpBootstrapper;
 use OpulenceWebsite\Bootstrappers\Documentation\DocumentationBootstrapper;
 
 /**
@@ -16,7 +15,6 @@ use OpulenceWebsite\Bootstrappers\Documentation\DocumentationBootstrapper;
  * ----------------------------------------------------------
  */
 return [
-    PhpBootstrapper::class,
     CryptographyBootstrapper::class,
     DocumentationBootstrapper::class
 ];
