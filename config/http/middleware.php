@@ -6,6 +6,7 @@
  * @copyright Copyright (C) 2015 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
+use Opulence\Framework\Http\Middleware\CheckMaintenanceMode;
 use OpulenceWebsite\Http\Middleware\CheckCsrfToken;
 use OpulenceWebsite\Http\Middleware\Session;
 
@@ -15,13 +16,7 @@ use OpulenceWebsite\Http\Middleware\Session;
  * ----------------------------------------------------------
  */
 return [
-    /**
-     * ----------------------------------------------------------
-     * Middleware to be run on every route
-     * ----------------------------------------------------------
-     *
-     * List any Http middleware you'd like here
-     */
+    CheckMaintenanceMode::class,
     Session::class,
     CheckCsrfToken::class
 ];
