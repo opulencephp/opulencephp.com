@@ -9,13 +9,13 @@
 namespace OpulenceWebsite\Console;
 
 use Opulence\Bootstrappers\ApplicationBinder;
-use Opulence\Framework\Testing\PhpUnit\Console\ApplicationTestCase as BaseTestCase;
+use Opulence\Framework\Testing\PhpUnit\Console\IntegrationTestCase as BaseIntegrationTestCase;
 use Opulence\Ioc\IContainer;
 
 /**
- * Defines the console application test case
+ * Defines the console integration test
  */
-class ApplicationTestCase extends BaseTestCase
+class IntegrationTestCase extends BaseIntegrationTestCase
 {
     /**
      * @inheritdoc

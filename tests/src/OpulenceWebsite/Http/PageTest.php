@@ -15,7 +15,7 @@ use Parsedown;
 /**
  * Defines the page tests
  */
-class PageTest extends ApplicationTestCase
+class PageTest extends IntegrationTestCase
 {
     /** @var Documentation The docs */
     private $docs = null;
