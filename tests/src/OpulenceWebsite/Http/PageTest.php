@@ -43,7 +43,8 @@ class PageTest extends ApplicationTestCase
     {
         $this->get("/does-not-exist")
             ->go()
-            ->assertResponseIsNotFound();
+            ->assertResponse
+            ->isNotFound();
     }
 
     /**
@@ -53,11 +54,13 @@ class PageTest extends ApplicationTestCase
     {
         $this->get("/docs")
             ->go()
-            ->assertResponseIsOK()
-            ->assertViewVarEquals("doFormatTitle", true)
-            ->assertViewVarEquals("mainClasses", "docs")
-            ->assertViewVarEquals("docs", $this->docs->getDocs(Documentation::DEFAULT_BRANCH))
-            ->assertViewVarEquals("mainClasses", "docs");
+            ->assertResponse
+            ->isOK();
+        $this->assertView
+            ->varEquals("doFormatTitle", true)
+            ->varEquals("mainClasses", "docs")
+            ->varEquals("docs", $this->docs->getDocs(Documentation::DEFAULT_BRANCH))
+            ->varEquals("mainClasses", "docs");
         $this->checkMasterTemplateSetup();
     }
 
@@ -68,12 +71,14 @@ class PageTest extends ApplicationTestCase
     {
         $this->get("/")
             ->go()
-            ->assertResponseIsOK()
-            ->assertViewVarEquals("doFormatTitle", false)
-            ->assertViewVarEquals("title", "Opulence | PHP Framework")
-            ->assertViewVarEquals("metaKeywords", ["opulence", "php", "framework", "orm", "router", "console", "mvc"])
-            ->assertViewVarEquals("metaDescription", "A simple, secure, and scalable MVC framework for PHP")
-            ->assertViewVarEquals("mainClasses", "home");
+            ->assertResponse
+            ->isOK();
+        $this->assertView
+            ->varEquals("doFormatTitle", false)
+            ->varEquals("title", "Opulence | PHP Framework")
+            ->varEquals("metaKeywords", ["opulence", "php", "framework", "orm", "router", "console", "mvc"])
+            ->varEquals("metaDescription", "A simple, secure, and scalable MVC framework for PHP")
+            ->varEquals("mainClasses", "home");
         $this->checkMasterTemplateSetup();
     }
 
@@ -84,7 +89,8 @@ class PageTest extends ApplicationTestCase
     {
         $this->get("/docs/master/does-not-exist")
             ->go()
-            ->assertRedirectsTo("/docs/master/" . $this->docs->getDefaultDoc("master"));
+            ->assertResponse
+            ->redirectsTo("/docs/master/" . $this->docs->getDefaultDoc("master"));
     }
 
     /**
@@ -94,7 +100,8 @@ class PageTest extends ApplicationTestCase
     {
         $this->get("/docs/non-existent-version/does-not-exist")
             ->go()
-            ->assertRedirectsTo("/docs");
+            ->assertResponse
+            ->redirectsTo("/docs");
     }
 
     /**
@@ -102,14 +109,15 @@ class PageTest extends ApplicationTestCase
      */
     private function checkMasterTemplateSetup()
     {
-        $this->assertViewVarEquals("masterCSS", [
-            "/assets/css/style.css?v=1.8",
-            "/assets/css/prism.css",
-            "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-        ]);
-        $this->assertViewVarEquals("javaScript", [
-            "/assets/js/prism.js"
-        ]);
-        $this->assertViewVarEquals("defaultBranch", Documentation::DEFAULT_BRANCH);
+        $this->assertView
+            ->varEquals("masterCSS", [
+                "/assets/css/style.css?v=1.8",
+                "/assets/css/prism.css",
+                "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+            ])
+            ->varEquals("javaScript", [
+                "/assets/js/prism.js"
+            ])
+            ->varEquals("defaultBranch", Documentation::DEFAULT_BRANCH);
     }
 }
