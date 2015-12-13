@@ -9,7 +9,7 @@
     </section>
     <section id="installation">
         <h2><i class="fa fa-download"></i> Installing</h2>
-        <pre class="language-php"><code class=" language-php">composer create<span class="token operator">-</span>project opulence<span class="token operator">/</span>project <span class="token operator">--</span>prefer<span class="token operator">-</span>dist</code> <span class="token operator">--</span>stability<span class="token operator">=</span>dev</code></pre>
+        <pre class="language-php"><code class=" language-php">composer create<span class="token operator">-</span>project opulence<span class="token operator">/</span>project <span class="token operator">--</span>prefer<span class="token operator">-</span>dist</code> <span class="token operator">--</span>stability<span class="token operator">=</span>dev</pre>
     </section>
     <section id="features">
         <div class="feature-wrapper">
