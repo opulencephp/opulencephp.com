@@ -8,6 +8,7 @@
  */
 use Opulence\Framework\Bootstrappers\Cryptography\CryptographyBootstrapper;
 use OpulenceWebsite\Bootstrappers\Documentation\DocumentationBootstrapper;
+use OpulenceWebsite\Bootstrappers\Validation\ValidatorBootstrapper;
 
 /**
  * ----------------------------------------------------------
@@ -16,5 +17,6 @@ use OpulenceWebsite\Bootstrappers\Documentation\DocumentationBootstrapper;
  */
 return [
     CryptographyBootstrapper::class,
-    DocumentationBootstrapper::class
+    DocumentationBootstrapper::class,
+    ValidatorBootstrapper::class
 ];

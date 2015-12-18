@@ -268,6 +268,12 @@ $config["master"] = [
                 "linkText" => "Redis",
                 "description" => "Learn how to interact with Redis databases in Opulence",
                 "keywords" => ["opulence", "nosql", "redis", "cache", "php"]
+            ],
+            "validation" => [
+                "title" => "Validation",
+                "linkText" => "Validation",
+                "description" => "Learn how to validate data in Opulence",
+                "keywords" => ["opulence", "validation", "forms", "php"]
             ]
         ]
     ]
@@ -528,6 +534,12 @@ $config["1.0"] = [
                 "linkText" => "Redis",
                 "description" => "Learn how to interact with Redis databases in Opulence",
                 "keywords" => ["opulence", "nosql", "redis", "cache", "php"]
+            ],
+            "validation" => [
+                "title" => "Validation",
+                "linkText" => "Validation",
+                "description" => "Learn how to validate data in Opulence",
+                "keywords" => ["opulence", "validation", "forms", "php"]
             ]
         ]
     ]
