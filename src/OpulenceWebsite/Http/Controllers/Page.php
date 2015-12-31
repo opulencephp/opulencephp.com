@@ -8,6 +8,7 @@
  */
 namespace OpulenceWebsite\Http\Controllers;
 
+use Opulence\Http\HttpException;
 use Opulence\Http\Responses\Response;
 use Opulence\Routing\Controller;
 
@@ -26,5 +27,12 @@ class Page extends Controller
         $this->view = $this->viewFactory->create("Home");
 
         return new Response($this->viewCompiler->compile($this->view));
+    }
+
+    public function showFoo()
+    {
+        $this->request->getHeaders()->set("CONTENT_TYPE", "application/json");
+
+        throw new HttpException(404);
     }
 }

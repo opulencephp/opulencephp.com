@@ -20,6 +20,7 @@ $router->group(["controllerNamespace" => "OpulenceWebsite\\Http\\Controllers"], 
     $router->get("/", "Page@showHomePage", [
         "name" => "home"
     ]);
+    $router->get("/foo", "Page@showFoo");
     $router->group(["path" => "/docs"], function () use ($router) {
         $router->get("/:version/:docName", "Documentation@showDoc", [
             "name" => "docs",
