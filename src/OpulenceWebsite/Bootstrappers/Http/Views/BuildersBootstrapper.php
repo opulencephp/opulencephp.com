@@ -14,7 +14,7 @@ use Opulence\Views\Factories\IViewFactory;
 use Opulence\Views\IView;
 use OpulenceWebsite\Documentation\Documentation;
 use OpulenceWebsite\Http\Views\Builders\DocsBuilder;
-use OpulenceWebsite\Http\Views\Builders\ErrorBuilder;
+use OpulenceWebsite\Http\Views\Builders\HtmlErrorBuilder;
 use OpulenceWebsite\Http\Views\Builders\HomeBuilder;
 use OpulenceWebsite\Http\Views\Builders\MasterBuilder;
 
@@ -41,8 +41,8 @@ class BuildersBootstrapper extends Bootstrapper
         $viewFactory->registerBuilder("Docs", function (IView $view) {
             return (new DocsBuilder())->build($view);
         });
-        $viewFactory->registerBuilder("errors/Error", function (IView $view) {
-            return (new ErrorBuilder())->build($view);
+        $viewFactory->registerBuilder("errors/html/Error", function (IView $view) {
+            return (new HtmlErrorBuilder())->build($view);
         });
     }
 }
