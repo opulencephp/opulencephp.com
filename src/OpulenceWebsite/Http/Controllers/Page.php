@@ -8,7 +8,6 @@
  */
 namespace OpulenceWebsite\Http\Controllers;
 
-use Opulence\Http\HttpException;
 use Opulence\Http\Responses\Response;
 use Opulence\Routing\Controller;
 
