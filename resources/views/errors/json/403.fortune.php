@@ -1,4 +1,1 @@
-<% extends("errors/json/Error") %>
-
-<% part("errorCode") %>403<% endpart %>
-<% part("errorMessage") %>You do not have permission for this resource<% endpart %>
+<% include("errors/json/Error", ["__errorCode" => 403, "__errorMessage" => "You do not have permission for this resource"]) %>

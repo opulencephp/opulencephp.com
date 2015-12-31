@@ -1,1 +1,1 @@
-{{! json_encode(["error" => ["code" => <% show("errorCode") %>, "message" => <% show("errorMessage") %>]]) !}}
+{{! json_encode(["error" => ["code" => $__errorCode, "message" => $__errorMessage]]) !}}
