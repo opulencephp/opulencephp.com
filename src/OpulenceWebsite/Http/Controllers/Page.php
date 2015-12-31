@@ -28,11 +28,4 @@ class Page extends Controller
 
         return new Response($this->viewCompiler->compile($this->view));
     }
-
-    public function showFoo()
-    {
-        $this->request->getHeaders()->set("CONTENT_TYPE", "application/json");
-
-        throw new HttpException(404);
-    }
 }
