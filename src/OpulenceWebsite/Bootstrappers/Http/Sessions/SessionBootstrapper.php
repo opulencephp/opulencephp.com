@@ -3,7 +3,7 @@
  * Opulence
  *
  * @link      https://www.opulencephp.com
- * @copyright Copyright (C) 2015 David Young
+ * @copyright Copyright (C) 2016 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 namespace OpulenceWebsite\Bootstrappers\Http\Sessions;
