@@ -24,7 +24,7 @@ class HomeBuilder implements IViewBuilder
         $view->setVar("title", "Opulence | PHP Framework");
         $view->setVar("doFormatTitle", false);
         $view->setVar("metaKeywords", ["opulence", "php", "framework", "orm", "router", "console", "mvc"]);
-        $view->setVar("metaDescription", "A simple, secure, and scalable MVC framework for PHP");
+        $view->setVar("metaDescription", "A simple, secure, and scalable MVC framework for PHP 7");
 
         return $view;
     }

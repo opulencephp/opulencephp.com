@@ -77,7 +77,7 @@ class PageTest extends IntegrationTestCase
             ->varEquals("doFormatTitle", false)
             ->varEquals("title", "Opulence | PHP Framework")
             ->varEquals("metaKeywords", ["opulence", "php", "framework", "orm", "router", "console", "mvc"])
-            ->varEquals("metaDescription", "A simple, secure, and scalable MVC framework for PHP")
+            ->varEquals("metaDescription", "A simple, secure, and scalable MVC framework for PHP 7")
             ->varEquals("mainClasses", "home");
         $this->checkMasterTemplateSetup();
     }

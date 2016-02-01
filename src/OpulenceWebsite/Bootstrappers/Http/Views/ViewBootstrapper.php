@@ -27,7 +27,7 @@ class ViewBootstrapper extends BaseBootstrapper
      */
     protected function getViewCache(IContainer $container) : ICache
     {
-        $cacheConfig = require_once $this->paths["config"] . "/http/views.php";
+        $cacheConfig = require $this->paths["config"] . "/http/views.php";
 
         return new FileCache(
             $this->paths["views.compiled"],

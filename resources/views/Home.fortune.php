@@ -2,7 +2,7 @@
 
 <% part("content") %>
     <section id="introduction">
-        <h2><i class="fa fa-code"></i> Opulence - A powerful new MVC framework for PHP</h2>
+        <h2><i class="fa fa-code"></i> Opulence - A modern framework for modern PHP</h2>
         <pre class="language-php"><code class="language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">"/welcome/:name"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token string">"Welcome to Opulence,</span> <span class="token variable">$name</span><span class="token string">!"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
