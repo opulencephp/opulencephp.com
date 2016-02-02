@@ -24,7 +24,7 @@
             <% include("MainNav", compact("request", "defaultBranch")) %>
         </header>
         <main class="{{! $mainClasses !}}">
-            <% include("SidebarNav", compact("request")) %>
+            <% include("SidebarNav", compact("request", "defaultBranch")) %>
             <% show("content") %>
             <div id="gray-out"></div>
         </main>
