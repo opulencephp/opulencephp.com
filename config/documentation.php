@@ -195,6 +195,18 @@ $config["master"] = [
                 "description" => "Learn about the inner-workings of an Opulence application",
                 "keywords" => ["opulence", "application", "php"]
             ],
+            "authentication" => [
+                "title" => "Authentication",
+                "linkText" => "Authentication",
+                "description" => "Learn about authentication in Opulence",
+                "keywords" => ["opulence", "authentication", "users"]
+            ],
+            "authorization" => [
+                "title" => "Authorization",
+                "linkText" => "Authorization",
+                "description" => "Learn about authorization in Opulence",
+                "keywords" => ["opulence", "authorization", "users"]
+            ],
             "bootstrappers" => [
                 "title" => "Bootstrappers",
                 "linkText" => "Bootstrappers",
@@ -460,6 +472,18 @@ $config["1.0"] = [
                 "linkText" => "Applications",
                 "description" => "Learn about the inner-workings of an Opulence application",
                 "keywords" => ["opulence", "application", "php"]
+            ],
+            "authentication" => [
+                "title" => "Authentication",
+                "linkText" => "Authentication",
+                "description" => "Learn about authentication in Opulence",
+                "keywords" => ["opulence", "authentication", "users"]
+            ],
+            "authorization" => [
+                "title" => "Authorization",
+                "linkText" => "Authorization",
+                "description" => "Learn about authorization in Opulence",
+                "keywords" => ["opulence", "authorization", "users"]
             ],
             "bootstrappers" => [
                 "title" => "Bootstrappers",
