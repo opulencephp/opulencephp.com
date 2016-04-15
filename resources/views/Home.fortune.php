@@ -3,7 +3,7 @@
 <% part("content") %>
     <section id="introduction">
         <h2><i class="fa fa-code"></i> Opulence - A modern framework for modern PHP</h2>
-        <pre class="language-php"><code class="language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">"/welcome/:name"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <pre class="language-php"><code class="language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">"/welcome/:name"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>string <span class="token variable">$name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token string">"Welcome to Opulence,</span> <span class="token variable">$name</span><span class="token string">!"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
     </section>
@@ -53,7 +53,10 @@
                 <h4><i class="fa fa-rocket"></i> It's fast.</h4>
                 <ul>
                     <li>
-                        Opulence can handle 500 requests/second on a cheap 512MB server and 2,000 requests/second on a modest 8GB server.
+                        Opulence is written in PHP 7, for PHP 7
+                    </li>
+                    <li>
+                        It can handle 500 requests/second on a cheap 512MB server and 2,000 requests/second on a modest 8GB server.
                     </li>
                     <li>
                         Most of Opulence's settings are cached to reduce overhead on each request.
