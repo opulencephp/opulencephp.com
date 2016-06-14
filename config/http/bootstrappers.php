@@ -7,11 +7,11 @@
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 use Opulence\Framework\Bootstrappers\Http\Requests\RequestBootstrapper;
-use OpulenceWebsite\Bootstrappers\Http\Routing\RouterBootstrapper;
-use OpulenceWebsite\Bootstrappers\Http\Sessions\SessionBootstrapper;
-use OpulenceWebsite\Bootstrappers\Http\Views\BuildersBootstrapper;
-use OpulenceWebsite\Bootstrappers\Http\Views\ViewBootstrapper;
-use OpulenceWebsite\Bootstrappers\Http\Views\ViewFunctionsBootstrapper;
+use OpulenceWebsite\Application\Bootstrappers\Http\Routing\RouterBootstrapper;
+use OpulenceWebsite\Application\Bootstrappers\Http\Sessions\SessionBootstrapper;
+use OpulenceWebsite\Application\Bootstrappers\Http\Views\BuildersBootstrapper;
+use OpulenceWebsite\Application\Bootstrappers\Http\Views\ViewBootstrapper;
+use OpulenceWebsite\Application\Bootstrappers\Http\Views\ViewFunctionsBootstrapper;
 
 /**
  * ----------------------------------------------------------

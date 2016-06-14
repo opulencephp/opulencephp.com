@@ -7,7 +7,7 @@
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 use Opulence\Routing\Router;
-use OpulenceWebsite\Http\Middleware\Documentation;
+use OpulenceWebsite\Application\Http\Middleware\Documentation;
 
 /**
  * ----------------------------------------------------------
@@ -16,11 +16,11 @@ use OpulenceWebsite\Http\Middleware\Documentation;
  *
  * @var Router $router
  */
-$router->group(["controllerNamespace" => "OpulenceWebsite\\Http\\Controllers"], function () use ($router) {
+$router->group(["controllerNamespace" => "OpulenceWebsite\\Application\\Http\\Controllers"], function (Router $router) {
     $router->get("/", "Page@showHomePage", [
         "name" => "home"
     ]);
-    $router->group(["path" => "/docs"], function () use ($router) {
+    $router->group(["path" => "/docs"], function (Router $router) {
         $router->get("/:version/:docName", "Documentation@showDoc", [
             "name" => "docs",
             "middleware" => [

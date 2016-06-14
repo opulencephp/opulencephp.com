@@ -9,9 +9,9 @@
 use Opulence\Framework\Bootstrappers\Console\Commands\CommandsBootstrapper as OpulenceCommandsBootstrapper;
 use Opulence\Framework\Bootstrappers\Console\Requests\RequestsBootstrapper;
 use Opulence\Framework\Bootstrappers\Console\Composer\ComposerBootstrapper;
-use OpulenceWebsite\Bootstrappers\Console\Commands\CommandsBootstrapper as WebsiteCommandsBootstrapper;
-use OpulenceWebsite\Bootstrappers\Http\Routing\RouterBootstrapper;
-use OpulenceWebsite\Bootstrappers\Http\Views\ViewBootstrapper;
+use OpulenceWebsite\Application\Bootstrappers\Console\Commands\CommandsBootstrapper as WebsiteCommandsBootstrapper;
+use OpulenceWebsite\Application\Bootstrappers\Http\Routing\RouterBootstrapper;
+use OpulenceWebsite\Application\Bootstrappers\Http\Views\ViewBootstrapper;
 
 /**
  * ----------------------------------------------------------

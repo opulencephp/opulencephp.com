@@ -6,8 +6,8 @@
  * @copyright Copyright (C) 2016 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-use OpulenceWebsite\Console\Commands\ApiCommand;
-use OpulenceWebsite\Console\Commands\DocsCommand;
+use OpulenceWebsite\Application\Console\Commands\ApiCommand;
+use OpulenceWebsite\Application\Console\Commands\DocsCommand;
 
 /**
  * ----------------------------------------------------------

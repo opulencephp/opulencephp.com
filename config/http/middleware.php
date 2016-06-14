@@ -7,8 +7,8 @@
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
 use Opulence\Framework\Http\Middleware\CheckMaintenanceMode;
-use OpulenceWebsite\Http\Middleware\CheckCsrfToken;
-use OpulenceWebsite\Http\Middleware\Session;
+use OpulenceWebsite\Application\Http\Middleware\CheckCsrfToken;
+use OpulenceWebsite\Application\Http\Middleware\Session;
 
 /**
  * ----------------------------------------------------------
