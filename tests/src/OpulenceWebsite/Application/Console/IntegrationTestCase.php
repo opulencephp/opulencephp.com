@@ -9,7 +9,7 @@
 namespace OpulenceWebsite\Application\Console;
 
 use Opulence\Bootstrappers\ApplicationBinder;
-use Opulence\Framework\Testing\PhpUnit\Console\IntegrationTestCase as BaseIntegrationTestCase;
+use Opulence\Framework\Console\Testing\PhpUnit\IntegrationTestCase as BaseIntegrationTestCase;
 use Opulence\Ioc\IContainer;
 
 /**

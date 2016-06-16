@@ -6,7 +6,7 @@
  * @copyright Copyright (C) 2016 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-use Opulence\Framework\Bootstrappers\Http\Requests\RequestBootstrapper;
+use Opulence\Framework\Http\Bootstrappers\RequestBootstrapper;
 use OpulenceWebsite\Application\Bootstrappers\Http\Routing\RouterBootstrapper;
 use OpulenceWebsite\Application\Bootstrappers\Http\Sessions\SessionBootstrapper;
 use OpulenceWebsite\Application\Bootstrappers\Http\Views\BuildersBootstrapper;

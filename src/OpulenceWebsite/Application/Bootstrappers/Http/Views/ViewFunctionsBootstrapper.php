@@ -8,7 +8,7 @@
  */
 namespace OpulenceWebsite\Application\Bootstrappers\Http\Views;
 
-use Opulence\Framework\Bootstrappers\Http\Views\ViewFunctionsBootstrapper as BaseBootstrapper;
+use Opulence\Framework\Views\Bootstrappers\ViewFunctionsBootstrapper as BaseBootstrapper;
 use Opulence\Http\Requests\Request;
 use Opulence\Routing\Urls\UrlGenerator;
 use Opulence\Sessions\ISession;

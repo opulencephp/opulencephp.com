@@ -9,7 +9,7 @@
 namespace OpulenceWebsite\Application\Http\Middleware;
 
 use DateTime;
-use Opulence\Framework\Http\Middleware\Session as BaseSession;
+use Opulence\Framework\Sessions\Http\Middleware\Session as BaseSession;
 use Opulence\Http\Responses\Cookie;
 use Opulence\Http\Responses\Response;
 

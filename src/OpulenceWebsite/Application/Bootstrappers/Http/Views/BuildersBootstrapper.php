@@ -12,11 +12,11 @@ use Opulence\Bootstrappers\Bootstrapper;
 use Opulence\Http\Requests\Request;
 use Opulence\Views\Factories\IViewFactory;
 use Opulence\Views\IView;
-use OpulenceWebsite\Domain\Documentation\Documentation;
 use OpulenceWebsite\Application\Http\Views\Builders\DocsBuilder;
 use OpulenceWebsite\Application\Http\Views\Builders\HtmlErrorBuilder;
 use OpulenceWebsite\Application\Http\Views\Builders\HomeBuilder;
 use OpulenceWebsite\Application\Http\Views\Builders\MasterBuilder;
+use OpulenceWebsite\Domain\Documentation\Documentation;
 
 /**
  * Defines the view builders bootstrapper

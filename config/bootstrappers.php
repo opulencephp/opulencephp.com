@@ -6,7 +6,7 @@
  * @copyright Copyright (C) 2016 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-use Opulence\Framework\Bootstrappers\Cryptography\CryptographyBootstrapper;
+use Opulence\Framework\Cryptography\Bootstrappers\CryptographyBootstrapper;
 use OpulenceWebsite\Application\Bootstrappers\Documentation\DocumentationBootstrapper;
 use OpulenceWebsite\Application\Bootstrappers\Validation\ValidatorBootstrapper;
 
