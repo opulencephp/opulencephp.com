@@ -399,6 +399,11 @@ blockquote
     border: 1px solid $background - $borderColorDifference;
     padding: 10px;
     margin: 10px 30px;
+
+    &.news
+    {
+        margin: 0;
+    }
 }
 
 pre

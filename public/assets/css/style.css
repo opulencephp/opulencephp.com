@@ -212,6 +212,8 @@ blockquote {
   border: 1px solid #ccddee;
   padding: 10px;
   margin: 10px 30px; }
+  blockquote.news {
+    margin: 0; }
 
 pre {
   padding: 10px;
