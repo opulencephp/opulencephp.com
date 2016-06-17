@@ -30,9 +30,9 @@ class PageTest extends IntegrationTestCase
         $paths = require __DIR__ . "/../../../../../config/paths.php";
         $this->docs = new Documentation(
             require "{$paths["config"]}/documentation.php",
-            $this->getMock(Parsedown::class),
+            $this->createMock(Parsedown::class),
             $paths,
-            $this->getMock(FileSystem::class)
+            $this->createMock(FileSystem::class)
         );
     }
 
