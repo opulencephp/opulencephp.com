@@ -70,6 +70,28 @@
                 </ul>
             </article>
             <article>
+                <h4><i class="fa fa-chain-broken"></i> It's loosely coupled.</h4>
+                <ul>
+                    <li>
+                        Want to use a component without downloading half the framework?  20 out of 23 components have 0 dependencies.
+                    </li>
+                    <li>
+                        Want to write your own app from scratch?  Opulence isn't bound to any config implementation like some frameworks.
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h4><i class="fa fa-thumbs-o-up"></i> It doesn't bleed into your code.</h4>
+                <ul>
+                    <li>
+                        Want to write an HTTP controller?  Use a <a href="{{! route('docs', $defaultBranch, 'http-basics') !}}#controllers" title="Learn about HTTP controllers">plain-old PHP object</a>.
+                    </li>
+                    <li>
+                        Want to write a class that can be stored with ORM?  Use a plain-old PHP object.
+                    </li>
+                </ul>
+            </article>
+            <article>
                 <h4><i class="fa fa-wrench"></i> It's completely configurable.</h4>
                 <ul>
                     <li>
@@ -85,28 +107,6 @@
                     </li>
                     <li>
                         Need session support with multiple servers?  We've <a href="{{! route('docs', $defaultBranch, 'sessions') !}}" title="Learn about sessions">got you covered</a>.
-                    </li>
-                </ul>
-            </article>
-            <article>
-                <h4><i class="fa fa-chain-broken"></i> It's loosely coupled.</h4>
-                <ul>
-                    <li>
-                        Want to use a component without downloading half the framework?  Most components have 0 dependencies.
-                    </li>
-                    <li>
-                        Want to write your own app from scratch?  Opulence isn't bound to any config implementation like some frameworks.
-                    </li>
-                </ul>
-            </article>
-            <article>
-                <h4><i class="fa fa-thumbs-o-up"></i> It doesn't bleed into your code.</h4>
-                <ul>
-                    <li>
-                        Want to write an HTTP controller?  Use a <a href="{{! route('docs', $defaultBranch, 'http-basics') !}}#controllers" title="Learn about HTTP controllers">plain-old PHP object</a>.
-                    </li>
-                    <li>
-                        Want to write a class that can be stored with ORM?  Use a plain-old PHP object.
                     </li>
                 </ul>
             </article>
