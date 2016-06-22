@@ -4,6 +4,7 @@
 html {
   font-family: 'Open Sans', 'Segoe UI', arial, sans-serif;
   font-size: 14px;
+  line-height: 1.5;
   color: #111;
   background-color: #f1f1f1;
   overflow-x: hidden; }
