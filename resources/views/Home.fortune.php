@@ -4,7 +4,9 @@
     <section id="news">
         <blockquote class="news">
             <h2><i class="fa fa-newspaper-o"></i> News</h2>
-            <p><strong>June 15, 2016:</strong> The first beta of Opulence has been released. </p>
+            <p><strong>June 22, 2016:</strong> Opulence 1.0.0-beta3 has been released.  Check the <a href="https://github.com/opulencephp/Opulence/blob/1.0/CHANGELOG.md#v100-beta3" title="Changelog" target="_blank">changelog</a> for a few minor backwards incompatibilities.</p>
+            <p><strong>June 20, 2016:</strong> Opulence 1.0.0-beta2 has been released.</p>
+            <p><strong>June 15, 2016:</strong> The first beta of Opulence has been released.</p>
         </blockquote>
     </section>
     <section id="introduction">
