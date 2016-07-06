@@ -4,7 +4,7 @@
     <section id="news">
         <blockquote class="news">
             <h2><i class="fa fa-newspaper-o"></i> News</h2>
-            <p><strong>July 1, 2016:</strong> Opulence 1.0.0-beta4 has been released.  Check the <a href="https://github.com/opulencephp/Opulence/blob/1.0/CHANGELOG.md#v100-beta4" title="Changelog" target="_blank">changelog</a> for a few minor backwards incompatibilities and deprecated classes.</p>
+            <p><strong>July 5, 2016:</strong> Opulence 1.0.0-beta5 has been released.  Check the <a href="https://github.com/opulencephp/Opulence/blob/1.0/CHANGELOG.md#v100-beta5" title="Changelog" target="_blank">changelog</a> for a few deprecated classes.</p>
         </blockquote>
     </section>
     <section id="introduction">

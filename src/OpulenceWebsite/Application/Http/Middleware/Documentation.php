@@ -9,10 +9,10 @@
 namespace OpulenceWebsite\Application\Http\Middleware;
 
 use Closure;
-use Opulence\Http\Middleware\IMiddleware;
 use Opulence\Http\Requests\Request;
 use Opulence\Http\Responses\RedirectResponse;
 use Opulence\Http\Responses\Response;
+use Opulence\Routing\Middleware\IMiddleware;
 use Opulence\Routing\Router;
 use Opulence\Routing\Urls\UrlGenerator;
 use OpulenceWebsite\Domain\Documentation\Documentation as DocumentationWrapper;
