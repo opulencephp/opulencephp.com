@@ -30,7 +30,7 @@
         </main>
         <footer class="main {{! $mainClasses !}}">
             <% include("FooterNav", compact("request", "defaultBranch")) %>
-            &copy; {{ date("Y") }} David Young
+            Opulence &reg; is a registered trademark of David Young.
         </footer>
         <script type="text/javascript">
             <% part("footerJS") %>
