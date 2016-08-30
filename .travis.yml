@@ -2,6 +2,7 @@ language: php
 
 php:
   - 7.0
+  - 7.1
 
 env:
   - ENCRYPTION_KEY=3dd1c15c3e4f0fd3c100e12748312405a1285b091e05349151ad4a7f92ea0f20
@@ -24,4 +25,6 @@ notifications:
 sudo: false
 
 matrix:
+  allow_failures:
+    - php: 7.1
   fast_finish: true
