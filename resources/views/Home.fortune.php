@@ -114,7 +114,7 @@
                 <h4><i class="fa fa-shield"></i> It's secure.</h4>
                 <ul>
                     <li>
-                        Need to store passwords?  Try our <a href="{{! route('docs', $defaultBranch, 'cryptography') !}}#hashing" title="Learn about hashing">hashing library</a>.
+                        Need to encrypt your data?  Try our <a href="{{! route('docs', $defaultBranch, 'cryptography') !}}#encryption" title="Learn about encryption">encryption library</a>.
                     </li>
                     <li>
                         Need to prevent cross-site scripting attacks?  Try our <a href="{{! route('docs', $defaultBranch, 'view-fortune') !}}#sanitized-tags" title="Learn how to prevent cross-site scripting">template engine</a>.
