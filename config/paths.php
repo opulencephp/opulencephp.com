@@ -6,14 +6,12 @@
  * @copyright Copyright (C) 2016 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-use Opulence\Bootstrappers\Paths;
-
 /**
  * ----------------------------------------------------------
  * Define the list of paths needed by this application
  * ----------------------------------------------------------
  */
-$pathsConfig = [
+$paths = [
     /**
      * ----------------------------------------------------------
      * Configs
@@ -23,9 +21,9 @@ $pathsConfig = [
      * "config.console" => The console config directory
      * "config.http" => The Http config directory
      */
-    "config" => __DIR__,
-    "config.console" => __DIR__ . "/console",
-    "config.http" => __DIR__ . "/http",
+    "config" => realpath(__DIR__),
+    "config.console" => realpath(__DIR__ . "/console"),
+    "config.http" => realpath(__DIR__ . "/http"),
 
     /**
      * ----------------------------------------------------------
@@ -34,7 +32,7 @@ $pathsConfig = [
      *
      * "docs.compiled" => The path to the compiled docs directory
      */
-    "docs.compiled" => __DIR__ . "/../resources/docs",
+    "docs.compiled" => realpath(__DIR__ . "/../resources/docs"),
 
     /**
      * ----------------------------------------------------------
@@ -43,7 +41,7 @@ $pathsConfig = [
      *
      * "logs" => The logs directory
      */
-    "logs" => __DIR__ . "/../tmp/logs",
+    "logs" => realpath(__DIR__ . "/../tmp/logs"),
 
     /**
      * ----------------------------------------------------------
@@ -52,7 +50,7 @@ $pathsConfig = [
      *
      * "public" => The public directory
      */
-    "public" => __DIR__ . "/../public",
+    "public" => realpath(__DIR__ . "/../public"),
 
     /**
      * ----------------------------------------------------------
@@ -63,9 +61,9 @@ $pathsConfig = [
      * "resources.lang" => The language resources directory
      * "resources.lang.en" => The English language resources directory
      */
-    "resources" => __DIR__ . "/../resources",
-    "resources.lang" => __DIR__ . "/../resources/lang",
-    "resources.lang.en" => __DIR__ . "/../resources/lang/en",
+    "resources" => realpath(__DIR__ . "/../resources"),
+    "resources.lang" => realpath(__DIR__ . "/../resources/lang"),
+    "resources.lang.en" => realpath(__DIR__ . "/../resources/lang/en"),
 
     /**
      * ----------------------------------------------------------
@@ -74,7 +72,7 @@ $pathsConfig = [
      *
      * "root" => The root directory
      */
-    "root" => __DIR__ . "/..",
+    "root" => realpath(__DIR__ . "/.."),
 
     /**
      * ----------------------------------------------------------
@@ -83,7 +81,7 @@ $pathsConfig = [
      *
      * "routes.cache" => The cached routes directory
      */
-    "routes.cache" => __DIR__ . "/../tmp/framework/http/routing",
+    "routes.cache" => realpath(__DIR__ . "/../tmp/framework/http/routing"),
 
     /**
      * ----------------------------------------------------------
@@ -92,7 +90,7 @@ $pathsConfig = [
      *
      * "src" => The application source directory
      */
-    "src" => __DIR__ . "/../src",
+    "src" => realpath(__DIR__ . "/../src"),
 
     /**
      * ----------------------------------------------------------
@@ -101,7 +99,7 @@ $pathsConfig = [
      *
      * "tests" => The tests directory
      */
-    "tests" => __DIR__ . "/../tests/src",
+    "tests" => realpath(__DIR__ . "/../tests/src"),
 
     /**
      * ----------------------------------------------------------
@@ -114,11 +112,11 @@ $pathsConfig = [
      * "tmp.framework.console" => The framework's temporary console directory
      * "tmp.framework.http" => The framework's temporary Http directory
      */
-    "tmp" => __DIR__ . "/../tmp",
-    "tmp.api" => __DIR__ . "/../tmp/api",
-    "tmp.docs" => __DIR__ . "/../tmp/docs",
-    "tmp.framework.console" => __DIR__ . "/../tmp/framework/console",
-    "tmp.framework.http" => __DIR__ . "/../tmp/framework/http",
+    "tmp" => realpath(__DIR__ . "/../tmp"),
+    "tmp.api" => realpath(__DIR__ . "/../tmp/api"),
+    "tmp.docs" => realpath(__DIR__ . "/../tmp/docs"),
+    "tmp.framework.console" => realpath(__DIR__ . "/../tmp/framework/console"),
+    "tmp.framework.http" => realpath(__DIR__ . "/../tmp/framework/http"),
 
     /**
      * ----------------------------------------------------------
@@ -127,7 +125,7 @@ $pathsConfig = [
      *
      * "vendor" => The vendor directory
      */
-    "vendor" => __DIR__ . "/../vendor",
+    "vendor" => realpath(__DIR__ . "/../vendor"),
 
     /**
      * ----------------------------------------------------------
@@ -137,11 +135,11 @@ $pathsConfig = [
      * "views.compiled" => The compiled views directory
      * "views.raw" => The raw views directory
      */
-    "views.compiled" => __DIR__ . "/../tmp/framework/http/views",
-    "views.raw" => __DIR__ . "/../resources/views"
+    "views.compiled" => realpath(__DIR__ . "/../tmp/framework/http/views"),
+    "views.raw" => realpath(__DIR__ . "/../resources/views")
 ];
 
 // Get the autoloader
-require $pathsConfig["vendor"] . "/autoload.php";
+require "{$paths["vendor"]}/autoload.php";
 
-return new Paths($pathsConfig);
+return $paths;

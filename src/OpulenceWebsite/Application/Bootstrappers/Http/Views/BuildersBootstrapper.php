@@ -8,8 +8,8 @@
  */
 namespace OpulenceWebsite\Application\Bootstrappers\Http\Views;
 
-use Opulence\Bootstrappers\Bootstrapper;
 use Opulence\Http\Requests\Request;
+use Opulence\Ioc\Bootstrappers\Bootstrapper;
 use Opulence\Views\Factories\IViewFactory;
 use Opulence\Views\IView;
 use OpulenceWebsite\Application\Http\Views\Builders\DocsBuilder;

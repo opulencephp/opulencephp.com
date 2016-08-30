@@ -8,7 +8,6 @@
  */
 namespace OpulenceWebsite\Domain\Documentation;
 
-use Opulence\Bootstrappers\Paths;
 use Opulence\Files\FileSystem;
 
 /**
@@ -21,19 +20,36 @@ class Api
 
     /** @var array The list of versions to create APIs for */
     private static $branches = ["1.0", "master"];
-    /** @var Paths The application paths */
-    private $paths = null;
     /** @var FileSystem The file system */
     private $files = null;
+    /** @var string The path to the config directory */
+    private $configPath = "";
+    /** @var string The path to the public directory */
+    private $publicPath = "";
+    /** @var string The path to the cloned doc directory */
+    private $clonedDocPath = "";
+    /** @var string The path to the vendor directory */
+    private $vendorPath = "";
 
     /**
-     * @param Paths $paths The application paths
      * @param FileSystem $files The file system
+     * @param string $configPath The path to the config directory
+     * @param string $publicPath The path to the public directory
+     * @param string $clonedDocPath The path to the cloned doc directory
+     * @param string $vendorPath The path to the vendor directory
      */
-    public function __construct(Paths $paths, FileSystem $files)
-    {
-        $this->paths = $paths;
+    public function __construct(
+        FileSystem $files,
+        string $configPath,
+        string $publicPath,
+        string $clonedDocPath,
+        string $vendorPath
+    ) {
         $this->files = $files;
+        $this->configPath = $configPath;
+        $this->publicPath = $publicPath;
+        $this->clonedDocPath = $clonedDocPath;
+        $this->vendorPath = $vendorPath;
     }
 
     /**
@@ -46,7 +62,7 @@ class Api
         $this->clearTempFiles();
 
         // Grab the branches from Git
-        $rawDocsPath = "{$this->paths["tmp.api"]}/versions";
+        $rawDocsPath = "{$this->clonedDocPath}/versions";
         shell_exec(
             sprintf(
                 "rm -rf %s* && mkdir %s && cd %s && git clone %s",
@@ -61,15 +77,15 @@ class Api
         $samiOutput = shell_exec(
             sprintf(
                 'php %s/bin/sami.php update %s/sami.php',
-                $this->paths["vendor"],
-                $this->paths["config"]
+                $this->vendorPath,
+                $this->configPath
             )
         );
 
         // Move them to the public directory
         foreach (self::$branches as $branchName) {
-            $this->files->copyDirectory($this->paths["tmp.api"] . "/build/$branchName",
-                $this->paths["public"] . "/api/$branchName");
+            $this->files->copyDirectory("{$this->clonedDocPath}/build/$branchName",
+                "{$this->publicPath}/api/$branchName");
         }
 
         $this->clearTempFiles();
@@ -85,13 +101,13 @@ class Api
         shell_exec(
             sprintf(
                 "rm -rf %s/build",
-                $this->paths["tmp.api"]
+                $this->clonedDocPath
             )
         );
         shell_exec(
             sprintf(
                 "rm -rf %s/cache",
-                $this->paths["tmp.api"]
+                $this->clonedDocPath
             )
         );
     }

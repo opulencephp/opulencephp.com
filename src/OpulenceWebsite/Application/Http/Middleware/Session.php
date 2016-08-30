@@ -8,7 +8,7 @@
  */
 namespace OpulenceWebsite\Application\Http\Middleware;
 
-use DateTime;
+use Opulence\Framework\Configuration\Config;
 use Opulence\Framework\Sessions\Http\Middleware\Session as BaseSession;
 use Opulence\Http\Responses\Cookie;
 use Opulence\Http\Responses\Response;
@@ -18,18 +18,13 @@ use Opulence\Http\Responses\Response;
  */
 class Session extends BaseSession
 {
-    /** @var array|null The config array */
-    private $config = null;
-
     /**
      * Runs garbage collection, if necessary
      */
     protected function gc()
     {
-        $this->loadConfig();
-
-        if (rand(1, $this->config["gc.divisor"]) <= $this->config["gc.chance"]) {
-            $this->sessionHandler->gc($this->config["lifetime"]);
+        if (rand(1, Config::get("sessions", "gc.divisor")) <= Config::get("sessions", "gc.chance")) {
+            $this->sessionHandler->gc(Config::get("sessions", "lifetime"));
         }
     }
 
@@ -41,29 +36,18 @@ class Session extends BaseSession
      */
     protected function writeToResponse(Response $response) : Response
     {
-        $this->loadConfig();
         $response->getHeaders()->setCookie(
             new Cookie(
                 $this->session->getName(),
                 $this->session->getId(),
-                new DateTime("+{$this->config["lifetime"]} seconds"),
-                $this->config["cookie.path"],
-                $this->config["cookie.domain"],
-                $this->config["cookie.isSecure"],
+                time() + Config::get("sessions", "lifetime"),
+                Config::get("sessions", "cookie.path"),
+                Config::get("sessions", "cookie.domain"),
+                Config::get("sessions", "cookie.isSecure"),
                 false
             )
         );
 
         return $response;
-    }
-
-    /**
-     * Loads the configuration array
-     */
-    private function loadConfig()
-    {
-        if ($this->config === null) {
-            $this->config = require $this->paths["config"] . "/http/sessions.php";;
-        }
     }
 }

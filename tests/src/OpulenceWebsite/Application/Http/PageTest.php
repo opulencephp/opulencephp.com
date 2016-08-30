@@ -9,6 +9,7 @@
 namespace OpulenceWebsite\Application\Http;
 
 use Opulence\Files\FileSystem;
+use Opulence\Framework\Configuration\Config;
 use OpulenceWebsite\Domain\Documentation\Documentation;
 use Parsedown;
 
@@ -27,12 +28,12 @@ class PageTest extends IntegrationTestCase
     {
         parent::setUp();
 
-        $paths = require __DIR__ . "/../../../../../config/paths.php";
         $this->docs = new Documentation(
-            require "{$paths["config"]}/documentation.php",
+            require Config::get("paths", "config") . "/documentation.php",
             $this->createMock(Parsedown::class),
-            $paths,
-            $this->createMock(FileSystem::class)
+            $this->createMock(FileSystem::class),
+            Config::get("paths", "tmp.docs"),
+            Config::get("paths", "docs.compiled")
         );
     }
 

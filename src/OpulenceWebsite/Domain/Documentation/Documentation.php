@@ -8,7 +8,6 @@
  */
 namespace OpulenceWebsite\Domain\Documentation;
 
-use Opulence\Bootstrappers\Paths;
 use Opulence\Files\FileSystem;
 use Opulence\Files\FileSystemException;
 use Parsedown;
@@ -26,23 +25,32 @@ class Documentation
     private $config = [];
     /** @var Parsedown The parsedown object to use */
     private $parsedown = null;
-    /** @var Paths The application paths */
-    private $paths = null;
     /** @var FileSystem The file system */
     private $files = null;
+    /** @var string The temporary location for cloned docs */
+    private $clonedDocPath = "";
+    /** @var string The permanent location for compiled docs */
+    private $compiledDocPath = "";
 
     /**
      * @param array $config The config for the docs
      * @param Parsedown $parsedown The parsedown object to use
-     * @param Paths $paths The application paths
      * @param FileSystem $files The file system
+     * @param string $clonedDocPath The temporary location for cloned docs
+     * @param string $compiledDocPath The permanent location for compiled docs
      */
-    public function __construct(array $config, Parsedown $parsedown, Paths $paths, FileSystem $files)
-    {
+    public function __construct(
+        array $config,
+        Parsedown $parsedown,
+        FileSystem $files,
+        string $clonedDocPath,
+        string $compiledDocPath
+    ) {
         $this->config = $config;
         $this->parsedown = $parsedown;
-        $this->paths = $paths;
         $this->files = $files;
+        $this->clonedDocPath = $clonedDocPath;
+        $this->compiledDocPath = $compiledDocPath;
     }
 
     /**
@@ -55,8 +63,8 @@ class Documentation
         $gitOutput = "";
 
         foreach ($this->config as $branchName => $branchData) {
-            $rawDocsPath = "{$this->paths["tmp.docs"]}/$branchName";
-            $compiledDocsPath = "{$this->paths["docs.compiled"]}/$branchName";
+            $rawDocsPath = "{$this->clonedDocPath}/$branchName";
+            $compiledDocsPath = "{$this->compiledDocPath}/$branchName";
 
             // Clone the branch from GitHub into our temporary directory
             $gitOutput .= shell_exec(
@@ -81,7 +89,7 @@ class Documentation
                 $html = $this->parsedown->text($this->files->read($markdownFile));
                 $compiledDocFilename = sprintf(
                     "%s/%s/%s.html",
-                    $this->paths['docs.compiled'],
+                    $this->compiledDocPath,
                     $branchName,
                     $this->files->getFileName($markdownFile)
                 );
@@ -118,7 +126,7 @@ class Documentation
      */
     public function getCompiledDoc(string $name, string $version) : string
     {
-        return $this->files->read("{$this->paths["docs.compiled"]}/$version/$name.html");
+        return $this->files->read("{$this->compiledDocPath}/$version/$name.html");
     }
 
     /**

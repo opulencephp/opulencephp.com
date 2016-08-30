@@ -13,6 +13,7 @@ use Opulence\Cache\FileBridge;
 use Opulence\Cache\ICacheBridge;
 use Opulence\Cache\MemcachedBridge;
 use Opulence\Cache\RedisBridge;
+use Opulence\Framework\Configuration\Config;
 use Opulence\Framework\Sessions\Bootstrappers\SessionBootstrapper as BaseBootstrapper;
 use Opulence\Ioc\IContainer;
 use Opulence\Memcached\Memcached;
@@ -29,9 +30,6 @@ use SessionHandlerInterface;
  */
 class SessionBootstrapper extends BaseBootstrapper
 {
-    /** @var array|null The config array */
-    private $config = null;
-
     /**
      * Gets the session object to use
      *
@@ -40,9 +38,8 @@ class SessionBootstrapper extends BaseBootstrapper
      */
     protected function getSession(IContainer $container) : ISession
     {
-        $this->loadConfig();
         $session = new Session();
-        $session->setName($this->config["name"]);
+        $session->setName(Config::get("sessions", "name"));
 
         return $session;
     }
@@ -55,17 +52,18 @@ class SessionBootstrapper extends BaseBootstrapper
      */
     protected function getSessionHandler(IContainer $container) : SessionHandlerInterface
     {
-        $this->loadConfig();
-
-        switch ($this->environment->getVar("SESSION_HANDLER")) {
+        switch (Config::get("sessions", "handler")) {
             case CacheSessionHandler::class:
-                $handler = new CacheSessionHandler($this->getCacheBridge($container), $this->config["lifetime"]);
+                $handler = new CacheSessionHandler(
+                    $this->getCacheBridge($container),
+                    Config::get("sessions", "lifetime")
+                );
                 break;
             default: // FileSessionHandler
-                $handler = new FileSessionHandler($this->config["file.path"]);
+                $handler = new FileSessionHandler(Config::get("sessions", "file.path"));
         }
 
-        if ($this->config["isEncrypted"] && $handler instanceof IEncryptableSessionHandler) {
+        if (Config::get("sessions", "isEncrypted") && $handler instanceof IEncryptableSessionHandler) {
             $handler->useEncryption(true);
             $handler->setEncrypter($this->getSessionEncrypter($container));
         }
@@ -81,33 +79,23 @@ class SessionBootstrapper extends BaseBootstrapper
      */
     private function getCacheBridge(IContainer $container) : ICacheBridge
     {
-        switch ($this->environment->getVar("SESSION_CACHE_BRIDGE")) {
+        switch (Config::get("sessions", "cache.bridge")) {
             case ArrayBridge::class:
                 return new ArrayBridge();
             case MemcachedBridge::class:
                 return new MemcachedBridge(
                     $container->resolve(Memcached::class),
-                    $this->config["cache.clientName"],
-                    $this->config["cache.keyPrefix"]
+                    Config::get("sessions", "cache.clientName"),
+                    Config::get("sessions", "cache.keyPrefix")
                 );
             case RedisBridge::class:
                 return new RedisBridge(
                     $container->resolve(Redis::class),
-                    $this->config["cache.clientName"],
-                    $this->config["cache.keyPrefix"]
+                    Config::get("sessions", "cache.clientName"),
+                    Config::get("sessions", "cache.keyPrefix")
                 );
             default: // FileBridge
-                return new FileBridge($this->config["file.path"]);
-        }
-    }
-
-    /**
-     * Loads the configuration array
-     */
-    private function loadConfig()
-    {
-        if ($this->config === null) {
-            $this->config = require $this->paths["config"] . "/http/sessions.php";;
+                return new FileBridge(Config::get("sessions", "file.path"));
         }
     }
 }

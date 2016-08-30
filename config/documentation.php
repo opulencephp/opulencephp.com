@@ -23,6 +23,12 @@ $config["master"] = [
                 "description" => "Learn how to install Opulence",
                 "keywords" => ["opulence", "install", "php"]
             ],
+            "upgrading" => [
+                "title" => "Upgrading",
+                "linkText" => "Upgrading",
+                "description" => "Learn how to upgrade Opulence to the latest version",
+                "keywords" => ["opulence", "upgrade", "update", "php"]
+            ],
             "directory-structure" => [
                 "title" => "Directory Structure",
                 "linkText" => "Directory Structure",
@@ -233,12 +239,6 @@ $config["master"] = [
                     "php"
                 ]
             ],
-            "dependency-injection" => [
-                "title" => "Dependency Injection",
-                "linkText" => "Dependency Injection",
-                "description" => "Learn about dependency injection in Opulence",
-                "keywords" => ["opulence", "ioc", "dependency injection", "php"]
-            ],
             "environments" => [
                 "title" => "Environments",
                 "linkText" => "Environments",
@@ -262,6 +262,12 @@ $config["master"] = [
                 "linkText" => "File System",
                 "description" => "Learn about working with the file system in Opulence",
                 "keywords" => ["opulence", "file system", "read write", "php"]
+            ],
+            "ioc-container" => [
+                "title" => "IoC Container",
+                "linkText" => "IoC Container",
+                "description" => "Learn about dependency injection in Opulence",
+                "keywords" => ["opulence", "ioc", "dependency injection", "php"]
             ],
             "memcached" => [
                 "title" => "Memcached",
@@ -300,6 +306,12 @@ $config["1.0"] = [
                 "linkText" => "Installing",
                 "description" => "Learn how to install Opulence",
                 "keywords" => ["opulence", "install", "php"]
+            ],
+            "upgrading" => [
+                "title" => "Upgrading",
+                "linkText" => "Upgrading",
+                "description" => "Learn how to upgrade Opulence to the latest version",
+                "keywords" => ["opulence", "upgrade", "update", "php"]
             ],
             "directory-structure" => [
                 "title" => "Directory Structure",
@@ -511,12 +523,6 @@ $config["1.0"] = [
                     "php"
                 ]
             ],
-            "dependency-injection" => [
-                "title" => "Dependency Injection",
-                "linkText" => "Dependency Injection",
-                "description" => "Learn about dependency injection in Opulence",
-                "keywords" => ["opulence", "ioc", "dependency injection", "php"]
-            ],
             "environments" => [
                 "title" => "Environments",
                 "linkText" => "Environments",
@@ -540,6 +546,12 @@ $config["1.0"] = [
                 "linkText" => "File System",
                 "description" => "Learn about working with the file system in Opulence",
                 "keywords" => ["opulence", "file system", "read write", "php"]
+            ],
+            "ioc-container" => [
+                "title" => "IoC Container",
+                "linkText" => "IoC Container",
+                "description" => "Learn about dependency injection in Opulence",
+                "keywords" => ["opulence", "ioc", "dependency injection", "php"]
             ],
             "memcached" => [
                 "title" => "Memcached",

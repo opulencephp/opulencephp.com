@@ -8,6 +8,7 @@
  */
 namespace OpulenceWebsite\Application\Bootstrappers\Http\Views;
 
+use Opulence\Framework\Configuration\Config;
 use Opulence\Framework\Views\Bootstrappers\ViewBootstrapper as BaseBootstrapper;
 use Opulence\Ioc\IContainer;
 use Opulence\Views\Caching\FileCache;
@@ -27,13 +28,11 @@ class ViewBootstrapper extends BaseBootstrapper
      */
     protected function getViewCache(IContainer $container) : ICache
     {
-        $cacheConfig = require $this->paths["config"] . "/http/views.php";
-
         return new FileCache(
-            $this->paths["views.compiled"],
-            $cacheConfig["cache.lifetime"],
-            $cacheConfig["gc.chance"],
-            $cacheConfig["gc.divisor"]
+            Config::get("paths", "views.compiled"),
+            Config::get("views", "cache.lifetime"),
+            Config::get("views", "gc.chance"),
+            Config::get("views", "gc.divisor")
         );
     }
 }

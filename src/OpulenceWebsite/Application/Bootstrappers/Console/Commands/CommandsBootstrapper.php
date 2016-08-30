@@ -8,8 +8,9 @@
  */
 namespace OpulenceWebsite\Application\Bootstrappers\Console\Commands;
 
-use Opulence\Bootstrappers\Bootstrapper;
 use Opulence\Console\Commands\CommandCollection;
+use Opulence\Framework\Configuration\Config;
+use Opulence\Ioc\Bootstrappers\Bootstrapper;
 use Opulence\Ioc\IContainer;
 
 /**
@@ -20,16 +21,16 @@ class CommandsBootstrapper extends Bootstrapper
     /**
      * Sets the console commands from this project
      *
-     * @param CommandCollection $commands The commands to add to
+     * @param CommandCollection $commandCollection The commands to add to
      * @param IContainer $container The dependency injection container
      */
-    public function run(CommandCollection $commands, IContainer $container)
+    public function run(CommandCollection $commandCollection, IContainer $container)
     {
-        $commandClasses = require $this->paths["config"] . "/console/commands.php";
+        $commandClasses = require Config::get("paths", "config.console") . "/commands.php";
 
         // Instantiate each command class
         foreach ($commandClasses as $commandClass) {
-            $commands->add($container->resolve($commandClass));
+            $commandCollection->add($container->resolve($commandClass));
         }
     }
 }

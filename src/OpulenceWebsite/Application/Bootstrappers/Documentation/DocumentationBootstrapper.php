@@ -8,10 +8,12 @@
  */
 namespace OpulenceWebsite\Application\Bootstrappers\Documentation;
 
-use Opulence\Bootstrappers\Bootstrapper;
-use Opulence\Bootstrappers\ILazyBootstrapper;
 use Opulence\Files\FileSystem;
+use Opulence\Framework\Configuration\Config;
+use Opulence\Ioc\Bootstrappers\Bootstrapper;
+use Opulence\Ioc\Bootstrappers\ILazyBootstrapper;
 use Opulence\Ioc\IContainer;
+use OpulenceWebsite\Domain\Documentation\Api;
 use OpulenceWebsite\Domain\Documentation\Documentation;
 use Parsedown;
 
@@ -25,7 +27,7 @@ class DocumentationBootstrapper extends Bootstrapper implements ILazyBootstrappe
      */
     public function getBindings() : array
     {
-        return [Documentation::class];
+        return [Documentation::class, Api::class];
     }
 
     /**
@@ -36,10 +38,21 @@ class DocumentationBootstrapper extends Bootstrapper implements ILazyBootstrappe
         $container->bindInstance(
             Documentation::class,
             new Documentation(
-                require "{$this->paths["config"]}/documentation.php",
+                require Config::get("paths", "config") . "/documentation.php",
                 new Parsedown(),
-                $this->paths,
-                $container->resolve(FileSystem::class)
+                $container->resolve(FileSystem::class),
+                Config::get("paths", "tmp.docs"),
+                Config::get("paths", "docs.compiled")
+            )
+        );
+        $container->bindInstance(
+            Api::class,
+            new Api(
+                $container->resolve(FileSystem::class),
+                Config::get("paths", "config"),
+                Config::get("paths", "public"),
+                Config::get("paths", "tmp.api"),
+                Config::get("paths", "vendor")
             )
         );
     }
