@@ -73,7 +73,7 @@
                 <h4><i class="fa fa-chain-broken"></i> It's loosely coupled.</h4>
                 <ul>
                     <li>
-                        Want to use a component without downloading half the framework?  20 out of 23 components have 0 dependencies.
+                        Want to use a component without downloading half the framework?  20 out of 22 components have 0 dependencies.
                     </li>
                     <li>
                         Want to write your own app from scratch?  Opulence isn't bound to any config implementation like some frameworks.
