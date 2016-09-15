@@ -56,7 +56,7 @@
         <div class="highlight-wrapper">
             <h2><i class="fa fa-question-circle"></i> Why Use Opulence?</h2>
             <article>
-                <h4><i class="fa fa-rocket"></i> It's fast.</h4>
+                <h4><i class="fa fa-rocket"></i> Fast.</h4>
                 <ul>
                     <li>
                         Opulence is written in PHP 7, for PHP 7
@@ -70,7 +70,7 @@
                 </ul>
             </article>
             <article>
-                <h4><i class="fa fa-chain-broken"></i> It's loosely coupled.</h4>
+                <h4><i class="fa fa-chain-broken"></i> Loosely coupled.</h4>
                 <ul>
                     <li>
                         Want to use a component without downloading half the framework?  20 out of 22 components have 0 dependencies.
@@ -81,7 +81,7 @@
                 </ul>
             </article>
             <article>
-                <h4><i class="fa fa-thumbs-o-up"></i> It doesn't bleed into your code.</h4>
+                <h4><i class="fa fa-thumbs-o-up"></i> Doesn't bleed into your code.</h4>
                 <ul>
                     <li>
                         Want to write an HTTP controller?  Use a <a href="{{! route('docs', $defaultBranch, 'http-basics') !}}#controllers" title="Learn about HTTP controllers">plain-old PHP object</a>.
@@ -92,7 +92,7 @@
                 </ul>
             </article>
             <article>
-                <h4><i class="fa fa-wrench"></i> It's completely configurable.</h4>
+                <h4><i class="fa fa-wrench"></i> Completely configurable.</h4>
                 <ul>
                     <li>
                         Want to write your own implementation of an Opulence component?  Most are written to an interface, so you can <a href="{{! route('docs', $defaultBranch, 'dependency-injection') !}}" title="Learn about dependency injection">bind your implementation to Opulence at runtime</a>.
@@ -100,7 +100,7 @@
                 </ul>
             </article>
             <article>
-                <h4><i class="fa fa-sitemap"></i> It's scalable.</h4>
+                <h4><i class="fa fa-sitemap"></i> Scalable.</h4>
                 <ul>
                     <li>
                         Need to take a load off your database?  Learn how data mappers can <a href="{{! route('docs', $defaultBranch, 'orm-data-mappers') !}}" title="Learn about data mappers">send 95% of queries to cache</a>.
@@ -111,7 +111,7 @@
                 </ul>
             </article>
             <article>
-                <h4><i class="fa fa-shield"></i> It's secure.</h4>
+                <h4><i class="fa fa-shield"></i> Secure.</h4>
                 <ul>
                     <li>
                         Need to encrypt your data?  Try our <a href="{{! route('docs', $defaultBranch, 'cryptography') !}}#encryption" title="Learn about encryption">encryption library</a>.
