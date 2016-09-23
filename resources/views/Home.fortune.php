@@ -4,7 +4,7 @@
     <section id="news">
         <blockquote class="news">
             <h2><i class="fa fa-newspaper-o"></i> News</h2>
-            <p><strong>August 29, 2016:</strong> Opulence 1.0.0-beta6 has been released.  Read the <a href="{{! route('docs', $defaultBranch, 'upgrading#1.0.0-beta6') !}}" title="Upgrade guide">upgrade guide</a> to learn how to upgrade.</p>
+            <p><strong>September 22, 2016:</strong> Opulence 1.0.0-beta7 has been released.  Read the <a href="{{! route('docs', $defaultBranch, 'upgrading#1.0.0-beta7') !}}" title="Upgrade guide">upgrade guide</a> to learn how to upgrade.</p>
         </blockquote>
     </section>
     <section id="introduction">
