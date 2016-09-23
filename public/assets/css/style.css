@@ -322,7 +322,7 @@ p code, li code {
   header.main nav > ul > li:first-child {
     /* Add some left-padding so the logo is not scrunched against the side */
     padding-left: 10px; }
-  header.main nav > ul > li:nth-last-of-type(3) {
+  header.main nav > ul > li.main-nav:last-child {
     padding-right: 10px; }
 
   main nav.sidebar {
@@ -353,12 +353,10 @@ p code, li code {
 
   header.main nav, footer.main nav {
     width: 1024px; }
-    header.main nav > ul > li, footer.main nav > ul > li {
-      /* In the desktop version, the third-to-lst item is the last visible one */ }
-      header.main nav > ul > li#mobile-menu, footer.main nav > ul > li#mobile-menu {
-        display: none; }
-      header.main nav > ul > li:nth-last-of-type(3), footer.main nav > ul > li:nth-last-of-type(3) {
-        padding-right: 0; }
+    header.main nav > ul > li#mobile-menu, footer.main nav > ul > li#mobile-menu {
+      display: none; }
+    header.main nav > ul > li.main-nav:last-child, footer.main nav > ul > li.main-nav:last-child {
+      padding-right: 0; }
 
   main {
     width: 1024px;

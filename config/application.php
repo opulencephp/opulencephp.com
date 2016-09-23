@@ -8,7 +8,6 @@
  */
 use Opulence\Applications\Application;
 use Opulence\Applications\Tasks\Dispatchers\ITaskDispatcher;
-use Opulence\Environments\Environment;
 use Opulence\Framework\Configuration\Config;
 use Opulence\Ioc\Bootstrappers\BootstrapperResolver;
 use Opulence\Ioc\IContainer;
@@ -51,7 +50,6 @@ $globalBootstrappers = require __DIR__ . "/bootstrappers.php";
  * bound before bootstrappers are even run
  */
 $container->bindInstance(ITaskDispatcher::class, $taskDispatcher);
-$container->bindInstance(Environment::class, $environment);
 $container->bindInstance(IContainer::class, $container);
 
 return $application;

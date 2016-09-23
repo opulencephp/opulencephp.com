@@ -598,7 +598,7 @@ p code, li code
                 padding-left: 10px;
             }
 
-            &:nth-last-of-type(3)
+            &.main-nav:last-child
             {
                 padding-right: $mainNavPadding;
             }
@@ -664,8 +664,7 @@ p code, li code
                 display: none;
             }
 
-            /* In the desktop version, the third-to-lst item is the last visible one */
-            &:nth-last-of-type(3)
+            &.main-nav:last-child
             {
                 padding-right: 0;
             }
