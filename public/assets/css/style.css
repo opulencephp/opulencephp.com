@@ -218,8 +218,8 @@ blockquote {
 
 pre {
   padding: 10px;
-  background: #f1f1f1;
-  border: 1px solid #e0e0e0;
+  background: #f9f9f9;
+  border: 1px solid #e8e8e8;
   position: relative;
   overflow: auto; }
 
@@ -227,17 +227,17 @@ code {
   font-family: Consolas, Monaco, "Andale Mono", monospace; }
 
 p code, li code {
-  background: #f1f1f1;
+  background: #f9f9f9;
   padding: 2px 5px;
   font-size: 11px;
   white-space: nowrap;
-  border: 1px solid #e0e0e0; }
+  border: 1px solid #e8e8e8; }
 
 .logo {
   color: #bbe5ff; }
   .logo .logo-icon {
     height: 26px;
-    margin-right: 5px;
+    margin-right: 7px;
     vertical-align: middle; }
 
 .feature-wrapper article {

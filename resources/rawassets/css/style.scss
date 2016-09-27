@@ -9,7 +9,7 @@ $borderColor: #ccc;
 $borderColorDifference: #111;
 $hoverColorDifference: #111;
 $highlightsColor: #e41;
-$codeBackgroundColor: #f1f1f1;
+$codeBackgroundColor: #f9f9f9;
 
 *
 {
@@ -438,7 +438,7 @@ p code, li code
     .logo-icon
     {
         height: $headerHeight - 8px;
-        margin-right: 5px;
+        margin-right: 7px;
         vertical-align: middle;
     }
 }

@@ -6,13 +6,11 @@
         {{! opulenceTitle($title, $doFormatTitle) !}}
         {{! css("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700") !}}
         {{! css($masterCSS) !}}
-        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="/manifest.json">
-        <meta name="msapplication-TileColor" content="#336699">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png?v=1.0" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png?v=1.0" sizes="16x16">
+        <link rel="manifest" href="/manifest.json?v=1.0">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1.0" color="#5bbad5">
         <meta name="theme-color" content="#ffffff">
         {{! metaKeywords($metaKeywords) !}}
         {{! metaDescription($metaDescription) !}}
