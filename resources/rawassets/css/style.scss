@@ -346,6 +346,23 @@ main
             margin-top: -1*$headerHeight;
             color: #f50;
         }
+
+        footer
+        {
+            margin-top: 30px;
+            $footerLinkColor: #ccc;
+
+            a
+            {
+                font-size: .9em;
+                color: $footerLinkColor;
+
+                &:hover
+                {
+                    color: $footerLinkColor - $hoverColorDifference;
+                }
+            }
+        }
     }
 }
 

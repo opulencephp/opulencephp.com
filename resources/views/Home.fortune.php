@@ -4,7 +4,7 @@
     <section id="news">
         <blockquote class="news">
             <h2><i class="fa fa-newspaper-o"></i> News</h2>
-            <p><strong>November 9, 2016:</strong> The second release candidate for Opulence is out.  It primarily contains bug fixes.</p>
+            <p><strong>November 24, 2016:</strong> The third release candidate for Opulence is out.  It fixes an issue that prevented console commands from being run when you delete bootstrappers.</p>
         </blockquote>
     </section>
     <section id="introduction">

@@ -3,6 +3,9 @@
 <% part("content") %>
     <article>
         {{! $doc !}}
+        <footer>
+            <a href="https://github.com/opulencephp/docs/blob/{{ $version }}/{{ $docName }}.md" target="_blank" title="Edit this document"><i class="fa fa-pencil" aria-hidden="true"></i> Edit this document</a>
+        </footer>
     </article>
 <% endpart %>
 
