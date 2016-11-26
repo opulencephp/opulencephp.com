@@ -8,18 +8,16 @@
  */
 namespace OpulenceWebsite\Application\Http;
 
-use Opulence\Files\FileSystem;
 use Opulence\Framework\Configuration\Config;
-use OpulenceWebsite\Domain\Documentation\Documentation;
-use Parsedown;
+use OpulenceWebsite\Application\Config\DocumentationConfig;
 
 /**
  * Defines the page tests
  */
 class PageTest extends IntegrationTestCase
 {
-    /** @var Documentation The docs */
-    private $docs = null;
+    /** @var DocumentationConfig The documentation config */
+    private $documentationConfig = null;
 
     /**
      * Sets up the tests
@@ -28,12 +26,8 @@ class PageTest extends IntegrationTestCase
     {
         parent::setUp();
 
-        $this->docs = new Documentation(
-            require Config::get("paths", "config") . "/documentation.php",
-            $this->createMock(Parsedown::class),
-            $this->createMock(FileSystem::class),
-            Config::get("paths", "tmp.docs"),
-            Config::get("paths", "docs.compiled")
+        $this->documentationConfig = new DocumentationConfig(
+            require Config::get("paths", "config") . "/documentation.php"
         );
     }
 
@@ -60,7 +54,7 @@ class PageTest extends IntegrationTestCase
         $this->assertView
             ->varEquals("doFormatTitle", true)
             ->varEquals("mainClasses", "docs")
-            ->varEquals("docs", $this->docs->getDocs(Documentation::DEFAULT_BRANCH))
+            ->varEquals("docs", $this->documentationConfig->getDocs(DocumentationConfig::DEFAULT_BRANCH))
             ->varEquals("mainClasses", "docs");
         $this->checkMasterTemplateSetup();
     }
@@ -91,7 +85,7 @@ class PageTest extends IntegrationTestCase
         $this->get("/docs/master/does-not-exist")
             ->go()
             ->assertResponse
-            ->redirectsTo("/docs/master/" . $this->docs->getDefaultDoc("master"));
+            ->redirectsTo("/docs/master/" . $this->documentationConfig->getDefaultDoc("master"));
     }
 
     /**
@@ -119,6 +113,6 @@ class PageTest extends IntegrationTestCase
             ->varEquals("javaScript", [
                 "/assets/js/prism.js"
             ])
-            ->varEquals("defaultBranch", Documentation::DEFAULT_BRANCH);
+            ->varEquals("defaultBranch", DocumentationConfig::DEFAULT_BRANCH);
     }
 }

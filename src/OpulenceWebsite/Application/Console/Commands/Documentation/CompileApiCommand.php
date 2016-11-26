@@ -6,28 +6,28 @@
  * @copyright Copyright (C) 2016 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-namespace OpulenceWebsite\Application\Console\Commands;
+namespace OpulenceWebsite\Application\Console\Commands\Documentation;
 
 use Opulence\Console\Commands\Command;
 use Opulence\Console\Responses\IResponse;
-use OpulenceWebsite\Domain\Documentation\Api;
+use OpulenceWebsite\Domain\Documentation\Compilers\IApiCompiler;
 
 /**
- * Defines the command that generates API docs
+ * Defines the command that compiles API docs
  */
-class ApiCommand extends Command
+class CompileApiCommand extends Command
 {
-    /** @var Api The tool to generate docs */
-    private $api = null;
+    /** @var IApiCompiler The compiler to generate docs */
+    private $apiCompiler = null;
 
     /**
-     * @param Api $api The tool to generate API docs
+     * @param IApiCompiler $apiCompiler The compiler to generate API docs
      */
-    public function __construct(Api $api)
+    public function __construct(IApiCompiler $apiCompiler)
     {
         parent::__construct();
 
-        $this->api = $api;
+        $this->apiCompiler = $apiCompiler;
     }
 
     /**
@@ -35,7 +35,7 @@ class ApiCommand extends Command
      */
     protected function define()
     {
-        $this->setName("api")
+        $this->setName("compile:api")
             ->setDescription("Generates API docs for Opulence");
     }
 
@@ -44,7 +44,7 @@ class ApiCommand extends Command
      */
     protected function doExecute(IResponse $response)
     {
-        $this->api->compile();
+        $this->apiCompiler->compile();
         $response->writeln("<success>API docs created</success>");
     }
 }

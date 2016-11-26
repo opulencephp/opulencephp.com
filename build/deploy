@@ -17,8 +17,8 @@ $commands = [
     "composer update",
     "composer dump-autoload -o",
     // Generate the necessary files and run tests
-    "php apex docs",
-    "php apex api",
+    "php apex compile:docs",
+    "php apex compile:api",
     "chown -R 48:48 resources",
     "chown -R 48:48 tmp",
     "chmod -R 755 resources",

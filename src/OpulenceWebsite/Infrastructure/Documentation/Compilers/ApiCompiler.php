@@ -6,18 +6,18 @@
  * @copyright Copyright (C) 2016 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-namespace OpulenceWebsite\Domain\Documentation;
+namespace OpulenceWebsite\Infrastructure\Documentation\Compilers;
 
 use Opulence\Files\FileSystem;
+use OpulenceWebsite\Domain\Documentation\Compilers\IApiCompiler;
 
 /**
- * Defines the API docs
+ * Defines the API compiler
  */
-class Api
+class ApiCompiler implements IApiCompiler
 {
     /** The GitHub docs repository */
     const GITHUB_REPOSITORY = "https://github.com/opulencephp/Opulence.git";
-
     /** @var array The list of versions to create APIs for */
     private static $branches = ["1.0", "master"];
     /** @var FileSystem The file system */
@@ -53,9 +53,7 @@ class Api
     }
 
     /**
-     * Compiles the latest source code API documentation
-     *
-     * @return string The output of the compilation
+     * @inheritdoc
      */
     public function compile() : string
     {

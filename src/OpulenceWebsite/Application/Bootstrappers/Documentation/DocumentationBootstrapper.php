@@ -13,8 +13,13 @@ use Opulence\Framework\Configuration\Config;
 use Opulence\Ioc\Bootstrappers\Bootstrapper;
 use Opulence\Ioc\Bootstrappers\ILazyBootstrapper;
 use Opulence\Ioc\IContainer;
-use OpulenceWebsite\Domain\Documentation\Api;
-use OpulenceWebsite\Domain\Documentation\Documentation;
+use OpulenceWebsite\Application\Config\DocumentationConfig;
+use OpulenceWebsite\Domain\Documentation\Compilers\IApiCompiler;
+use OpulenceWebsite\Domain\Documentation\Compilers\IDocumentationCompiler;
+use OpulenceWebsite\Domain\Documentation\Factories\IDocumentationFactory;
+use OpulenceWebsite\Infrastructure\Documentation\Compilers\ApiCompiler;
+use OpulenceWebsite\Infrastructure\Documentation\Compilers\DocumentationCompiler;
+use OpulenceWebsite\Infrastructure\Documentation\DocumentationFactory;
 use Parsedown;
 
 /**
@@ -27,7 +32,7 @@ class DocumentationBootstrapper extends Bootstrapper implements ILazyBootstrappe
      */
     public function getBindings() : array
     {
-        return [Documentation::class, Api::class];
+        return [DocumentationConfig::class, IDocumentationCompiler::class, IApiCompiler::class];
     }
 
     /**
@@ -35,19 +40,26 @@ class DocumentationBootstrapper extends Bootstrapper implements ILazyBootstrappe
      */
     public function registerBindings(IContainer $container)
     {
+        $fileSystem = $container->resolve(FileSystem::class);
+        $documentationConfig = require Config::get("paths", "config") . "/documentation.php";
+        $container->bindInstance(DocumentationConfig::class, new DocumentationConfig($documentationConfig));
         $container->bindInstance(
-            Documentation::class,
-            new Documentation(
-                require Config::get("paths", "config") . "/documentation.php",
+            IDocumentationFactory::class,
+            new DocumentationFactory($fileSystem, Config::get("paths", "docs.compiled"))
+        );
+        $container->bindInstance(
+            IDocumentationCompiler::class,
+            new DocumentationCompiler(
+                $documentationConfig,
                 new Parsedown(),
-                $container->resolve(FileSystem::class),
+                $fileSystem,
                 Config::get("paths", "tmp.docs"),
                 Config::get("paths", "docs.compiled")
             )
         );
         $container->bindInstance(
-            Api::class,
-            new Api(
+            IApiCompiler::class,
+            new ApiCompiler(
                 $container->resolve(FileSystem::class),
                 Config::get("paths", "config"),
                 Config::get("paths", "public"),

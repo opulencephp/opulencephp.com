@@ -15,7 +15,7 @@ use Opulence\Http\Responses\Response;
 use Opulence\Routing\Middleware\IMiddleware;
 use Opulence\Routing\Router;
 use Opulence\Routing\Urls\UrlGenerator;
-use OpulenceWebsite\Domain\Documentation\Documentation as DocumentationWrapper;
+use OpulenceWebsite\Application\Config\DocumentationConfig;
 
 /**
  * Defines the documentation middleware
@@ -26,18 +26,18 @@ class Documentation implements IMiddleware
     private $router = null;
     /** @var UrlGenerator The URL generator */
     private $urlGenerator = null;
-    /** @var DocumentationWrapper The docs */
-    private $docs = null;
+    /** @var DocumentationConfig The documentationConfig */
+    private $documentationConfig = null;
 
     /**
      * @param Router $router The Http router
-     * @param DocumentationWrapper $docs The docs
+     * @param DocumentationConfig $documentationConfig The documentationConfig
      * @param UrlGenerator $urlGenerator The URL generator
      */
-    public function __construct(Router $router, DocumentationWrapper $docs, UrlGenerator $urlGenerator)
+    public function __construct(Router $router, DocumentationConfig $documentationConfig, UrlGenerator $urlGenerator)
     {
         $this->router = $router;
-        $this->docs = $docs;
+        $this->documentationConfig = $documentationConfig;
         $this->urlGenerator = $urlGenerator;
     }
 
@@ -50,13 +50,14 @@ class Documentation implements IMiddleware
         $version = $matchedRoute->getPathVar("version");
         $docName = $matchedRoute->getPathVar("docName");
 
-        if (!$this->docs->hasVersion($version)) {
+        if (!$this->documentationConfig->hasVersion($version)) {
             return new RedirectResponse("/docs");
         }
 
-        if (!$this->docs->hasDoc($version, $docName)) {
+        if (!$this->documentationConfig->hasDoc($version, $docName)) {
             return new RedirectResponse(
-                $this->urlGenerator->createFromName("docs", $version, $this->docs->getDefaultDoc($version))
+                $this->urlGenerator->createFromName("docs", $version,
+                    $this->documentationConfig->getDefaultDoc($version))
             );
         }
 

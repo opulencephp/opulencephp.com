@@ -11,7 +11,7 @@ namespace OpulenceWebsite\Application\Http\Views\Builders;
 use Opulence\Http\Requests\Request;
 use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
-use OpulenceWebsite\Domain\Documentation\Documentation;
+use OpulenceWebsite\Application\Config\DocumentationConfig;
 
 /**
  * Defines the master view builder
@@ -20,17 +20,17 @@ class MasterBuilder implements IViewBuilder
 {
     /** @var Request The current request */
     private $request = null;
-    /** @var Documentation The docs */
-    private $docs = null;
+    /** @var DocumentationConfig The documentation config */
+    private $documentationConfig = null;
 
     /**
      * @param Request $request The current request
-     * @param Documentation $docs The docs
+     * @param DocumentationConfig $documentationConfig The documentation config
      */
-    public function __construct(Request $request, Documentation $docs)
+    public function __construct(Request $request, DocumentationConfig $documentationConfig)
     {
         $this->request = $request;
-        $this->docs = $docs;
+        $this->documentationConfig = $documentationConfig;
     }
 
     /**
@@ -53,9 +53,9 @@ class MasterBuilder implements IViewBuilder
             "/assets/js/prism.js"
         ]);
         $view->setVar("mainClasses", "home");
-        $view->setVar("branchTitles", $this->docs->getBranchTitles());
+        $view->setVar("branchTitles", $this->documentationConfig->getBranchTitles());
         $view->setVar("request", $this->request);
-        $view->setVar("defaultBranch", Documentation::DEFAULT_BRANCH);
+        $view->setVar("defaultBranch", DocumentationConfig::DEFAULT_BRANCH);
 
         return $view;
     }

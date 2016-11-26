@@ -6,8 +6,8 @@
  * @copyright Copyright (C) 2016 David Young
  * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
  */
-use OpulenceWebsite\Application\Console\Commands\ApiCommand;
-use OpulenceWebsite\Application\Console\Commands\DocsCommand;
+use OpulenceWebsite\Application\Console\Commands\Documentation\CompileApiCommand;
+use OpulenceWebsite\Application\Console\Commands\Documentation\CompileDocumentationCommand;
 
 /**
  * ----------------------------------------------------------
@@ -15,6 +15,6 @@ use OpulenceWebsite\Application\Console\Commands\DocsCommand;
  * ----------------------------------------------------------
  */
 return [
-    ApiCommand::class,
-    DocsCommand::class
+    CompileApiCommand::class,
+    CompileDocumentationCommand::class
 ];
