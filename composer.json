@@ -18,9 +18,9 @@
   },
   "require": {
     "php": "^7.0",
-    "erusev/parsedown": "1.5.3",
-    "monolog/monolog": "1.12.*@dev",
-    "opulence/opulence": "1.0.*@dev",
+    "erusev/parsedown": "1.6.1",
+    "monolog/monolog": "1.22.0",
+    "opulence/opulence": "1.0.x-dev",
     "sami/sami": "3.2.*@dev"
   },
   "require-dev": {

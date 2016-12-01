@@ -11,6 +11,7 @@ namespace OpulenceWebsite\Application\Bootstrappers\Http\Views;
 use Opulence\Framework\Configuration\Config;
 use Opulence\Framework\Views\Bootstrappers\ViewBootstrapper as BaseBootstrapper;
 use Opulence\Ioc\IContainer;
+use Opulence\Views\Caching\ArrayCache;
 use Opulence\Views\Caching\FileCache;
 use Opulence\Views\Caching\ICache;
 
@@ -28,11 +29,17 @@ class ViewBootstrapper extends BaseBootstrapper
      */
     protected function getViewCache(IContainer $container) : ICache
     {
-        return new FileCache(
-            Config::get("paths", "views.compiled"),
-            Config::get("views", "cache.lifetime"),
-            Config::get("views", "gc.chance"),
-            Config::get("views", "gc.divisor")
-        );
+        switch (Config::get("views", "cache")) {
+            case ArrayCache::class:
+                return new ArrayCache();
+                break;
+            default:
+                return new FileCache(
+                    Config::get("paths", "views.compiled"),
+                    Config::get("views", "cache.lifetime"),
+                    Config::get("views", "gc.chance"),
+                    Config::get("views", "gc.divisor")
+                );
+        }
     }
 }
