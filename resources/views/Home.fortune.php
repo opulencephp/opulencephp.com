@@ -4,7 +4,7 @@
     <section id="news">
         <blockquote class="news">
             <h2><i class="fa fa-newspaper-o"></i> News</h2>
-            <p><strong>November 24, 2016:</strong> The third release candidate for Opulence is out.  It fixes an issue that prevented console commands from being run when you delete bootstrappers.  Read the <a href="{{! route('docs', $defaultBranch, 'upgrading#1.0.0-rc3') !}}" title="Upgrade guide">upgrade guide</a>.</p>
+            <p><strong>December 2, 2016:</strong> The fourth release candidate for Opulence is out.  It fixed broken unit tests on Windows machines and made it easier to run on localhost.  Read the <a href="{{! route('docs', $defaultBranch, 'upgrading#1.0.0-rc4') !}}" title="Upgrade guide">upgrade guide</a>.</p>
         </blockquote>
     </section>
     <section id="introduction">
