@@ -14,7 +14,7 @@ namespace OpulenceWebsite\Application\Config;
 class DocumentationConfig
 {
     /** The default branch to show in the docs */
-    const DEFAULT_BRANCH = "1.0";
+    public const DEFAULT_BRANCH = "1.0";
     /** @var array The config for the docs */
     private $config = [];
 

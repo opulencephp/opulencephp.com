@@ -14,7 +14,7 @@ namespace OpulenceWebsite\Domain\Documentation\Compilers;
 interface IDocumentationCompiler
 {
     /** The GitHub docs repository */
-    const GITHUB_REPOSITORY = "https://github.com/opulencephp/docs.git";
+    public const GITHUB_REPOSITORY = "https://github.com/opulencephp/docs.git";
 
     /**
      * Compiles the documentation

@@ -33,7 +33,7 @@ class CompileDocumentationCommand extends Command
     /**
      * @inheritdoc
      */
-    protected function define()
+    protected function define() : void
     {
         $this->setName("compile:docs")
             ->setDescription("Grabs the latest docs and compiles them into HTML");
@@ -42,7 +42,7 @@ class CompileDocumentationCommand extends Command
     /**
      * @inheritdoc
      */
-    protected function doExecute(IResponse $response)
+    protected function doExecute(IResponse $response) : void
     {
         $response->write($this->documentationCompiler->compile());
         $response->writeln("<success>Documentation created</success>");

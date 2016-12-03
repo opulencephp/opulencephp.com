@@ -23,7 +23,7 @@ class ValidatorBootstrapper extends BaseBootstrapper
      *
      * @param ErrorTemplateRegistry $errorTemplateRegistry The registry to register to
      */
-    protected function registerErrorTemplates(ErrorTemplateRegistry $errorTemplateRegistry)
+    protected function registerErrorTemplates(ErrorTemplateRegistry $errorTemplateRegistry) : void
     {
         $errorTemplateRegistry->registerErrorTemplatesFromConfig(
             require Config::get("paths", "resources.lang.en") . "/validation.php"
@@ -35,7 +35,7 @@ class ValidatorBootstrapper extends BaseBootstrapper
      *
      * @param RuleExtensionRegistry $ruleExtensionRegistry The registry to register rules to
      */
-    protected function registerRuleExtensions(RuleExtensionRegistry $ruleExtensionRegistry)
+    protected function registerRuleExtensions(RuleExtensionRegistry $ruleExtensionRegistry) : void
     {
         // Register any custom rules here
     }

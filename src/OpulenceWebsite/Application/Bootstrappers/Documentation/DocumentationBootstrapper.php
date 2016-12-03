@@ -38,7 +38,7 @@ class DocumentationBootstrapper extends Bootstrapper implements ILazyBootstrappe
     /**
      * @inheritdoc
      */
-    public function registerBindings(IContainer $container)
+    public function registerBindings(IContainer $container) : void
     {
         $fileSystem = $container->resolve(FileSystem::class);
         $documentationConfig = require Config::get("paths", "config") . "/documentation.php";

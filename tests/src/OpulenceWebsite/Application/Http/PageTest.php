@@ -22,7 +22,7 @@ class PageTest extends IntegrationTestCase
     /**
      * Sets up the tests
      */
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
 
@@ -34,7 +34,7 @@ class PageTest extends IntegrationTestCase
     /**
      * Tests that the 404 template is set up correctly
      */
-    public function test404PageIsSetUpCorrectly()
+    public function test404PageIsSetUpCorrectly() : void
     {
         $this->get("/does-not-exist")
             ->go()
@@ -45,7 +45,7 @@ class PageTest extends IntegrationTestCase
     /**
      * Tests that the docs template is set up correctly
      */
-    public function testDocsPageIsSetUpCorrectly()
+    public function testDocsPageIsSetUpCorrectly() : void
     {
         $this->get("/docs")
             ->go()
@@ -62,7 +62,7 @@ class PageTest extends IntegrationTestCase
     /**
      * Tests that the home template is set up correctly
      */
-    public function testHomePageIsSetUpCorrectly()
+    public function testHomePageIsSetUpCorrectly() : void
     {
         $this->get("/")
             ->go()
@@ -80,7 +80,7 @@ class PageTest extends IntegrationTestCase
     /**
      * Tests that a non-existent doc redirects to the default
      */
-    public function testNonExistentDocIsRedirectingToDefault()
+    public function testNonExistentDocIsRedirectingToDefault() : void
     {
         $this->get("/docs/master/does-not-exist")
             ->go()
@@ -91,7 +91,7 @@ class PageTest extends IntegrationTestCase
     /**
      * Tests that a non-existent doc version redirects to the default
      */
-    public function testNonExistentDocVersionIsRedirectingToDefault()
+    public function testNonExistentDocVersionIsRedirectingToDefault() : void
     {
         $this->get("/docs/non-existent-version/does-not-exist")
             ->go()
@@ -102,7 +102,7 @@ class PageTest extends IntegrationTestCase
     /**
      * Tests that the master template is set up correctly
      */
-    private function checkMasterTemplateSetup()
+    private function checkMasterTemplateSetup() : void
     {
         $this->assertView
             ->varEquals("masterCSS", [

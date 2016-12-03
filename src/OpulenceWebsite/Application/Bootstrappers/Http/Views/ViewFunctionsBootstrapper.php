@@ -27,7 +27,7 @@ class ViewFunctionsBootstrapper extends BaseBootstrapper
      * @param UrlGenerator $urlGenerator What generates URLs from routes
      * @param ISession $session The current session
      */
-    public function run(Request $request, ITranspiler $transpiler, UrlGenerator $urlGenerator, ISession $session)
+    public function run(Request $request, ITranspiler $transpiler, UrlGenerator $urlGenerator, ISession $session) : void
     {
         parent::run($request, $transpiler, $urlGenerator, $session);
 

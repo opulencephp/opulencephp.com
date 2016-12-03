@@ -33,7 +33,7 @@ class CompileApiCommand extends Command
     /**
      * @inheritdoc
      */
-    protected function define()
+    protected function define() : void
     {
         $this->setName("compile:api")
             ->setDescription("Generates API docs for Opulence");
@@ -42,7 +42,7 @@ class CompileApiCommand extends Command
     /**
      * @inheritdoc
      */
-    protected function doExecute(IResponse $response)
+    protected function doExecute(IResponse $response) : void
     {
         $this->apiCompiler->compile();
         $response->writeln("<success>API docs created</success>");

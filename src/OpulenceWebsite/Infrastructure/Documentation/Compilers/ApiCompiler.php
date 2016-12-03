@@ -17,7 +17,7 @@ use OpulenceWebsite\Domain\Documentation\Compilers\IApiCompiler;
 class ApiCompiler implements IApiCompiler
 {
     /** The GitHub docs repository */
-    const GITHUB_REPOSITORY = "https://github.com/opulencephp/Opulence.git";
+    private const GITHUB_REPOSITORY = "https://github.com/opulencephp/Opulence.git";
     /** @var array The list of versions to create APIs for */
     private static $branches = ["1.0", "master"];
     /** @var FileSystem The file system */
@@ -94,7 +94,7 @@ class ApiCompiler implements IApiCompiler
     /**
      * Clears the temporary files
      */
-    private function clearTempFiles()
+    private function clearTempFiles() : void
     {
         shell_exec(
             sprintf(

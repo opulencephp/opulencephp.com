@@ -30,7 +30,7 @@ class BuildersBootstrapper extends Bootstrapper
      * @param Request $request The current request
      * @param DocumentationConfig $documentationConfig The documentation config
      */
-    public function run(IViewFactory $viewFactory, Request $request, DocumentationConfig $documentationConfig)
+    public function run(IViewFactory $viewFactory, Request $request, DocumentationConfig $documentationConfig) : void
     {
         $viewFactory->registerBuilder("Master", function (IView $view) use ($request, $documentationConfig) {
             return (new MasterBuilder($request, $documentationConfig))->build($view);

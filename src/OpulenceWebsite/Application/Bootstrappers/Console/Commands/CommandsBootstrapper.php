@@ -24,7 +24,7 @@ class CommandsBootstrapper extends Bootstrapper
      * @param CommandCollection $commandCollection The commands to add to
      * @param IContainer $container The dependency injection container
      */
-    public function run(CommandCollection $commandCollection, IContainer $container)
+    public function run(CommandCollection $commandCollection, IContainer $container) : void
     {
         $commandClasses = require Config::get("paths", "config.console") . "/commands.php";
 
