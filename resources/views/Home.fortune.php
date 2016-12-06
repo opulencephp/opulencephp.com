@@ -59,7 +59,7 @@
                 <h4><i class="fa fa-chain-broken"></i> Loosely coupled</h4>
                 <ul>
                     <li>
-                        Automatically instantiate controllers with the <a href="{{! route('docs', $defaultBranch, 'dependency-injection') !}}" title="Learn about dependency injection">DI container</a>.
+                        Automatically instantiate controllers with the <a href="{{! route('docs', $defaultBranch, 'ioc-container') !}}" title="Learn about dependency injection">DI container</a>.
                     </li>
                     <li>
                         20 out of 22 components have 0 dependencies.
