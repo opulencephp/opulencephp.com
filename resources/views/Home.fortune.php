@@ -4,7 +4,7 @@
     <section id="news">
         <blockquote class="news">
             <h2><i class="fa fa-newspaper-o"></i> News</h2>
-            <p><strong>December 2, 2016:</strong> The fourth release candidate for Opulence is out.  It fixed broken unit tests on Windows machines and made it easier to run on localhost.  Read the <a href="{{! route('docs', $defaultBranch, 'upgrading#1.0.0-rc4') !}}" title="Upgrade guide">upgrade guide</a>.</p>
+            <p><strong>December 5, 2016:</strong> Opulence v1.0.0 has been released.  Read the <a href="{{! route('docs-index') !}}" title="Documentation">documentation</a> to learn how to get started.</p>
         </blockquote>
     </section>
     <section id="introduction">
@@ -15,7 +15,7 @@
     </section>
     <section id="installation">
         <h2><i class="fa fa-download"></i> Installing</h2>
-        <pre class="language-php"><code class=" language-php">composer create<span class="token operator">-</span>project opulence<span class="token operator">/</span>project <span class="token operator">--</span>prefer<span class="token operator">-</span>dist</code> <span class="token operator">--</span>stability<span class="token operator">=</span>dev</pre>
+        <pre class="language-php"><code class=" language-php">composer create<span class="token operator">-</span>project opulence<span class="token operator">/</span>project <span class="token operator">--</span>prefer<span class="token operator">-</span>dist</code></pre>
     </section>
     <section id="features">
         <div class="feature-wrapper">
@@ -56,46 +56,52 @@
         <div class="highlight-wrapper">
             <h2><i class="fa fa-question-circle"></i> Why Use Opulence?</h2>
             <article>
-                <h4><i class="fa fa-rocket"></i> Fast</h4>
-                <ul>
-                    <li>
-                        Opulence is written in PHP 7, for PHP 7
-                    </li>
-                    <li>
-                        It can handle 500 requests/second on a cheap 512MB server and 2,000 requests/second on a modest 8GB server.
-                    </li>
-                    <li>
-                        Most of Opulence's settings are cached to reduce overhead on each request.
-                    </li>
-                </ul>
-            </article>
-            <article>
                 <h4><i class="fa fa-chain-broken"></i> Loosely coupled</h4>
                 <ul>
                     <li>
-                        Want to use a component without downloading half the framework?  20 out of 22 components have 0 dependencies.
+                        Automatically instantiate controllers with the <a href="{{! route('docs', $defaultBranch, 'dependency-injection') !}}" title="Learn about dependency injection">DI container</a>.
                     </li>
                     <li>
-                        Want to write your own app from scratch?  Opulence isn't bound to any config implementation like some frameworks.
-                    </li>
-                </ul>
-            </article>
-            <article>
-                <h4><i class="fa fa-thumbs-o-up"></i> Doesn't bleed into your code</h4>
-                <ul>
-                    <li>
-                        Want to write an HTTP controller?  Use a <a href="{{! route('docs', $defaultBranch, 'http-basics') !}}#controllers" title="Learn about HTTP controllers">plain-old PHP object</a>.
-                    </li>
-                    <li>
-                        Want to write a class that can be stored with ORM?  Use a plain-old PHP object.
+                        20 out of 22 components have 0 dependencies.
                     </li>
                 </ul>
             </article>
             <article>
-                <h4><i class="fa fa-wrench"></i> Completely configurable</h4>
+                <h4><i class="fa fa-cogs"></i> Doesn't bleed into your code</h4>
                 <ul>
                     <li>
-                        Want to write your own implementation of an Opulence component?  Most are written to an interface, so you can <a href="{{! route('docs', $defaultBranch, 'dependency-injection') !}}" title="Learn about dependency injection">bind your implementation to Opulence at runtime</a>.
+                        Use plain-old PHP objects as <a href="{{! route('docs', $defaultBranch, 'http-basics') !}}#controllers" title="Learn about HTTP controllers">controllers</a>.
+                    </li>
+                    <li>
+                        Use plain-old PHP objects in its <a href="{{! route('docs', $defaultBranch, 'orm-basics') !}}" title="ORM">ORM</a>.
+                    </li>
+                    <li>
+                        Clear separation of application code and domain logic.
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h4><i class="fa fa-thumbs-o-up"></i> No magic, just SOLID code</h4>
+                <ul> 
+                    <li>
+                        No magic under the hood.  <a href="https://github.com/opulencephp/Opulence" target="_blank" title="Source">The internals</a> are easy to understand and extend.
+                    </li>
+                    <li>
+                        All Opulence components are unit-testable.
+                    </li>
+                    <li>
+                        No "God" classes.
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h4><i class="fa fa-rocket"></i> Fast</h4>
+                <ul>
+                    <li>
+                        Written in PHP 7.
+                    </li>
+                    <li>
+                        Handles 500 requests/second on a cheap 512MB server and 2,000 requests/second on a modest 8GB server.
                     </li>
                 </ul>
             </article>
@@ -103,10 +109,13 @@
                 <h4><i class="fa fa-sitemap"></i> Scalable</h4>
                 <ul>
                     <li>
-                        Need to take a load off your database?  Learn how data mappers can <a href="{{! route('docs', $defaultBranch, 'orm-data-mappers') !}}" title="Learn about data mappers">send 95% of queries to cache</a>.
+                        Heavy caching in <a href="{{! route('docs', $defaultBranch, 'orm-data-mappers') !}}" title="Learn about data mappers">data mappers</a>.
                     </li>
                     <li>
-                        Need session support with multiple servers?  We've <a href="{{! route('docs', $defaultBranch, 'sessions') !}}" title="Learn about sessions">got you covered</a>.
+                        Automatic caching of <a href="{{! route('docs', $defaultBranch, 'view-basics') !}}#caching" title="View caching">compiled views</a>.
+                    </li>
+                    <li>
+                        <a href="{{! route('docs', $defaultBranch, 'sessions') !}}" title="Learn about sessions">Session support</a> for multiple servers.
                     </li>
                 </ul>
             </article>
@@ -114,13 +123,13 @@
                 <h4><i class="fa fa-shield"></i> Secure</h4>
                 <ul>
                     <li>
-                        Need to encrypt your data?  Try our <a href="{{! route('docs', $defaultBranch, 'cryptography') !}}#encryption" title="Learn about encryption">encryption library</a>.
+                        <a href="{{! route('docs', $defaultBranch, 'cryptography') !}}#encryption" title="Learn about encryption">Built-in encryption</a> that uses the latest secure practices.
                     </li>
                     <li>
-                        Need to prevent cross-site scripting attacks?  Try our <a href="{{! route('docs', $defaultBranch, 'view-fortune') !}}#sanitized-tags" title="Learn how to prevent cross-site scripting">template engine</a>.
+                        <a href="{{! route('docs', $defaultBranch, 'view-fortune') !}}#sanitized-tags" title="Learn how to prevent cross-site scripting">Cross-site scripting prevention</a>.
                     </li>
                     <li>
-                        Need to prevent cross-site request forgeries?  Try our <a href="{{! route('docs', $defaultBranch, 'http-security') !}}#cross-site-request-forgery" title="Learn how to prevent cross-site request forgeries">middleware</a>.
+                        <a href="{{! route('docs', $defaultBranch, 'http-security') !}}#cross-site-request-forgery" title="Learn how to prevent cross-site request forgeries">Cross-site request forgery prevention</a>.
                     </li>
                 </ul>
             </article>

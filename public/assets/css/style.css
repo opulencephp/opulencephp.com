@@ -390,14 +390,9 @@ p code, li code {
       width: 1024px;
       margin: 0 auto; }
       main.home section#why-opulence {
-        width: auto;
-        background: #eee;
         padding-top: 10px;
         /* Make next section look like it has padding */
         margin-bottom: 10px; }
-      main.home section .highlight-wrapper {
-        width: 1024px;
-        margin: 0 auto; }
 
   .highlight-wrapper article, .feature-wrapper article {
     width: 32%;
@@ -414,7 +409,7 @@ p code, li code {
     vertical-align: top; }
 
   .highlight-wrapper article {
-    background: #fcfcfc;
+    background: #f9f9f9;
     min-height: 205px;
     vertical-align: top;
     border: 1px solid #ddd; } }
