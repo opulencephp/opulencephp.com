@@ -82,7 +82,7 @@
             </article>
             <article>
                 <h4><i class="fa fa-thumbs-o-up"></i> No magic, just SOLID code</h4>
-                <ul> 
+                <ul>
                     <li>
                         No magic under the hood.  <a href="https://github.com/opulencephp/Opulence" target="_blank" title="Source">The internals</a> are easy to understand and extend.
                     </li>
@@ -98,10 +98,10 @@
                 <h4><i class="fa fa-rocket"></i> Fast</h4>
                 <ul>
                     <li>
-                        Written in PHP 7.
+                        Written for PHP 7.
                     </li>
                     <li>
-                        Handles 500 requests/second on a cheap 512MB server and 2,000 requests/second on a modest 8GB server.
+                        Handles 500 requests/second on a single-core server and 2,000 requests/second on a modest quad-core server.
                     </li>
                 </ul>
             </article>
