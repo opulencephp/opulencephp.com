@@ -1,6 +1,6 @@
 <nav>
     <ul>
-        <li><a href="{{! route('home') !}}" title="Home">{{! logo(false) !}}</a></li>
+        <li class="logo"><a href="{{! route('home') !}}" title="Home">{{! logo(false) !}}</a></li>
         <li
         {{! $request->isPath("/docs(/.*)?", true) ? ' class="current"' : "" !}}><a href="{{! route('docs-index') !}}"
                                                                                    title="Documentation">Docs</a></li>

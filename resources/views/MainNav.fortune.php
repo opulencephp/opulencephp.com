@@ -1,6 +1,6 @@
 <nav>
     <ul>
-        <li><a href="{{! route('home') !}}" title="Home">{{! logo() !}}</a></li>
+        <li class="logo"><a href="{{! route('home') !}}" title="Home">{{! logo() !}}</a></li>
         <li class="movable main-nav{{! $request->isPath("
         /docs(/.*)?", true) ? ' current' : "" !}}"><a href="{{! route('docs-index') !}}"
                                                       title="Documentation">Docs</a></li>

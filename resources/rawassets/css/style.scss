@@ -785,3 +785,32 @@ p code, li code
         min-height: 600px;
     }
 }
+
+@media print
+{
+    header.main
+    {
+        position: relative;
+    }
+
+    header.main, footer.main
+    {
+        nav ul li:not(.logo)
+        {
+            display: none !important;
+        }
+    }
+
+    nav.sidebar
+    {
+        display: none;
+    }
+
+    main.docs
+    {
+        article
+        {
+            margin-left: 0;
+        }
+    }
+}

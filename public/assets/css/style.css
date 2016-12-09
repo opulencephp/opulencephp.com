@@ -417,3 +417,15 @@ p code, li code {
 @media screen and (min-device-height: 650px) {
   main {
     min-height: 600px; } }
+@media print {
+  header.main {
+    position: relative; }
+
+  header.main nav ul li:not(.logo), footer.main nav ul li:not(.logo) {
+    display: none !important; }
+
+  nav.sidebar {
+    display: none; }
+
+  main.docs article {
+    margin-left: 0; } }
