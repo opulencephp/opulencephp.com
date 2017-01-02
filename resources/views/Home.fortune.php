@@ -1,12 +1,6 @@
 <% extends("Master") %>
 
 <% part("content") %>
-    <section id="news">
-        <blockquote class="news">
-            <h2><i class="fa fa-newspaper-o"></i> News</h2>
-            <p><strong>December 5, 2016:</strong> Opulence v1.0.0 has been released.  Read the <a href="{{! route('docs-index') !}}" title="Documentation">documentation</a> to learn how to get started.</p>
-        </blockquote>
-    </section>
     <section id="introduction">
         <h2><i class="fa fa-code"></i> Opulence - A modern framework for modern PHP</h2>
         <pre class="language-php"><code class="language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">"/welcome/:name"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>string <span class="token variable">$name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
