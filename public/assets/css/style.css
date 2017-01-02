@@ -195,6 +195,9 @@ main {
     padding-top: 34px;
     margin-top: -14px;
     color: #f50; }
+  main.docs article h2:first-of-type {
+    /* For the first header in the docs, we want it to appear as high up as possible */
+    margin-top: -34px; }
   main.docs article footer {
     margin-top: 30px; }
     main.docs article footer a {

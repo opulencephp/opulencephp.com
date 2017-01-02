@@ -357,6 +357,12 @@ main
             color: #f50;
         }
 
+        h2:first-of-type
+        {
+            /* For the first header in the docs, we want it to appear as high up as possible */
+            margin-top: -1*$headerHeight;
+        }
+
         footer
         {
             margin-top: 30px;
