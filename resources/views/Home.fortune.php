@@ -101,7 +101,7 @@
                         Written for PHP 7.
                     </li>
                     <li>
-                        Handles 500 requests/second on a single-core server and 2,000 requests/second on a modest quad-core server.
+                        Handles ~1000 requests/second on a simple 2GB dual-core server.
                     </li>
                 </ul>
             </article>
