@@ -60,15 +60,24 @@ class DocumentationCompiler implements IDocumentationCompiler
             $rawDocsPath = "{$this->clonedDocPath}/$branchName";
             $compiledDocsPath = "{$this->compiledDocPath}/$branchName";
 
+            /**
+             * When cloning from GitHub, some files in the .git directory are read-only, which means we cannot delete
+             * them using normal PHP commands.  So, we first chmod all the files, then delete them.
+             */
+            foreach ($this->files->getFiles($rawDocsPath, true) as $file) {
+                chmod($file, 0777);
+            }
+
+            $this->files->deleteDirectory($rawDocsPath);
+            $this->files->makeDirectory($rawDocsPath);
+
             // Clone the branch from GitHub into our temporary directory
             $gitOutput .= shell_exec(
                 sprintf(
-                    "rm -rf %s* && mkdir %s && cd %s && git clone -b %s --single-branch %s .",
-                    $rawDocsPath,
-                    $rawDocsPath,
-                    $rawDocsPath,
+                    "git clone -b %s --single-branch %s %s",
                     $branchName,
-                    self::GITHUB_REPOSITORY
+                    self::GITHUB_REPOSITORY,
+                    $rawDocsPath
                 )
             );
 

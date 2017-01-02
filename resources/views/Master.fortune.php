@@ -66,6 +66,54 @@
                     }
                 };
 
+                // Defines a menu with a toggle button and a dropdown
+                function toggleMenu(toggleElement, dropdownElement)
+                {
+                    this.close = function()
+                    {
+                        dropdownElement.removeClass("open");
+                        document.removeEventListener("click", this.detectClickOff);
+                    };
+
+                    this.detectClickOff = function(e)
+                    {
+                        if(e.target != dropdownElement && e.target != toggleElement)
+                        {
+                            self.close();
+                        }
+                    };
+
+                    this.isOpen = function()
+                    {
+                        return dropdownElement.hasClass("open");
+                    };
+
+                    this.open = function()
+                    {
+                        dropdownElement.addClass("open");
+                        document.addEventListener("click", this.detectClickOff);
+                    };
+
+                    toggleElement.onclick = function()
+                    {
+                        if(self.isOpen())
+                        {
+                            self.close();
+                        }
+                        else
+                        {
+                            self.open();
+                        }
+
+                        return false;
+                    };
+
+                    var self = this;
+                }
+
+                // Create the community dropdown menu
+                var communityMenu = new toggleMenu(document.getElementById("community-toggle"), document.getElementById("community-dropdown"));
+
                 // Handle toggling the mobile menu
                 document.querySelector("#mobile-menu a").onclick = function()
                 {

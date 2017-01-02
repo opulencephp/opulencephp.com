@@ -214,11 +214,12 @@ header.main
     height: $headerHeight;
     z-index: 10;
 
-    &.docs nav li#doc-version-option
+    nav li.dropdown-option
     {
         display: inline-block;
+        position: relative;
 
-        a#doc-version-toggle:after
+        a.dropdown-toggle:after
         {
             font-family: "FontAwesome";
             content: " \f0d7";
@@ -230,7 +231,8 @@ header.main
             position: absolute;
             top: 100%;
             right: 0;
-            border: 1px solid $borderColor;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.75);
 
             &.open
             {
@@ -239,7 +241,7 @@ header.main
 
             li
             {
-                $background: #f1f1f1;
+                $background: #f9f9f9;
                 background: $background;
                 width: 100%;
                 padding: 0;
@@ -273,6 +275,14 @@ header.main
                     }
                 }
             }
+        }
+    }
+
+    &.docs nav
+    {
+        li#doc-version-option
+        {
+            display: inline-block;
         }
     }
 
@@ -343,7 +353,7 @@ main
         h2, h3, h4, h5
         {
             padding-top: $headerHeight;
-            margin-top: -1*$headerHeight;
+            margin-top: -1*$headerHeight + 20;
             color: #f50;
         }
 
@@ -657,6 +667,11 @@ p code, li code
     {
         article
         {
+            &:not(:last-of-type)
+            {
+                margin-bottom: 20px;
+            }
+
             h4
             {
                 text-align: left;

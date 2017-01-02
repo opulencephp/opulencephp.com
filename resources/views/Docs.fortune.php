@@ -10,8 +10,8 @@
 <% endpart %>
 
 <% part("docVersion") %>
-    <li id="doc-version-option" class="aux">
-        <a id="doc-version-toggle" href="#" title="Select the documentation version">{{ $branchTitles[$docVersion] }}</a>
+    <li id="doc-version-option" class="aux dropdown-option">
+        <a id="doc-version-toggle" class="dropdown-toggle" href="#" title="Select the documentation version">{{ $branchTitles[$docVersion] }}</a>
         <ul id="doc-version-dropdown">
             <% foreach($branchTitles as $branchName => $branchTitle) %>
             <li><a href="{{! route('docs', $branchName, $docName) !}}" title="View documentation for {{ $branchTitle }} version">{{ $branchTitle }}</a></li>
@@ -35,50 +35,11 @@
 
 <% part("footerJS") %>
     <% parent %>
-    var sidebar = document.querySelector("nav.sidebar");
     var versionDropdown = document.getElementById("doc-version-dropdown");
     var versionToggle = document.getElementById("doc-version-toggle");
+    versionMenu = new toggleMenu(versionToggle, versionDropdown);
 
     // Make sure our docs are at least as tall as the sidebar
+    var sidebar = document.querySelector("nav.sidebar");
     document.querySelector("main.docs").style.minHeight = (sidebar.offsetTop + sidebar.scrollHeight + 10) + "px";
-
-    var versionMenu = {
-        close: function()
-        {
-            versionDropdown.removeClass("open");
-            document.removeEventListener("click", this.detectClickOff);
-        },
-        detectClickOff: function(e)
-        {
-            if(e.target != versionDropdown && e.target != versionToggle)
-            {
-                // Can't use this because that'll point to the document
-                versionMenu.close();
-            }
-        },
-        isOpen: function()
-        {
-            return versionDropdown.hasClass("open");
-        },
-        open: function()
-        {
-            versionDropdown.addClass("open");
-            document.addEventListener("click", this.detectClickOff);
-        }
-    };
-
-    // Handle toggling the version menu
-    versionToggle.onclick = function()
-    {
-        if(versionMenu.isOpen())
-        {
-            versionMenu.close();
-        }
-        else
-        {
-            versionMenu.open();
-        }
-
-        return false;
-    };
 <% endpart %>

@@ -61,13 +61,22 @@ class ApiCompiler implements IApiCompiler
 
         // Grab the branches from Git
         $rawDocsPath = "{$this->clonedDocPath}/versions";
+
+        /**
+         * When cloning from GitHub, some files in the .git directory are read-only, which means we cannot delete
+         * them using normal PHP commands.  So, we first chmod all the files, then delete them.
+         */
+        foreach ($this->files->getFiles($rawDocsPath, true) as $file) {
+            chmod($file, 0777);
+        }
+        
+        $this->files->deleteDirectory($rawDocsPath);
+        $this->files->makeDirectory($rawDocsPath);
         shell_exec(
             sprintf(
-                "rm -rf %s* && mkdir %s && cd %s && git clone %s",
-                $rawDocsPath,
-                $rawDocsPath,
-                $rawDocsPath,
-                self::GITHUB_REPOSITORY
+                "git clone %s %s",
+                self::GITHUB_REPOSITORY,
+                $rawDocsPath
             )
         );
 
@@ -96,17 +105,7 @@ class ApiCompiler implements IApiCompiler
      */
     private function clearTempFiles() : void
     {
-        shell_exec(
-            sprintf(
-                "rm -rf %s/build",
-                $this->clonedDocPath
-            )
-        );
-        shell_exec(
-            sprintf(
-                "rm -rf %s/cache",
-                $this->clonedDocPath
-            )
-        );
+        $this->files->deleteDirectory("{$this->clonedDocPath}/build");
+        $this->files->deleteDirectory("{$this->clonedDocPath}/cache");
     }
 }
