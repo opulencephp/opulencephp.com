@@ -6,7 +6,7 @@
         <li id="community-option" class="movable main-nav dropdown-option">
             <a id="community-toggle" class="dropdown-toggle" href="#" title="View various ways of getting in touch with the community">Community</a>
             <ul id="community-dropdown">
-                <li><a href="https://slackinvite.me/to/opulencephp" target="_blank" title="Get invited to Opulence's Slack channel"><i class="fa fa-slack"></i> Slack</a></li>
+                <li><a href="{{! route('slack') !}}" title="Get invited to Opulence's Slack channel"><i class="fa fa-slack"></i> Slack</a></li>
                 <li><a href="https://www.twitter.com/opulencephp" target="_blank" title="David's Twitter"><i class="fa fa-twitter"></i> Twitter</a></li>
             </ul>
         </li>

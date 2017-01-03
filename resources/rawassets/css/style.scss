@@ -738,11 +738,15 @@ p code, li code
         }
     }
 
-    main.home
+    main
     {
-        width: auto;
-        padding-left: 0;
-        padding-right: 0;
+
+        &.home
+        {
+            width: auto;
+            padding-left: 0;
+            padding-right: 0;
+        }
 
         section
         {

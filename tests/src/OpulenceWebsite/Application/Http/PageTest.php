@@ -16,21 +16,6 @@ use OpulenceWebsite\Application\Config\DocumentationConfig;
  */
 class PageTest extends IntegrationTestCase
 {
-    /** @var DocumentationConfig The documentation config */
-    private $documentationConfig = null;
-
-    /**
-     * Sets up the tests
-     */
-    public function setUp() : void
-    {
-        parent::setUp();
-
-        $this->documentationConfig = new DocumentationConfig(
-            require Config::get("paths", "config") . "/documentation.php"
-        );
-    }
-
     /**
      * Tests that the 404 template is set up correctly
      */
@@ -43,24 +28,7 @@ class PageTest extends IntegrationTestCase
     }
 
     /**
-     * Tests that the docs template is set up correctly
-     */
-    public function testDocsPageIsSetUpCorrectly() : void
-    {
-        $this->get("/docs")
-            ->go()
-            ->assertResponse
-            ->isOK();
-        $this->assertView
-            ->varEquals("doFormatTitle", true)
-            ->varEquals("mainClasses", "docs")
-            ->varEquals("docs", $this->documentationConfig->getDocs(DocumentationConfig::DEFAULT_BRANCH))
-            ->varEquals("mainClasses", "docs");
-        $this->checkMasterTemplateSetup();
-    }
-
-    /**
-     * Tests that the home template is set up correctly
+     * Tests that the home page is set up correctly
      */
     public function testHomePageIsSetUpCorrectly() : void
     {
@@ -78,25 +46,20 @@ class PageTest extends IntegrationTestCase
     }
 
     /**
-     * Tests that a non-existent doc redirects to the default
+     * Tests that the slack page is set up correctly
      */
-    public function testNonExistentDocIsRedirectingToDefault() : void
+    public function testSlackPageIsSetUpCorrectly() : void
     {
-        $this->get("/docs/master/does-not-exist")
+        $this->get("/slack")
             ->go()
             ->assertResponse
-            ->redirectsTo("/docs/master/" . $this->documentationConfig->getDefaultDoc("master"));
-    }
-
-    /**
-     * Tests that a non-existent doc version redirects to the default
-     */
-    public function testNonExistentDocVersionIsRedirectingToDefault() : void
-    {
-        $this->get("/docs/non-existent-version/does-not-exist")
-            ->go()
-            ->assertResponse
-            ->redirectsTo("/docs");
+            ->isOK();
+        $this->assertView
+            ->varEquals("doFormatTitle", true)
+            ->varEquals("title", "Slack")
+            ->varEquals("metaKeywords", ["opulence", "slack", "chat", "php", "framework"])
+            ->varEquals("metaDescription", "Join Opulence's Slack channel");
+        $this->checkMasterTemplateSetup();
     }
 
     /**
@@ -106,13 +69,12 @@ class PageTest extends IntegrationTestCase
     {
         $this->assertView
             ->varEquals("masterCSS", [
-                "/assets/css/style.css?v=1.17",
+                "/assets/css/style.css?v=1.18",
                 "/assets/css/prism.css",
                 "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
             ])
             ->varEquals("javaScript", [
                 "/assets/js/prism.js"
-            ])
-            ->varEquals("defaultBranch", DocumentationConfig::DEFAULT_BRANCH);
+            ]);
     }
 }

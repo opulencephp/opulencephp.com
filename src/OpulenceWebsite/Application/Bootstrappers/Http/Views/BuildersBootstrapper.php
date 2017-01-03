@@ -17,6 +17,7 @@ use OpulenceWebsite\Application\Http\Views\Builders\DocsBuilder;
 use OpulenceWebsite\Application\Http\Views\Builders\HtmlErrorBuilder;
 use OpulenceWebsite\Application\Http\Views\Builders\HomeBuilder;
 use OpulenceWebsite\Application\Http\Views\Builders\MasterBuilder;
+use OpulenceWebsite\Application\Http\Views\Builders\SlackBuilder;
 
 /**
  * Defines the view builders bootstrapper
@@ -37,6 +38,9 @@ class BuildersBootstrapper extends Bootstrapper
         });
         $viewFactory->registerBuilder("Home", function (IView $view) {
             return (new HomeBuilder())->build($view);
+        });
+        $viewFactory->registerBuilder("Slack", function (IView $view) {
+            return (new SlackBuilder())->build($view);
         });
         $viewFactory->registerBuilder("Docs", function (IView $view) {
             return (new DocsBuilder())->build($view);
