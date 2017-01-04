@@ -399,10 +399,6 @@ p code, li code {
   main > section {
     width: 1024px;
     margin: 0 auto; }
-    main section#why-opulence {
-      padding-top: 10px;
-      /* Make next section look like it has padding */
-      margin-bottom: 10px; }
 
   .highlight-wrapper article, .feature-wrapper article {
     width: 32%;
