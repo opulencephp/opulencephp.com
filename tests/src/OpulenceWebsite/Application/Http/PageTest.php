@@ -69,7 +69,7 @@ class PageTest extends IntegrationTestCase
     {
         $this->assertView
             ->varEquals("masterCSS", [
-                "/assets/css/style.css?v=1.18",
+                "/assets/css/style.css?v=1.19",
                 "/assets/css/prism.css",
                 "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
             ])
