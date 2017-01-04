@@ -740,7 +740,6 @@ p code, li code
 
     main
     {
-
         &.home
         {
             width: auto;
@@ -748,7 +747,7 @@ p code, li code
             padding-right: 0;
         }
 
-        section
+        & > section
         {
             width: $siteWidth;
             margin: 0 auto;

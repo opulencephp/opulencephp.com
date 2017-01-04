@@ -396,7 +396,7 @@ p code, li code {
     width: auto;
     padding-left: 0;
     padding-right: 0; }
-  main section {
+  main > section {
     width: 1024px;
     margin: 0 auto; }
     main section#why-opulence {
