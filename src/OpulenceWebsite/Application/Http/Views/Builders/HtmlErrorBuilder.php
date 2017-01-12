@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Http\Views\Builders;
 
 use Opulence\Views\Factories\IViewBuilder;
@@ -21,7 +23,7 @@ class HtmlErrorBuilder implements IViewBuilder
      */
     public function build(IView $view) : IView
     {
-        $view->setVar("title", "Error");
+        $view->setVar('title', 'Error');
 
         return $view;
     }

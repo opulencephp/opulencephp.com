@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Console;
 
 use Opulence\Applications\Tasks\Dispatchers\ITaskDispatcher;
@@ -29,8 +31,8 @@ class IntegrationTestCase extends BaseIntegrationTestCase
      */
     public function setUp() : void
     {
-        require __DIR__ . "/../../../../../config/paths.php";
-        $this->application = require __DIR__ . "/../../../../../config/application.php";
+        require __DIR__ . '/../../../../../config/paths.php';
+        $this->application = require __DIR__ . '/../../../../../config/application.php';
         /** @var IContainer $container */
         $this->container = $container;
 
@@ -44,9 +46,9 @@ class IntegrationTestCase extends BaseIntegrationTestCase
          * @var IBootstrapperResolver $bootstrapperResolver
          * @var ITaskDispatcher $taskDispatcher
          */
-        $consoleBootstrapperPath = Config::get("paths", "config.console") . "/bootstrappers.php";
+        $consoleBootstrapperPath = Config::get('paths', 'config.console') . '/bootstrappers.php';
         $bootstrapperCache = new FileCache(
-            Config::get("paths", "tmp.framework.console") . "/cachedBootstrapperRegistry.json",
+            Config::get('paths', 'tmp.framework.console') . '/cachedBootstrapperRegistry.json',
             max(filemtime($globalBootstrapperPath), filemtime($consoleBootstrapperPath))
         );
         $container->bindInstance(ICache::class, $bootstrapperCache);

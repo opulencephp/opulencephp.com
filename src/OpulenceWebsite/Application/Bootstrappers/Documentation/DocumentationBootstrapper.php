@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Bootstrappers\Documentation;
 
 use Opulence\Files\FileSystem;
@@ -41,11 +43,11 @@ class DocumentationBootstrapper extends Bootstrapper implements ILazyBootstrappe
     public function registerBindings(IContainer $container) : void
     {
         $fileSystem = $container->resolve(FileSystem::class);
-        $documentationConfig = require Config::get("paths", "config") . "/documentation.php";
+        $documentationConfig = require Config::get('paths', 'config') . '/documentation.php';
         $container->bindInstance(DocumentationConfig::class, new DocumentationConfig($documentationConfig));
         $container->bindInstance(
             IDocumentationFactory::class,
-            new DocumentationFactory($fileSystem, Config::get("paths", "docs.compiled"))
+            new DocumentationFactory($fileSystem, Config::get('paths', 'docs.compiled'))
         );
         $container->bindInstance(
             IDocumentationCompiler::class,
@@ -53,18 +55,18 @@ class DocumentationBootstrapper extends Bootstrapper implements ILazyBootstrappe
                 $documentationConfig,
                 new Parsedown(),
                 $fileSystem,
-                Config::get("paths", "tmp.docs"),
-                Config::get("paths", "docs.compiled")
+                Config::get('paths', 'tmp.docs'),
+                Config::get('paths', 'docs.compiled')
             )
         );
         $container->bindInstance(
             IApiCompiler::class,
             new ApiCompiler(
                 $container->resolve(FileSystem::class),
-                Config::get("paths", "config"),
-                Config::get("paths", "public"),
-                Config::get("paths", "tmp.api"),
-                Config::get("paths", "vendor")
+                Config::get('paths', 'config'),
+                Config::get('paths', 'public'),
+                Config::get('paths', 'tmp.api'),
+                Config::get('paths', 'vendor')
             )
         );
     }

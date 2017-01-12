@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Console\Commands\Documentation;
 
 use Opulence\Console\Commands\Command;
@@ -35,8 +37,8 @@ class CompileDocumentationCommand extends Command
      */
     protected function define() : void
     {
-        $this->setName("compile:docs")
-            ->setDescription("Grabs the latest docs and compiles them into HTML");
+        $this->setName('compile:docs')
+            ->setDescription('Grabs the latest docs and compiles them into HTML');
     }
 
     /**
@@ -45,6 +47,6 @@ class CompileDocumentationCommand extends Command
     protected function doExecute(IResponse $response) : void
     {
         $response->write($this->documentationCompiler->compile());
-        $response->writeln("<success>Documentation created</success>");
+        $response->writeln('<success>Documentation created</success>');
     }
 }

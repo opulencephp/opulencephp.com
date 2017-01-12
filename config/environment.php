@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 /**
  * ----------------------------------------------------------
  * Load environment config files
@@ -15,7 +17,7 @@
  * you set environment variables on the server itself
  */
 $environmentConfigFiles = [
-    __DIR__ . "/environment/.env.app.php"
+    __DIR__ . '/environment/.env.app.php'
 ];
 
 foreach ($environmentConfigFiles as $environmentConfigFile) {

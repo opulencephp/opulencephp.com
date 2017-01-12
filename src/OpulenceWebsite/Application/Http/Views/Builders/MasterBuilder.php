@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Http\Views\Builders;
 
 use Opulence\Http\Requests\Request;
@@ -38,24 +40,24 @@ class MasterBuilder implements IViewBuilder
      */
     public function build(IView $view) : IView
     {
-        $view->setVar("title", "Opulence");
+        $view->setVar('title', 'Opulence');
         // Default to empty meta data
-        $view->setVar("metaKeywords", []);
-        $view->setVar("metaDescription", "");
+        $view->setVar('metaKeywords', []);
+        $view->setVar('metaDescription', '');
         // Set default variable values
-        $view->setVar("doFormatTitle", true);
-        $view->setVar("masterCSS", [
-            "/assets/css/style.css?v=1.19",
-            "/assets/css/prism.css",
-            "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+        $view->setVar('doFormatTitle', true);
+        $view->setVar('masterCSS', [
+            '/assets/css/style.css?v=1.19',
+            '/assets/css/prism.css',
+            '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
         ]);
-        $view->setVar("javaScript", [
-            "/assets/js/prism.js"
+        $view->setVar('javaScript', [
+            '/assets/js/prism.js'
         ]);
-        $view->setVar("mainClasses", "home");
-        $view->setVar("branchTitles", $this->documentationConfig->getBranchTitles());
-        $view->setVar("request", $this->request);
-        $view->setVar("defaultBranch", DocumentationConfig::DEFAULT_BRANCH);
+        $view->setVar('mainClasses', 'home');
+        $view->setVar('branchTitles', $this->documentationConfig->getBranchTitles());
+        $view->setVar('request', $this->request);
+        $view->setVar('defaultBranch', DocumentationConfig::DEFAULT_BRANCH);
 
         return $view;
     }

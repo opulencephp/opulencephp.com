@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Http\Controllers;
 
 use Opulence\Http\Responses\RedirectResponse;
@@ -52,15 +54,15 @@ class Documentation extends Controller
     public function showDoc(string $docName, string $version = DocumentationConfig::DEFAULT_BRANCH) : Response
     {
         $docs = $this->documentationConfig->getFlattenedDocs($version);
-        $this->view = $this->viewFactory->createView("Docs");
-        $this->view->setVar("version", $version);
-        $this->view->setVar("doc", $this->documentationFactory->createDocument($docName, $version));
-        $this->view->setVar("docs", $this->documentationConfig->getDocs($version));
-        $this->view->setVar("title", $docs[$docName]["title"]);
-        $this->view->setVar("docName", $docName);
-        $this->view->setVar("docVersion", $version);
-        $this->view->setVar("metaKeywords", $docs[$docName]["keywords"]);
-        $this->view->setVar("metaDescription", $docs[$docName]["description"]);
+        $this->view = $this->viewFactory->createView('Docs');
+        $this->view->setVar('version', $version);
+        $this->view->setVar('doc', $this->documentationFactory->createDocument($docName, $version));
+        $this->view->setVar('docs', $this->documentationConfig->getDocs($version));
+        $this->view->setVar('title', $docs[$docName]['title']);
+        $this->view->setVar('docName', $docName);
+        $this->view->setVar('docVersion', $version);
+        $this->view->setVar('metaKeywords', $docs[$docName]['keywords']);
+        $this->view->setVar('metaDescription', $docs[$docName]['description']);
 
         return new Response($this->viewCompiler->compile($this->view));
     }
@@ -85,7 +87,7 @@ class Documentation extends Controller
     public function showNoVersionDoc(string $docName) : RedirectResponse
     {
         return new RedirectResponse(
-            $this->urlGenerator->createFromName("docs", DocumentationConfig::DEFAULT_BRANCH, $docName)
+            $this->urlGenerator->createFromName('docs', DocumentationConfig::DEFAULT_BRANCH, $docName)
         );
     }
 }

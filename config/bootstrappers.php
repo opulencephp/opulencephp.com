@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 use Opulence\Framework\Cryptography\Bootstrappers\CryptographyBootstrapper;
 use OpulenceWebsite\Application\Bootstrappers\Documentation\DocumentationBootstrapper;
 use OpulenceWebsite\Application\Bootstrappers\Validation\ValidatorBootstrapper;

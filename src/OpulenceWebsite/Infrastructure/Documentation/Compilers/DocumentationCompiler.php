@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Infrastructure\Documentation\Compilers;
 
 use Opulence\Files\FileSystem;
@@ -24,9 +26,9 @@ class DocumentationCompiler implements IDocumentationCompiler
     /** @var FileSystem The file system */
     private $files = null;
     /** @var string The temporary location for cloned docs */
-    private $clonedDocPath = "";
+    private $clonedDocPath = '';
     /** @var string The permanent location for compiled docs */
-    private $compiledDocPath = "";
+    private $compiledDocPath = '';
 
     /**
      * @param array $config The config for the docs
@@ -54,7 +56,7 @@ class DocumentationCompiler implements IDocumentationCompiler
      */
     public function compile() : string
     {
-        $gitOutput = "";
+        $gitOutput = '';
 
         foreach ($this->config as $branchName => $branchData) {
             $rawDocsPath = "{$this->clonedDocPath}/$branchName";
@@ -74,7 +76,7 @@ class DocumentationCompiler implements IDocumentationCompiler
             // Clone the branch from GitHub into our temporary directory
             $gitOutput .= shell_exec(
                 sprintf(
-                    "git clone -b %s --single-branch %s %s",
+                    'git clone -b %s --single-branch %s %s',
                     $branchName,
                     self::GITHUB_REPOSITORY,
                     $rawDocsPath
@@ -91,7 +93,7 @@ class DocumentationCompiler implements IDocumentationCompiler
             foreach ($markdownFiles as $index => $markdownFile) {
                 $html = $this->parsedown->text($this->files->read($markdownFile));
                 $compiledDocFilename = sprintf(
-                    "%s/%s/%s.html",
+                    '%s/%s/%s.html',
                     $this->compiledDocPath,
                     $branchName,
                     $this->files->getFileName($markdownFile)
