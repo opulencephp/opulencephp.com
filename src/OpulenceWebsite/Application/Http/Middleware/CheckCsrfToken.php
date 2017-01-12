@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Http\Middleware;
 
 use Opulence\Framework\Configuration\Config;
@@ -30,12 +32,12 @@ class CheckCsrfToken extends BaseMiddleware
         // Add an XSRF cookie for JavaScript frameworks to use
         $response->getHeaders()->setCookie(
             new Cookie(
-                "XSRF-TOKEN",
+                'XSRF-TOKEN',
                 $this->session->get(CsrfTokenChecker::TOKEN_INPUT_NAME),
-                time() + Config::get("sessions", "xsrfcookie.lifetime"),
-                Config::get("sessions", "cookie.path"),
-                Config::get("sessions", "cookie.domain"),
-                Config::get("sessions", "cookie.isSecure"),
+                time() + Config::get('sessions', 'xsrfcookie.lifetime'),
+                Config::get('sessions', 'cookie.path'),
+                Config::get('sessions', 'cookie.domain'),
+                Config::get('sessions', 'cookie.isSecure'),
                 false
             )
         );

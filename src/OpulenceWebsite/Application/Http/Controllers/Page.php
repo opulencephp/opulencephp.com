@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Http\Controllers;
 
 use Opulence\Http\Responses\Response;
@@ -23,7 +25,7 @@ class Page extends Controller
      */
     public function showHomePage() : Response
     {
-        $this->view = $this->viewFactory->createView("Home");
+        $this->view = $this->viewFactory->createView('Home');
 
         return new Response($this->viewCompiler->compile($this->view));
     }
@@ -35,7 +37,7 @@ class Page extends Controller
      */
     public function showSlackPage() : Response
     {
-        $this->view = $this->viewFactory->createView("Slack");
+        $this->view = $this->viewFactory->createView('Slack');
 
         return new Response($this->viewCompiler->compile($this->view));
     }

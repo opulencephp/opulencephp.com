@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Infrastructure\Documentation\Compilers;
 
 use Opulence\Files\FileSystem;
@@ -17,19 +19,19 @@ use OpulenceWebsite\Domain\Documentation\Compilers\IApiCompiler;
 class ApiCompiler implements IApiCompiler
 {
     /** The GitHub docs repository */
-    private const GITHUB_REPOSITORY = "https://github.com/opulencephp/Opulence.git";
+    private const GITHUB_REPOSITORY = 'https://github.com/opulencephp/Opulence.git';
     /** @var array The list of versions to create APIs for */
-    private static $branches = ["1.0", "master"];
+    private static $branches = ['1.0', 'master'];
     /** @var FileSystem The file system */
     private $files = null;
     /** @var string The path to the config directory */
-    private $configPath = "";
+    private $configPath = '';
     /** @var string The path to the public directory */
-    private $publicPath = "";
+    private $publicPath = '';
     /** @var string The path to the cloned doc directory */
-    private $clonedDocPath = "";
+    private $clonedDocPath = '';
     /** @var string The path to the vendor directory */
-    private $vendorPath = "";
+    private $vendorPath = '';
 
     /**
      * @param FileSystem $files The file system
@@ -69,12 +71,12 @@ class ApiCompiler implements IApiCompiler
         foreach ($this->files->getFiles($rawDocsPath, true) as $file) {
             chmod($file, 0777);
         }
-        
+
         $this->files->deleteDirectory($rawDocsPath);
         $this->files->makeDirectory($rawDocsPath);
         shell_exec(
             sprintf(
-                "git clone %s %s",
+                'git clone %s %s',
                 self::GITHUB_REPOSITORY,
                 $rawDocsPath
             )

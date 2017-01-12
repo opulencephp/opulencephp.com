@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulence.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Bootstrappers\Validation;
 
 use Opulence\Framework\Configuration\Config;
@@ -26,7 +28,7 @@ class ValidatorBootstrapper extends BaseBootstrapper
     protected function registerErrorTemplates(ErrorTemplateRegistry $errorTemplateRegistry) : void
     {
         $errorTemplateRegistry->registerErrorTemplatesFromConfig(
-            require Config::get("paths", "resources.lang.en") . "/validation.php"
+            require Config::get('paths', 'resources.lang.en') . '/validation.php'
         );
     }
 

@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Infrastructure\Documentation;
 
 use Opulence\Files\FileSystem;
@@ -19,7 +21,7 @@ class DocumentationFactory implements IDocumentationFactory
     /** @var FileSystem The file system */
     private $files = null;
     /** @var string The permanent location for compiled docs */
-    private $compiledDocPath = "";
+    private $compiledDocPath = '';
 
     /**
      * @param FileSystem $files The file system

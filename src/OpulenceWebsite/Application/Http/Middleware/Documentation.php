@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Http\Middleware;
 
 use Closure;
@@ -47,16 +49,16 @@ class Documentation implements IMiddleware
     public function handle(Request $request, Closure $next) : Response
     {
         $matchedRoute = $this->router->getMatchedRoute();
-        $version = $matchedRoute->getPathVar("version");
-        $docName = $matchedRoute->getPathVar("docName");
+        $version = $matchedRoute->getPathVar('version');
+        $docName = $matchedRoute->getPathVar('docName');
 
         if (!$this->documentationConfig->hasVersion($version)) {
-            return new RedirectResponse("/docs");
+            return new RedirectResponse('/docs');
         }
 
         if (!$this->documentationConfig->hasDoc($version, $docName)) {
             return new RedirectResponse(
-                $this->urlGenerator->createFromName("docs", $version,
+                $this->urlGenerator->createFromName('docs', $version,
                     $this->documentationConfig->getDefaultDoc($version))
             );
         }

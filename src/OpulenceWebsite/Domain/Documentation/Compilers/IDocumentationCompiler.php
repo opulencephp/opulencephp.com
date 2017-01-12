@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Domain\Documentation\Compilers;
 
 /**
@@ -14,7 +16,7 @@ namespace OpulenceWebsite\Domain\Documentation\Compilers;
 interface IDocumentationCompiler
 {
     /** The GitHub docs repository */
-    public const GITHUB_REPOSITORY = "https://github.com/opulencephp/docs.git";
+    public const GITHUB_REPOSITORY = 'https://github.com/opulencephp/docs.git';
 
     /**
      * Compiles the documentation

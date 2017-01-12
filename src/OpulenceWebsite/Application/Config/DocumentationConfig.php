@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Config;
 
 /**
@@ -14,7 +16,7 @@ namespace OpulenceWebsite\Application\Config;
 class DocumentationConfig
 {
     /** The default branch to show in the docs */
-    public const DEFAULT_BRANCH = "1.0";
+    public const DEFAULT_BRANCH = '1.0';
     /** @var array The config for the docs */
     private $config = [];
 
@@ -36,7 +38,7 @@ class DocumentationConfig
         $titles = [];
 
         foreach ($this->config as $name => $data) {
-            $titles[$name] = $data["title"];
+            $titles[$name] = $data['title'];
         }
 
         return $titles;
@@ -50,7 +52,7 @@ class DocumentationConfig
      */
     public function getDefaultDoc(string $version) : string
     {
-        return $this->config[$version]["default"];
+        return $this->config[$version]['default'];
     }
 
     /**
@@ -61,7 +63,7 @@ class DocumentationConfig
      */
     public function getDocs($version) : array
     {
-        return $this->config[$version]["docs"];
+        return $this->config[$version]['docs'];
     }
 
     /**
@@ -74,7 +76,7 @@ class DocumentationConfig
     {
         $flattenedDocs = [];
 
-        foreach ($this->config[$version]["docs"] as $sectionHeader => $docs) {
+        foreach ($this->config[$version]['docs'] as $sectionHeader => $docs) {
             $flattenedDocs = array_merge($flattenedDocs, $docs);
         }
 

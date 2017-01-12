@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Http;
 
 use Opulence\Framework\Configuration\Config;
@@ -27,7 +29,7 @@ class DocumentationTest extends IntegrationTestCase
         parent::setUp();
 
         $this->documentationConfig = new DocumentationConfig(
-            require Config::get("paths", "config") . "/documentation.php"
+            require Config::get('paths', 'config') . '/documentation.php'
         );
     }
 
@@ -36,15 +38,15 @@ class DocumentationTest extends IntegrationTestCase
      */
     public function testDocsPageIsSetUpCorrectly() : void
     {
-        $this->get("/docs")
+        $this->get('/docs')
             ->go()
             ->assertResponse
             ->isOK();
         $this->assertView
-            ->varEquals("doFormatTitle", true)
-            ->varEquals("mainClasses", "docs")
-            ->varEquals("docs", $this->documentationConfig->getDocs(DocumentationConfig::DEFAULT_BRANCH))
-            ->varEquals("mainClasses", "docs");
+            ->varEquals('doFormatTitle', true)
+            ->varEquals('mainClasses', 'docs')
+            ->varEquals('docs', $this->documentationConfig->getDocs(DocumentationConfig::DEFAULT_BRANCH))
+            ->varEquals('mainClasses', 'docs');
         $this->checkMasterTemplateSetup();
     }
 
@@ -53,10 +55,10 @@ class DocumentationTest extends IntegrationTestCase
      */
     public function testNonExistentDocIsRedirectingToDefault() : void
     {
-        $this->get("/docs/master/does-not-exist")
+        $this->get('/docs/master/does-not-exist')
             ->go()
             ->assertResponse
-            ->redirectsTo("/docs/master/" . $this->documentationConfig->getDefaultDoc("master"));
+            ->redirectsTo('/docs/master/' . $this->documentationConfig->getDefaultDoc('master'));
     }
 
     /**
@@ -64,10 +66,10 @@ class DocumentationTest extends IntegrationTestCase
      */
     public function testNonExistentDocVersionIsRedirectingToDefault() : void
     {
-        $this->get("/docs/non-existent-version/does-not-exist")
+        $this->get('/docs/non-existent-version/does-not-exist')
             ->go()
             ->assertResponse
-            ->redirectsTo("/docs");
+            ->redirectsTo('/docs');
     }
 
     /**
@@ -76,14 +78,14 @@ class DocumentationTest extends IntegrationTestCase
     private function checkMasterTemplateSetup() : void
     {
         $this->assertView
-            ->varEquals("masterCSS", [
-                "/assets/css/style.css?v=1.19",
-                "/assets/css/prism.css",
-                "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+            ->varEquals('masterCSS', [
+                '/assets/css/style.css?v=1.19',
+                '/assets/css/prism.css',
+                '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
             ])
-            ->varEquals("javaScript", [
-                "/assets/js/prism.js"
+            ->varEquals('javaScript', [
+                '/assets/js/prism.js'
             ])
-            ->varEquals("defaultBranch", DocumentationConfig::DEFAULT_BRANCH);
+            ->varEquals('defaultBranch', DocumentationConfig::DEFAULT_BRANCH);
     }
 }

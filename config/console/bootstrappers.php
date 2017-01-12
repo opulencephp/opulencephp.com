@@ -1,14 +1,16 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
+use Opulence\Framework\Composer\Bootstrappers\ComposerBootstrapper;
 use Opulence\Framework\Console\Bootstrappers\CommandsBootstrapper as OpulenceCommandsBootstrapper;
 use Opulence\Framework\Console\Bootstrappers\RequestBootstrapper;
-use Opulence\Framework\Composer\Bootstrappers\ComposerBootstrapper;
 use OpulenceWebsite\Application\Bootstrappers\Console\Commands\CommandsBootstrapper as WebsiteCommandsBootstrapper;
 use OpulenceWebsite\Application\Bootstrappers\Http\Routing\RouterBootstrapper;
 use OpulenceWebsite\Application\Bootstrappers\Http\Views\ViewBootstrapper;

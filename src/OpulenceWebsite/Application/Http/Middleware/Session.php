@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Http\Middleware;
 
 use Opulence\Framework\Configuration\Config;
@@ -23,8 +25,8 @@ class Session extends BaseSession
      */
     protected function gc() : void
     {
-        if (rand(1, Config::get("sessions", "gc.divisor")) <= Config::get("sessions", "gc.chance")) {
-            $this->sessionHandler->gc(Config::get("sessions", "lifetime"));
+        if (rand(1, Config::get('sessions', 'gc.divisor')) <= Config::get('sessions', 'gc.chance')) {
+            $this->sessionHandler->gc(Config::get('sessions', 'lifetime'));
         }
     }
 
@@ -40,10 +42,10 @@ class Session extends BaseSession
             new Cookie(
                 $this->session->getName(),
                 $this->session->getId(),
-                time() + Config::get("sessions", "lifetime"),
-                Config::get("sessions", "cookie.path"),
-                Config::get("sessions", "cookie.domain"),
-                Config::get("sessions", "cookie.isSecure"),
+                time() + Config::get('sessions', 'lifetime'),
+                Config::get('sessions', 'cookie.path'),
+                Config::get('sessions', 'cookie.domain'),
+                Config::get('sessions', 'cookie.isSecure'),
                 false
             )
         );

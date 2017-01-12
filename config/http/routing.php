@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 /**
  * ----------------------------------------------------------
  * Define the routing config
@@ -21,5 +23,5 @@ return [
      *
      * "cache" => Whether or not to cache routes
      */
-    "cache" => true
+    'cache' => true
 ];

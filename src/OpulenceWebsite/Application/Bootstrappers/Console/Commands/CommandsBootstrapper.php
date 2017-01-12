@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Bootstrappers\Console\Commands;
 
 use Opulence\Console\Commands\CommandCollection;
@@ -26,7 +28,7 @@ class CommandsBootstrapper extends Bootstrapper
      */
     public function run(CommandCollection $commandCollection, IContainer $container) : void
     {
-        $commandClasses = require Config::get("paths", "config.console") . "/commands.php";
+        $commandClasses = require Config::get('paths', 'config.console') . '/commands.php';
 
         // Instantiate each command class
         foreach ($commandClasses as $commandClass) {

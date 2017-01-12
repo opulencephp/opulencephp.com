@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Console\Commands\Documentation;
 
 use Opulence\Console\Commands\Command;
@@ -35,8 +37,8 @@ class CompileApiCommand extends Command
      */
     protected function define() : void
     {
-        $this->setName("compile:api")
-            ->setDescription("Generates API docs for Opulence");
+        $this->setName('compile:api')
+            ->setDescription('Generates API docs for Opulence');
     }
 
     /**
@@ -45,6 +47,6 @@ class CompileApiCommand extends Command
     protected function doExecute(IResponse $response) : void
     {
         $this->apiCompiler->compile();
-        $response->writeln("<success>API docs created</success>");
+        $response->writeln('<success>API docs created</success>');
     }
 }

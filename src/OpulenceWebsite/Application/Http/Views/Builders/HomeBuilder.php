@@ -1,11 +1,13 @@
 <?php
-/**
+
+/*
  * Opulence
  *
  * @link      https://www.opulencephp.com
  * @copyright Copyright (C) 2017 David Young
- * @license   https://github.com/opulencephp/opulencephp.com/blob/master/LICENSE.md
+ * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
+
 namespace OpulenceWebsite\Application\Http\Views\Builders;
 
 use Opulence\Views\Factories\IViewBuilder;
@@ -21,10 +23,10 @@ class HomeBuilder implements IViewBuilder
      */
     public function build(IView $view) : IView
     {
-        $view->setVar("title", "Opulence | PHP Framework");
-        $view->setVar("doFormatTitle", false);
-        $view->setVar("metaKeywords", ["opulence", "php", "framework", "orm", "router", "console", "mvc"]);
-        $view->setVar("metaDescription", "A simple, secure, and scalable MVC framework for PHP 7");
+        $view->setVar('title', 'Opulence | PHP Framework');
+        $view->setVar('doFormatTitle', false);
+        $view->setVar('metaKeywords', ['opulence', 'php', 'framework', 'orm', 'router', 'console', 'mvc']);
+        $view->setVar('metaDescription', 'A simple, secure, and scalable MVC framework for PHP 7');
 
         return $view;
     }
