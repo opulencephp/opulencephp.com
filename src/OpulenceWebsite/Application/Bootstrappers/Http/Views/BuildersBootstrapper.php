@@ -35,7 +35,7 @@ class BuildersBootstrapper extends Bootstrapper
         $viewFactory = $container->resolve(IViewFactory::class);
         $request = $container->resolve(Request::class);
         $documentationConfig = $container->resolve(DocumentationConfig::class);
-        
+
         $viewFactory->registerBuilder('Master', function (IView $view) use ($request, $documentationConfig) {
             return (new MasterBuilder($request, $documentationConfig))->build($view);
         });
