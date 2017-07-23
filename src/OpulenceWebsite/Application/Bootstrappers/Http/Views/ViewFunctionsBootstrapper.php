@@ -11,9 +11,7 @@
 namespace OpulenceWebsite\Application\Bootstrappers\Http\Views;
 
 use Opulence\Framework\Views\Bootstrappers\ViewFunctionsBootstrapper as BaseBootstrapper;
-use Opulence\Http\Requests\Request;
-use Opulence\Routing\Urls\UrlGenerator;
-use Opulence\Sessions\ISession;
+use Opulence\Ioc\IContainer;
 use Opulence\Views\Compilers\Fortune\ITranspiler;
 
 /**
@@ -22,16 +20,13 @@ use Opulence\Views\Compilers\Fortune\ITranspiler;
 class ViewFunctionsBootstrapper extends BaseBootstrapper
 {
     /**
-     * Registers view functions
-     *
-     * @param Request $request The current request
-     * @param ITranspiler $transpiler The transpiler to use
-     * @param UrlGenerator $urlGenerator What generates URLs from routes
-     * @param ISession $session The current session
+     * @inheritdoc
      */
-    public function run(Request $request, ITranspiler $transpiler, UrlGenerator $urlGenerator, ISession $session) : void
+    public function registerBindings(IContainer $container) : void
     {
-        parent::run($request, $transpiler, $urlGenerator, $session);
+        parent::registerBindings($container);
+        
+        $transpiler = $container->resolve(ITranspiler::class);
 
         // Generates the title HTML
         $transpiler->registerViewFunction('opulenceTitle', function ($title, $doFormat = true) use ($transpiler) {

@@ -10,8 +10,6 @@
 
 namespace OpulenceWebsite\Application\Http;
 
-use Opulence\Applications\Tasks\Dispatchers\ITaskDispatcher;
-use Opulence\Applications\Tasks\TaskTypes;
 use Opulence\Debug\Errors\Handlers\IErrorHandler;
 use Opulence\Debug\Exceptions\Handlers\IExceptionHandler;
 use Opulence\Framework\Configuration\Config;
@@ -36,9 +34,10 @@ class IntegrationTestCase extends BaseIntegrationTestCase
     /**
      * @inheritdoc
      */
-    public function setUp() : void
+    public function setUp()
     {
         require __DIR__ . '/../../../../../config/paths.php';
+        require __DIR__ . '/../../../../../config/environment.php';
         /** @var LoggerInterface $logger */
         /** @var IExceptionRenderer $exceptionRenderer */
         /** @var IExceptionHandler $exceptionHandler */
@@ -50,7 +49,7 @@ class IntegrationTestCase extends BaseIntegrationTestCase
         $errorHandler->register();
         $this->exceptionHandler = $exceptionHandler;
         $this->exceptionRenderer = $exceptionRenderer;
-        $this->application = require __DIR__ . '/../../../../../config/application.php';
+        require __DIR__ . '/../../../../../config/application.php';
         /** @var IContainer $container */
         $this->container = $container;
 
@@ -77,18 +76,7 @@ class IntegrationTestCase extends BaseIntegrationTestCase
         $bootstrapperFactory = new BootstrapperRegistryFactory($bootstrapperResolver);
         $bootstrapperRegistry = $bootstrapperFactory->createBootstrapperRegistry($allBootstrappers);
         $bootstrapperDispatcher = new BootstrapperDispatcher($container, $bootstrapperRegistry, $bootstrapperResolver);
-        $taskDispatcher->registerTask(
-            TaskTypes::PRE_START,
-            function () use ($bootstrapperDispatcher) {
-                $bootstrapperDispatcher->startBootstrappers(false);
-            }
-        );
-        $taskDispatcher->registerTask(
-            TaskTypes::PRE_SHUTDOWN,
-            function () use ($bootstrapperDispatcher) {
-                $bootstrapperDispatcher->shutDownBootstrappers();
-            }
-        );
+        $bootstrapperDispatcher->dispatch(false);
 
         parent::setUp();
     }

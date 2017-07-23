@@ -8,7 +8,6 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-use Opulence\Applications\Tasks\TaskTypes;
 use Opulence\Console\Commands\CommandCollection;
 use Opulence\Console\Commands\Compilers\ICompiler;
 use Opulence\Console\Kernel;
@@ -36,16 +35,10 @@ require __DIR__ . '/../../config/environment.php';
 
 /**
  * ----------------------------------------------------------
- * Initialize some application variables
- * ----------------------------------------------------------
- */
-$application = require_once __DIR__ . '/../../config/application.php';
-
-/**
- * ----------------------------------------------------------
  * Configure the bootstrappers for the console kernel
  * ----------------------------------------------------------
  */
+require __DIR__ . '/../../config/application.php';
 $consoleBootstrapperPath = Config::get('paths', 'config.console') . '/bootstrappers.php';
 $consoleBootstrappers = require $consoleBootstrapperPath;
 $allBootstrappers = array_merge($globalBootstrappers, $consoleBootstrappers);
@@ -58,53 +51,21 @@ $bootstrapperRegistry = $bootstrapperFactory->createBootstrapperRegistry($allBoo
 $bootstrapperDispatcher = new BootstrapperDispatcher($container, $bootstrapperRegistry, $bootstrapperResolver);
 $container->bindInstance(IBootstrapperRegistry::class, $bootstrapperRegistry);
 $container->bindInstance(IBootstrapperDispatcher::class, $bootstrapperDispatcher);
-$taskDispatcher->registerTask(
-    TaskTypes::PRE_START,
-    function () use ($bootstrapperDispatcher) {
-        $bootstrapperDispatcher->startBootstrappers(false);
-    }
-);
-$taskDispatcher->registerTask(
-    TaskTypes::PRE_SHUTDOWN,
-    function () use ($bootstrapperDispatcher) {
-        $bootstrapperDispatcher->shutDownBootstrappers();
-    }
-);
 
 /**
  * ----------------------------------------------------------
- * Let's get started
+ * Handle the request
  * ----------------------------------------------------------
+ *
+ * @var CommandCollection $commandCollection
+ * @var IParser $requestParser
+ * @var ICompiler $commandCompiler
  */
-$statusCode = $application->start(function () use ($application, $container) {
-    global $argv;
-
-    /**
-     * ----------------------------------------------------------
-     * Handle the request
-     * ----------------------------------------------------------
-     *
-     * @var CommandCollection $commandCollection
-     * @var IParser $requestParser
-     * @var ICompiler $commandCompiler
-     */
-    $commandCollection = $container->resolve(CommandCollection::class);
-    $requestParser = $container->resolve(IParser::class);
-    $commandCompiler = $container->resolve(ICompiler::class);
-    $kernel = new Kernel(
-        $requestParser,
-        $commandCompiler,
-        $commandCollection,
-        $application->getVersion()
-    );
-
-    return $kernel->handle($argv);
-});
-
-/**
- * ----------------------------------------------------------
- * Shut her down
- * ----------------------------------------------------------
- */
-$application->shutDown();
+global $argv;
+$bootstrapperDispatcher->dispatch(false);
+$commandCollection = $container->resolve(CommandCollection::class);
+$requestParser = $container->resolve(IParser::class);
+$commandCompiler = $container->resolve(ICompiler::class);
+$kernel = new Kernel($requestParser, $commandCompiler, $commandCollection);
+$statusCode = $kernel->handle($argv);
 exit($statusCode);

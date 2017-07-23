@@ -10,8 +10,6 @@
 
 namespace OpulenceWebsite\Application\Console;
 
-use Opulence\Applications\Tasks\Dispatchers\ITaskDispatcher;
-use Opulence\Applications\Tasks\TaskTypes;
 use Opulence\Framework\Configuration\Config;
 use Opulence\Framework\Console\Testing\PhpUnit\IntegrationTestCase as BaseIntegrationTestCase;
 use Opulence\Ioc\Bootstrappers\Caching\FileCache;
@@ -29,10 +27,11 @@ class IntegrationTestCase extends BaseIntegrationTestCase
     /**
      * @inheritdoc
      */
-    public function setUp() : void
+    public function setUp()
     {
         require __DIR__ . '/../../../../../config/paths.php';
-        $this->application = require __DIR__ . '/../../../../../config/application.php';
+        require __DIR__ . '/../../../../../config/environment.php';
+        require __DIR__ . '/../../../../../config/application.php';
         /** @var IContainer $container */
         $this->container = $container;
 
@@ -57,18 +56,7 @@ class IntegrationTestCase extends BaseIntegrationTestCase
         $bootstrapperFactory = new BootstrapperRegistryFactory($bootstrapperResolver);
         $bootstrapperRegistry = $bootstrapperFactory->createBootstrapperRegistry($allBootstrappers);
         $bootstrapperDispatcher = new BootstrapperDispatcher($container, $bootstrapperRegistry, $bootstrapperResolver);
-        $taskDispatcher->registerTask(
-            TaskTypes::PRE_START,
-            function () use ($bootstrapperDispatcher) {
-                $bootstrapperDispatcher->startBootstrappers(false);
-            }
-        );
-        $taskDispatcher->registerTask(
-            TaskTypes::PRE_SHUTDOWN,
-            function () use ($bootstrapperDispatcher) {
-                $bootstrapperDispatcher->shutDownBootstrappers();
-            }
-        );
+        $bootstrapperDispatcher->dispatch(false);
 
         parent::setUp();
     }

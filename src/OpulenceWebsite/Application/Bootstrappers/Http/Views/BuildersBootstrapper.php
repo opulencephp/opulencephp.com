@@ -12,6 +12,7 @@ namespace OpulenceWebsite\Application\Bootstrappers\Http\Views;
 
 use Opulence\Http\Requests\Request;
 use Opulence\Ioc\Bootstrappers\Bootstrapper;
+use Opulence\Ioc\IContainer;
 use Opulence\Views\Factories\IViewFactory;
 use Opulence\Views\IView;
 use OpulenceWebsite\Application\Config\DocumentationConfig;
@@ -27,14 +28,14 @@ use OpulenceWebsite\Application\Http\Views\Builders\SlackBuilder;
 class BuildersBootstrapper extends Bootstrapper
 {
     /**
-     * Registers view builders to the factory
-     *
-     * @param IViewFactory $viewFactory The view factory to use
-     * @param Request $request The current request
-     * @param DocumentationConfig $documentationConfig The documentation config
+     * @inheritdoc
      */
-    public function run(IViewFactory $viewFactory, Request $request, DocumentationConfig $documentationConfig) : void
+    public function registerBindings(IContainer $container) : void
     {
+        $viewFactory = $container->resolve(IViewFactory::class);
+        $request = $container->resolve(Request::class);
+        $documentationConfig = $container->resolve(DocumentationConfig::class);
+        
         $viewFactory->registerBuilder('Master', function (IView $view) use ($request, $documentationConfig) {
             return (new MasterBuilder($request, $documentationConfig))->build($view);
         });
