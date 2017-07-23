@@ -25,7 +25,7 @@ class ViewFunctionsBootstrapper extends BaseBootstrapper
     public function registerBindings(IContainer $container) : void
     {
         parent::registerBindings($container);
-        
+
         $transpiler = $container->resolve(ITranspiler::class);
 
         // Generates the title HTML
