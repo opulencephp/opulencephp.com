@@ -92,7 +92,7 @@
                 <h4><i class="fa fa-rocket"></i> Fast</h4>
                 <ul>
                     <li>
-                        Written for PHP 7.
+                        Written for PHP 7.1.
                     </li>
                     <li>
                         Handles ~1000 requests/second on a simple 2GB dual-core server.

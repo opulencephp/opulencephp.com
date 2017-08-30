@@ -21,7 +21,7 @@ class ApiCompiler implements IApiCompiler
     /** The GitHub docs repository */
     private const GITHUB_REPOSITORY = 'https://github.com/opulencephp/Opulence.git';
     /** @var array The list of versions to create APIs for */
-    private static $branches = ['1.0', 'master'];
+    private static $branches = ['1.0', '1.1', 'master'];
     /** @var FileSystem The file system */
     private $files = null;
     /** @var string The path to the config directory */
