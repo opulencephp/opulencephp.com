@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Domain\Documentation\Factories;
+namespace Project\Domain\Documentation\Factories;
 
 /**
  * Defines the interface for documentation factories to implement

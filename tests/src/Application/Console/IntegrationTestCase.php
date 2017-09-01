@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Console;
+namespace Project\Application\Console;
 
 use Opulence\Framework\Configuration\Config;
 use Opulence\Framework\Console\Testing\PhpUnit\IntegrationTestCase as BaseIntegrationTestCase;

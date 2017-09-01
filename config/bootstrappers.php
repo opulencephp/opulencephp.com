@@ -9,8 +9,8 @@
  */
 
 use Opulence\Framework\Cryptography\Bootstrappers\CryptographyBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Documentation\DocumentationBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Validation\ValidatorBootstrapper;
+use Project\Application\Bootstrappers\Documentation\DocumentationBootstrapper;
+use Project\Application\Bootstrappers\Validation\ValidatorBootstrapper;
 
 /**
  * ----------------------------------------------------------

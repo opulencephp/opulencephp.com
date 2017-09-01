@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Bootstrappers\Http\Views;
+namespace Project\Application\Bootstrappers\Http\Views;
 
 use Opulence\Framework\Configuration\Config;
 use Opulence\Framework\Views\Bootstrappers\ViewBootstrapper as BaseBootstrapper;

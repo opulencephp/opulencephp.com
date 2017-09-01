@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Bootstrappers\Databases;
+namespace Project\Application\Bootstrappers\Databases;
 
 use Exception;
 use Opulence\Databases\Adapters\Pdo\PostgreSql\Driver;

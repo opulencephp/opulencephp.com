@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Config;
+namespace Project\Application\Config;
 
 /**
  * Defines a wrapper for the documentation config

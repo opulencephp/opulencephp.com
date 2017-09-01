@@ -8,10 +8,10 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Infrastructure\Documentation;
+namespace Project\Infrastructure\Documentation;
 
 use Opulence\Files\FileSystem;
-use OpulenceWebsite\Domain\Documentation\Factories\IDocumentationFactory;
+use Project\Domain\Documentation\Factories\IDocumentationFactory;
 
 /**
  * Defines the documentation factory

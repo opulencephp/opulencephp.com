@@ -8,10 +8,10 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Infrastructure\Documentation\Compilers;
+namespace Project\Infrastructure\Documentation\Compilers;
 
 use Opulence\Files\FileSystem;
-use OpulenceWebsite\Domain\Documentation\Compilers\IDocumentationCompiler;
+use Project\Domain\Documentation\Compilers\IDocumentationCompiler;
 use Parsedown;
 
 /**

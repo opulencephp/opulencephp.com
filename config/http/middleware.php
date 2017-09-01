@@ -9,8 +9,8 @@
  */
 
 use Opulence\Framework\Http\Middleware\CheckMaintenanceMode;
-use OpulenceWebsite\Application\Http\Middleware\CheckCsrfToken;
-use OpulenceWebsite\Application\Http\Middleware\Session;
+use Project\Application\Http\Middleware\CheckCsrfToken;
+use Project\Application\Http\Middleware\Session;
 
 /**
  * ----------------------------------------------------------

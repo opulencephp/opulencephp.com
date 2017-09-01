@@ -8,12 +8,12 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Http\Views\Builders;
+namespace Project\Application\Http\Views\Builders;
 
 use Opulence\Http\Requests\Request;
 use Opulence\Views\Factories\IViewBuilder;
 use Opulence\Views\IView;
-use OpulenceWebsite\Application\Config\DocumentationConfig;
+use Project\Application\Config\DocumentationConfig;
 
 /**
  * Defines the master view builder

@@ -12,10 +12,10 @@ use Opulence\Framework\Composer\Bootstrappers\ComposerBootstrapper;
 use Opulence\Framework\Console\Bootstrappers\CommandsBootstrapper as OpulenceCommandsBootstrapper;
 use Opulence\Framework\Console\Bootstrappers\RequestBootstrapper;
 use Opulence\Framework\Databases\Bootstrappers\MigrationBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Console\Commands\CommandsBootstrapper as WebsiteCommandsBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Databases\SqlBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Http\Routing\RouterBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Http\Views\ViewBootstrapper;
+use Project\Application\Bootstrappers\Console\Commands\CommandsBootstrapper as WebsiteCommandsBootstrapper;
+use Project\Application\Bootstrappers\Databases\SqlBootstrapper;
+use Project\Application\Bootstrappers\Http\Routing\RouterBootstrapper;
+use Project\Application\Bootstrappers\Http\Views\ViewBootstrapper;
 
 /**
  * ----------------------------------------------------------

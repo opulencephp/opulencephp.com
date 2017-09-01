@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Bootstrappers\Console\Commands;
+namespace Project\Application\Bootstrappers\Console\Commands;
 
 use Exception;
 use Opulence\Console\Commands\CommandCollection;

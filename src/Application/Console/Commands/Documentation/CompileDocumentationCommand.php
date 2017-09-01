@@ -8,11 +8,11 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Console\Commands\Documentation;
+namespace Project\Application\Console\Commands\Documentation;
 
 use Opulence\Console\Commands\Command;
 use Opulence\Console\Responses\IResponse;
-use OpulenceWebsite\Domain\Documentation\Compilers\IDocumentationCompiler;
+use Project\Domain\Documentation\Compilers\IDocumentationCompiler;
 
 /**
  * Defines the command that generates HTML from the markdown docs

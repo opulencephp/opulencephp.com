@@ -8,10 +8,10 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Http;
+namespace Project\Application\Http;
 
 use Opulence\Framework\Configuration\Config;
-use OpulenceWebsite\Application\Config\DocumentationConfig;
+use Project\Application\Config\DocumentationConfig;
 
 /**
  * Defines the documentation tests

@@ -9,7 +9,7 @@
  */
 
 use Opulence\Routing\Router;
-use OpulenceWebsite\Application\Http\Middleware\Documentation;
+use Project\Application\Http\Middleware\Documentation;
 
 /**
  * ----------------------------------------------------------
@@ -18,7 +18,7 @@ use OpulenceWebsite\Application\Http\Middleware\Documentation;
  *
  * @var Router $router
  */
-$router->group(['controllerNamespace' => 'OpulenceWebsite\\Application\\Http\\Controllers'], function (Router $router) {
+$router->group(['controllerNamespace' => 'Project\\Application\\Http\\Controllers'], function (Router $router) {
     $router->get('/', 'Page@showHomePage', [
         'name' => 'home'
     ]);

@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Domain\Documentation\Compilers;
+namespace Project\Domain\Documentation\Compilers;
 
 /**
  * Defines the interface for the documentation compiler

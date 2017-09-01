@@ -8,14 +8,14 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Http\Controllers;
+namespace Project\Application\Http\Controllers;
 
 use Opulence\Http\Responses\RedirectResponse;
 use Opulence\Http\Responses\Response;
 use Opulence\Routing\Controller;
 use Opulence\Routing\Urls\UrlGenerator;
-use OpulenceWebsite\Application\Config\DocumentationConfig;
-use OpulenceWebsite\Domain\Documentation\Factories\IDocumentationFactory;
+use Project\Application\Config\DocumentationConfig;
+use Project\Domain\Documentation\Factories\IDocumentationFactory;
 
 /**
  * Defines the documentation page controller

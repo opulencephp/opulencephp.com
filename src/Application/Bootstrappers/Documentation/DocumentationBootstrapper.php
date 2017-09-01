@@ -8,20 +8,20 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Bootstrappers\Documentation;
+namespace Project\Application\Bootstrappers\Documentation;
 
 use Opulence\Files\FileSystem;
 use Opulence\Framework\Configuration\Config;
 use Opulence\Ioc\Bootstrappers\Bootstrapper;
 use Opulence\Ioc\Bootstrappers\ILazyBootstrapper;
 use Opulence\Ioc\IContainer;
-use OpulenceWebsite\Application\Config\DocumentationConfig;
-use OpulenceWebsite\Domain\Documentation\Compilers\IApiCompiler;
-use OpulenceWebsite\Domain\Documentation\Compilers\IDocumentationCompiler;
-use OpulenceWebsite\Domain\Documentation\Factories\IDocumentationFactory;
-use OpulenceWebsite\Infrastructure\Documentation\Compilers\ApiCompiler;
-use OpulenceWebsite\Infrastructure\Documentation\Compilers\DocumentationCompiler;
-use OpulenceWebsite\Infrastructure\Documentation\DocumentationFactory;
+use Project\Application\Config\DocumentationConfig;
+use Project\Domain\Documentation\Compilers\IApiCompiler;
+use Project\Domain\Documentation\Compilers\IDocumentationCompiler;
+use Project\Domain\Documentation\Factories\IDocumentationFactory;
+use Project\Infrastructure\Documentation\Compilers\ApiCompiler;
+use Project\Infrastructure\Documentation\Compilers\DocumentationCompiler;
+use Project\Infrastructure\Documentation\DocumentationFactory;
 use Parsedown;
 
 /**

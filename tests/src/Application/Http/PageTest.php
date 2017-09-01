@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Http;
+namespace Project\Application\Http;
 
 /**
  * Defines the page tests

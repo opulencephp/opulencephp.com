@@ -8,11 +8,11 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Console\Commands\Documentation;
+namespace Project\Application\Console\Commands\Documentation;
 
 use Opulence\Console\Commands\Command;
 use Opulence\Console\Responses\IResponse;
-use OpulenceWebsite\Domain\Documentation\Compilers\IApiCompiler;
+use Project\Domain\Documentation\Compilers\IApiCompiler;
 
 /**
  * Defines the command that compiles API docs

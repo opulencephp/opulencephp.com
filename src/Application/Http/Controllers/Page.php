@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Http\Controllers;
+namespace Project\Application\Http\Controllers;
 
 use Opulence\Http\Responses\Response;
 use Opulence\Routing\Controller;

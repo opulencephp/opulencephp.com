@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Bootstrappers\Http\Routing;
+namespace Project\Application\Bootstrappers\Http\Routing;
 
 use Opulence\Environments\Environment;
 use Opulence\Framework\Configuration\Config;

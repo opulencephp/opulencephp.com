@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Http\Middleware;
+namespace Project\Application\Http\Middleware;
 
 use Opulence\Framework\Configuration\Config;
 use Opulence\Framework\Sessions\Http\Middleware\Session as BaseSession;

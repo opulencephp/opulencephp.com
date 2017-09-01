@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Http\Middleware;
+namespace Project\Application\Http\Middleware;
 
 use Closure;
 use Opulence\Http\Requests\Request;
@@ -17,7 +17,7 @@ use Opulence\Http\Responses\Response;
 use Opulence\Routing\Middleware\IMiddleware;
 use Opulence\Routing\Router;
 use Opulence\Routing\Urls\UrlGenerator;
-use OpulenceWebsite\Application\Config\DocumentationConfig;
+use Project\Application\Config\DocumentationConfig;
 
 /**
  * Defines the documentation middleware

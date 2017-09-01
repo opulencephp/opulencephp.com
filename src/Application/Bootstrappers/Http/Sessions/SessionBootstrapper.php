@@ -8,7 +8,7 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Bootstrappers\Http\Sessions;
+namespace Project\Application\Bootstrappers\Http\Sessions;
 
 use Opulence\Cache\ArrayBridge;
 use Opulence\Cache\FileBridge;

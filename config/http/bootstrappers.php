@@ -9,11 +9,11 @@
  */
 
 use Opulence\Framework\Http\Bootstrappers\RequestBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Http\Routing\RouterBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Http\Sessions\SessionBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Http\Views\BuildersBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Http\Views\ViewBootstrapper;
-use OpulenceWebsite\Application\Bootstrappers\Http\Views\ViewFunctionsBootstrapper;
+use Project\Application\Bootstrappers\Http\Routing\RouterBootstrapper;
+use Project\Application\Bootstrappers\Http\Sessions\SessionBootstrapper;
+use Project\Application\Bootstrappers\Http\Views\BuildersBootstrapper;
+use Project\Application\Bootstrappers\Http\Views\ViewBootstrapper;
+use Project\Application\Bootstrappers\Http\Views\ViewFunctionsBootstrapper;
 
 /**
  * ----------------------------------------------------------

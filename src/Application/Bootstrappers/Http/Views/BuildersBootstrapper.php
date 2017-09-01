@@ -8,19 +8,19 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-namespace OpulenceWebsite\Application\Bootstrappers\Http\Views;
+namespace Project\Application\Bootstrappers\Http\Views;
 
 use Opulence\Http\Requests\Request;
 use Opulence\Ioc\Bootstrappers\Bootstrapper;
 use Opulence\Ioc\IContainer;
 use Opulence\Views\Factories\IViewFactory;
 use Opulence\Views\IView;
-use OpulenceWebsite\Application\Config\DocumentationConfig;
-use OpulenceWebsite\Application\Http\Views\Builders\DocsBuilder;
-use OpulenceWebsite\Application\Http\Views\Builders\HomeBuilder;
-use OpulenceWebsite\Application\Http\Views\Builders\HtmlErrorBuilder;
-use OpulenceWebsite\Application\Http\Views\Builders\MasterBuilder;
-use OpulenceWebsite\Application\Http\Views\Builders\SlackBuilder;
+use Project\Application\Config\DocumentationConfig;
+use Project\Application\Http\Views\Builders\DocsBuilder;
+use Project\Application\Http\Views\Builders\HomeBuilder;
+use Project\Application\Http\Views\Builders\HtmlErrorBuilder;
+use Project\Application\Http\Views\Builders\MasterBuilder;
+use Project\Application\Http\Views\Builders\SlackBuilder;
 
 /**
  * Defines the view builders bootstrapper

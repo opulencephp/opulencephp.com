@@ -8,8 +8,8 @@
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
-use OpulenceWebsite\Application\Console\Commands\Documentation\CompileApiCommand;
-use OpulenceWebsite\Application\Console\Commands\Documentation\CompileDocumentationCommand;
+use Project\Application\Console\Commands\Documentation\CompileApiCommand;
+use Project\Application\Console\Commands\Documentation\CompileDocumentationCommand;
 
 /**
  * ----------------------------------------------------------
