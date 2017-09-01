@@ -15,6 +15,7 @@ use Opulence\Framework\Configuration\Config;
 use Opulence\Ioc\Bootstrappers\Bootstrapper;
 use Opulence\Ioc\Bootstrappers\ILazyBootstrapper;
 use Opulence\Ioc\IContainer;
+use Parsedown;
 use Project\Application\Config\DocumentationConfig;
 use Project\Domain\Documentation\Compilers\IApiCompiler;
 use Project\Domain\Documentation\Compilers\IDocumentationCompiler;
@@ -22,7 +23,6 @@ use Project\Domain\Documentation\Factories\IDocumentationFactory;
 use Project\Infrastructure\Documentation\Compilers\ApiCompiler;
 use Project\Infrastructure\Documentation\Compilers\DocumentationCompiler;
 use Project\Infrastructure\Documentation\DocumentationFactory;
-use Parsedown;
 
 /**
  * Defines the documentation bootstrapper

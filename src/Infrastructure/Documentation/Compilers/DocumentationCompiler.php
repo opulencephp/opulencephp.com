@@ -11,8 +11,8 @@
 namespace Project\Infrastructure\Documentation\Compilers;
 
 use Opulence\Files\FileSystem;
-use Project\Domain\Documentation\Compilers\IDocumentationCompiler;
 use Parsedown;
+use Project\Domain\Documentation\Compilers\IDocumentationCompiler;
 
 /**
  * Defines the documentation compiler
