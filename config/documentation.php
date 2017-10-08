@@ -259,11 +259,11 @@ $config['master'] = [
                 'description' => 'Learn about events in Opulence',
                 'keywords' => ['opulence', 'events', 'dispatchers', 'php']
             ],
-            'files' => [
-                'title' => 'File System',
-                'linkText' => 'File System',
-                'description' => 'Learn about working with the file system in Opulence',
-                'keywords' => ['opulence', 'file system', 'read write', 'php']
+            'io' => [
+                'title' => 'IO',
+                'linkText' => 'Input/Output',
+                'description' => 'Learn about working with IO in Opulence',
+                'keywords' => ['opulence', 'io', 'stream', 'file system', 'read write', 'php']
             ],
             'ioc-container' => [
                 'title' => 'IoC Container',
@@ -543,11 +543,11 @@ $config['1.1'] = [
                 'description' => 'Learn about events in Opulence',
                 'keywords' => ['opulence', 'events', 'dispatchers', 'php']
             ],
-            'files' => [
-                'title' => 'File System',
-                'linkText' => 'File System',
-                'description' => 'Learn about working with the file system in Opulence',
-                'keywords' => ['opulence', 'file system', 'read write', 'php']
+            'io' => [
+                'title' => 'IO',
+                'linkText' => 'Input/Output',
+                'description' => 'Learn about working with IO in Opulence',
+                'keywords' => ['opulence', 'io', 'stream', 'file system', 'read write', 'php']
             ],
             'ioc-container' => [
                 'title' => 'IoC Container',
