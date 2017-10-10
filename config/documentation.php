@@ -511,6 +511,12 @@ $config['1.1'] = [
                 'description' => 'Learn how to use cache in an Opulence application',
                 'keywords' => ['opulence', 'cache', 'Redis', 'Memcached', 'php']
             ],
+            'collections' => [
+                'title' => 'Collections',
+                'linkText' => 'Collections',
+                'description' => 'Learn about collections in Opulence',
+                'keywords' => ['opulence', 'collections', 'hash tables', 'array lists', 'stacks', 'queues']
+            ],
             'cryptography' => [
                 'title' => 'Cryptography',
                 'linkText' => 'Cryptography',
