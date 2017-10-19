@@ -550,7 +550,7 @@ $config['1.1'] = [
                 'keywords' => ['opulence', 'events', 'dispatchers', 'php']
             ],
             'io' => [
-                'title' => 'IO',
+                'title' => 'Input/Output',
                 'linkText' => 'Input/Output',
                 'description' => 'Learn about working with IO in Opulence',
                 'keywords' => ['opulence', 'io', 'stream', 'file system', 'read write', 'php']
