@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "11c88be361016a378fd8f2fbc2a71587",
+    "content-hash": "9daa423e8fd8cdf5b0512b790680b5ca",
     "packages": [
         {
             "name": "blackfire/php-sdk",
@@ -1339,7 +1339,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2017-09-19T12:41:22+00:00"
+            "time": "2017-09-19 12:41:22"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1384,7 +1384,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-10-18T22:25:45+00:00"
+            "time": "2017-10-18 22:25:45"
         },
         {
             "name": "phar-io/manifest",
@@ -1549,7 +1549,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-09-04T11:05:03+00:00"
+            "time": "2017-09-04 11:05:03"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1807,12 +1807,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "eb0232bab22fdb71bcdd077dcf3f64a4bc325f4c"
+                "reference": "92cba1d0bce5fd91ef74a49c31a8cbf1a42a79ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/eb0232bab22fdb71bcdd077dcf3f64a4bc325f4c",
-                "reference": "eb0232bab22fdb71bcdd077dcf3f64a4bc325f4c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/92cba1d0bce5fd91ef74a49c31a8cbf1a42a79ef",
+                "reference": "92cba1d0bce5fd91ef74a49c31a8cbf1a42a79ef",
                 "shasum": ""
             },
             "require": {
@@ -1883,7 +1883,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-10-18T18:53:01+00:00"
+            "time": "2017-10-19T18:18:42+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2051,7 +2051,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-10-16T04:35:48+00:00"
+            "time": "2017-10-16 04:35:48"
         },
         {
             "name": "sebastian/diff",
@@ -2103,7 +2103,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2017-10-05T13:24:46+00:00"
+            "time": "2017-10-05 13:24:46"
         },
         {
             "name": "sebastian/environment",
