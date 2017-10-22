@@ -16,7 +16,7 @@ namespace Project\Application\Config;
 class DocumentationConfig
 {
     /** The default branch to show in the docs */
-    public const DEFAULT_BRANCH = '1.0';
+    public const DEFAULT_BRANCH = '1.1';
     /** @var array The config for the docs */
     private $config = [];
 

@@ -1,6 +1,11 @@
 <% extends("Master") %>
 
 <% part("content") %>
+    <section id="news">
+        <blockquote class="news">
+            Version 1.1 has been released.  <a href="{{! route('docs', $defaultBranch, 'upgrading') !}}" title="Upgrade to 1.1">Check it out</a>.
+        </blockquote>
+    </section>
     <section id="introduction">
         <h2><i class="fa fa-code"></i> Opulence - A modern framework for modern PHP</h2>
         <pre class="language-php"><code class="language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'/welcome/:name'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>string <span class="token variable">$name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -56,7 +61,7 @@
                         Automatically instantiate controllers with the <a href="{{! route('docs', $defaultBranch, 'ioc-container') !}}" title="Learn about dependency injection">DI container</a>.
                     </li>
                     <li>
-                        20 out of 22 components have 0 dependencies.
+                        22 out of 24 components have 0 dependencies.
                     </li>
                 </ul>
             </article>
