@@ -20,7 +20,7 @@
     "php": "^7.1",
     "erusev/parsedown": "1.6.1",
     "monolog/monolog": "1.22.0",
-    "opulence/opulence": "1.1.x-dev",
+    "opulence/opulence": "1.1.*",
     "sami/sami": "3.2.*@dev"
   },
   "require-dev": {
