@@ -43,7 +43,7 @@ class SqlBootstrapper extends Bootstrapper implements ILazyBootstrapper
     {
         try {
             $driverClass = getenv('DB_DRIVER') ?: PostgreSqlDriver::class;
-        
+
             switch ($driverClass) {
                 case MySqlDriver::class:
                     $driver = new MySqlDriver();
@@ -56,7 +56,7 @@ class SqlBootstrapper extends Bootstrapper implements ILazyBootstrapper
                         "Invalid database driver type specified in environment var \"DB_DRIVER\": $driverClass"
                     );
             }
-            
+
             $connectionPool = new SingleServerConnectionPool(
                 $driver,
                 new Server(
