@@ -32,11 +32,12 @@ target_dir=$html_dir/releases/$BUILD_ID
 echo "rsync'ing to host"
 rsync -aq --delete-after --rsync-path="mkdir -p $target_dir/ && rsync" "$SOURCE_DIR" $SSH_USER@$SSH_HOST:$target_dir/
 
+# Need to change the owner of some directories that will be written to by our CI user
 echo "Creating symlinks and swapping"
 ssh $SSH_USER@$SSH_HOST <<EOF
 cp -vrf $html_dir/.env.app.php $target_dir/config/environment/.env.app.php
-sudo chown -R 48:48 $target_dir/resources
-sudo chown -R 48:48 $target_dir/tmp
+sudo chown -R 1000:48 $target_dir/resources
+sudo chown -R 1000:48 $target_dir/tmp
 sudo chmod -R 755 $target_dir/resources
 sudo chmod -R 755 $target_dir/tmp
 php $target_dir/apex framework:flushcache
