@@ -1,0 +1,45 @@
+SOURCE_DIR="$1"
+BUILD_ID="$2"
+SSH_USER="$3"
+SSH_HOST="$4"
+
+if [ -z "$SOURCE_DIR" ]
+then
+    echo "No source directory specified"
+    exit 1
+fi
+
+if [ -z "$BUILD_ID" ]
+then
+    echo "No build ID specified"
+    exit 1
+fi
+
+if [ -z "$SSH_USER" ]
+then
+    echo "No SSH user specified"
+    exit 1
+fi
+
+if [ -z "$SSH_HOST" ]
+then
+    echo "No SSH host specified"
+    exit 1
+fi
+
+html_dir=/var/www/html
+target_dir=$html_dir/releases/$BUILD_ID/
+echo "rsync'ing to host"
+rsync -aq --delete-after --rsync-path="mkdir -p $target_dir && rsync" "$SOURCE_DIR" $SSH_USER@$SSH_HOST:$target_dir
+
+echo "Creating symlinks and swapping"
+ssh $SSH_USER@$SSH_HOST <<EOF
+cp -vrf $html_dir/.env.app.php $target_dir/config/environment/.env.app.php
+sudo chown -R 48:48 resources
+sudo chown -R 48:48 tmp
+sudo chmod -R 755 resources
+sudo chmod -R 755 tmp
+php apex framework:flushcache
+ln -snf $(readlink $html_dir/current) $html_dir/previous
+ln -snf $target_dir $html_dir/current
+EOF
