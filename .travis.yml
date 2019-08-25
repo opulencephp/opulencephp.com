@@ -41,7 +41,9 @@ deploy:
 
 notifications:
   email:
-    - dbyoung2@gmail.com
+    recipients:
+      - dbyoung2@gmail.com
+    on_success: always
 
 sudo: false
 
