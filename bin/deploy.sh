@@ -1,3 +1,5 @@
+set -e
+
 SOURCE_DIR="$1"
 BUILD_ID="$2"
 SSH_USER="$3"
