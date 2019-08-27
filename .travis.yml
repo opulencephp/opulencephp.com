@@ -33,7 +33,7 @@ script: vendor/bin/phpunit --verbose
 
 deploy:
   - provider: script
-    script: bash bin/deploy.sh $TRAVIS_BUILD_DIR $TRAVIS_BUILD_NUMBER $SSH_USER $SSH_HOST
+    script: bash bin/deploy.sh $TRAVIS_BUILD_DIR $TRAVIS_JOB_NUMBER $SSH_USER $SSH_HOST
     on:
       branch: "1.0"
     skip_cleanup: true
