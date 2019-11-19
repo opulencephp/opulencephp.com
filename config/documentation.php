@@ -163,6 +163,12 @@ $config['master'] = [
                 'description' => 'Learn about Opulence SQL query builders',
                 'keywords' => ['opulence', 'programmatically build', 'queries', 'sql', 'php']
             ],
+            'database-migrations' => [
+                'title' => 'Database Migrations',
+                'linkText' => 'Migrations',
+                'description' => 'Learn about using database migrations in Opulence',
+                'keywords' => ['opulence', 'rdbms', 'mysql', 'postgresql', 'migration', 'sql', 'database', 'php']
+            ],
             'database-type-mappers' => [
                 'title' => 'Type Mappers',
                 'linkText' => 'Type Mappers',
