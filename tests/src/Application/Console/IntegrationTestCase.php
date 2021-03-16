@@ -4,7 +4,7 @@
  * Opulence
  *
  * @link      https://www.opulencephp.com
- * @copyright Copyright (C) 2017 David Young
+ * @copyright Copyright (C) 2021 David Young
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
@@ -27,7 +27,7 @@ class IntegrationTestCase extends BaseIntegrationTestCase
     /**
      * @inheritdoc
      */
-    public function setUp()
+    public function setUp() : void
     {
         $paths = require __DIR__ . '/../../../../config/paths.php';
         require __DIR__ . '/../../../../config/environment.php';

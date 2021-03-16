@@ -4,7 +4,7 @@
  * Opulence
  *
  * @link      https://www.opulencephp.com
- * @copyright Copyright (C) 2017 David Young
+ * @copyright Copyright (C) 2021 David Young
  * @license   https://github.com/opulencephp/Opulence/blob/master/LICENSE.md
  */
 
@@ -16,7 +16,7 @@ namespace Project\Application\Config;
 class DocumentationConfig
 {
     /** The default branch to show in the docs */
-    public const DEFAULT_BRANCH = '1.1';
+    public const DEFAULT_BRANCH = '1.2';
     /** @var array The config for the docs */
     private $config = [];
 

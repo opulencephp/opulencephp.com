@@ -17,14 +17,13 @@
     }
   },
   "require": {
-    "php": "^7.1",
+    "php": "^7.3 || ^8.0",
     "erusev/parsedown": "1.6.1",
     "monolog/monolog": "1.22.0",
-    "opulence/opulence": "1.1.*",
-    "sami/sami": "3.2.*@dev"
+    "opulence/opulence": "1.2.*"
   },
   "require-dev": {
-    "phpunit/phpunit": "~6.2"
+    "phpunit/phpunit": "~9.5"
   },
   "extra": {
     "branch-alias": {

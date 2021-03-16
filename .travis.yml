@@ -1,7 +1,7 @@
 language: php
 
 php:
-  - 7.1
+  - 7.3
 
 # Deploy the key to tmp so that it doesn't get deployed by accident
 before_install:
